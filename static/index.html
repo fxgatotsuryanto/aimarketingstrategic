@@ -12,12 +12,14 @@
 <meta property="og:url" content="https://aimarketingstrategic.com/">
 <meta property="og:title" content="AI Marketing Strategic — Solusi AI Automation untuk UMKM Indonesia">
 <meta property="og:description" content="Bangun AI Frontliner yang menangkap leads, membalas chat, dan menjalankan follow-up otomatis 24/7. Setup mulai Rp 1 juta. Infra Rp 100rb/bulan. Kuota chat isi ulang seperti pulsa.">
-<meta property="og:image" content="https://aimarketingstrategic.com/images/background.png">
+<meta property="og:image" content="https://aimarketingstrategic.com/images/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:locale" content="id_ID">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="AI Marketing Strategic — Solusi AI Automation untuk UMKM Indonesia">
 <meta name="twitter:description" content="Bangun AI Frontliner yang menangkap leads, membalas chat, dan menjalankan follow-up otomatis 24/7.">
-<meta name="twitter:image" content="https://aimarketingstrategic.com/images/background.png">
+<meta name="twitter:image" content="https://aimarketingstrategic.com/images/og-card.png">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ProfessionalService","name":"AI Marketing Strategic","description":"Solusi AI Automation untuk UMKM Indonesia","url":"https://aimarketingstrategic.com","telephone":"+6281907552758","email":"hallo@aimarketingstrategic.com","address":{"@type":"PostalAddress","addressCountry":"ID"},"priceRange":"Rp 1.000.000 – Rp 3.000.000","sameAs":["https://www.linkedin.com/company/aimarketingstrategic","https://www.youtube.com/@AIMarketingStrategic"]}
 </script>
@@ -342,6 +344,30 @@ footer{background:#061626;color:#fff;padding:64px 24px 40px;border-top:1px solid
 .btn-modal-close{width:100%;background:var(--primary);color:#fff;padding:16px;border-radius:12px;font-family:'Orbitron',sans-serif;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-top:24px;transition:background .2s}
 .btn-modal-close:hover{background:#0a1f36}
 
+/* LEAD FORM */
+#lead-form-section{background:linear-gradient(135deg,#0B2A4A 0%,#061626 100%);border-top:2px solid var(--orange)}
+.lead-form-inner{max-width:640px;margin:0 auto;padding:64px 24px}
+.lead-form-inner h2{font-family:'Orbitron',sans-serif;font-size:clamp(18px,3vw,26px);font-weight:700;color:#fff;margin-bottom:8px;letter-spacing:.05em}
+.lead-form-inner p{font-size:14px;color:rgba(255,255,255,.6);margin-bottom:32px;line-height:1.6}
+.lead-form{display:flex;flex-direction:column;gap:14px}
+.lead-form input,.lead-form select,.lead-form textarea{width:100%;padding:13px 16px;border:1px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(255,255,255,.06);color:#fff;font-family:'Space Grotesk',sans-serif;font-size:14px;outline:none;transition:border-color .2s}
+.lead-form input::placeholder,.lead-form textarea::placeholder{color:rgba(255,255,255,.35)}
+.lead-form input:focus,.lead-form select:focus,.lead-form textarea:focus{border-color:var(--orange)}
+.lead-form select{color:rgba(255,255,255,.6);appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23fff' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+.lead-form select option{background:#0B2A4A;color:#fff}
+.lead-form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:480px){.lead-form-row{grid-template-columns:1fr}}
+.btn-form-submit{width:100%;padding:15px;background:var(--orange);color:#fff;border-radius:8px;font-family:'Orbitron',sans-serif;font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;transition:background .2s;margin-top:4px}
+.btn-form-submit:hover{background:#e06600}
+.btn-form-submit:disabled{background:#6b7280;cursor:not-allowed}
+.form-success{display:none;text-align:center;padding:32px;color:#fff}
+.form-success svg{margin:0 auto 16px}
+.form-success h3{font-family:'Orbitron',sans-serif;font-size:16px;margin-bottom:8px}
+.form-success p{font-size:13px;color:rgba(255,255,255,.6)}
+.form-or{display:flex;align-items:center;gap:12px;margin:8px 0}
+.form-or span{font-size:12px;color:rgba(255,255,255,.35);white-space:nowrap}
+.form-or::before,.form-or::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.1)}
+
 /* SCROLL TO TOP */
 #scroll-top{display:none;position:fixed;bottom:40px;right:40px;width:56px;height:56px;background:var(--orange);color:#fff;border-radius:16px;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(245,124,0,.4);z-index:99;border:1px solid rgba(255,255,255,.2);transition:all .2s}
 #scroll-top.show{display:flex}
@@ -535,32 +561,25 @@ window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);
     <div class="section-header">
       <div style="display:flex;align-items:center;gap:16px;margin-bottom:16px">
         <div class="section-line"></div>
-        <h2 class="section-title">Kenapa Bisnis Susah Naik Kelas?</h2>
+        <h2 class="section-title">Dua Kebocoran Terbesar Bisnis Anda</h2>
         <div class="section-line"></div>
       </div>
-      <p class="section-sub">Pertumbuhan sering tertahan karena hampir semua hal masih harus dikerjakan manual oleh tim.</p>
+      <p class="section-sub">Pertumbuhan tertahan bukan karena kurang kerja keras — tapi karena dua lubang ini belum ditutup.</p>
     </div>
-    <div class="cards-3">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px">
       <div class="card" style="text-align:center">
         <div class="card-icon card-icon-light" style="margin:0 auto 24px">
           <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--orange)"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0"/></svg>
         </div>
         <h3 class="card-title text-primary">Calon Pembeli Kabur</h3>
-        <p class="card-body">Prospek hilang karena chat baru dibalas saat admin sempat — sering sudah terlambat.</p>
+        <p class="card-body">Prospek hilang karena chat baru dibalas saat admin sempat — sering sudah terlambat. Setiap jam keterlambatan = peluang yang pindah ke kompetitor.</p>
       </div>
       <div class="card" style="text-align:center">
         <div class="card-icon card-icon-light" style="margin:0 auto 24px">
           <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--orange)"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2 1 3 3 3h10c2 0 3-1 3-3V7M4 7c0-2 1-3 3-3h10c2 0 3 1 3 3M4 7h16M9 11h6M9 15h4"/></svg>
         </div>
-        <h3 class="card-title text-primary">Sibuk Urus Data Manual</h3>
-        <p class="card-body">Waktu dan biaya habis untuk pindah-pindah data antara Excel dan WhatsApp.</p>
-      </div>
-      <div class="card" style="text-align:center">
-        <div class="card-icon card-icon-light" style="margin:0 auto 24px">
-          <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--orange)"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01"/></svg>
-        </div>
-        <h3 class="card-title text-primary">Semua Numpuk ke Owner</h3>
-        <p class="card-body">Bisnis sulit berkembang karena hampir setiap keputusan harus menunggu owner atau manajer turun tangan.</p>
+        <h3 class="card-title text-primary">Waktu Habis untuk Hal Operasional</h3>
+        <p class="card-body">Jam kerja tim dan owner tersedot untuk input data, copy-paste WhatsApp ke Excel, dan kirim reminder manual — bukan untuk berkembang.</p>
       </div>
     </div>
   </div>
@@ -681,6 +700,7 @@ window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);
           <p class="price-label">Setup sekali bayar</p>
           <p class="price-amount">Rp 1.000.000</p>
           <p class="price-recur" style="font-size:11px;color:#6b7280;margin-top:4px">Termasuk web, setup, dan infra AI bulan pertama</p>
+          <p style="font-size:11px;color:#9ca3af;margin-top:6px">≈ <strong style="color:#15803d">Rp 3.300 / hari</strong> di bulan pertama</p>
         </div>
         <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:12px 14px;margin:12px 0">
           <p style="font-size:12px;font-weight:700;color:#15803d;margin-bottom:4px">Rp 100.000 / bulan</p>
@@ -946,6 +966,48 @@ window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);
   </div>
 </section>
 
+<!-- LEAD FORM (jalur konversi ke-2) -->
+<section id="lead-form-section">
+  <div class="lead-form-inner">
+    <div id="form-wrap">
+      <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(245,124,0,.15);border:1px solid rgba(245,124,0,.35);border-radius:100px;padding:5px 14px;margin-bottom:20px">
+        <div style="width:7px;height:7px;background:#F57C00;border-radius:50%"></div>
+        <span style="font-size:11px;font-weight:700;color:#F57C00;letter-spacing:.15em;text-transform:uppercase">Tidak mau chat sekarang?</span>
+      </div>
+      <h2 class="lead-form-inner h2">Tinggalkan Nomor WA Anda</h2>
+      <p class="lead-form-inner p">Kami hubungi balik dalam <strong style="color:#F57C00">1×24 jam</strong> — ceritakan kebutuhan Anda, kami kirim rekomendasi sistem yang sesuai.</p>
+      <form class="lead-form" id="leadForm" onsubmit="submitLeadForm(event)">
+        <div class="lead-form-row">
+          <input type="text" id="lf-nama" name="nama" placeholder="Nama Anda *" required autocomplete="name">
+          <input type="tel" id="lf-wa" name="wa" placeholder="No. WhatsApp * (08xx)" required autocomplete="tel">
+        </div>
+        <select id="lf-kebutuhan" name="kebutuhan" required>
+          <option value="" disabled selected>Kebutuhan utama Anda *</option>
+          <option value="frontliner">Balas chat otomatis 24/7</option>
+          <option value="followup">Follow-up leads otomatis</option>
+          <option value="dashboard">Dashboard monitoring bisnis</option>
+          <option value="crm">CRM + pipeline sales</option>
+          <option value="custom">Custom / tidak yakin dulu</option>
+        </select>
+        <input type="text" id="lf-bisnis" name="bisnis" placeholder="Jenis bisnis Anda (contoh: properti, kuliner, jasa…)">
+        <button type="submit" class="btn-form-submit" id="formBtn">
+          Kirim — Saya Minta Dihubungi →
+        </button>
+        <p style="font-size:11px;color:rgba(255,255,255,.3);text-align:center">Data Anda aman · Tidak dijual · Hanya untuk follow-up dari tim kami</p>
+      </form>
+      <div class="form-or"><span>atau langsung chat sekarang</span></div>
+      <button onclick="trackLead();openChat()" style="width:100%;padding:13px;border:1px solid rgba(255,255,255,.2);border-radius:8px;color:rgba(255,255,255,.7);font-size:13px;font-weight:600;transition:all .2s" onmouseover="this.style.borderColor='#F57C00';this.style.color='#F57C00'" onmouseout="this.style.borderColor='rgba(255,255,255,.2)';this.style.color='rgba(255,255,255,.7)'">
+        💬 Buka Chat Langsung
+      </button>
+    </div>
+    <div class="form-success" id="form-success">
+      <svg width="56" height="56" fill="none" stroke="#F57C00" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      <h3>Terima kasih!</h3>
+      <p>Kami akan menghubungi Anda via WhatsApp dalam 1×24 jam.<br>Cek chat dari nomor <strong>0819-0755-2758</strong>.</p>
+    </div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section id="faq" class="section bg-white" style="border-top:1px solid #e5e7eb">
   <div class="section-inner">
@@ -1023,7 +1085,7 @@ window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);
       </button>
       <a href="https://wa.me/6281907552758" class="cta-phone">0819-0755-2758</a>
     </div>
-    <p class="cta-note">Respon dalam 1x24 jam · Konsultasi gratis</p>
+    <p class="cta-note">Respon dalam 1×24 jam · Konsultasi gratis · Tanpa komitmen</p>
   </div>
 </section>
 
@@ -1143,6 +1205,25 @@ function closeMenu(){document.getElementById('mobile-menu').classList.remove('op
 // MODALS
 function openChat(){openModal('chat-modal')}
 function trackLead(){try{if(typeof fbq==='function')fbq('track','Lead');if(typeof gtag==='function')gtag('event','generate_lead',{event_category:'CTA'});}catch(e){}}
+
+function submitLeadForm(e){
+  e.preventDefault();
+  var btn=document.getElementById('formBtn');
+  btn.disabled=true;btn.textContent='Mengirim…';
+  var nama=document.getElementById('lf-nama').value.trim();
+  var wa=document.getElementById('lf-wa').value.trim();
+  var kebutuhan=document.getElementById('lf-kebutuhan').value;
+  var bisnis=document.getElementById('lf-bisnis').value.trim();
+  // Fire tracking
+  trackLead();
+  try{if(typeof fbq==='function')fbq('track','Contact');}catch(e){}
+  // Send via WhatsApp deep-link to owner as fallback (works always, no server needed)
+  var pesan=encodeURIComponent('Halo, saya '+nama+' ingin info sistem AI.\nKebutuhan: '+kebutuhan+(bisnis?'\nBisnis: '+bisnis:'')+'\nNo WA: '+wa);
+  // Show success state immediately, open WA in bg
+  document.getElementById('form-wrap').style.display='none';
+  document.getElementById('form-success').style.display='block';
+  setTimeout(function(){window.open('https://wa.me/6281907552758?text='+pesan,'_blank');},600);
+}
 function openModal(id){document.getElementById(id).classList.add('open');document.body.style.overflow='hidden'}
 function closeModal(id){document.getElementById(id).classList.remove('open');document.body.style.overflow=''}
 document.querySelectorAll('.modal-overlay').forEach(function(m){m.addEventListener('click',function(e){if(e.target===m){m.classList.remove('open');document.body.style.overflow=''}})})
