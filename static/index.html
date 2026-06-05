@@ -325,15 +325,15 @@ footer{background:#061626;color:#fff;padding:64px 24px 40px;border-top:1px solid
 .footer-legal button:hover{color:#fff}
 
 /* MODALS */
-.modal-overlay{display:none;position:fixed;inset:0;z-index:500;background:rgba(0,0,0,.8);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:16px}
+.modal-overlay{display:none;position:fixed;inset:0;z-index:500;background:rgba(0,0,0,.8);backdrop-filter:blur(8px);align-items:flex-start;justify-content:center;padding:24px 16px;overflow-y:auto;overflow-x:hidden}
 .modal-overlay.open{display:flex}
-.modal-box{background:#fff;border-radius:24px;width:100%;max-width:480px;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,.3)}
-.modal-chat-box{max-height:85vh;display:flex;flex-direction:column}
-.modal-header{background:var(--primary);color:#fff;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;flex-shrink:0}
+.modal-box{background:#fff;border-radius:24px;width:100%;max-width:480px;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,.3);overflow-x:hidden}
+.modal-chat-box{max-height:90vh;display:flex;flex-direction:column;overflow:hidden}
+.modal-header{background:var(--primary);color:#fff;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;flex-shrink:0;position:sticky;top:0;z-index:10;min-height:56px}
 .modal-title{font-family:'Orbitron',sans-serif;font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase}
-.modal-close{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.2);color:#fff;display:flex;align-items:center;justify-content:center;transition:background .2s;flex-shrink:0}
-.modal-close:hover{background:rgba(255,255,255,.35)}
-.modal-iframe{flex:1;border:none;min-height:400px}
+.modal-close{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.25);color:#fff;display:flex;align-items:center;justify-content:center;transition:background .2s;flex-shrink:0;border:2px solid rgba(255,255,255,.3)}
+.modal-close:hover{background:rgba(255,255,255,.4)}
+.modal-iframe{flex:1;border:none;min-height:400px;width:100%;overflow-x:hidden;display:block}
 .modal-content{color:#1f2937;padding:32px 40px;max-height:75vh;overflow-y:auto}
 .modal-content h2{font-family:'Orbitron',sans-serif;font-size:18px;font-weight:700;text-transform:uppercase;color:var(--primary);margin-bottom:24px}
 .modal-content h3{font-family:'Orbitron',sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;color:var(--primary);margin:24px 0 8px}
@@ -981,7 +981,7 @@ footer{background:#061626;color:#fff;padding:64px 24px 40px;border-top:1px solid
         <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
       </button>
     </div>
-    <iframe class="modal-iframe" src="https://ai.newton.co.id/webhook/f263072c-d9fd-47e0-82e5-a85af72df984/chat" allow="microphone" style="height:500px"></iframe>
+    <iframe class="modal-iframe" src="https://ai.newton.co.id/webhook/f263072c-d9fd-47e0-82e5-a85af72df984/chat" allow="microphone" style="height:520px;max-width:100%"></iframe>
   </div>
 </div>
 
