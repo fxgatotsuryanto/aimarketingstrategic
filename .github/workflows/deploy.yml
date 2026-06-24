@@ -24,6 +24,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Remove non-web files from static
+        run: |
+          rm -f static/blog/update_index.py
+          rm -f static/blog/_template.html
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
