@@ -1,39 +1,30 @@
-name: Deploy ke GitHub Pages
+name: Deploy ke cPanel via FTP
 
 on:
   push:
     branches: [main]
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: true
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Remove non-web files from static
+      - name: Remove non-web files
         run: |
           rm -f static/blog/update_index.py
           rm -f static/blog/_template.html
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Deploy via FTP ke cPanel
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          path: static
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./static/
+          server-dir: /public_html/
+          exclude: |
+            **/.git*
+            **/.git*/**
