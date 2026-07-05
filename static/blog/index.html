@@ -16,28 +16,61 @@
 <link rel="canonical" href="https://aimarketingstrategic.com/blog/">
 <link rel="stylesheet" href="/css/style.css">
 <style>
-/* BLOG INDEX */
-.blog-hero{background:var(--bg-dark);color:#fff;padding:140px 24px 80px;text-align:center}
-.blog-hero h1{font-size:clamp(28px,5vw,48px);margin-bottom:16px;color:#fff}
-.blog-hero p{color:rgba(255,255,255,.6);font-size:18px;max-width:600px;margin:0 auto}
-.blog-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(245,124,0,.1);border:1px solid rgba(245,124,0,.3);border-radius:100px;padding:6px 16px;font-size:11px;font-family:'Orbitron',sans-serif;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--orange);margin-bottom:24px}
-.blog-grid-section{max-width:1280px;margin:0 auto;padding:60px 24px}
-.blog-grid-section h2{font-size:24px;margin-bottom:32px;color:var(--primary)}
-.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:28px}
-.blog-card{border:1px solid #e5e7eb;border-radius:16px;overflow:hidden;background:#fff;transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column}
-.blog-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(11,42,74,.12)}
-.blog-card-cat{font-family:'Orbitron',sans-serif;font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);margin-bottom:10px}
-.blog-card-body{padding:24px;flex:1;display:flex;flex-direction:column}
-.blog-card-title{font-size:18px;font-weight:700;color:var(--primary);margin-bottom:10px;line-height:1.4;font-family:'Orbitron',sans-serif}
-.blog-card-excerpt{font-size:14px;color:#6b7280;line-height:1.7;flex:1;margin-bottom:16px}
-.blog-card-meta{display:flex;align-items:center;gap:12px;font-size:12px;color:#9ca3af;padding-top:16px;border-top:1px solid #f3f4f6}
-.blog-card-read{display:inline-flex;align-items:center;gap:6px;color:var(--orange);font-size:13px;font-weight:600;margin-top:16px}
+/* ===== BLOG INDEX — Editorial refresh v2 (redesign 2026-07-05) ===== */
+/* HERO */
+.blog-hero{position:relative;background:var(--bg-dark);color:#fff;padding:150px 24px 74px;text-align:center;overflow:hidden}
+.blog-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(58% 120% at 50% -10%,rgba(245,124,0,.20),transparent 62%);pointer-events:none}
+.blog-hero-inner{position:relative;max-width:780px;margin:0 auto}
+.blog-kicker{display:inline-flex;align-items:center;gap:12px;font-family:'Orbitron',sans-serif;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--orange);margin-bottom:22px}
+.blog-kicker::before,.blog-kicker::after{content:"";height:1px;width:30px;background:rgba(245,124,0,.45)}
+.blog-hero h1{font-size:clamp(30px,5.2vw,54px);line-height:1.06;letter-spacing:-.02em;margin-bottom:18px;color:#fff;text-wrap:balance}
+.blog-hero p{color:rgba(255,255,255,.70);font-size:clamp(15px,2vw,18px);max-width:560px;margin:0 auto;line-height:1.6}
+.blog-hero-meta{margin-top:28px;display:inline-flex;gap:22px;flex-wrap:wrap;justify-content:center;font-size:13px;color:rgba(255,255,255,.55)}
+.blog-hero-meta b{color:var(--orange);font-weight:700}
+/* SECTION + FILTER TOOLBAR */
+.blog-grid-section{max-width:1200px;margin:0 auto;padding:44px 24px 76px}
+.blog-toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:30px}
+.blog-toolbar .label{font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#94a3b8;margin-right:4px}
+.chip{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;color:var(--primary);background:#fff;border:1px solid #e2e8f0;border-radius:100px;padding:8px 16px;cursor:pointer;transition:background .2s,color .2s,border-color .2s,transform .15s}
+.chip:hover{border-color:var(--orange);transform:translateY(-1px)}
+.chip[aria-pressed="true"]{background:var(--primary);color:#fff;border-color:var(--primary)}
+/* GRID */
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px}
+/* CARD */
+.blog-card{border:1px solid #e8edf3;border-radius:16px;background:#fff;overflow:hidden;display:flex;flex-direction:column;opacity:0;animation:cardIn .5s cubic-bezier(.2,.7,.2,1) forwards;transition:transform .25s cubic-bezier(.2,.7,.2,1),box-shadow .25s}
+.blog-card:hover{transform:translateY(-5px);box-shadow:0 18px 44px -20px rgba(11,42,74,.45)}
+.blog-card-body{padding:26px;flex:1;display:flex;flex-direction:column}
+.blog-card-cat{align-self:flex-start;font-family:'Orbitron',sans-serif;font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);background:rgba(245,124,0,.09);border-radius:100px;padding:5px 11px;margin-bottom:16px}
+.blog-card-title{font-size:19px;font-weight:700;color:var(--primary);margin-bottom:12px;line-height:1.32;font-family:'Orbitron',sans-serif;letter-spacing:0}
+.blog-card-title a{color:inherit;text-decoration:none}
+.blog-card-title a:hover{color:var(--orange)}
+.blog-card-excerpt{font-size:14px;color:#475569;line-height:1.7;flex:1;margin-bottom:18px}
+.blog-card-meta{display:flex;align-items:center;gap:10px;font-size:12.5px;color:#64748b;padding-top:16px;border-top:1px solid #eef2f7}
+.blog-card-read{display:inline-flex;align-items:center;gap:7px;color:var(--orange);font-size:13px;font-weight:700;margin-top:18px;text-decoration:none}
 .blog-card-read svg{transition:transform .2s}
 .blog-card:hover .blog-card-read svg{transform:translateX(4px)}
-.blog-empty{text-align:center;padding:80px 24px;color:#9ca3af}
+.blog-card.hide{display:none}
+/* FEATURED (newest) — breaks the uniform grid; only when not filtering */
+.blog-grid:not(.filtered) article:first-child{grid-column:1/-1;background:linear-gradient(120deg,#081d33,#0B2A4A);border:none}
+.blog-grid:not(.filtered) article:first-child .blog-card-body{padding:40px}
+.blog-grid:not(.filtered) article:first-child .blog-card-cat{color:#fff;background:rgba(245,124,0,.92)}
+.blog-grid:not(.filtered) article:first-child .blog-card-title{color:#fff;font-size:clamp(22px,3.4vw,32px);line-height:1.18;max-width:22ch}
+.blog-grid:not(.filtered) article:first-child .blog-card-excerpt{color:rgba(255,255,255,.74);font-size:15.5px;max-width:64ch}
+.blog-grid:not(.filtered) article:first-child .blog-card-meta{color:rgba(255,255,255,.55);border-color:rgba(255,255,255,.14)}
+.blog-grid:not(.filtered) article:first-child:hover{transform:translateY(-4px);box-shadow:0 30px 60px -30px rgba(6,22,38,.75)}
+@media(min-width:820px){.blog-grid:not(.filtered) article:first-child .blog-card-body{max-width:780px}}
+/* MOTION */
+@keyframes cardIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.blog-card:nth-child(1){animation-delay:.02s}
+.blog-card:nth-child(2){animation-delay:.08s}
+.blog-card:nth-child(3){animation-delay:.14s}
+.blog-card:nth-child(4){animation-delay:.20s}
+.blog-card:nth-child(5){animation-delay:.26s}
+.blog-card:nth-child(n+6){animation-delay:.30s}
+.blog-empty{text-align:center;padding:80px 24px;color:#94a3b8}
 .blog-empty h3{font-size:20px;color:var(--primary);margin-bottom:12px}
-/* NAV active */
 .nav-links a.active{color:var(--orange)}
+@media (prefers-reduced-motion:reduce){.blog-card{opacity:1;animation:none}.blog-card:hover,.blog-grid:not(.filtered) article:first-child:hover{transform:none}.chip:hover{transform:none}}
 </style>
 </head>
 <body>
@@ -74,14 +107,25 @@
 
 <!-- HERO -->
 <section class="blog-hero">
-  <div class="blog-badge"><span style="width:6px;height:6px;border-radius:50%;background:var(--orange);display:inline-block"></span>Knowledge Base</div>
-  <h1>Blog & Panduan<br><span style="color:var(--orange)">AI Automation</span></h1>
-  <p>Tutorial, case study, dan insight praktis tentang AI automation untuk UMKM dan bisnis B2B Indonesia</p>
+  <div class="blog-hero-inner">
+    <div class="blog-kicker">Knowledge Base</div>
+    <h1>Panduan &amp; Insight<br>AI Automation UMKM</h1>
+    <p>Tutorial, studi kasus, dan strategi praktis untuk mengotomatiskan WhatsApp, leads, dan penjualan bisnis Indonesia.</p>
+    <div class="blog-hero-meta"><span><b id="art-count">14</b> artikel</span><span>Diperbarui tiap minggu</span></div>
+  </div>
 </section>
 
 <!-- POSTS GRID -->
 <section class="blog-grid-section">
-  <h2>Artikel Terbaru</h2>
+  <div class="blog-toolbar" id="blog-filter">
+    <span class="label">Topik</span>
+    <button class="chip" data-cat="all" aria-pressed="true">Semua</button>
+    <button class="chip" data-cat="panduan" aria-pressed="false">Panduan</button>
+    <button class="chip" data-cat="tutorial" aria-pressed="false">Tutorial</button>
+    <button class="chip" data-cat="case study" aria-pressed="false">Case Study</button>
+    <button class="chip" data-cat="insight" aria-pressed="false">Insight</button>
+    <button class="chip" data-cat="perbandingan" aria-pressed="false">Perbandingan</button>
+  </div>
   <div class="blog-grid" id="blog-grid">
     <article class="blog-card">
       <div class="blog-card-body">
@@ -320,6 +364,30 @@
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=GA4_ID"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','GA4_ID');</script>
+<!-- BLOG FILTER + COUNT -->
+<script>
+(function(){
+  var grid=document.getElementById('blog-grid');
+  if(!grid) return;
+  var cards=grid.querySelectorAll('.blog-card');
+  var cnt=document.getElementById('art-count');
+  if(cnt) cnt.textContent=cards.length;
+  var chips=document.querySelectorAll('#blog-filter .chip');
+  chips.forEach(function(c){
+    c.addEventListener('click',function(){
+      chips.forEach(function(x){x.setAttribute('aria-pressed','false');});
+      c.setAttribute('aria-pressed','true');
+      var cat=c.getAttribute('data-cat');
+      grid.classList.toggle('filtered',cat!=='all');
+      cards.forEach(function(card){
+        var el=card.querySelector('.blog-card-cat');
+        var cc=el?el.textContent.trim().toLowerCase():'';
+        card.classList.toggle('hide',!(cat==='all'||cc===cat));
+      });
+    });
+  });
+})();
+</script>
 <script src="/js/script.js"></script>
 </body>
 </html>
