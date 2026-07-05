@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>[PREVIEW] AI Marketing Strategic — AI Automation untuk UMKM Indonesia</title>
+<meta name="description" content="AI chatbot WhatsApp untuk UMKM Indonesia. Otomatis balas leads, follow-up pelanggan, dan kelola CRM — tanpa tim IT. Response 4 jam → 2 menit.">
+<meta name="keywords" content="AI automation UMKM, chatbot WhatsApp Indonesia, otomasi bisnis, AI marketing UMKM, lead follow-up otomatis, CRM WhatsApp, n8n automation Indonesia">
+<meta name="author" content="AI Marketing Strategic">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aimarketingstrategic.com/">
+<link rel="canonical" href="https://aimarketingstrategic.com/">
+<meta property="og:title" content="AI Marketing Strategic — AI Automation untuk UMKM Indonesia">
+<meta property="og:description" content="AI chatbot WhatsApp untuk UMKM Indonesia. Otomatis balas leads, follow-up pelanggan, dan kelola CRM — tanpa tim IT. Response 4 jam → 2 menit.">
+<meta property="og:image" content="https://aimarketingstrategic.com/images/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="id_ID">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Marketing Strategic — AI Automation untuk UMKM Indonesia">
+<meta name="twitter:description" content="AI chatbot WhatsApp untuk UMKM Indonesia. Otomatis balas leads, follow-up pelanggan, dan kelola CRM — tanpa tim IT. Response 4 jam → 2 menit.">
+<meta name="twitter:image" content="https://aimarketingstrategic.com/images/og-card.png">
+
+<link rel="stylesheet" href="/css/style.css">
+<style>
+/* ===== REDESIGN OVERRIDES (homepage only) ===== */
+
+/* Hero: drenched navy with geometric pattern */
+#hero {
+  min-height: 750px;
+  padding: 130px 24px 80px;
+}
+.hero-bg {
+  background-image: url('https://aimarketingstrategic.com/images/backgroundrobot.png');
+  opacity: 0.3;
+}
+.hero-grad1 {
+  background: linear-gradient(to right, #061626, rgba(6,22,38,0.3), rgba(6,22,38,0.6));
+}
+.hero-h1 {
+  font-size: clamp(24px, 4.5vw, 44px);
+}
+.hero-h1 span {
+  /* SOLID orange — ban on gradient text */
+  color: var(--orange);
+  background: none;
+  -webkit-text-fill-color: var(--orange);
+  -webkit-background-clip: unset;
+  background-clip: unset;
+}
+.hero-h1 span {
+  display: block;
+  margin-top: 4px;
+}
+.hero-stats {
+  margin-top: 48px;
+  gap: 40px;
+}
+.hero-stat-label {
+  font-size: clamp(20px, 3vw, 28px);
+  letter-spacing: -0.02em;
+}
+.hero-stat-sub {
+  color: var(--orange);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+}
+.btn-primary {
+  border-radius: 10px;
+}
+.btn-secondary {
+  border-radius: 10px;
+}
+
+/* Social proof: single clean bar */
+.social-proof-bar {
+  background: #f8fafc;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 20px 0;
+}
+.social-proof-inner {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px 40px;
+  align-items: center;
+}
+.social-proof-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: #374151;
+  font-weight: 600;
+}
+.social-proof-item svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: #16a34a;
+}
+
+/* Sections: cleaner margins */
+.section {
+  padding: 80px 24px;
+}
+.section-header {
+  margin-bottom: 40px;
+}
+
+/* Cards: reduced border-radius, no ghost-shadow combo */
+.card {
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: none;
+  border: 1px solid #e5e7eb;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  border-color: var(--orange);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+}
+.card-dark {
+  border-color: #1e3a5f;
+}
+.card-icon {
+  border-radius: 14px;
+  width: 52px;
+  height: 52px;
+}
+.card-title {
+  font-size: 16px;
+}
+.card-stripe {
+  height: 3px;
+  border-radius: 16px 16px 0 0;
+}
+
+/* Problem/solution blocks: remove side-stripe borders */
+.ps-block {
+  margin-bottom: 14px;
+  padding-left: 0;
+  border-left: none;
+}
+.ps-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #9ca3af;
+  margin-bottom: 4px;
+}
+.ps-text {
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151;
+}
+.card-dark .ps-text {
+  color: #dbeafe;
+}
+.impact-box {
+  border-radius: 12px;
+}
+
+/* Pricing cards */
+.pricing-card {
+  border-radius: 16px;
+  padding: 28px;
+}
+.pricing-card-featured {
+  border: 2px solid var(--orange);
+  box-shadow: 0 12px 40px rgba(245,124,0,0.2);
+}
+.pricing-card .price-box {
+  border-radius: 16px;
+}
+
+/* Steps */
+.step-num {
+  border-radius: 50%;
+}
+.cta-final .btn-chat {
+  border-radius: 10px;
+}
+.cta-phone {
+  letter-spacing: 0.1em;
+}
+
+/* Section line removal — was an eyebrow-like divider */
+.section-line {
+  display: none !important;
+}
+
+/* Staggered entrance animation */
+@keyframes staggerUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.stagger-1 { animation: staggerUp 0.6s 0.1s both; }
+.stagger-2 { animation: staggerUp 0.6s 0.2s both; }
+.stagger-3 { animation: staggerUp 0.6s 0.3s both; }
+
+/* Hero badge: cleaner */
+.hero-badge {
+  border-radius: 100px;
+}
+.hero-badge-dot {
+  animation: pulse 2s infinite;
+}
+.hero-badge-text {
+  letter-spacing: 0.2em;
+}
+
+/* Smooth section reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s, transform 0.8s;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Fix mobile padding for cards on small screens */
+@media (max-width: 480px) {
+  .section { padding: 48px 16px; }
+  .card { padding: 20px; }
+  .pricing-card { padding: 20px; }
+  .hero-stats { gap: 24px; }
+}
+</style>
+</head>
+<body>
+<div style="position:fixed;top:0;left:0;right:0;z-index:99999;background:#F57C00;color:#fff;font:600 12px/1 'Space Grotesk',sans-serif;text-align:center;padding:7px 12px;letter-spacing:.02em">PREVIEW REDESAIN — belum live. Setujui via WhatsApp untuk tayangkan.</div>
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a class="nav-logo" href="/index.html">
+      <img src="https://aimarketingstrategic.com/images/logo%20aims.png" alt="AI Marketing Strategic" height="44">
+    </a>
+    <div class="nav-links">
+      <a href="/index.html">Beranda</a>
+      <a href="/hasil.html">Hasil</a>
+      <a href="/harga.html">Harga</a>
+      <a href="/tentang.html">Tentang</a>
+      <a href="/blog/">Blog</a>
+    </div>
+    <button class="nav-cta" onclick="trackLead();openChat()">Demo Gratis</button>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <svg id="ham-icon" class="icon" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div id="overlay" onclick="closeMenu()"></div>
+<div id="mobile-menu">
+  <a href="/index.html" onclick="closeMenu()">Beranda</a>
+  <a href="/hasil.html" onclick="closeMenu()">Hasil</a>
+  <a href="/harga.html" onclick="closeMenu()">Harga</a>
+  <a href="/tentang.html" onclick="closeMenu()">Tentang</a>
+  <a href="/blog/" onclick="closeMenu()">Blog</a>
+  <div class="menu-cta-wrap">
+    <button class="menu-cta-btn" onclick="trackLead();openChat();closeMenu()">Konsultasi Gratis</button>
+  </div>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grad1"></div>
+  <div class="hero-grad2"></div>
+  <div class="hero-content fade-in">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      <span class="hero-badge-text">AI Marketing Strategic</span>
+    </div>
+    <h1 class="hero-h1">
+      WA Bisnis Anda Lambat Balas Leads?
+      <span>Revenue Bocor Setiap Hari</span>
+    </h1>
+    <p class="hero-sub">Sistem AI automation yang kami pakai sendiri untuk UMKM Indonesia. Otomatis balas WhatsApp pelanggan dalam 2 detik, follow-up leads yang gak pernah ditindaklanjuti, dan catat semua data ke CRM — tanpa perlu tim IT atau tambahan karyawan.</p>
+    <p class="hero-tag">Sudah dipraktekkan oleh pemilik UMKM di berbagai industri</p>
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="trackLead();openChat()"> Konsultasi Gratis 15 Menit</button>
+      <a class="btn-secondary" href="/harga.html">Lihat Paket &amp; Harga</a>
+    </div>
+    <p class="hero-note">Setup mulai Rp 1.000.000 · Infra Rp 100.000/bulan · Garansi uang kembali</p>
+    <div class="hero-checks">
+      <span class="hero-check"><svg class="icon" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Setup dalam 3 hari</span>
+      <span class="hero-check"><svg class="icon" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Support 2 minggu</span>
+      <span class="hero-check"><svg class="icon" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Tanpa kontrak jangka panjang</span>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-label">2 Detik</div>
+        <div class="hero-stat-sub">Response WA</div>
+      </div>
+      <div>
+        <div class="hero-stat-label">100%</div>
+        <div class="hero-stat-sub">Leads Tercatat</div>
+      </div>
+      <div>
+        <div class="hero-stat-label">20+ Jam</div>
+        <div class="hero-stat-sub">Hemat Per Minggu</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF BAR (single, fixed — was duplicated) -->
+<section class="social-proof-bar">
+  <div class="social-proof-inner">
+    <div class="social-proof-item">
+      <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+      <span>Dipakai pemilik UMKM di berbagai industri</span>
+    </div>
+    <div class="social-proof-item">
+      <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+      <span>Response time dari 4 jam → 2 detik</span>
+    </div>
+    <div class="social-proof-item">
+      <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+      <span>100% leads tercatat, 0% hilang karena telat follow-up</span>
+    </div>
+  </div>
+</section>
+
+<!-- AI FRONTLINER -->
+<section id="ai-frontliner" class="section bg-light" style="border-top:1px solid #e5e7eb">
+  <div class="section-inner">
+    <div class="section-header">
+      <h2 class="section-title">Website Anda Jadi Mesin Akuisisi yang Bekerja 24/7</h2>
+      <p class="section-sub">Website modern bukan brosur digital. Ia harus mampu menangkap leads, menjawab otomatis, mengarahkan calon pelanggan, dan bekerja 24 jam sehari tanpa libur.</p>
+    </div>
+    <div class="cards-3">
+      <div class="card stagger-1">
+        <div class="card-icon card-icon-light">
+          <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+        </div>
+        <h3 class="card-title text-primary">AI Webchat Frontliner</h3>
+        <div class="ps-block">
+          <div class="ps-label">Masalah</div>
+          <div class="ps-text">Pelanggan datang, bertanya, lalu hilang karena tidak ada yang balas.</div>
+        </div>
+        <div class="ps-block">
+          <div class="ps-label">Sistem</div>
+          <div class="ps-text">AI menjawab otomatis, kualifikasi leads, dan arahkan ke bagian sales dalam 2 detik.</div>
+        </div>
+        <div class="impact-box">
+          <div class="impact-label">Dampak</div>
+          <div class="impact-text">Prospek masuk ke pipeline, bukan berhenti di chat tanpa balasan.</div>
+        </div>
+      </div>
+      <div class="card card-dark stagger-2">
+        <div class="card-icon card-icon-dark">
+          <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2 1 3 3 3h10c2 0 3-1 3-3V7M4 7c0-2 1-3 3-3h10c2 0 3 1 3 3M4 7h16M9 11h6M9 15h4"/></svg>
+        </div>
+        <h3 class="card-title">Website + CRM Intake</h3>
+        <div class="ps-block">
+          <div class="ps-label" style="color:rgba(191,219,254,.4)">Masalah</div>
+          <div class="ps-text" style="color:#dbeafe">Data pelanggan tercecer di WhatsApp dan spreadsheet manual.</div>
+        </div>
+        <div class="ps-block">
+          <div class="ps-label" style="color:rgba(191,219,254,.4)">Sistem</div>
+          <div class="ps-text" style="color:#dbeafe">Form website langsung sinkron ke database dan workflow follow-up otomatis.</div>
+        </div>
+        <div class="impact-box impact-box-dark">
+          <div class="impact-label">Dampak</div>
+          <div class="impact-text">Tidak ada lagi copy-paste data manual.</div>
+        </div>
+      </div>
+      <div class="card stagger-3">
+        <div class="card-icon card-icon-light">
+          <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-2 0-4 1.5-4 4s2 4 4 4 4-1.5 4-4-2-4-4-4zM2 12h2M20 12h2M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </div>
+        <h3 class="card-title text-primary">AI Landing Page Conversion</h3>
+        <div class="ps-block">
+          <div class="ps-label">Masalah</div>
+          <div class="ps-text">Traffic masuk dari Instagram/FB tapi tidak jadi prospek karena tidak ada follow-up.</div>
+        </div>
+        <div class="ps-block">
+          <div class="ps-label">Sistem</div>
+          <div class="ps-text">Landing page dengan AI interaction flow dan CTA tracking yang menangkap leads otomatis.</div>
+        </div>
+        <div class="impact-box">
+          <div class="impact-label">Dampak</div>
+          <div class="impact-text">Website berubah menjadi mesin akuisisi yang bekerja 24 jam.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODUL BISNIS AUTOPILOT (single section, was duplicated) -->
+<section id="modul" class="section bg-white" style="border-top:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb">
+  <div class="section-inner">
+    <div class="section-header">
+      <h2 class="section-title">Modul Bisnis Autopilot</h2>
+      <p class="section-sub">Sistem siap pakai yang mengotomatiskan bisnis Anda — dari menjaring leads sampai memantau hasilnya. Semua terintegrasi lewat WhatsApp.</p>
+    </div>
+    <div class="cards-3">
+      <div class="card card-rel stagger-1">
+        <div class="card-stripe"></div>
+        <div class="card-icon card-icon-light">
+          <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4h16v4H4zM4 12h16v4H4zM4 20h10"/></svg>
+        </div>
+        <h3 class="card-title text-primary">AI Penjaga Garis Depan</h3>
+        <p class="card-tag">Balas & Kualifikasi Leads 24/7 — Otomatis</p>
+        <p class="card-body">Tidak ada lagi leads yang hilang karena admin sedang tidur atau sibuk. AI penyambut & penyaring chat yang mengambil alih 100% interaksi awal. Diprogram dalam Bahasa Indonesia tanpa sapaan robotik. Komplain diteruskan ke tim teknis, prospek panas langsung dikunci ke CRM.</p>
+      </div>
+      <div class="card card-dark card-rel stagger-2" style="transform:scale(1.02)">
+        <div style="position:absolute;top:0;left:0;right:0;height:4px;background:var(--orange);border-radius:16px 16px 0 0"></div>
+        <div class="card-icon card-icon-dark">
+          <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path stroke-linecap="round" d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <h3 class="card-title">Mesin Follow-Up Otomatis</h3>
+        <p class="card-tag">Data Masuk Sendiri, Follow-Up Jalan Sendiri</p>
+        <p class="card-body" style="color:rgba(191,219,254,.8)">Tidak ada lagi copy-paste data dari WhatsApp ke spreadsheet. Mesin integrasi webhook yang berjalan di latar belakang. Mengeliminasi entri data manual dengan mengekstrak data pelanggan secara instan dan memicu alur follow-up tanpa intervensi manusia.</p>
+      </div>
+      <div class="card card-rel stagger-3">
+        <div class="card-stripe"></div>
+        <div class="card-icon card-icon-light">
+          <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        </div>
+        <h3 class="card-title text-primary">Dashboard Kendali Owner</h3>
+        <p class="card-tag">Semua Angka Bisnis Anda, Satu Layar</p>
+        <p class="card-body">Tidak perlu tanya ke tim — semua data bisnis tersedia real-time di genggaman Anda. Papan kendali terpusat yang membaca aliran data dari modul frontliner dan alur kerja otomatis. Menampilkan KPI, aliran kas, dan peringatan operasional secara real-time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CARA ADOPSI -->
+<section id="cara-adopsi" class="section bg-white">
+  <div class="section-inner">
+    <div class="section-header">
+      <h2 class="section-title">Cara Membangun Ekosistem Otonom Anda</h2>
+      <p class="section-sub">Transisi mulus menuju operasional tanpa hambatan. Tiga langkah menuju bisnis yang berjalan otomatis.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="stagger-1">
+        <div class="step-num">1</div>
+        <h3 class="step-title">AI Business Diagnostic</h3>
+        <p class="step-body">Kami identifikasi modul mana yang paling krusial untuk menutup kebocoran leads di bisnis Anda — tanpa sales pitch, hanya analisis.</p>
+      </div>
+      <div class="stagger-2">
+        <div class="step-num">2</div>
+        <h3 class="step-title">Integrasi & Pengujian</h3>
+        <p class="step-body">Pemasangan dan penyesuaian sistem tanpa mengganggu operasional bisnis yang sedang berjalan. Selesai dalam 3 hari untuk paket starter.</p>
+      </div>
+      <div class="stagger-3">
+        <div class="step-num">3</div>
+        <h3 class="step-title">Otonomi Penuh</h3>
+        <p class="step-body">Sistem mengeksekusi beban kerja harian — balas chat, follow-up leads, catat CRM — menggantikan biaya overhead staf tambahan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section id="screening" class="cta-final">
+  <div class="cta-final-bg"></div>
+  <div class="cta-final-inner">
+    <h2 class="cta-final-title">Gratis: <span>AI Business Screening</span> 15 Menit</h2>
+    <p class="cta-final-sub">Kami diagnose 1 masalah automation terbesar di bisnis Anda. Tanpa sales pitch, tanpa komitmen. Hanya actionable insight yang bisa langsung Anda praktekkan.</p>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:24px">
+      <button class="btn-chat" onclick="trackLead();openChat()">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+        Jadwalkan Demo Gratis
+      </button>
+      <a href="https://wa.me/6281907552758" class="cta-phone">0819-0755-2758</a>
+    </div>
+    <p class="cta-note">Respon dalam 1×24 jam · Konsultasi gratis · Tanpa komitmen</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <p class="footer-brand-name">AI Marketing Strategic</p>
+      <p class="footer-brand-sub">Solusi AI automation untuk UMKM & Perusahaan B2B Indonesia. Otomatiskan WhatsApp, CRM, dan follow-up bisnis Anda tanpa ribet.</p>
+      <div class="footer-socials">
+        <button class="footer-social" onclick="openChat()" aria-label="Chat">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+        </button>
+        <a class="footer-social" href="https://www.linkedin.com/company/aimarketingstrategic" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a class="footer-social" href="https://www.youtube.com/@AIMarketingStrategic" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon fill="#fff" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <p class="footer-col-title">Menu</p>
+      <ul class="footer-links">
+        <li><a href="/index.html">Beranda</a></li>
+        <li><a href="/hasil.html">Hasil Nyata</a></li>
+        <li><a href="/harga.html">Harga & Paket</a></li>
+        <li><a href="/tentang.html">Tentang Kami</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">Kontak</p>
+      <div style="margin-bottom:24px">
+        <p class="footer-contact-label">WhatsApp Business</p>
+        <a href="https://wa.me/6281907552758" target="_blank" rel="noopener noreferrer" class="footer-phone">0819-0755-2758</a>
+      </div>
+      <p class="footer-hours">🕒 Senin - Sabtu (09.00 - 17.00)</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 aimarketingstrategic.com</p>
+    <div class="footer-legal">
+      <a href="/privacy-policy.html" target="_blank" rel="noopener" style="font-family:'Orbitron',sans-serif;font-size:10px;color:rgba(191,219,254,.25);letter-spacing:.3em;text-transform:uppercase;text-decoration:none;transition:color .2s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(191,219,254,.25)'">Privacy</a>
+      <button onclick="openModal('terms-modal')" style="font-family:'Orbitron',sans-serif;font-size:10px;color:rgba(191,219,254,.25);letter-spacing:.3em;text-transform:uppercase;background:none;border:none;cursor:pointer;transition:color .2s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(191,219,254,.25)'">Terms</button>
+    </div>
+  </div>
+</footer>
+
+<!-- CHAT MODAL -->
+<div class="modal-overlay" id="chat-modal">
+  <div class="modal-box modal-chat-box" style="max-width:480px">
+    <div class="modal-header">
+      <div>
+        <p class="modal-header-badge">AI Marketing Strategic</p>
+        <h3 class="modal-header-title">Konsultasi Gratis 15 Menit</h3>
+        <p class="modal-header-sub">Ceritakan kondisi bisnis Anda — kami kasih rekomendasi modul AI yang paling cepat berdampak.</p>
+      </div>
+      <button class="modal-close" onclick="closeModal('chat-modal')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <a href="https://wa.me/6281907552758" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:14px;padding:16px;background:#25D366;color:#fff;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none">
+          <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.822 11.822 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          Chat via WhatsApp
+        </a>
+        <a href="mailto:hallo@aimarketingstrategic.com" style="display:flex;align-items:center;gap:14px;padding:16px;background:rgba(11,42,74,.05);color:var(--primary);border-radius:12px;font-weight:700;font-size:15px;justify-content:center">
+          hallo@aimarketingstrategic.com
+        </a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;margin-top:16px">
+        <p style="font-size:12px;color:#6b7280;font-weight:600;text-align:center">Atau tinggalkan kontak, kami hubungi balik:</p>
+        <input type="text" id="chat-nama" placeholder="Nama Anda" style="width:100%;padding:12px 14px;border:1px solid #e5e7eb;border-radius:8px;font-size:14px;font-family:inherit">
+        <input type="tel" id="chat-wa" placeholder="No. WhatsApp (08xx)" style="width:100%;padding:12px 14px;border:1px solid #e5e7eb;border-radius:8px;font-size:14px;font-family:inherit">
+        <button onclick="trackLead();var n=document.getElementById('chat-nama').value;var w=document.getElementById('chat-wa').value;var msg=encodeURIComponent('Halo, saya '+n+(w?' (WA: '+w+')':'')+' ingin konsultasi sistem AI.');window.open('https://wa.me/6281907552758?text='+msg,'_blank');closeModal('chat-modal')" style="width:100%;padding:14px;background:linear-gradient(135deg,#F57C00,#EA580C);color:#fff;border:none;border-radius:10px;font-weight:700;font-size:15px;font-family:inherit;cursor:pointer;margin-top:4px">Kirim & Buka WhatsApp →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="terms-modal">
+  <div class="modal-box modal-terms-box" style="max-width:640px">
+    <div class="modal-header">
+      <h3 class="modal-header-title">Syarat & Ketentuan</h3>
+      <button class="modal-close" onclick="closeModal('terms-modal')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div style="font-size:14px;color:#374151;line-height:1.8">
+        <p style="font-weight:700;color:#0B2A4A;margin-bottom:8px">1. Layanan</p>
+        <p style="margin-bottom:16px">AI Marketing Strategic menyediakan layanan pembuatan website AI-ready, setup chatbot automation, dan konsultasi sistem bisnis untuk UMKM dan perusahaan B2B Indonesia.</p>
+        <p style="font-weight:700;color:#0B2A4A;margin-bottom:8px">2. Biaya & Pembayaran</p>
+        <p style="margin-bottom:16px">Biaya setup dibayar sekali di awal. Biaya infrastruktur bulanan dikenakan terpisah. Tidak ada biaya tersembunyi dan tidak ada kontrak jangka panjang — klien dapat berhenti berlangganan kapan saja.</p>
+        <p style="font-weight:700;color:#0B2A4A;margin-bottom:8px">3. Garansi</p>
+        <p style="margin-bottom:16px">Setup standar diselesaikan dalam 3 hari kerja. Jika sistem tidak berjalan sesuai spesifikasi tertulis, kami perbaiki hingga berjalan atau uang setup dikembalikan 100%.</p>
+        <p style="font-weight:700;color:#0B2A4A;margin-bottom:8px">4. Data & Privasi</p>
+        <p style="margin-bottom:16px">Data klien tidak dijual, tidak dibagikan ke pihak ketiga, dan disimpan sesuai kebijakan privasi yang berlaku. Silakan baca <a href="/privacy-policy.html" target="_blank" style="color:var(--orange)">Kebijakan Privasi</a> untuk detail.</p>
+        <p style="font-weight:700;color:#0B2A4A;margin-bottom:8px">5. Dukungan</p>
+        <p style="margin-bottom:8px">Kami memberikan dukungan 2 minggu setelah sistem live untuk perbaikan bug, penyesuaian flow AI, dan konsultasi WhatsApp.</p>
+        <p style="font-size:12px;color:#9ca3af;margin-top:20px">Terakhir diperbarui: Maret 2026</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button id="scroll-top" onclick="scrollTop()" aria-label="Scroll to top">
+  <svg class="icon" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
+</button>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA4_ID"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','GA4_ID');
+</script>
+
+<!-- Reveal observer for scroll-triggered animations -->
+<script>
+(function() {
+  var els = document.querySelectorAll('.reveal');
+  if (els.length) {
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    els.forEach(function(el) { obs.observe(el); });
+  }
+})();
+</script>
+
+<script src="/js/script.js"></script>
+</body>
+</html>
