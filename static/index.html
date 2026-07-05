@@ -3,26 +3,237 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Marketing Strategic — AI Automation untuk Sales Team B2B Indonesia</title>
-<meta name="description" content="Sistem AI automation untuk perusahaan B2B Indonesia. Handle 100+ leads/bulan tanpa admin tambahan. Response 4 jam → 2 menit.">
-<meta name="keywords" content="AI automation B2B, AI marketing Indonesia, otomasi sales team, AI frontliner, lead follow-up otomatis, n8n automation, CRM WhatsApp">
+<title>AI Marketing Strategic — AI Automation untuk UMKM Indonesia</title>
+<meta name="description" content="AI chatbot WhatsApp untuk UMKM Indonesia. Otomatis balas leads, follow-up pelanggan, dan kelola CRM — tanpa tim IT. Response 4 jam → 2 menit.">
+<meta name="keywords" content="AI automation UMKM, chatbot WhatsApp Indonesia, otomasi bisnis, AI marketing UMKM, lead follow-up otomatis, CRM WhatsApp, n8n automation Indonesia">
 <meta name="author" content="AI Marketing Strategic">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://aimarketingstrategic.com/">
 <link rel="canonical" href="https://aimarketingstrategic.com/">
-<meta property="og:title" content="AI Marketing Strategic — AI Automation untuk Sales Team B2B Indonesia">
-<meta property="og:description" content="Sistem AI automation untuk perusahaan B2B Indonesia. Handle 100+ leads/bulan tanpa admin tambahan. Response 4 jam → 2 menit.">
+<meta property="og:title" content="AI Marketing Strategic — AI Automation untuk UMKM Indonesia">
+<meta property="og:description" content="AI chatbot WhatsApp untuk UMKM Indonesia. Otomatis balas leads, follow-up pelanggan, dan kelola CRM — tanpa tim IT. Response 4 jam → 2 menit.">
 <meta property="og:image" content="https://aimarketingstrategic.com/images/og-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="id_ID">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="AI Marketing Strategic — AI Automation untuk Sales Team B2B Indonesia">
-<meta name="twitter:description" content="Sistem AI automation untuk perusahaan B2B Indonesia. Handle 100+ leads/bulan tanpa admin tambahan. Response 4 jam → 2 menit.">
+<meta name="twitter:title" content="AI Marketing Strategic — AI Automation untuk UMKM Indonesia">
+<meta name="twitter:description" content="AI chatbot WhatsApp untuk UMKM Indonesia. Otomatis balas leads, follow-up pelanggan, dan kelola CRM — tanpa tim IT. Response 4 jam → 2 menit.">
 <meta name="twitter:image" content="https://aimarketingstrategic.com/images/og-card.png">
 
 <link rel="stylesheet" href="/css/style.css">
-<style></style>
+<style>
+/* ===== REDESIGN OVERRIDES (homepage only) ===== */
+
+/* Hero: drenched navy with geometric pattern */
+#hero {
+  min-height: 750px;
+  padding: 130px 24px 80px;
+}
+.hero-bg {
+  background-image: url('https://aimarketingstrategic.com/images/backgroundrobot.png');
+  opacity: 0.3;
+}
+.hero-grad1 {
+  background: linear-gradient(to right, #061626, rgba(6,22,38,0.3), rgba(6,22,38,0.6));
+}
+.hero-h1 {
+  font-size: clamp(24px, 4.5vw, 44px);
+}
+.hero-h1 span {
+  /* SOLID orange — ban on gradient text */
+  color: var(--orange);
+  background: none;
+  -webkit-text-fill-color: var(--orange);
+  -webkit-background-clip: unset;
+  background-clip: unset;
+}
+.hero-h1 span {
+  display: block;
+  margin-top: 4px;
+}
+.hero-stats {
+  margin-top: 48px;
+  gap: 40px;
+}
+.hero-stat-label {
+  font-size: clamp(20px, 3vw, 28px);
+  letter-spacing: -0.02em;
+}
+.hero-stat-sub {
+  color: var(--orange);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+}
+.btn-primary {
+  border-radius: 10px;
+}
+.btn-secondary {
+  border-radius: 10px;
+}
+
+/* Social proof: single clean bar */
+.social-proof-bar {
+  background: #f8fafc;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 20px 0;
+}
+.social-proof-inner {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px 40px;
+  align-items: center;
+}
+.social-proof-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: #374151;
+  font-weight: 600;
+}
+.social-proof-item svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: #16a34a;
+}
+
+/* Sections: cleaner margins */
+.section {
+  padding: 80px 24px;
+}
+.section-header {
+  margin-bottom: 40px;
+}
+
+/* Cards: reduced border-radius, no ghost-shadow combo */
+.card {
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: none;
+  border: 1px solid #e5e7eb;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  border-color: var(--orange);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+}
+.card-dark {
+  border-color: #1e3a5f;
+}
+.card-icon {
+  border-radius: 14px;
+  width: 52px;
+  height: 52px;
+}
+.card-title {
+  font-size: 16px;
+}
+.card-stripe {
+  height: 3px;
+  border-radius: 16px 16px 0 0;
+}
+
+/* Problem/solution blocks: remove side-stripe borders */
+.ps-block {
+  margin-bottom: 14px;
+  padding-left: 0;
+  border-left: none;
+}
+.ps-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #9ca3af;
+  margin-bottom: 4px;
+}
+.ps-text {
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151;
+}
+.card-dark .ps-text {
+  color: #dbeafe;
+}
+.impact-box {
+  border-radius: 12px;
+}
+
+/* Pricing cards */
+.pricing-card {
+  border-radius: 16px;
+  padding: 28px;
+}
+.pricing-card-featured {
+  border: 2px solid var(--orange);
+  box-shadow: 0 12px 40px rgba(245,124,0,0.2);
+}
+.pricing-card .price-box {
+  border-radius: 16px;
+}
+
+/* Steps */
+.step-num {
+  border-radius: 50%;
+}
+.cta-final .btn-chat {
+  border-radius: 10px;
+}
+.cta-phone {
+  letter-spacing: 0.1em;
+}
+
+/* Section line removal — was an eyebrow-like divider */
+.section-line {
+  display: none !important;
+}
+
+/* Staggered entrance animation */
+@keyframes staggerUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.stagger-1 { animation: staggerUp 0.6s 0.1s both; }
+.stagger-2 { animation: staggerUp 0.6s 0.2s both; }
+.stagger-3 { animation: staggerUp 0.6s 0.3s both; }
+
+/* Hero badge: cleaner */
+.hero-badge {
+  border-radius: 100px;
+}
+.hero-badge-dot {
+  animation: pulse 2s infinite;
+}
+.hero-badge-text {
+  letter-spacing: 0.2em;
+}
+
+/* Smooth section reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s, transform 0.8s;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Fix mobile padding for cards on small screens */
+@media (max-width: 480px) {
+  .section { padding: 48px 16px; }
+  .card { padding: 20px; }
+  .pricing-card { padding: 20px; }
+  .hero-stats { gap: 24px; }
+}
+</style>
 </head>
 <body>
 <!-- NAVBAR -->
@@ -58,6 +269,7 @@
   </div>
 </div>
 
+<!-- HERO -->
 <section id="hero">
   <div class="hero-bg"></div>
   <div class="hero-grad1"></div>
@@ -68,16 +280,16 @@
       <span class="hero-badge-text">AI Marketing Strategic</span>
     </div>
     <h1 class="hero-h1">
-      Leads Masuk WA, Sales Team Telat Follow-Up<br>
-            <span>Revenue Bocor Tiap Hari</span>
+      WA Bisnis Anda Lambat Balas Leads?
+      <span>Revenue Bocor Setiap Hari</span>
     </h1>
-    <p class="hero-sub">Sistem AI automation yang kami pakai sendiri untuk handle 100+ leads per bulan di perusahaan B2B Indonesia. Response time dari 4 jam jadi 2 menit. Tanpa hire admin tambahan.</p>
-    <p class="hero-tag">Dipraktekan langsung oleh Marketing Manager B2B di perusahaan konstruksi & industri.</p>
+    <p class="hero-sub">Sistem AI automation yang kami pakai sendiri untuk UMKM Indonesia. Otomatis balas WhatsApp pelanggan dalam 2 detik, follow-up leads yang gak pernah ditindaklanjuti, dan catat semua data ke CRM — tanpa perlu tim IT atau tambahan karyawan.</p>
+    <p class="hero-tag">Sudah dipraktekkan oleh pemilik UMKM di berbagai industri</p>
     <div class="hero-btns">
       <button class="btn-primary" onclick="trackLead();openChat()"> Konsultasi Gratis 15 Menit</button>
-      <a class="btn-secondary" href="#harga" onclick="navTo(event,'#harga')">Lihat Paket &amp; Harga</a>
+      <a class="btn-secondary" href="/harga.html">Lihat Paket &amp; Harga</a>
     </div>
-    <p class="hero-note">Setup mulai Rp 1.000.000 · Infra Rp 100.000/bulan · Isi ulang kuota chat seperti pulsa</p>
+    <p class="hero-note">Setup mulai Rp 1.000.000 · Infra Rp 100.000/bulan · Garansi uang kembali</p>
     <div class="hero-checks">
       <span class="hero-check"><svg class="icon" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Setup dalam 3 hari</span>
       <span class="hero-check"><svg class="icon" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Support 2 minggu</span>
@@ -85,189 +297,177 @@
     </div>
     <div class="hero-stats">
       <div>
-        <div class="hero-stat-label">Response Time</div>
-                <div class="hero-stat-sub">4 Jam → 2 Menit</div>
-              </div>
-              <div>
-                <div class="hero-stat-label">Leads/Bulan</div>
-                <div class="hero-stat-sub">100+ Ditangani</div>
-              </div>
-              <div>
-                <div class="hero-stat-label">Lead Leakage</div>
-                <div class="hero-stat-sub">40% → 0%</div>
+        <div class="hero-stat-label">2 Detik</div>
+        <div class="hero-stat-sub">Response WA</div>
+      </div>
+      <div>
+        <div class="hero-stat-label">100%</div>
+        <div class="hero-stat-sub">Leads Tercatat</div>
+      </div>
+      <div>
+        <div class="hero-stat-label">20+ Jam</div>
+        <div class="hero-stat-sub">Hemat Per Minggu</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SOCIAL PROOF BAR -->
-<section style="background:#f8fafc;border-top:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;padding:24px 0">
-  <div style="max-width:960px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;justify-content:center;gap:32px;align-items:center">
-    <div style="display:flex;align-items:center;gap:8px">
-      <svg width="20" height="20" fill="none" stroke="#16a34a" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-      <span style="font-size:13px;color:#374151;font-weight:600">Dipakai Marketing Manager perusahaan B2B (10-200 karyawan)</span>
+<!-- SOCIAL PROOF BAR (single, fixed — was duplicated) -->
+<section class="social-proof-bar">
+  <div class="social-proof-inner">
+    <div class="social-proof-item">
+      <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+      <span>Dipakai pemilik UMKM di berbagai industri</span>
     </div>
-    <div style="display:flex;align-items:center;gap:8px">
-      <svg width="20" height="20" fill="none" stroke="#16a34a" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-      <span style="font-size:13px;color:#374151;font-weight:600">Response time turun 99% (4 jam → 2 menit)</span>
+    <div class="social-proof-item">
+      <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+      <span>Response time dari 4 jam → 2 detik</span>
     </div>
-    <div style="display:flex;align-items:center;gap:8px">
-      <svg width="20" height="20" fill="none" stroke="#16a34a" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-      <span style="font-size:13px;color:#374151;font-weight:600">100% leads tercatat, 0% hilang karena telat follow-up</span>
-    </div>
-  </div>
-</section>
-
-
-<!-- SOCIAL PROOF BAR -->
-<section style="background:#f8fafc;border-top:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;padding:24px 0">
-  <div style="max-width:960px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;justify-content:center;gap:32px;align-items:center">
-    <div style="display:flex;align-items:center;gap:8px">
-      <svg width="20" height="20" fill="none" stroke="#16a34a" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-      <span style="font-size:13px;color:#374151;font-weight:600">Dipakai Marketing Manager perusahaan B2B (10-200 karyawan)</span>
-    </div>
-    <div style="display:flex;align-items:center;gap:8px">
-      <svg width="20" height="20" fill="none" stroke="#16a34a" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-      <span style="font-size:13px;color:#374151;font-weight:600">Response time turun 99% (4 jam → 2 menit)</span>
-    </div>
-    <div style="display:flex;align-items:center;gap:8px">
-      <svg width="20" height="20" fill="none" stroke="#16a34a" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-      <span style="font-size:13px;color:#374151;font-weight:600">100% leads tercatat, 0% hilang karena telat follow-up</span>
+    <div class="social-proof-item">
+      <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+      <span>100% leads tercatat, 0% hilang karena telat follow-up</span>
     </div>
   </div>
 </section>
-
 
 <!-- AI FRONTLINER -->
 <section id="ai-frontliner" class="section bg-light" style="border-top:1px solid #e5e7eb">
   <div class="section-inner">
     <div class="section-header">
-      <div style="display:flex;align-items:center;gap:16px;margin-bottom:16px">
-        <div class="section-line"></div>
-        <h2 class="section-title">Website Anda Bukan Brosur Lagi. Ia Jadi Mesin Akuisisi B2B yang Bekerja 24/7.</h2>
-        <div class="section-line"></div>
-      </div>
-      <p class="section-sub">Website modern bukan lagi brosur digital. Ia harus mampu menangkap leads, menjawab otomatis, mengarahkan calon customer, dan bekerja 24/7.</p>
+      <h2 class="section-title">Website Anda Jadi Mesin Akuisisi yang Bekerja 24/7</h2>
+      <p class="section-sub">Website modern bukan brosur digital. Ia harus mampu menangkap leads, menjawab otomatis, mengarahkan calon pelanggan, dan bekerja 24 jam sehari tanpa libur.</p>
     </div>
     <div class="cards-3">
-      <div class="card">
+      <div class="card stagger-1">
         <div class="card-icon card-icon-light">
           <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
         </div>
         <h3 class="card-title text-primary">AI Webchat Frontliner</h3>
-        <div class="ps-block ps-border-red"><div class="ps-label">Masalah</div><div class="ps-text">Visitor datang, bertanya, lalu hilang.</div></div>
-        <div class="ps-block ps-border-orange" style="margin-top:12px"><div class="ps-label">Sistem</div><div class="ps-text">AI menjawab, mengkualifikasi, dan mengarahkan leads otomatis.</div></div>
-        <div class="impact-box"><div class="impact-label">Dampak</div><div class="impact-text">Prospek masuk ke pipeline, bukan berhenti di chat.</div></div>
+        <div class="ps-block">
+          <div class="ps-label">Masalah</div>
+          <div class="ps-text">Pelanggan datang, bertanya, lalu hilang karena tidak ada yang balas.</div>
+        </div>
+        <div class="ps-block">
+          <div class="ps-label">Sistem</div>
+          <div class="ps-text">AI menjawab otomatis, kualifikasi leads, dan arahkan ke bagian sales dalam 2 detik.</div>
+        </div>
+        <div class="impact-box">
+          <div class="impact-label">Dampak</div>
+          <div class="impact-text">Prospek masuk ke pipeline, bukan berhenti di chat tanpa balasan.</div>
+        </div>
       </div>
-      <div class="card card-dark">
+      <div class="card card-dark stagger-2">
         <div class="card-icon card-icon-dark">
           <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2 1 3 3 3h10c2 0 3-1 3-3V7M4 7c0-2 1-3 3-3h10c2 0 3 1 3 3M4 7h16M9 11h6M9 15h4"/></svg>
         </div>
         <h3 class="card-title">Website + CRM Intake</h3>
-        <div class="ps-block ps-border-red-dark"><div class="ps-label" style="color:rgba(191,219,254,.4)">Masalah</div><div class="ps-text" style="color:#dbeafe">Data customer tercecer di WhatsApp dan spreadsheet.</div></div>
-        <div class="ps-block ps-border-orange-dark" style="margin-top:12px"><div class="ps-label" style="color:rgba(191,219,254,.4)">Sistem</div><div class="ps-text" style="color:#dbeafe">Form website langsung sinkron ke database dan workflow follow-up.</div></div>
-        <div class="impact-box impact-box-dark"><div class="impact-label">Dampak</div><div class="impact-text">Tidak ada lagi copy-paste data manual.</div></div>
+        <div class="ps-block">
+          <div class="ps-label" style="color:rgba(191,219,254,.4)">Masalah</div>
+          <div class="ps-text" style="color:#dbeafe">Data pelanggan tercecer di WhatsApp dan spreadsheet manual.</div>
+        </div>
+        <div class="ps-block">
+          <div class="ps-label" style="color:rgba(191,219,254,.4)">Sistem</div>
+          <div class="ps-text" style="color:#dbeafe">Form website langsung sinkron ke database dan workflow follow-up otomatis.</div>
+        </div>
+        <div class="impact-box impact-box-dark">
+          <div class="impact-label">Dampak</div>
+          <div class="impact-text">Tidak ada lagi copy-paste data manual.</div>
+        </div>
       </div>
-      <div class="card">
+      <div class="card stagger-3">
         <div class="card-icon card-icon-light">
           <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-2 0-4 1.5-4 4s2 4 4 4 4-1.5 4-4-2-4-4-4zM2 12h2M20 12h2M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
         </div>
         <h3 class="card-title text-primary">AI Landing Page Conversion</h3>
-        <div class="ps-block ps-border-red"><div class="ps-label">Masalah</div><div class="ps-text">Traffic masuk tapi tidak menjadi prospek.</div></div>
-        <div class="ps-block ps-border-orange" style="margin-top:12px"><div class="ps-label">Sistem</div><div class="ps-text">Landing page dengan AI interaction flow dan CTA tracking.</div></div>
-        <div class="impact-box"><div class="impact-label">Dampak</div><div class="impact-text">Website berubah menjadi mesin akuisisi.</div></div>
+        <div class="ps-block">
+          <div class="ps-label">Masalah</div>
+          <div class="ps-text">Traffic masuk dari Instagram/FB tapi tidak jadi prospek karena tidak ada follow-up.</div>
+        </div>
+        <div class="ps-block">
+          <div class="ps-label">Sistem</div>
+          <div class="ps-text">Landing page dengan AI interaction flow dan CTA tracking yang menangkap leads otomatis.</div>
+        </div>
+        <div class="impact-box">
+          <div class="impact-label">Dampak</div>
+          <div class="impact-text">Website berubah menjadi mesin akuisisi yang bekerja 24 jam.</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- MODUL -->
-<section id="modul" class="section bg-white" style="border-top:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb">
-
+<!-- MODUL BISNIS AUTOPILOT (single section, was duplicated) -->
 <section id="modul" class="section bg-white" style="border-top:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb">
   <div class="section-inner">
     <div class="section-header">
-      <div style="display:flex;align-items:center;gap:16px;margin-bottom:16px">
-        <div class="section-line"></div>
-        <h2 class="section-title">Modul Bisnis Autopilot</h2>
-        <div class="section-line"></div>
-      </div>
-      <p class="section-sub">Sistem siap pakai yang mengotomatiskan bisnis Anda — mulai dari menjaring pembeli sampai memantau hasilnya.</p>
+      <h2 class="section-title">Modul Bisnis Autopilot</h2>
+      <p class="section-sub">Sistem siap pakai yang mengotomatiskan bisnis Anda — dari menjaring leads sampai memantau hasilnya. Semua terintegrasi lewat WhatsApp.</p>
     </div>
     <div class="cards-3">
-      <div class="card card-rel">
+      <div class="card card-rel stagger-1">
         <div class="card-stripe"></div>
         <div class="card-icon card-icon-light">
           <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4h16v4H4zM4 12h16v4H4zM4 20h10"/></svg>
         </div>
         <h3 class="card-title text-primary">AI Penjaga Garis Depan</h3>
         <p class="card-tag">Balas & Kualifikasi Leads 24/7 — Otomatis</p>
-        <p class="card-body">Tidak ada lagi leads yang hilang karena admin sedang tidur atau sibuk. AI penyambut &amp; penyaring chat yang mengambil alih 100% interaksi awal. Diprogram murni dalam Bahasa Indonesia tanpa sapaan robotik yang kaku. Komplain diteruskan diam-diam ke tim teknis, dan prospek panas langsung dikunci ke CRM.</p>
+        <p class="card-body">Tidak ada lagi leads yang hilang karena admin sedang tidur atau sibuk. AI penyambut & penyaring chat yang mengambil alih 100% interaksi awal. Diprogram dalam Bahasa Indonesia tanpa sapaan robotik. Komplain diteruskan ke tim teknis, prospek panas langsung dikunci ke CRM.</p>
       </div>
-      <div class="card card-dark card-rel" style="transform:scale(1.02)">
-        <div style="position:absolute;top:0;left:0;right:0;height:4px;background:var(--orange);border-radius:40px 40px 0 0"></div>
+      <div class="card card-dark card-rel stagger-2" style="transform:scale(1.02)">
+        <div style="position:absolute;top:0;left:0;right:0;height:4px;background:var(--orange);border-radius:16px 16px 0 0"></div>
         <div class="card-icon card-icon-dark">
           <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path stroke-linecap="round" d="M8 21h8M12 17v4"/></svg>
         </div>
         <h3 class="card-title">Mesin Follow-Up Otomatis</h3>
         <p class="card-tag">Data Masuk Sendiri, Follow-Up Jalan Sendiri</p>
-        <p class="card-body" style="color:rgba(191,219,254,.8)">Tidak ada lagi copy-paste data dari WhatsApp ke spreadsheet. Mesin integrasi webhook yang berjalan di latar belakang. Mengeliminasi entri data manual secara absolut dengan mengekstraksi data pelanggan secara instan dan memicu alur follow-up cerdas tanpa intervensi manusia.</p>
+        <p class="card-body" style="color:rgba(191,219,254,.8)">Tidak ada lagi copy-paste data dari WhatsApp ke spreadsheet. Mesin integrasi webhook yang berjalan di latar belakang. Mengeliminasi entri data manual dengan mengekstrak data pelanggan secara instan dan memicu alur follow-up tanpa intervensi manusia.</p>
       </div>
-      <div class="card card-rel">
+      <div class="card card-rel stagger-3">
         <div class="card-stripe"></div>
         <div class="card-icon card-icon-light">
           <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
         </div>
         <h3 class="card-title text-primary">Dashboard Kendali Owner</h3>
         <p class="card-tag">Semua Angka Bisnis Anda, Satu Layar</p>
-        <p class="card-body">Tidak perlu tanya ke tim — semua data bisnis tersedia real-time di genggaman Anda. Papan kendali terpusat yang membaca aliran data dari modul frontliner dan alur kerja otomatis. Menampilkan indikator kinerja utama, aliran kas, dan peringatan penyimpangan operasional secara real-time.</p>
+        <p class="card-body">Tidak perlu tanya ke tim — semua data bisnis tersedia real-time di genggaman Anda. Papan kendali terpusat yang membaca aliran data dari modul frontliner dan alur kerja otomatis. Menampilkan KPI, aliran kas, dan peringatan operasional secara real-time.</p>
       </div>
     </div>
   </div>
 </section>
-
-<!-- HARGA -->
-<section id="harga" class="section bg-white">
 
 <!-- CARA ADOPSI -->
 <section id="cara-adopsi" class="section bg-white">
   <div class="section-inner">
     <div class="section-header">
-      <div style="display:flex;align-items:center;gap:16px;margin-bottom:16px">
-        <div class="section-line"></div>
-        <h2 class="section-title">Cara Membangun Ekosistem Otonom Anda</h2>
-        <div class="section-line"></div>
-      </div>
-      <p class="section-sub">Transisi mulus menuju operasional tanpa hambatan.</p>
+      <h2 class="section-title">Cara Membangun Ekosistem Otonom Anda</h2>
+      <p class="section-sub">Transisi mulus menuju operasional tanpa hambatan. Tiga langkah menuju bisnis yang berjalan otomatis.</p>
     </div>
     <div class="steps-grid">
-      <div>
+      <div class="stagger-1">
         <div class="step-num">1</div>
         <h3 class="step-title">AI Business Diagnostic</h3>
-        <p class="step-body">Mengidentifikasi modul mana yang paling krusial untuk menutup kebocoran.</p>
+        <p class="step-body">Kami identifikasi modul mana yang paling krusial untuk menutup kebocoran leads di bisnis Anda — tanpa sales pitch, hanya analisis.</p>
       </div>
-      <div>
+      <div class="stagger-2">
         <div class="step-num">2</div>
         <h3 class="step-title">Integrasi & Pengujian</h3>
-        <p class="step-body">Pemasangan logika sistem dan penyesuaian parameter tanpa mengganggu operasional berjalan.</p>
+        <p class="step-body">Pemasangan dan penyesuaian sistem tanpa mengganggu operasional bisnis yang sedang berjalan. Selesai dalam 3 hari untuk paket starter.</p>
       </div>
-      <div>
+      <div class="stagger-3">
         <div class="step-num">3</div>
         <h3 class="step-title">Otonomi Penuh</h3>
-        <p class="step-body">Sistem mengeksekusi beban kerja harian, menggantikan biaya overhead staf.</p>
+        <p class="step-body">Sistem mengeksekusi beban kerja harian — balas chat, follow-up leads, catat CRM — menggantikan biaya overhead staf tambahan.</p>
       </div>
     </div>
   </div>
 </section>
-
-<!-- LEAD FORM (jalur konversi ke-2) -->
 
 <!-- CTA FINAL -->
 <section id="screening" class="cta-final">
   <div class="cta-final-bg"></div>
   <div class="cta-final-inner">
     <h2 class="cta-final-title">Gratis: <span>AI Business Screening</span> 15 Menit</h2>
-    <p class="cta-final-sub">Kami diagnose 1 masalah automation terbesar di sales team Anda. Tanpa sales pitch, tanpa komitmen. Hanya actionable insight.</p>
+    <p class="cta-final-sub">Kami diagnose 1 masalah automation terbesar di bisnis Anda. Tanpa sales pitch, tanpa komitmen. Hanya actionable insight yang bisa langsung Anda praktekkan.</p>
     <div style="display:flex;flex-direction:column;align-items:center;gap:24px">
       <button class="btn-chat" onclick="trackLead();openChat()">
         <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
@@ -280,15 +480,11 @@
 </section>
 
 <!-- FOOTER -->
-
-
-
-<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div>
       <p class="footer-brand-name">AI Marketing Strategic</p>
-      <p class="footer-brand-sub">Solusi Digital Praktis untuk UMKM & Perusahaan B2B Indonesia.</p>
+      <p class="footer-brand-sub">Solusi AI automation untuk UMKM & Perusahaan B2B Indonesia. Otomatiskan WhatsApp, CRM, dan follow-up bisnis Anda tanpa ribet.</p>
       <div class="footer-socials">
         <button class="footer-social" onclick="openChat()" aria-label="Chat">
           <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
@@ -298,7 +494,7 @@
         </a>
         <a class="footer-social" href="https://www.youtube.com/@AIMarketingStrategic" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
           <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon fill="#fff" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
-        </button>
+        </a>
       </div>
     </div>
     <div>
@@ -335,7 +531,7 @@
       <div>
         <p class="modal-header-badge">AI Marketing Strategic</p>
         <h3 class="modal-header-title">Konsultasi Gratis 15 Menit</h3>
-        <p class="modal-header-sub">Ceritakan kondisi sales team Anda — kami kasih rekomendasi modul AI yang paling cepat berdampak.</p>
+        <p class="modal-header-sub">Ceritakan kondisi bisnis Anda — kami kasih rekomendasi modul AI yang paling cepat berdampak.</p>
       </div>
       <button class="modal-close" onclick="closeModal('chat-modal')">✕</button>
     </div>
@@ -391,6 +587,25 @@
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','GA4_ID');
 </script>
+
+<!-- Reveal observer for scroll-triggered animations -->
+<script>
+(function() {
+  var els = document.querySelectorAll('.reveal');
+  if (els.length) {
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    els.forEach(function(el) { obs.observe(el); });
+  }
+})();
+</script>
+
 <script src="/js/script.js"></script>
 </body>
 </html>
