@@ -233,6 +233,52 @@
   .pricing-card { padding: 20px; }
   .hero-stats { gap: 24px; }
 }
+
+/* FAQ accordion (native <details>, accessible) */
+#faq .faq-list { max-width: 720px; margin: 0 auto; }
+#faq .faq-item {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fff;
+  margin-bottom: 12px;
+  transition: border-color 0.3s;
+}
+#faq .faq-item[open] { border-color: var(--orange); }
+#faq summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--primary);
+}
+#faq summary::-webkit-details-marker { display: none; }
+#faq summary:focus-visible { outline: 2px solid var(--orange); outline-offset: -2px; border-radius: 12px; }
+#faq .faq-icon {
+  flex-shrink: 0;
+  width: 22px; height: 22px;
+  color: var(--orange);
+  transition: transform 0.3s cubic-bezier(0.22,1,0.36,1);
+}
+#faq .faq-item[open] .faq-icon { transform: rotate(45deg); }
+#faq .faq-answer {
+  padding: 0 24px 20px;
+  font-size: 14px;
+  line-height: 1.75;
+  color: #4b5563;
+  max-width: 62ch;
+}
+@media (prefers-reduced-motion: reduce) {
+  #faq .faq-icon { transition: none; }
+}
+@media (max-width: 480px) {
+  #faq summary { padding: 16px 18px; font-size: 14px; }
+  #faq .faq-answer { padding: 0 18px 16px; }
+}
 </style>
 </head>
 <body>
@@ -458,6 +504,54 @@
         <h3 class="step-title">Otonomi Penuh</h3>
         <p class="step-body">Sistem mengeksekusi beban kerja harian — balas chat, follow-up leads, catat CRM — menggantikan biaya overhead staf tambahan.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="section bg-light" style="border-top:1px solid #e5e7eb">
+  <div class="section-inner">
+    <div class="section-header">
+      <h2 class="section-title">Pertanyaan yang Sering Ditanyakan</h2>
+      <p class="section-sub">Hal-hal yang biasanya ingin dipastikan pemilik bisnis sebelum mulai. Masih ada yang mengganjal? <a href="#faq" onclick="trackLead();openChat();return false" style="color:var(--orange);font-weight:600;text-decoration:none">Tanya langsung lewat WhatsApp.</a></p>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item stagger-1">
+        <summary>Berapa biaya untuk memulai?
+          <svg class="faq-icon" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 5v14M5 12h14"/></svg>
+        </summary>
+        <div class="faq-answer">Setup mulai Rp1.000.000 (sekali bayar) plus infrastruktur Rp100.000/bulan. Tidak ada biaya tersembunyi dan tidak ada kontrak jangka panjang — Anda bisa berhenti kapan saja.</div>
+      </details>
+      <details class="faq-item stagger-2">
+        <summary>Berapa lama proses setup sampai sistem berjalan?
+          <svg class="faq-icon" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 5v14M5 12h14"/></svg>
+        </summary>
+        <div class="faq-answer">Paket starter diselesaikan dalam 3 hari kerja, tanpa mengganggu operasional bisnis yang sedang berjalan. Kami pasang, uji, lalu serahkan sistem yang sudah siap pakai.</div>
+      </details>
+      <details class="faq-item stagger-3">
+        <summary>Apakah saya butuh tim IT atau harus paham teknis?
+          <svg class="faq-icon" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 5v14M5 12h14"/></svg>
+        </summary>
+        <div class="faq-answer">Tidak. Kami yang memasang, mengonfigurasi, dan merawat sistemnya. Anda cukup menerima hasilnya lewat WhatsApp seperti biasa — tanpa perlu belajar tools baru atau menambah karyawan.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Bagaimana jika sistemnya tidak berjalan sesuai harapan?
+          <svg class="faq-icon" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 5v14M5 12h14"/></svg>
+        </summary>
+        <div class="faq-answer">Kami perbaiki hingga berjalan sesuai spesifikasi yang disepakati di awal. Jika tetap tidak sesuai, biaya setup dikembalikan 100% — itu garansi kami.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Apakah bisnis saya cocok dengan sistem ini?
+          <svg class="faq-icon" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 5v14M5 12h14"/></svg>
+        </summary>
+        <div class="faq-answer">Cocok untuk UMKM yang mengandalkan WhatsApp untuk menjaring leads dan melayani pelanggan — F&B, klinik, retail, jasa, properti, dan lainnya. Saat konsultasi gratis, kami cek dulu apakah sistem ini benar-benar relevan untuk bisnis Anda.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Apakah data pelanggan saya aman?
+          <svg class="faq-icon" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 5v14M5 12h14"/></svg>
+        </summary>
+        <div class="faq-answer">Data Anda tidak dijual dan tidak dibagikan ke pihak ketiga, serta disimpan sesuai kebijakan privasi yang berlaku.</div>
+      </details>
     </div>
   </div>
 </section>
