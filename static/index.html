@@ -305,9 +305,10 @@
     <p class="hero-sub">Sistem AI automation yang kami pakai sendiri untuk UMKM Indonesia. Otomatis balas WhatsApp pelanggan dalam 2 detik, follow-up leads yang gak pernah ditindaklanjuti, dan catat semua data ke CRM — tanpa perlu tim IT atau tambahan karyawan.</p>
     <p class="hero-tag">Sudah dipraktekkan oleh pemilik UMKM di berbagai industri</p>
     <div class="hero-btns">
-      <button class="btn-primary" onclick="trackLead();openChat()"> Konsultasi Gratis 15 Menit</button>
-      <a class="btn-secondary" href="/harga.html">Lihat Paket &amp; Harga</a>
-    </div>
+          <button class="btn-primary" onclick="trackLead();openChat()"> Konsultasi Gratis 15 Menit</button>
+          <a class="btn-secondary" href="/demo.html">🎮 Coba Demo</a>
+          <a class="btn-secondary" href="/harga.html">Lihat Paket &amp; Harga</a>
+        </div>
     <p class="hero-note">Setup mulai Rp 1.000.000 · Infra Rp 100.000/bulan · Garansi uang kembali</p>
     <div class="hero-checks">
       <span class="hero-check"><svg class="icon" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Setup dalam 3 hari</span>
@@ -345,6 +346,67 @@
     <div class="social-proof-item">
       <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
       <span>100% leads tercatat, 0% hilang karena telat follow-up</span>
+    </div>
+  </div>
+</section>
+
+<!-- LIVE DEMO SIMULATION -->
+<section id="demo-simulator" class="section" style="background:#0B1929;border-top:1px solid rgba(255,255,255,.05)">
+  <div class="section-inner">
+    <div class="section-header section-dark">
+      <div class="demo-live-badge">
+        <span class="hero-badge-dot"></span>
+        <span style="font-family:'Orbitron',sans-serif;font-size:10px;font-weight:900;color:var(--orange);letter-spacing:.3em;text-transform:uppercase">● LIVE DEMO SIMULATION</span>
+      </div>
+      <h2 class="section-title" style="color:#fff">Lihat AI Frontliner Bekerja</h2>
+      <p class="section-sub">Simulasi percakapan nyata — persis seperti yang akan terjadi di bisnis Anda</p>
+    </div>
+    <div class="demo-grid">
+      <!-- Phone -->
+      <div style="display:flex;justify-content:center;order:2">
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-header">
+            <div class="phone-avatar">AI</div>
+            <div>
+              <div class="phone-bot-name" id="bot-name">AI Frontliner — Properti</div>
+              <div class="phone-status"><span class="phone-status-dot"></span>online</div>
+            </div>
+          </div>
+          <div class="phone-chat" id="phone-chat">
+            <div class="typing-bubble" id="typing-bubble">
+              <span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>
+            </div>
+          </div>
+          <div class="phone-input">
+            <div class="phone-input-bar"></div>
+            <div class="phone-send">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Controls -->
+      <div style="order:1">
+        <div class="demo-controls">
+          <div class="demo-ind-label">Pilih industri untuk simulasi:</div>
+          <div class="industry-grid">
+            <button class="ind-btn active" data-ind="properti" onclick="selectIndustry(this)">🏠 Properti</button>
+            <button class="ind-btn" data-ind="klinik" onclick="selectIndustry(this)">🏥 Klinik</button>
+            <button class="ind-btn" data-ind="toko" onclick="selectIndustry(this)">🛒 Toko Online</button>
+            <button class="ind-btn" data-ind="b2b" onclick="selectIndustry(this)">🏢 Jasa & Profesional</button>
+          </div>
+          <button class="demo-btn-run" id="demo-run-btn" onclick="runDemo()">▶ Mulai Simulasi</button>
+          <button class="demo-btn-reset" onclick="resetDemo()">↺ Reset Simulasi</button>
+          <div class="demo-checks">
+            <div class="demo-check"><svg class="demo-check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> AI merespons dalam hitungan detik</div>
+            <div class="demo-check"><svg class="demo-check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Kualifikasi leads otomatis 24/7</div>
+            <div class="demo-check"><svg class="demo-check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Tidak perlu admin tambahan</div>
+          </div>
+          <p class="demo-quote">"Ini bukan rekaman — sistem yang sama akan bekerja di bisnis Anda"</p>
+          <button class="demo-install-btn" onclick="openChat()">Pasang di Bisnis Saya →</button>
+        </div>
+      </div>
     </div>
   </div>
 </section>

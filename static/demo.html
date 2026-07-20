@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live Demo — AI Marketing Strategic untuk UMKM</title>
+<meta name="description" content="Coba simulasi interaktif AI frontliner WhatsApp. Lihat bagaimana AI membalas chat pelanggan secara otomatis dalam hitungan detik — 4 industri berbeda.">
+<meta name="keywords" content="demo AI WhatsApp, simulasi chatbot UMKM, AI frontliner Indonesia, otomasi WhatsApp, live demo chatbot">
+<meta name="author" content="AI Marketing Strategic">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aimarketingstrategic.com/demo.html">
+<meta property="og:title" content="Live Demo — AI Frontliner WhatsApp untuk UMKM">
+<meta property="og:description" content="Coba simulasi interaktif AI frontliner WhatsApp. Lihat bagaimana AI membalas chat pelanggan secara otomatis dalam hitungan detik.">
+<meta property="og:image" content="https://aimarketingstrategic.com/images/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="id_ID">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Live Demo — AI Frontliner WhatsApp untuk UMKM">
+<meta name="twitter:description" content="Coba simulasi interaktif AI frontliner WhatsApp. Lihat bagaimana AI membalas chat pelanggan secara otomatis dalam hitungan detik.">
+<meta name="twitter:image" content="https://aimarketingstrategic.com/images/og-card.png">
+<link rel="stylesheet" href="/css/style.css">
+<style>
+/* Demo page: full-height hero, no scroll distraction */
+#demo-hero {
+  padding: 140px 24px 30px;
+  background: linear-gradient(135deg, #061626 0%, #0B2A4A 100%);
+  text-align: center;
+}
+#demo-hero h1 {
+  color: #fff;
+  font-size: clamp(28px, 5vw, 48px);
+  margin-bottom: 12px;
+}
+#demo-hero h1 span { color: var(--orange); }
+#demo-hero p {
+  color: rgba(255,255,255,.7);
+  max-width: 640px;
+  margin: 0 auto;
+  font-size: 15px;
+  line-height: 1.7;
+}
+#demo-simulator {
+  padding-top: 40px;
+}
+.demo-page-cta {
+  text-align: center;
+  padding: 60px 24px 80px;
+  background: #f8fafc;
+  border-top: 1px solid #e5e7eb;
+}
+.demo-page-cta h2 {
+  font-size: clamp(22px, 3vw, 32px);
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+.demo-page-cta p {
+  color: #6b7280;
+  margin-bottom: 24px;
+  font-size: 14px;
+}
+</style>
+</head>
+<body>
+<!-- NAVBAR -->
+<div id="nav-placeholder"></div>
+<div id="mobile-placeholder"></div>
+
+<!-- HERO -->
+<section id="demo-hero">
+  <p style="font-size:11px;font-weight:700;color:var(--orange);letter-spacing:.25em;text-transform:uppercase;margin-bottom:16px">● LIVE DEMO</p>
+  <h1>Lihat AI Frontliner <span>Bekerja Langsung</span></h1>
+  <p>Pilih industri, tekan Mulai, dan lihat bagaimana AI kami membalas chat pelanggan secara otomatis dalam hitungan detik — persis seperti yang akan terjadi di bisnis Anda.</p>
+</section>
+
+<!-- DEMO SIMULATOR (full width) -->
+<section id="demo-simulator" class="section" style="background:#0B1929;padding-top:30px;padding-bottom:60px">
+  <div class="section-inner">
+    <div class="demo-grid">
+      <!-- Phone -->
+      <div style="display:flex;justify-content:center;order:2">
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-header">
+            <div class="phone-avatar">AI</div>
+            <div>
+              <div class="phone-bot-name" id="bot-name">AI Frontliner — Properti</div>
+              <div class="phone-status"><span class="phone-status-dot"></span>online</div>
+            </div>
+          </div>
+          <div class="phone-chat" id="phone-chat">
+            <div class="typing-bubble" id="typing-bubble">
+              <span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>
+            </div>
+          </div>
+          <div class="phone-input">
+            <div class="phone-input-bar"></div>
+            <div class="phone-send">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Controls -->
+      <div style="order:1">
+        <div class="demo-controls">
+          <div class="demo-ind-label">Pilih industri untuk simulasi:</div>
+          <div class="industry-grid">
+            <button class="ind-btn active" data-ind="properti" onclick="selectIndustry(this)">🏠 Properti</button>
+            <button class="ind-btn" data-ind="klinik" onclick="selectIndustry(this)">🏥 Klinik</button>
+            <button class="ind-btn" data-ind="toko" onclick="selectIndustry(this)">🛒 Toko Online</button>
+            <button class="ind-btn" data-ind="b2b" onclick="selectIndustry(this)">🏢 Jasa & Profesional</button>
+          </div>
+          <button class="demo-btn-run" id="demo-run-btn" onclick="runDemo()">▶ Mulai Simulasi</button>
+          <button class="demo-btn-reset" onclick="resetDemo()">↺ Reset Simulasi</button>
+          <div class="demo-checks">
+            <div class="demo-check"><svg class="demo-check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> AI merespons dalam hitungan detik</div>
+            <div class="demo-check"><svg class="demo-check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Kualifikasi leads otomatis 24/7</div>
+            <div class="demo-check"><svg class="demo-check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Tidak perlu admin tambahan</div>
+          </div>
+          <p class="demo-quote">"Ini bukan rekaman — sistem yang sama akan bekerja di bisnis Anda"</p>
+          <button class="demo-install-btn" onclick="openChat()">Pasang di Bisnis Saya →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="demo-page-cta">
+  <h2>Siap Otomatiskan Bisnis Anda?</h2>
+  <p>Konsultasi gratis 15 menit — kami diagnosis 1 masalah automation terbesar Anda.</p>
+  <button class="btn-primary" onclick="trackLead();openChat()" style="display:inline-flex;align-items:center;gap:8px">
+    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+    Konsultasi Gratis
+  </button>
+</section>
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+
+<!-- SCRIPTS -->
+<script src="/js/script.js"></script>
+<script src="/js/nav-footer.js"></script>
+</body>
+</html>
