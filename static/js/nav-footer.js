@@ -116,7 +116,7 @@
 
     // Brand
     var brand = document.createElement('div');
-    brand.innerHTML = '<img src="https://aimarketingstrategic.com/images/logo%20aims.png" alt="AI Marketing Strategic" height="36"><p class="footer-tagline">AI Automation untuk UMKM Indonesia</p>';
+    brand.innerHTML = '<img src="https://aimarketingstrategic.com/images/logo%20aims.png" alt="AI Marketing Strategic" height="36"><p class="footer-tagline">AI Revenue Activation untuk UMKM Indonesia</p>';
     inner.appendChild(brand);
 
     // Menu links
