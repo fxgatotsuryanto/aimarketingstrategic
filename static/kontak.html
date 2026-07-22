@@ -116,8 +116,15 @@ footer{background:var(--bg-warm);border-top:1px solid var(--border-light);paddin
 <section style="padding-top:0">
   <div class="container">
     <div class="contact-grid fade-up">
+      <div class="contact-card" style="padding:0;overflow:hidden;display:flex;flex-direction:column">
+              <div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:var(--text-primary);color:#fff;border-radius:var(--radius-xl) var(--radius-xl) 0 0;flex-shrink:0">
+                <span style="font-size:14px;font-weight:600">💬 Chatbot AI Assessment</span>
+              </div>
+              <iframe class="modal-iframe" src="https://ai.newton.co.id/webhook/f263072c-d9fd-47e0-82e5-a85af72df984/chat" allow="microphone" style="width:100%;height:480px;border:none;display:block;flex:1"></iframe>
+              <div style="padding:12px 20px;background:var(--bg-warm);border-top:1px solid var(--border-light);font-size:11px;color:var(--text-tertiary);text-align:center;flex-shrink:0">AI siap membantu — respon instan 24/7</div>
+            </div>
       <div class="contact-card">
-        <div style="font-size:18px;font-weight:700;letter-spacing:-0.02em;margin-bottom:20px">Kontak Langsung</div>
+        <div style="font-size:18px;font-weight:700;letter-spacing:-0.02em;margin-bottom:20px">Atau Hubungi Langsung</div>
         <div class="contact-method">
           <div class="contact-icon wa">💬</div>
           <div><div class="contact-label">WhatsApp</div><div class="contact-value"><a href="https://wa.me/6281907552758" target="_blank">0819-0755-2758</a></div></div>
@@ -130,13 +137,9 @@ footer{background:var(--bg-warm);border-top:1px solid var(--border-light);paddin
           <div class="contact-icon" style="background:rgba(37,99,235,0.1)">📍</div>
           <div><div class="contact-label">Respon</div><div class="contact-value">1×24 jam · Senin-Sabtu</div></div>
         </div>
-        <div style="margin-top:20px">
-          <a href="https://wa.me/6281907552758" class="btn btn-accent btn-block" target="_blank" rel="noopener" style="display:flex">💬 Chat via WhatsApp →</a>
-        </div>
-      </div>
-      <div class="contact-card">
-        <div style="font-size:18px;font-weight:700;letter-spacing:-0.02em;margin-bottom:20px">Atau Tinggalkan Pesan</div>
-        <form onsubmit="submitForm(event)">
+        <div style="margin-top:20px;padding-top:20px;border-top:1px solid var(--border-light)">
+          <div style="font-size:14px;font-weight:600;margin-bottom:12px">Atau tinggalkan pesan:</div>
+          <form onsubmit="submitForm(event)">
           <div class="input-group"><label>Nama</label><input type="text" id="form-nama" placeholder="Nama Anda" required></div>
           <div class="input-group"><label>No. WhatsApp</label><input type="tel" id="form-wa" placeholder="08xxxxxxxxxx" required></div>
           <div class="input-group"><label>Bisnis Anda</label><input type="text" id="form-bisnis" placeholder="Nama bisnis / industri"></div>
@@ -230,18 +233,9 @@ footer{background:var(--bg-warm);border-top:1px solid var(--border-light);paddin
   <div class="footer-bottom"><p class="footer-copy">© 2026 aimarketingstrategic.com</p><div style="display:flex;gap:24px"><a href="/privacy-policy.html" style="font-size:11px;color:var(--text-tertiary)">Privacy</a><button onclick="openModal('terms-modal')" style="font-size:11px;color:var(--text-tertiary);background:none;border:none;cursor:pointer">Terms</button></div></div>
   </footer>
 
-  <div class="modal-overlay" id="chat-modal">
-    <div class="modal-box" style="padding:0;overflow:hidden;max-width:440px;background:var(--bg-white);border-radius:var(--radius-xl);box-shadow:0 0 0 1px rgba(0,0,0,0.08),0 8px 32px rgba(0,0,0,0.08);width:100%">
-      <div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:var(--text-primary);color:#fff;border-radius:var(--radius-xl) var(--radius-xl) 0 0">
-        <span style="font-size:14px;font-weight:600">AI Assessment Gratis</span>
-        <button onclick="closeModal('chat-modal')" style="width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px;cursor:pointer;border:none">✕</button>
-      </div>
-      <iframe class="modal-iframe" src="https://ai.newton.co.id/webhook/f263072c-d9fd-47e0-82e5-a85af72df984/chat" allow="microphone"></iframe>
-          </div>
-        </div>
-      <script>
-      function toggleMenu
-function openChat(){openModal('chat-modal')}
+  <script>
+  function toggleMenu(){var m=document.getElementById('mobile-menu');if(!m){m=document.createElement('div');m.id='mobile-menu';m.style.cssText='display:none;position:fixed;top:64px;right:16px;width:260px;background:#fff;border:1px solid rgba(0,0,0,0.08);border-radius:16px;padding:20px;z-index:200;box-shadow:0 0 0 1px rgba(0,0,0,0.08),0 8px 32px rgba(0,0,0,0.08)';m.innerHTML='<a href="/" style="display:block;padding:10px 0;font-size:14px;font-weight:500;color:#171717">Beranda</a><a href="/tentang.html" style="display:block;padding:10px 0;font-size:14px;font-weight:500;color:#5a5a5a">Tentang</a><a href="/harga.html" style="display:block;padding:10px 0;font-size:14px;font-weight:500;color:#5a5a5a">Harga</a><a href="/hasil.html" style="display:block;padding:10px 0;font-size:14px;font-weight:500;color:#5a5a5a">Hasil</a><a href="/blog/" style="display:block;padding:10px 0;font-size:14px;font-weight:500;color:#5a5a5a;margin-bottom:12px">Blog</a><button onclick="openChat()" style="width:100%;padding:12px;background:#f57c00;color:#fff;border:none;border-radius:6px;font-size:14px;font-weight:600;cursor:pointer">AI Assessment Gratis</button>';document.body.appendChild(m)}m.style.display=m.style.display==='none'?'block':'none'}
+  function openChat(){window.open('https://wa.me/6281907552758','_blank')}
 function openModal(id){document.getElementById(id).classList.add('open')}
 function closeModal(id){document.getElementById(id).classList.remove('open')}
 function submitForm(e){e.preventDefault();var n=document.getElementById('form-nama').value;var w=document.getElementById('form-wa').value;var b=document.getElementById('form-bisnis').value;var p=document.getElementById('form-pesan').value;var msg=encodeURIComponent('Halo, saya '+n+'. WA: '+w+(b?'. Bisnis: '+b:'')+(p?'. Pesan: '+p:''));window.open('https://wa.me/6281907552758?text='+msg,'_blank')}
