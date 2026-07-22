@@ -167,7 +167,7 @@ footer{background:var(--bg-warm);border-top:1px solid var(--border-light);paddin
 .footer-bottom{max-width:var(--max-w);margin:40px auto 0;padding:24px 24px 0;border-top:1px solid var(--border-light);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
 .footer-copy{font-size:12px;color:var(--text-tertiary)}
 .modal-iframe{width:100%;height:480px;border:none;border-radius:0 0 var(--radius-xl) var(--radius-xl);display:block}
-@media(min-width:768px)
+@media(min-width:768px){.nav-links{display:flex}.nav-cta{display:inline-flex}.hamburger{display:none}}
 /* Modal */
 .modal-overlay{display:none;position:fixed;inset:0;z-index:500;background:rgba(0,0,0,0.5);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:24px}
 .modal-overlay.open{display:flex}
@@ -220,7 +220,7 @@ footer{background:var(--bg-warm);border-top:1px solid var(--border-light);paddin
     <div class="pricing-grid">
       <div class="pricing-card stagger-1">
         <div class="pricing-name">Starter</div>
-        <div class="pricing-desc">AI Frontliner — untuk UMKM baru mulai otomasi</div>
+                <div class="pricing-desc">Untuk bisnis yang baru mulai menggunakan AI. Cukup 1 AI Employee — AURA sebagai resepsionis digital.</div>
         <div class="pricing-amount"><span class="curr">Rp</span>990<span class="period">rb</span> <span class="strikethrough">Rp2jt</span></div>
         <div class="pricing-detail">+ Rp299rb/bulan · Infra + maintenance AI</div>
         <ul class="pricing-features">
@@ -230,13 +230,13 @@ footer{background:var(--bg-warm);border-top:1px solid var(--border-light);paddin
           <li>Setup selesai 3 hari</li>
           <li>Support 2 minggu</li>
         </ul>
-        <button class="btn btn-primary btn-block" onclick="openChat()">Pilih Starter</button>
+        <button class="btn btn-primary btn-block" onclick="openChat()">Mulai Trial →</button>
       </div>
 
       <div class="pricing-card featured stagger-2">
         <div class="pricing-badge">Paling Laris</div>
         <div class="pricing-name">Autopilot</div>
-        <div class="pricing-desc">Frontliner + CRM + Follow-Up — untuk bisnis dengan banyak leads</div>
+                <div class="pricing-desc">Untuk perusahaan yang ingin mengotomasi penjualan dan layanan pelanggan. 3 AI Employee bekerja terintegrasi.</div>
         <div class="pricing-amount"><span class="curr">Rp</span>2,5<span class="period">jt</span></div>
         <div class="pricing-detail">+ Rp499rb/bulan · Infra + maintenance + prioritas</div>
         <ul class="pricing-features">
@@ -246,12 +246,12 @@ footer{background:var(--bg-warm);border-top:1px solid var(--border-light);paddin
           <li>Dashboard Owner Real-Time</li>
           <li>Prioritas Support 24/7</li>
         </ul>
-        <button class="btn btn-accent btn-block" onclick="openChat()">Pilih Autopilot</button>
+        <button class="btn btn-accent btn-block" onclick="openChat()">Paling Populer →</button>
       </div>
 
       <div class="pricing-card stagger-3">
         <div class="pricing-name">Custom</div>
-        <div class="pricing-desc">AI Business Operating System — untuk kebutuhan spesifik</div>
+                <div class="pricing-desc">Untuk perusahaan yang siap membangun AI Business Operating System secara menyeluruh. 6 AI Employee + workflow khusus.</div>
         <div class="pricing-amount"><span class="curr">Rp</span>Hubungi</div>
         <div class="pricing-detail">Konsultasi gratis untuk menentukan kebutuhan</div>
         <ul class="pricing-features">
@@ -261,7 +261,7 @@ footer{background:var(--bg-warm);border-top:1px solid var(--border-light);paddin
           <li>AI Sales Department</li>
           <li>Dedicated Support & Training</li>
         </ul>
-        <button class="btn btn-primary btn-block" onclick="openChat()">Hubungi Kami</button>
+        <button class="btn btn-primary btn-block" onclick="openChat()">Hubungi Sales</button>
       </div>
     </div>
   </div>
@@ -296,10 +296,46 @@ footer{background:var(--bg-warm);border-top:1px solid var(--border-light);paddin
         </tbody>
       </table>
     </div>
-  </div>
-</section>
+      </div>
+    </section>
 
-<!-- FAQ -->
+    <!-- ROI Comparison -->
+    <section>
+      <div class="container">
+        <div class="section-header fade-up">
+          <div class="section-label">Nilai Investasi</div>
+          <h2 class="section-title">Investasi AI vs <span class="highlight">Biaya Operasional Manual</span></h2>
+          <p class="section-sub">Bandingkan biaya memiliki 1 AI Employee dengan biaya 1 staf admin — dan lihat sendiri efisiensinya.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;max-width:900px;margin:0 auto">
+          <div style="background:var(--bg-warm);border-radius:var(--radius-xl);padding:32px;border:1px solid var(--border);text-align:center">
+            <div style="font-size:11px;font-weight:600;color:var(--text-tertiary);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:12px">Tanpa AI</div>
+            <div style="font-size:36px;font-weight:700;color:var(--text-primary);letter-spacing:-0.03em">Rp4-6<span style="font-size:14px;color:var(--text-tertiary)">jt/bln</span></div>
+            <div style="font-size:12px;color:var(--text-secondary);margin-top:8px;line-height:1.6">Biaya 1 staf admin<br>(gaji + tunjangan)</div>
+            <ul style="list-style:none;margin-top:20px;font-size:12px;color:var(--text-secondary);line-height:2;text-align:left">
+              <li>✗ Hanya bekerja 8 jam/hari</li>
+              <li>✗ Libur akhir pekan & cuti</li>
+              <li>✗ Follow-up sering terlewat</li>
+              <li>✗ Leads malam tidak terbalas</li>
+            </ul>
+          </div>
+          <div style="background:var(--bg-white);border-radius:var(--radius-xl);padding:32px;box-shadow:var(--shadow-md);border:2px solid rgba(245,124,0,0.2);text-align:center;transform:scale(1.03);position:relative">
+            <div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;padding:4px 16px;border-radius:100px;font-size:11px;font-weight:600">Hemat 10x Lipat</div>
+            <div style="font-size:11px;font-weight:600;color:var(--text-tertiary);letter-spacing:0.08em;text-transform:uppercase;margin-top:8px;margin-bottom:12px">Dengan AI</div>
+            <div style="font-size:36px;font-weight:700;color:var(--accent);letter-spacing:-0.03em">Rp299-499<span style="font-size:14px;color:var(--text-tertiary)">rb/bln</span></div>
+            <div style="font-size:12px;color:var(--text-secondary);margin-top:8px;line-height:1.6">Biaya 1 AI Employee<br>(infra + maintenance)</div>
+            <ul style="list-style:none;margin-top:20px;font-size:12px;color:var(--text-secondary);line-height:2;text-align:left">
+              <li>✓ Bekerja 24 jam, 7 hari</li>
+              <li>✓ Tidak ada libur atau cuti</li>
+              <li>✓ Follow-up otomatis 3 sentuhan</li>
+              <li>✓ Leads malam langsung terbalas</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
 <section>
   <div class="container">
     <div class="section-header fade-up">
@@ -308,10 +344,12 @@ footer{background:var(--bg-warm);border-top:1px solid var(--border-light);paddin
     </div>
     <div class="faq-list">
       <details class="faq-item"><summary>Apakah ada biaya tersembunyi?</summary><div class="faq-answer">Tidak. Yang Anda bayar hanya setup (sekali) dan biaya infrastruktur bulanan. Tidak ada biaya instalasi, biaya training, atau biaya hidden lainnya.</div></details>
-      <details class="faq-item"><summary>Bisa ganti paket nanti?</summary><div class="faq-answer">Bisa. Upgrade dari Starter ke Autopilot kapan saja. Selisih harga setup akan disesuaikan. Tidak ada penalti.</div></details>
-      <details class="faq-item"><summary>Apakah ada kontrak jangka panjang?</summary><div class="faq-answer">Tidak. Anda bisa berhenti kapan saja tanpa penalti. Kami percaya sistem kami harus berbicara lewat hasil, bukan kontrak.</div></details>
-      <details class="faq-item"><summary>Bagaimana cara bayarnya?</summary><div class="faq-answer">Saat ini melalui transfer bank atau QRIS. Untuk kemudahan, kami juga sedang mengintegrasikan pembayaran otomatis.</div></details>
-      <details class="faq-item"><summary>Ada garansi jika tidak cocok?</summary><div class="faq-answer">100% uang kembali jika sistem tidak berjalan sesuai spesifikasi yang disepakati di awal. Kami perbaiki dulu sampai cocok — jika tetap tidak, uang kembali.</div></details>
+            <details class="faq-item"><summary>Berapa lama proses implementasi?</summary><div class="faq-answer">Paket Starter selesai dalam 3 hari kerja. Paket Autopilot 5-7 hari. Untuk Custom, timeline akan ditentukan setelah sesi konsultasi awal. Semua tanpa mengganggu operasional bisnis Anda.</div></details>
+            <details class="faq-item"><summary>Apakah bisa disesuaikan dengan kebutuhan saya?</summary><div class="faq-answer">Tentu. Paket Custom dirancang khusus untuk kebutuhan spesifik bisnis Anda — mulai dari workflow, integrasi sistem existing, hingga jumlah AI Employee yang dibutuhkan.</div></details>
+            <details class="faq-item"><summary>Bisa ganti paket nanti?</summary><div class="faq-answer">Bisa. Upgrade dari Starter ke Autopilot kapan saja. Selisih harga setup akan disesuaikan. Tidak ada penalti.</div></details>
+            <details class="faq-item"><summary>Apakah ada kontrak jangka panjang?</summary><div class="faq-answer">Tidak. Anda bisa berhenti kapan saja tanpa penalti. Kami percaya sistem kami harus berbicara lewat hasil, bukan kontrak.</div></details>
+            <details class="faq-item"><summary>Bagaimana cara bayarnya?</summary><div class="faq-answer">Saat ini melalui transfer bank atau QRIS. Untuk kemudahan, kami juga sedang mengintegrasikan pembayaran otomatis.</div></details>
+            <details class="faq-item"><summary>Ada garansi jika tidak cocok?</summary><div class="faq-answer">100% uang kembali jika sistem tidak berjalan sesuai spesifikasi yang disepakati di awal. Kami perbaiki dulu sampai cocok — jika tetap tidak, uang kembali.</div></details>
     </div>
   </div>
 </section>
