@@ -104,6 +104,7 @@ img{max-width:100%;display:block}
 .btn-ghost:hover{background:var(--bg-elevated)}
 .btn-lg{padding:14px 28px;font-size:15px;font-weight:600;border-radius:var(--radius-md)}
 .btn-block{width:100%;justify-content:center}
+.modal-iframe{width:100%;height:480px;border:none;border-radius:0 0 var(--radius-xl) var(--radius-xl);display:block}
 
 /* ═══ ANIMATIONS ═══ */
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
@@ -659,20 +660,12 @@ footer{background:var(--bg-warm);border-top:1px solid var(--border-light);paddin
 
 <!-- ═══ CHAT MODAL ═══ -->
 <div class="modal-overlay" id="chat-modal">
-  <div class="modal-box">
-    <button class="modal-close" onclick="closeModal('chat-modal')">✕</button>
-    <div class="modal-title">AI Assessment Gratis</div>
-    <p class="modal-sub">Ceritakan kondisi bisnis Anda — kami temukan 1 celah revenue terbesar di WhatsApp Anda.</p>
-    <div class="modal-body">
-      <a href="https://wa.me/6281907552758" class="btn btn-accent" target="_blank" rel="noopener" style="justify-content:center;background:#25D366">💬 Chat via WhatsApp</a>
-      <a href="mailto:hallo@aimarketingstrategic.com" class="btn btn-ghost" style="justify-content:center">✉️ hallo@aimarketingstrategic.com</a>
-      <div style="border-top:1px solid var(--border-light);padding-top:16px;margin-top:8px">
-        <p style="font-size:12px;color:var(--text-tertiary);text-align:center;margin-bottom:12px">Atau tinggalkan kontak:</p>
-        <input type="text" class="modal-input" id="chat-nama" placeholder="Nama Anda">
-        <input type="tel" class="modal-input" id="chat-wa" placeholder="No. WhatsApp (08xx)" style="margin-top:8px">
-        <button onclick="submitLead()" class="btn btn-primary btn-block" style="margin-top:12px;justify-content:center">Kirim & Buka WhatsApp →</button>
-      </div>
+  <div class="modal-box" style="padding:0;overflow:hidden">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:var(--text-primary);color:#fff">
+      <span style="font-size:14px;font-weight:600">AI Assessment Gratis</span>
+      <button onclick="closeModal('chat-modal')" style="width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px;cursor:pointer;border:none">✕</button>
     </div>
+    <iframe class="modal-iframe" src="https://ai.newton.co.id/webhook/f263072c-d9fd-47e0-82e5-a85af72df984/chat" allow="microphone"></iframe>
   </div>
 </div>
 
@@ -703,7 +696,7 @@ function toggleMenu() {
 }
 function openModal(id) { document.getElementById(id).classList.add('open'); }
 function closeModal(id) { document.getElementById(id).classList.remove('open'); }
-function openChat(){window.open('https://wa.me/6281907552758','_blank')}
+function openChat(){openModal('chat-modal')}
 function submitLead() {
   var n = document.getElementById('chat-nama').value;
   var w = document.getElementById('chat-wa').value;
