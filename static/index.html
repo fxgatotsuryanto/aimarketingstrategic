@@ -3,743 +3,751 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Marketing Strategic — AI Revenue Activation untuk UMKM Indonesia</title>
-<meta name="description" content="AI Revenue Activation untuk UMKM Indonesia. Bukan sekadar chatbot — sistem AI yang mengubah WhatsApp bisnis Anda jadi mesin revenue: auto-reply, follow-up, CRM, dan closing 24/7. Response 4 jam → 2 detik.">
-<meta name="keywords" content="AI revenue activation, AI automation UMKM, chatbot WhatsApp Indonesia, otomasi bisnis, AI marketing UMKM, lead follow-up otomatis, CRM WhatsApp, n8n automation Indonesia">
+<title>AI Marketing Strategic — AI Business Operating System untuk UMKM Indonesia</title>
+<meta name="description" content="AI Business Operating System untuk UMKM. Bukan chatbot biasa — sistem AI yang mengoperasikan WhatsApp, follow-up, CRM, dan dashboard bisnis Anda 24/7.">
+<meta name="keywords" content="AI business operating system, AI revenue activation, AI untuk UMKM, chatbot WhatsApp Indonesia, AI automation UMKM">
 <meta name="author" content="AI Marketing Strategic">
-<meta name="revision" content="trigger-redeploy">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://aimarketingstrategic.com/">
 <link rel="canonical" href="https://aimarketingstrategic.com/">
-<meta property="og:title" content="AI Marketing Strategic — AI Revenue Activation untuk UMKM Indonesia">
-<meta property="og:description" content="AI Revenue Activation untuk UMKM Indonesia. Bukan sekadar chatbot — sistem AI yang mengubah WhatsApp bisnis Anda jadi mesin revenue: auto-reply, follow-up, CRM, dan closing 24/7.">
+<meta property="og:title" content="AI Marketing Strategic — AI Business Operating System untuk UMKM Indonesia">
+<meta property="og:description" content="AI Business Operating System untuk UMKM. Bukan chatbot biasa — sistem AI yang mengoperasikan WhatsApp, follow-up, CRM, dan dashboard bisnis Anda 24/7.">
 <meta property="og:image" content="https://aimarketingstrategic.com/images/og-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="id_ID">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="AI Marketing Strategic — AI Revenue Activation untuk UMKM Indonesia">
-<meta name="twitter:description" content="AI Revenue Activation untuk UMKM Indonesia. Bukan sekadar chatbot — sistem AI yang mengubah WhatsApp bisnis Anda jadi mesin revenue: auto-reply, follow-up, CRM, dan closing 24/7.">
+<meta name="twitter:title" content="AI Marketing Strategic — AI Business Operating System untuk UMKM Indonesia">
+<meta name="twitter:description" content="AI Business Operating System untuk UMKM. Bukan chatbot biasa — sistem AI yang mengoperasikan WhatsApp, follow-up, CRM, dan dashboard bisnis Anda 24/7.">
 <meta name="twitter:image" content="https://aimarketingstrategic.com/images/og-card.png">
 
-<link rel="stylesheet" href="/css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
 <style>
-/* ===== REDESIGN OVERRIDES (homepage only) ===== */
+/* ═══════════════════════════════════════════════
+   DESIGN SYSTEM — AI Business Operating System
+   Inspired by: Vercel, Linear, Notion, OpenAI
+   ═══════════════════════════════════════════════ */
 
-/* Hero: drenched navy with geometric pattern */
-#hero {
-  min-height: 750px;
-  padding: 130px 24px 80px;
-}
-.hero-bg {
-  background-image: url('https://aimarketingstrategic.com/images/backgroundrobot.png');
-  opacity: 0.3;
-}
-.hero-grad1 {
-  background: linear-gradient(to right, #061626, rgba(6,22,38,0.9), rgba(6,22,38,0.75));
-}
-.hero-h1 {
-  font-size: clamp(24px, 4.5vw, 44px);
-}
-.hero-h1 span {
-  /* SOLID orange — ban on gradient text */
-  color: var(--orange);
-  background: none;
-  -webkit-text-fill-color: var(--orange);
-  -webkit-background-clip: unset;
-  background-clip: unset;
-}
-.hero-h1 span {
-  display: block;
-  margin-top: 4px;
-}
-.hero-stats {
-  margin-top: 48px;
-  gap: 40px;
-}
-.hero-stat-label {
-  font-size: clamp(20px, 3vw, 28px);
-  letter-spacing: -0.02em;
-}
-.hero-stat-sub {
-  color: var(--orange);
-  font-size: 11px;
-  letter-spacing: 0.12em;
-}
-.btn-primary {
-  border-radius: 10px;
-}
-.btn-secondary {
-  border-radius: 10px;
-}
+:root {
+  /* Colors */
+  --bg-white: #ffffff;
+  --bg-warm: #faf9f8;
+  --bg-dark: #0a0a0b;
+  --bg-card: #ffffff;
+  --bg-elevated: #f7f7f8;
 
-/* Social proof: single clean bar */
-.social-proof-bar {
-  background: #f8fafc;
-  border-top: 1px solid #e5e7eb;
-  border-bottom: 1px solid #e5e7eb;
-  padding: 20px 0;
-}
-.social-proof-inner {
-  max-width: 1040px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 24px 40px;
-  align-items: center;
-}
-.social-proof-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 13px;
-  color: #374151;
-  font-weight: 600;
-}
-.social-proof-item svg {
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
-  color: #16a34a;
+  --text-primary: #171717;
+  --text-secondary: #5a5a5a;
+  --text-tertiary: #8a8a8a;
+  --text-inverse: #ffffff;
+
+  --accent: #f57c00;
+  --accent-hover: #e07000;
+  --accent-subtle: rgba(245, 124, 0, 0.08);
+  --accent-light: #fff4e5;
+
+  --blue: #2563eb;
+  --blue-subtle: rgba(37, 99, 235, 0.08);
+  --green: #16a34a;
+  --green-subtle: rgba(22, 163, 74, 0.08);
+  --purple: #7c3aed;
+  --purple-subtle: rgba(124, 58, 237, 0.08);
+
+  --border: rgba(0, 0, 0, 0.08);
+  --border-light: rgba(0, 0, 0, 0.04);
+  --border-card: rgba(0, 0, 0, 0.06);
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  --shadow-sm: 0px 0px 0px 1px rgba(0,0,0,0.06);
+  --shadow-md: 0px 0px 0px 1px rgba(0,0,0,0.08), 0px 2px 4px rgba(0,0,0,0.04);
+  --shadow-lg: 0px 0px 0px 1px rgba(0,0,0,0.08), 0px 4px 16px rgba(0,0,0,0.06);
+  --shadow-xl: 0px 0px 0px 1px rgba(0,0,0,0.08), 0px 8px 32px rgba(0,0,0,0.08);
+
+  --font: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --max-w: 1200px;
+  --section-py: 100px;
 }
 
-/* Sections: cleaner margins */
-.section {
-  padding: 80px 24px;
-}
-.section-header {
-  margin-bottom: 40px;
-}
+*,::before,::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:var(--font);background:var(--bg-white);color:var(--text-primary);overflow-x:hidden;line-height:1.6}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer;border:none;background:none;font-family:inherit}
+img{max-width:100%;display:block}
 
-/* Cards: reduced border-radius, no ghost-shadow combo */
-.card {
-  border-radius: 16px;
-  padding: 28px;
-  box-shadow: none;
-  border: 1px solid #e5e7eb;
-  transition: border-color 0.3s, box-shadow 0.3s;
-}
-.card:hover {
-  border-color: var(--orange);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
-}
-.card-dark {
-  border-color: #1e3a5f;
-}
-.card-icon {
-  border-radius: 14px;
-  width: 52px;
-  height: 52px;
-}
-.card-title {
-  font-size: 16px;
-}
-.card-stripe {
-  height: 3px;
-  border-radius: 16px 16px 0 0;
-}
+/* ═══ UTILITY ═══ */
+.container{max-width:var(--max-w);margin:0 auto;padding:0 24px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+.tag{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;background:var(--accent-subtle);color:var(--accent);border-radius:100px;font-size:12px;font-weight:600;letter-spacing:0.02em}
+.tag-blue{background:var(--blue-subtle);color:var(--blue)}
+.tag-green{background:var(--green-subtle);color:var(--green)}
+.tag-purple{background:var(--purple-subtle);color:var(--purple)}
+.section-label{font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-tertiary);margin-bottom:12px}
+.section-title{font-size:clamp(28px,4vw,40px);font-weight:700;letter-spacing:-0.03em;line-height:1.15;color:var(--text-primary);margin-bottom:16px}
+.section-sub{font-size:clamp(15px,2vw,18px);color:var(--text-secondary);max-width:640px;line-height:1.7;font-weight:400}
+.section-title .highlight{color:var(--accent)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:var(--radius-sm);font-size:14px;font-weight:500;transition:all 0.2s;white-space:nowrap}
+.btn-primary{background:var(--text-primary);color:var(--text-inverse);box-shadow:var(--shadow-sm)}
+.btn-primary:hover{background:#2a2a2a}
+.btn-accent{background:var(--accent);color:var(--text-inverse);box-shadow:0 4px 14px rgba(245,124,0,0.3)}
+.btn-accent:hover{background:var(--accent-hover);transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--text-primary);box-shadow:var(--shadow-sm)}
+.btn-ghost:hover{background:var(--bg-elevated)}
+.btn-lg{padding:14px 28px;font-size:15px;font-weight:600;border-radius:var(--radius-md)}
+.btn-block{width:100%;justify-content:center}
 
-/* Problem/solution blocks: remove side-stripe borders */
-.ps-block {
-  margin-bottom: 14px;
-  padding-left: 0;
-  border-left: none;
-}
-.ps-label {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #9ca3af;
-  margin-bottom: 4px;
-}
-.ps-text {
-  font-size: 13px;
-  font-weight: 500;
-  color: #374151;
-}
-.card-dark .ps-text {
-  color: #dbeafe;
-}
-.impact-box {
-  border-radius: 12px;
-}
+/* ═══ ANIMATIONS ═══ */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+.fade-up{animation:fadeUp 0.6s ease both}
+.fade-in{animation:fadeIn 0.6s ease both}
+.stagger-1{animation:fadeUp 0.6s 0.1s both}
+.stagger-2{animation:fadeUp 0.6s 0.2s both}
+.stagger-3{animation:fadeUp 0.6s 0.3s both}
+.stagger-4{animation:fadeUp 0.6s 0.4s both}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important}}
 
-/* Pricing cards */
-.pricing-card {
-  border-radius: 16px;
-  padding: 28px;
-}
-.pricing-card-featured {
-  border: 2px solid var(--orange);
-  box-shadow: 0 12px 40px rgba(245,124,0,0.2);
-}
-.pricing-card .price-box {
-  border-radius: 16px;
-}
+/* ═══ NAVBAR ═══ */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border-light)}
+.nav-inner{max-width:var(--max-w);margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-weight:700;font-size:16px;letter-spacing:-0.03em;color:var(--text-primary)}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:none;gap:32px}
+.nav-links a{font-size:13px;font-weight:500;color:var(--text-secondary);transition:color 0.2s;letter-spacing:-0.01em}
+.nav-links a:hover{color:var(--text-primary)}
+.nav-cta{display:none}
+.hamburger{width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-sm);color:var(--text-primary);border:1px solid var(--border)}
+.hamburger svg{display:block}
 
-/* Steps */
-.step-num {
-  border-radius: 50%;
-}
-.cta-final .btn-chat {
-  border-radius: 10px;
-}
-.cta-phone {
-  letter-spacing: 0.1em;
-}
+/* ═══ HERO ═══ */
+#hero{min-height:80vh;display:flex;align-items:center;padding:120px 0 80px;background:linear-gradient(180deg,var(--bg-white) 0%,var(--bg-warm) 100%);position:relative;overflow:hidden}
+#hero::before{content:'';position:absolute;top:-40%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(245,124,0,0.06) 0%,transparent 70%);pointer-events:none}
+.hero-content{max-width:var(--max-w);margin:0 auto;padding:0 24px;position:relative;z-index:2}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;background:var(--accent-subtle);border:1px solid rgba(245,124,0,0.15);border-radius:100px;margin-bottom:28px}
+.hero-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
+.hero-badge-text{font-size:12px;font-weight:600;color:var(--accent);letter-spacing:0.02em}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.hero-h1{font-size:clamp(32px,4.5vw,52px);font-weight:800;letter-spacing:-0.04em;line-height:1.1;margin-bottom:20px;color:var(--text-primary)}
+.hero-h1 .highlight{color:var(--accent);display:block;margin-top:4px}
+.hero-sub{font-size:clamp(15px,2vw,18px);color:var(--text-secondary);line-height:1.7;margin-bottom:32px;max-width:520px;font-weight:400}
+.hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px}
+.hero-tag{font-size:12px;color:var(--text-tertiary);font-weight:500;margin-top:8px}
 
-/* Section line removal — was an eyebrow-like divider */
-.section-line {
-  display: none !important;
-}
+/* Hero Diagram — Abstract System Visual */
+.hero-diagram{position:relative;width:100%;aspect-ratio:1;max-width:480px;margin:0 auto}
+.diagram-ring{position:absolute;border:1px solid var(--border);border-radius:50%;animation:fadeIn 0.8s ease both}
+.diagram-ring.r1{width:100%;height:100%;top:0;left:0}
+.diagram-ring.r2{width:72%;height:72%;top:14%;left:14%;border-color:rgba(245,124,0,0.15)}
+.diagram-ring.r3{width:44%;height:44%;top:28%;left:28%;background:rgba(245,124,0,0.04);border-color:rgba(245,124,0,0.2)}
+.diagram-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44%;height:44%;border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;flex-direction:column;gap:4px}
+.diagram-center-label{font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent)}
+.diagram-center-title{font-size:14px;font-weight:700;color:var(--text-primary);letter-spacing:-0.02em}
+.diagram-node{position:absolute;padding:8px 14px;background:var(--bg-white);border:1px solid var(--border);border-radius:var(--radius-md);box-shadow:var(--shadow-sm);font-size:11px;font-weight:600;color:var(--text-primary);white-space:nowrap;animation:fadeUp 0.6s 0.3s both}
+.diagram-node.n1{top:2%;left:60%}
+.diagram-node.n2{top:28%;right:-8%}
+.diagram-node.n3{bottom:28%;right:-8%}
+.diagram-node.n4{bottom:2%;left:60%}
+.diagram-node.n5{top:28%;left:-8%}
+.diagram-node.n6{bottom:28%;left:-8%}
+.diagram-node .node-dot{display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:6px;vertical-align:middle}
+.node-dot.orange{background:var(--accent)}
+.node-dot.blue{background:var(--blue)}
+.node-dot.green{background:var(--green)}
+.node-dot.purple{background:var(--purple)}
 
-/* Staggered entrance animation */
-@keyframes staggerUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-.stagger-1 { animation: staggerUp 0.6s 0.1s both; }
-.stagger-2 { animation: staggerUp 0.6s 0.2s both; }
-.stagger-3 { animation: staggerUp 0.6s 0.3s both; }
+/* ═══ METRICS BAR ═══ */
+.metrics-bar{background:var(--bg-white);border-top:1px solid var(--border-light);border-bottom:1px solid var(--border-light);padding:40px 0}
+.metrics-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:var(--max-w);margin:0 auto;padding:0 24px}
+.metric-item{text-align:center}
+.metric-value{font-size:clamp(24px,3vw,36px);font-weight:700;letter-spacing:-0.03em;color:var(--text-primary);line-height:1}
+.metric-value span{color:var(--accent)}
+.metric-label{font-size:13px;color:var(--text-tertiary);margin-top:6px;font-weight:500}
 
-/* Hero badge: cleaner */
-.hero-badge {
-  border-radius: 100px;
-}
-.hero-badge-dot {
-  animation: pulse 2s infinite;
-}
-.hero-badge-text {
-  letter-spacing: 0.2em;
-}
+/* ═══ SECTIONS ═══ */
+section{padding:var(--section-py) 0}
+.section-dark{background:var(--bg-dark);color:var(--text-inverse)}
+.section-warm{background:var(--bg-warm)}
+.section-header{text-align:center;margin-bottom:60px}
+.section-dark .section-title{color:var(--text-inverse)}
+.section-dark .section-sub{color:rgba(255,255,255,0.6)}
+.section-dark .section-label{color:rgba(255,255,255,0.4)}
 
-/* Smooth section reveal */
-.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s, transform 0.8s;
-}
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+/* ═══ AI WORKFORCE CARDS ═══ */
+.workforce-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;max-width:var(--max-w);margin:0 auto;padding:0 24px}
+.employee-card{background:var(--bg-card);border-radius:var(--radius-lg);padding:28px;box-shadow:var(--shadow-md);transition:all 0.3s;position:relative;overflow:hidden}
+.employee-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px)}
+.employee-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.employee-card.orange::before{background:var(--accent)}
+.employee-card.blue::before{background:var(--blue)}
+.employee-card.green::before{background:var(--green)}
+.employee-card.purple::before{background:var(--purple)}
+.employee-avatar{width:44px;height:44px;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:16px}
+.employee-avatar.orange{background:var(--accent-subtle)}
+.employee-avatar.blue{background:var(--blue-subtle)}
+.employee-avatar.green{background:var(--green-subtle)}
+.employee-avatar.purple{background:var(--purple-subtle)}
+.employee-name{font-size:16px;font-weight:700;letter-spacing:-0.02em;margin-bottom:4px;color:var(--text-primary)}
+.employee-role{font-size:12px;font-weight:500;color:var(--text-tertiary);margin-bottom:12px;letter-spacing:0.02em}
+.employee-desc{font-size:13px;color:var(--text-secondary);line-height:1.7}
+.employee-status{display:inline-flex;align-items:center;gap:4px;margin-top:14px;font-size:11px;font-weight:600;color:var(--green)}
+.employee-status::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--green)}
 
-/* Fix mobile padding for cards on small screens */
-@media (max-width: 480px) {
-  .section { padding: 48px 16px; }
-  .card { padding: 20px; }
-  .pricing-card { padding: 20px; }
-  .hero-stats { gap: 24px; }
-}
+/* ═══ DASHBOARD PREVIEW ═══ */
+.dashboard-preview{background:linear-gradient(135deg,#0a0a0b 0%,#1a1a1e 100%);border-radius:var(--radius-xl);padding:40px;box-shadow:0 20px 60px rgba(0,0,0,0.3);position:relative;overflow:hidden;border:1px solid rgba(255,255,255,0.06)}
+.dashboard-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+.dashboard-title{font-size:12px;font-weight:600;color:rgba(255,255,255,0.5);letter-spacing:0.08em;text-transform:uppercase}
+.dashboard-dots{display:flex;gap:6px}
+.dashboard-dot{width:8px;height:8px;border-radius:50%}
+.dashboard-dot.red{background:#ff5f56}
+.dashboard-dot.yellow{background:#ffbd2e}
+.dashboard-dot.green{background:#27c93f}
+.dashboard-kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:24px}
+.kpi-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:var(--radius-md);padding:16px}
+.kpi-label{font-size:10px;color:rgba(255,255,255,0.4);font-weight:600;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:6px}
+.kpi-value{font-size:20px;font-weight:700;color:#fff;letter-spacing:-0.02em}
+.kpi-value .trend-up{color:var(--green);font-size:11px;margin-left:6px}
+.kpi-value .trend-down{color:#ff5f56;font-size:11px;margin-left:6px}
+.dashboard-table{width:100%;border-collapse:collapse}
+.dashboard-table th{text-align:left;padding:10px 0;font-size:10px;font-weight:600;color:rgba(255,255,255,0.3);letter-spacing:0.06em;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,0.06)}
+.dashboard-table td{padding:10px 0;font-size:12px;color:rgba(255,255,255,0.7);border-bottom:1px solid rgba(255,255,255,0.04)}
+.dashboard-table .status{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:500}
+.dashboard-table .status.active{color:var(--green)}
+.dashboard-table .status.pending{color:var(--accent)}
+.dashboard-table .status.won{color:var(--blue)}
 
-/* FAQ accordion (native <details>, accessible) */
-#faq .faq-list { max-width: 720px; margin: 0 auto; }
-#faq .faq-item {
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  background: #fff;
-  margin-bottom: 12px;
-  transition: border-color 0.3s;
+/* ═══ WORKFLOW ═══ */
+.workflow-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;max-width:var(--max-w);margin:40px auto 0;padding:0 24px;position:relative}
+.workflow-steps::before{content:'';position:absolute;top:40px;left:16%;right:16%;height:1px;background:var(--border);z-index:0}
+.workflow-step{text-align:center;position:relative;z-index:1}
+.workflow-num{width:40px;height:40px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;margin:0 auto 20px}
+.workflow-icon{font-size:28px;margin-bottom:12px}
+.workflow-title{font-size:16px;font-weight:700;letter-spacing:-0.02em;margin-bottom:8px;color:var(--text-primary)}
+.workflow-desc{font-size:13px;color:var(--text-secondary);line-height:1.7}
+
+/* ═══ FEATURE GRID ═══ */
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:var(--max-w);margin:0 auto;padding:0 24px}
+.feature-card{background:var(--bg-card);border-radius:var(--radius-lg);padding:24px;box-shadow:var(--shadow-sm);transition:all 0.3s}
+.feature-card:hover{box-shadow:var(--shadow-md);border-color:rgba(0,0,0,0.1)}
+.feature-icon{font-size:24px;margin-bottom:12px}
+.feature-title{font-size:15px;font-weight:700;letter-spacing:-0.02em;margin-bottom:6px;color:var(--text-primary)}
+.feature-desc{font-size:13px;color:var(--text-secondary);line-height:1.7}
+
+/* ═══ PRICING ═══ */
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:var(--max-w);margin:0 auto;padding:0 24px;align-items:start}
+.pricing-card{background:var(--bg-card);border-radius:var(--radius-xl);padding:32px;box-shadow:var(--shadow-sm);border:1px solid var(--border-card);position:relative}
+.pricing-card.featured{box-shadow:var(--shadow-lg);border-color:rgba(245,124,0,0.2);transform:scale(1.02)}
+.pricing-card.featured .pricing-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;padding:4px 16px;border-radius:100px;font-size:11px;font-weight:600;white-space:nowrap}
+.pricing-name{font-size:14px;font-weight:600;letter-spacing:0.04em;margin-bottom:4px;color:var(--text-tertiary)}
+.pricing-sub{font-size:11px;color:var(--text-tertiary);margin-bottom:20px}
+.pricing-amount{font-size:36px;font-weight:700;letter-spacing:-0.03em;color:var(--text-primary);line-height:1}
+.pricing-amount span{font-size:14px;font-weight:400;color:var(--text-tertiary);letter-spacing:0}
+.pricing-period{font-size:12px;color:var(--text-tertiary);margin-bottom:20px}
+.pricing-features{list-style:none;margin-bottom:24px;display:flex;flex-direction:column;gap:10px}
+.pricing-features li{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--text-secondary);line-height:1.5}
+.pricing-features li::before{content:'✓';color:var(--accent);font-weight:700;flex-shrink:0}
+
+/* ═══ CTA ═══ */
+.cta-section{background:var(--bg-dark);color:var(--text-inverse);text-align:center;padding:100px 24px;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:800px;height:800px;background:radial-gradient(circle,rgba(245,124,0,0.06) 0%,transparent 70%);pointer-events:none}
+.cta-inner{max-width:600px;margin:0 auto;position:relative;z-index:2}
+.cta-title{font-size:clamp(28px,4vw,40px);font-weight:700;letter-spacing:-0.03em;margin-bottom:16px;line-height:1.15}
+.cta-title .highlight{color:var(--accent)}
+.cta-sub{font-size:16px;color:rgba(255,255,255,0.6);margin-bottom:36px;line-height:1.7}
+.cta-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+
+/* ═══ FAQ ═══ */
+.faq-list{max-width:680px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;gap:8px}
+.faq-item{border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden}
+.faq-item summary{list-style:none;cursor:pointer;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;font-size:14px;font-weight:600;color:var(--text-primary);transition:color 0.2s}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:'+';font-size:18px;color:var(--text-tertiary);transition:transform 0.2s;font-weight:300}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item[open] summary{color:var(--accent)}
+.faq-answer{padding:0 20px 16px;font-size:13px;color:var(--text-secondary);line-height:1.7}
+
+/* ═══ FOOTER ═══ */
+footer{background:var(--bg-warm);border-top:1px solid var(--border-light);padding:60px 0 32px}
+.footer-inner{max-width:var(--max-w);margin:0 auto;padding:0 24px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px}
+.footer-brand{font-weight:700;font-size:16px;letter-spacing:-0.03em;margin-bottom:8px}
+.footer-brand span{color:var(--accent)}
+.footer-desc{font-size:13px;color:var(--text-tertiary);line-height:1.7;max-width:320px}
+.footer-col-title{font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-tertiary);margin-bottom:16px}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-links a{font-size:13px;color:var(--text-secondary);transition:color 0.2s}
+.footer-links a:hover{color:var(--text-primary)}
+.footer-bottom{max-width:var(--max-w);margin:40px auto 0;padding:24px 24px 0;border-top:1px solid var(--border-light);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-copy{font-size:12px;color:var(--text-tertiary)}
+
+/* ═══ CHAT MODAL ═══ */
+.modal-overlay{display:none;position:fixed;inset:0;z-index:500;background:rgba(0,0,0,0.5);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:24px}
+.modal-overlay.open{display:flex}
+.modal-box{background:var(--bg-white);border-radius:var(--radius-xl);width:100%;max-width:440px;padding:32px;box-shadow:var(--shadow-xl);max-height:90vh;overflow-y:auto}
+.modal-title{font-size:20px;font-weight:700;letter-spacing:-0.02em;margin-bottom:8px}
+.modal-sub{font-size:14px;color:var(--text-tertiary);margin-bottom:24px}
+.modal-close{float:right;width:32px;height:32px;border-radius:50%;background:var(--bg-elevated);display:flex;align-items:center;justify-content:center;color:var(--text-tertiary);font-size:16px}
+.modal-close:hover{background:var(--border)}
+.modal-body{display:flex;flex-direction:column;gap:12px}
+.modal-body a.btn{justify-content:center;font-size:14px;font-weight:600;padding:14px;border-radius:var(--radius-md)}
+.modal-input{width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:14px;font-family:var(--font);color:var(--text-primary);outline:none;transition:border-color 0.2s}
+.modal-input:focus{border-color:var(--accent)}
+.modal-input::placeholder{color:var(--text-tertiary)}
+
+/* ═══ RESPONSIVE ═══ */
+@media(min-width:768px){
+  .nav-links{display:flex}
+  .nav-cta{display:inline-flex}
+  .hamburger{display:none}
 }
-#faq .faq-item[open] { border-color: var(--orange); }
-#faq summary {
-  list-style: none;
-  cursor: pointer;
-  padding: 20px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--primary);
+@media(max-width:767px){
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .hero-diagram{max-width:320px}
+  .metrics-grid{grid-template-columns:repeat(2,1fr);gap:16px}
+  .workflow-steps{grid-template-columns:1fr;gap:32px}
+  .workflow-steps::before{display:none}
+  .dashboard-preview{padding:20px;border-radius:var(--radius-lg)}
+  .dashboard-kpi{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr 1fr}
+  .pricing-card.featured{transform:none}
+  section{padding:60px 0}
 }
-#faq summary::-webkit-details-marker { display: none; }
-#faq summary:focus-visible { outline: 2px solid var(--orange); outline-offset: -2px; border-radius: 12px; }
-#faq .faq-icon {
-  flex-shrink: 0;
-  width: 22px; height: 22px;
-  color: var(--orange);
-  transition: transform 0.3s cubic-bezier(0.22,1,0.36,1);
-}
-#faq .faq-item[open] .faq-icon { transform: rotate(45deg); }
-#faq .faq-answer {
-  padding: 0 24px 20px;
-  font-size: 14px;
-  line-height: 1.75;
-  color: #4b5563;
-  max-width: 62ch;
-}
-@media (prefers-reduced-motion: reduce) {
-  #faq .faq-icon { transition: none; }
-}
-@media (max-width: 480px) {
-  #faq summary { padding: 16px 18px; font-size: 14px; }
-  #faq .faq-answer { padding: 0 18px 16px; }
+@media(max-width:480px){
+  :root{--section-py:60px}
+  .footer-inner{grid-template-columns:1fr}
+  .metrics-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-h1{font-size:clamp(26px,8vw,32px)}
+  .btn-lg{padding:12px 24px;font-size:14px}
 }
 </style>
 </head>
 <body>
-<!-- NAVBAR (auto-rendered by nav-footer.js) -->
-<div id="nav-placeholder"></div>
 
-<!-- MOBILE MENU (auto-rendered by nav-footer.js) -->
-<div id="mobile-placeholder"></div>
+<!-- ═══ NAVBAR ═══ -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">aimarketing<span>strategic</span></a>
+    <div class="nav-links">
+      <a href="/">Beranda</a>
+      <a href="/tentang.html">Tentang</a>
+      <a href="/harga.html">Harga</a>
+      <a href="/hasil.html">Hasil</a>
+      <a href="/blog/">Blog</a>
+    </div>
+    <button class="btn btn-accent nav-cta" onclick="openChat()">AI Assessment Gratis</button>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+</nav>
 
-<!-- HERO -->
+<!-- ═══ MOBILE MENU ═══ -->
+<div id="mobile-menu" style="display:none;position:fixed;top:64px;right:16px;width:260px;background:var(--bg-white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px;z-index:200;box-shadow:var(--shadow-xl)">
+  <a href="/" style="display:block;padding:10px 0;font-size:14px;font-weight:500;color:var(--text-primary);border-bottom:1px solid var(--border-light)">Beranda</a>
+  <a href="/tentang.html" style="display:block;padding:10px 0;font-size:14px;font-weight:500;color:var(--text-secondary);border-bottom:1px solid var(--border-light)">Tentang</a>
+  <a href="/harga.html" style="display:block;padding:10px 0;font-size:14px;font-weight:500;color:var(--text-secondary);border-bottom:1px solid var(--border-light)">Harga</a>
+  <a href="/hasil.html" style="display:block;padding:10px 0;font-size:14px;font-weight:500;color:var(--text-secondary);border-bottom:1px solid var(--border-light)">Hasil</a>
+  <a href="/blog/" style="display:block;padding:10px 0;font-size:14px;font-weight:500;color:var(--text-secondary);margin-bottom:12px">Blog</a>
+  <button class="btn btn-accent btn-block" onclick="openChat()" style="padding:12px">AI Assessment Gratis</button>
+</div>
+
+<!-- ═══ HERO ═══ -->
 <section id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-grad1"></div>
-  <div class="hero-grad2"></div>
-  <div class="hero-content fade-in">
-    <div class="hero-badge">
+  <div class="hero-content">
+    <div class="hero-badge stagger-1">
       <span class="hero-badge-dot"></span>
-      <span class="hero-badge-text">AI Revenue Activation</span>
+      <span class="hero-badge-text">AI Business Operating System</span>
     </div>
-    <h1 class="hero-h1">
-      WA Bisnis Anda Lambat Balas Leads?
-      <span>Revenue Bocor Setiap Hari</span>
-    </h1>
-    <p class="hero-sub">Sistem AI Revenue Activation yang kami pakai sendiri. Balas WA dalam 2 detik, follow-up leads otomatis, semua data masuk CRM. Tanpa IT, tanpa karyawan tambahan. Revenue yang bocor, kembali aktif.</p>
-        <p class="hero-tag">Dikembangkan dari praktik langsung — bukan teori</p>
-    <div class="hero-btns">
-              <button class="btn-primary" onclick="trackLead();openChat()"> Konsultasi Gratis 15 Menit</button>
-              <a class="btn-secondary" href="/demo.html">🎮 Coba Demo</a>
-            </div>
-                <div class="hero-checks">
-      <span class="hero-check"><svg class="icon" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Setup dalam 3 hari</span>
-      <span class="hero-check"><svg class="icon" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Support 2 minggu</span>
-      <span class="hero-check"><svg class="icon" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Tanpa kontrak jangka panjang</span>
-    </div>
-    <div class="hero-stats">
-      <div>
-        <div class="hero-stat-label">2 Detik</div>
-        <div class="hero-stat-sub">Response WA</div>
-      </div>
-      <div>
-        <div class="hero-stat-label">100%</div>
-        <div class="hero-stat-sub">Leads Tercatat</div>
-      </div>
-      <div>
-        <div class="hero-stat-label">20+ Jam</div>
-        <div class="hero-stat-sub">Hemat Per Minggu</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SOCIAL PROOF BAR (single, fixed — was duplicated) -->
-<section class="social-proof-bar">
-  <div class="social-proof-inner">
-    <div class="social-proof-item">
-      <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-      <span>Didesain khusus untuk UMKM Indonesia</span>
-    </div>
-    <div class="social-proof-item">
-      <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-      <span>Response time dari 4 jam → 2 detik</span>
-    </div>
-    <div class="social-proof-item">
-      <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-      <span>100% leads tercatat — 0% bocor karena telat follow-up</span>
-    </div>
-  </div>
-</section>
-
-<!-- LIVE DEMO SIMULATION -->
-<section id="demo-simulator" class="section" style="background:#0B1929;border-top:1px solid rgba(255,255,255,.05)">
-  <div class="section-inner">
-    <div class="section-header section-dark">
-      <div class="demo-live-badge">
-        <span class="hero-badge-dot"></span>
-        <span style="font-family:'Orbitron',sans-serif;font-size:10px;font-weight:900;color:var(--orange);letter-spacing:.3em;text-transform:uppercase">● LIVE DEMO SIMULATION</span>
-      </div>
-      <h2 class="section-title" style="color:#fff">Lihat AI Frontliner Bekerja</h2>
-      <p class="section-sub">Simulasi percakapan nyata — persis seperti yang akan terjadi di bisnis Anda</p>
-    </div>
-    <div class="demo-grid">
-      <!-- Phone -->
-      <div style="display:flex;justify-content:center;order:2">
-        <div class="phone-frame">
-          <div class="phone-notch"></div>
-          <div class="phone-header">
-            <div class="phone-avatar">AI</div>
-            <div>
-              <div class="phone-bot-name" id="bot-name">AI Frontliner — Properti</div>
-              <div class="phone-status"><span class="phone-status-dot"></span>online</div>
-            </div>
-          </div>
-          <div class="phone-chat" id="phone-chat">
-            <div class="typing-bubble" id="typing-bubble">
-              <span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>
-            </div>
-          </div>
-          <div class="phone-input">
-            <div class="phone-input-bar"></div>
-            <div class="phone-send">
-              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Controls -->
-      <div style="order:1">
-        <div class="demo-controls">
-          <div class="demo-ind-label">Pilih industri untuk simulasi:</div>
-          <div class="industry-grid">
-            <button class="ind-btn active" data-ind="properti" onclick="selectIndustry(this)">🏠 Properti</button>
-            <button class="ind-btn" data-ind="klinik" onclick="selectIndustry(this)">🏥 Klinik</button>
-            <button class="ind-btn" data-ind="toko" onclick="selectIndustry(this)">🛒 Toko Online</button>
-            <button class="ind-btn" data-ind="b2b" onclick="selectIndustry(this)">🏢 Jasa & Profesional</button>
-          </div>
-          <button class="demo-btn-run" id="demo-run-btn" onclick="runDemo()">▶ Mulai Simulasi</button>
-          <button class="demo-btn-reset" onclick="resetDemo()">↺ Reset Simulasi</button>
-          <div class="demo-checks">
-            <div class="demo-check"><svg class="demo-check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> AI merespons dalam hitungan detik</div>
-            <div class="demo-check"><svg class="demo-check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Kualifikasi leads otomatis 24/7</div>
-            <div class="demo-check"><svg class="demo-check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Tidak perlu admin tambahan</div>
-          </div>
-          <p class="demo-quote">"Ini bukan rekaman — sistem yang sama akan bekerja di bisnis Anda"</p>
-          <button class="demo-install-btn" onclick="openChat()">Pasang di Bisnis Saya →</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- AI FRONTLINER -->
-<section id="ai-frontliner" class="section bg-light" style="border-top:1px solid #e5e7eb">
-  <div class="section-inner">
-    <div class="section-header">
-      <h2 class="section-title">Website Anda Jadi Mesin Akuisisi yang Bekerja 24/7</h2>
-      <p class="section-sub">Website modern bukan brosur digital. Ia harus mampu menangkap leads, menjawab otomatis, mengarahkan calon pelanggan, dan bekerja 24 jam sehari tanpa libur.</p>
-    </div>
-    <div class="cards-3">
-      <div class="card stagger-1">
-        <div class="card-icon card-icon-light">
-          <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
-        </div>
-        <h3 class="card-title text-primary">AI Webchat Frontliner</h3>
-        <div class="ps-block">
-          <div class="ps-label">Masalah</div>
-          <div class="ps-text">Pelanggan datang, bertanya, lalu hilang karena tidak ada yang balas.</div>
-        </div>
-        <div class="ps-block">
-          <div class="ps-label">Sistem</div>
-          <div class="ps-text">AI menjawab otomatis, kualifikasi leads, dan arahkan ke bagian sales dalam 2 detik.</div>
-        </div>
-        <div class="impact-box">
-          <div class="impact-label">Dampak</div>
-          <div class="impact-text">Prospek masuk ke pipeline, bukan berhenti di chat tanpa balasan.</div>
-        </div>
-      </div>
-      <div class="card card-dark stagger-2">
-        <div class="card-icon card-icon-dark">
-          <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2 1 3 3 3h10c2 0 3-1 3-3V7M4 7c0-2 1-3 3-3h10c2 0 3 1 3 3M4 7h16M9 11h6M9 15h4"/></svg>
-        </div>
-        <h3 class="card-title">Website + CRM Intake</h3>
-        <div class="ps-block">
-          <div class="ps-label" style="color:rgba(191,219,254,.4)">Masalah</div>
-          <div class="ps-text" style="color:#dbeafe">Data pelanggan tercecer di WhatsApp dan spreadsheet manual.</div>
-        </div>
-        <div class="ps-block">
-          <div class="ps-label" style="color:rgba(191,219,254,.4)">Sistem</div>
-          <div class="ps-text" style="color:#dbeafe">Form website langsung sinkron ke database dan workflow follow-up otomatis.</div>
-        </div>
-        <div class="impact-box impact-box-dark">
-          <div class="impact-label">Dampak</div>
-          <div class="impact-text">Tidak ada lagi copy-paste data manual.</div>
-        </div>
-      </div>
-      <div class="card stagger-3">
-        <div class="card-icon card-icon-light">
-          <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-2 0-4 1.5-4 4s2 4 4 4 4-1.5 4-4-2-4-4-4zM2 12h2M20 12h2M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-        </div>
-        <h3 class="card-title text-primary">AI Landing Page Conversion</h3>
-        <div class="ps-block">
-          <div class="ps-label">Masalah</div>
-          <div class="ps-text">Traffic masuk dari Instagram/FB tapi tidak jadi prospek karena tidak ada follow-up.</div>
-        </div>
-        <div class="ps-block">
-          <div class="ps-label">Sistem</div>
-          <div class="ps-text">Landing page dengan AI interaction flow dan CTA tracking yang menangkap leads otomatis.</div>
-        </div>
-        <div class="impact-box">
-          <div class="impact-label">Dampak</div>
-          <div class="impact-text">Website berubah menjadi mesin akuisisi yang bekerja 24 jam.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- MODUL BISNIS AUTOPILOT (single section, was duplicated) -->
-<section id="modul" class="section bg-white" style="border-top:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb">
-  <div class="section-inner">
-    <div class="section-header">
-      <h2 class="section-title">Modul Bisnis Autopilot</h2>
-      <p class="section-sub">Sistem siap pakai yang mengotomatiskan bisnis Anda — dari menjaring leads sampai memantau hasilnya. Semua terintegrasi lewat WhatsApp.</p>
-    </div>
-    <div class="cards-3">
-      <div class="card card-rel stagger-1">
-        <div class="card-stripe"></div>
-        <div class="card-icon card-icon-light">
-          <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4h16v4H4zM4 12h16v4H4zM4 20h10"/></svg>
-        </div>
-        <h3 class="card-title text-primary">AI Resepsionis Otomatis</h3>
-                <p class="card-tag">Balas & Kualifikasi Leads 24/7 — Otomatis</p>
-                <p class="card-body">Tidak ada lagi leads yang hilang karena admin sedang tidur atau sibuk. AI penyambut & penyaring chat yang mengambil alih 100% interaksi awal. Diprogram dalam Bahasa Indonesia tanpa sapaan robotik. Komplain diteruskan ke tim teknis, prospek panas langsung dikunci ke CRM.</p>
-      </div>
-      <div class="card card-dark card-rel stagger-2" style="transform:scale(1.02)">
-        <div style="position:absolute;top:0;left:0;right:0;height:4px;background:var(--orange);border-radius:16px 16px 0 0"></div>
-        <div class="card-icon card-icon-dark">
-          <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path stroke-linecap="round" d="M8 21h8M12 17v4"/></svg>
-        </div>
-        <h3 class="card-title">Mesin Follow-Up Otomatis</h3>
-        <p class="card-tag">Data Masuk Sendiri, Follow-Up Jalan Sendiri</p>
-        <p class="card-body" style="color:rgba(191,219,254,.8)">Tidak ada lagi copy-paste data dari WhatsApp ke spreadsheet. Mesin integrasi webhook yang berjalan di latar belakang. Mengeliminasi entri data manual dengan mengekstrak data pelanggan secara instan dan memicu alur follow-up tanpa intervensi manusia.</p>
-      </div>
-      <div class="card card-rel stagger-3">
-        <div class="card-stripe"></div>
-        <div class="card-icon card-icon-light">
-          <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
-        </div>
-        <h3 class="card-title text-primary">Dashboard Kendali Owner</h3>
-        <p class="card-tag">Semua Angka Bisnis Anda, Satu Layar</p>
-        <p class="card-body">Tidak perlu tanya ke tim — semua data bisnis tersedia real-time di genggaman Anda. Papan kendali terpusat yang membaca aliran data dari modul frontliner dan alur kerja otomatis. Menampilkan KPI, aliran kas, dan peringatan operasional secara real-time.</p>
-      </div>
-    </div>
-      </div>
-    </section>
-
-    <div style="text-align:center;padding:0 24px 40px;background:#fff">
-      <a href="/harga.html" class="btn-primary" style="display:inline-flex;align-items:center;gap:12px;padding:18px 40px;font-size:13px;text-decoration:none">Lihat Paket &amp; Harga →</a>
-      <p style="font-size:10px;color:#94a3b8;margin-top:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase">Mulai dari Rp990rb · Garansi uang kembali</p>
-    </div>
-
-    <!-- CARA ADOPSI -->
-<section id="cara-adopsi" class="section bg-white">
-  <div class="section-inner">
-    <div class="section-header">
-      <h2 class="section-title">Cara Membangun Ekosistem Otonom Anda</h2>
-      <p class="section-sub">Transisi mulus menuju operasional tanpa hambatan. Tiga langkah menuju bisnis yang berjalan otomatis.</p>
-    </div>
-    <div class="steps-grid">
-      <div class="stagger-1">
-        <div class="step-num">1</div>
-        <h3 class="step-title">AI Revenue Assessment</h3>
-                <p class="step-body">Kami identifikasi modul mana yang paling krusial untuk menutup kebocoran revenue di bisnis Anda — tanpa sales pitch, hanya analisis. Hasil: laporan rekomendasi yang bisa langsung ditindaklanjuti.</p>
-      </div>
+    <div class="hero-grid">
       <div class="stagger-2">
-        <div class="step-num">2</div>
-        <h3 class="step-title">Integrasi & Pengujian</h3>
-        <p class="step-body">Pemasangan dan penyesuaian sistem tanpa mengganggu operasional bisnis yang sedang berjalan. Selesai dalam 3 hari untuk paket starter.</p>
+        <h1 class="hero-h1">
+          WhatsApp Bisnis Anda Bukan <span class="highlight">Revenue Center?</span>
+        </h1>
+        <p class="hero-sub">Bukan chatbot biasa. Sistem AI yang mengoperasikan WhatsApp, follow-up leads, CRM, dan dashboard bisnis Anda — 24 jam sehari, 7 hari seminggu. Tanpa tambahan staf.</p>
+        <div class="hero-btns">
+          <button class="btn btn-accent btn-lg" onclick="openChat()">AI Assessment Gratis →</button>
+          <a href="/demo.html" class="btn btn-ghost btn-lg">Lihat Demo</a>
+        </div>
+        <p class="hero-tag">Mulai dari Rp990rb · Tidak perlu IT · Garansi uang kembali</p>
       </div>
       <div class="stagger-3">
-        <div class="step-num">3</div>
-        <h3 class="step-title">Otonomi Penuh</h3>
-        <p class="step-body">Sistem mengeksekusi beban kerja harian — balas chat, follow-up leads, catat CRM — menggantikan biaya overhead staf tambahan.</p>
+        <div class="hero-diagram">
+          <div class="diagram-ring r1"></div>
+          <div class="diagram-ring r2"></div>
+          <div class="diagram-ring r3"></div>
+          <div class="diagram-center">
+            <div class="diagram-center-label">AI OS</div>
+            <div class="diagram-center-title">Bisnis Anda</div>
+          </div>
+          <div class="diagram-node n1"><span class="node-dot orange"></span>AI Frontliner</div>
+          <div class="diagram-node n2"><span class="node-dot blue"></span>AI Sales</div>
+          <div class="diagram-node n3"><span class="node-dot green"></span>AI Follow-Up</div>
+          <div class="diagram-node n4"><span class="node-dot purple"></span>AI CRM</div>
+          <div class="diagram-node n5"><span class="node-dot orange"></span>Dashboard</div>
+          <div class="diagram-node n6"><span class="node-dot blue"></span>Analytics</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PRODUK DIGITAL -->
-<section id="produk-digital" class="section bg-white" style="border-top:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb">
-  <div class="section-inner">
-    <div class="section-header">
-      <h2 class="section-title">Produk Digital Siap Pakai</h2>
-      <p class="section-sub">Tools dan panduan praktis hasil riset nyata dari UMKM Indonesia. Bisa langsung diterapkan — tanpa komitmen bulanan.</p>
+<!-- ═══ METRICS ═══ -->
+<div class="metrics-bar fade-in">
+  <div class="metrics-grid">
+    <div class="metric-item"><div class="metric-value"><span>2</span> Detik</div><div class="metric-label">Response WA</div></div>
+    <div class="metric-item"><div class="metric-value"><span>100</span>%</div><div class="metric-label">Leads Tercatat</div></div>
+    <div class="metric-item"><div class="metric-value"><span>20+</span> Jam</div><div class="metric-label">Hemat Per Minggu</div></div>
+    <div class="metric-item"><div class="metric-value"><span>3</span> Hari</div><div class="metric-label">Setup Selesai</div></div>
+  </div>
+</div>
+
+<!-- ═══ AI WORKFORCE ═══ -->
+<section>
+  <div class="section-header fade-up">
+    <div class="section-label">AI Workforce</div>
+    <h2 class="section-title">Tim AI yang Bekerja <span class="highlight">24/7</span> untuk Bisnis Anda</h2>
+    <p class="section-sub">Bukan chatbot kaku. Enam AI Employee dengan peran spesifik yang bekerja sebagai satu sistem terpadu.</p>
+  </div>
+  <div class="workforce-grid">
+    <div class="employee-card orange stagger-1">
+      <div class="employee-avatar orange">🤖</div>
+      <div class="employee-name">AI Frontliner</div>
+      <div class="employee-role">RESEPSIONIS DIGITAL</div>
+      <div class="employee-desc">Menyambut, menyaring, dan menjawab pertanyaan pelanggan di WhatsApp 24 jam. Komplain ke tim teknis, prospek panas ke sales.</div>
+      <div class="employee-status">Active — 24/7</div>
     </div>
-    <div style="display:flex;gap:24px;flex-wrap:wrap;justify-content:center">
-      <div class="card stagger-1" style="flex:1 1 400px;max-width:520px">
-        <div class="card-icon card-icon-light" style="background:rgba(245,124,0,.1)">
-          <svg width="28" height="28" fill="none" stroke="#F57C00" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+    <div class="employee-card blue stagger-2">
+      <div class="employee-avatar blue">📊</div>
+      <div class="employee-name">AI Sales</div>
+      <div class="employee-role">KUALIFIKASI & CLOSING</div>
+      <div class="employee-desc">Mengkualifikasi leads, menjawab pertanyaan harga & jadwal, dan mengarahkan prospek panas ke booking. Bekerja seperti sales senior.</div>
+      <div class="employee-status">Active — 24/7</div>
+    </div>
+    <div class="employee-card green stagger-3">
+      <div class="employee-avatar green">📧</div>
+      <div class="employee-name">AI Follow-Up</div>
+      <div class="employee-role">LEADS RETARGETING</div>
+      <div class="employee-desc">Follow-up otomatis ke leads yang belum balas dalam 1 jam, 24 jam, dan 3 hari. Pola terbukti naikkan closing rate 3x lipat.</div>
+      <div class="employee-status">Active — 24/7</div>
+    </div>
+    <div class="employee-card purple stagger-4">
+      <div class="employee-avatar purple">📋</div>
+      <div class="employee-name">AI CRM</div>
+      <div class="employee-role">DATA & PIPELINE</div>
+      <div class="employee-desc">Mencatat setiap interaksi pelanggan ke CRM otomatis. Dari leads pertama sampai closing — semua tercatat, tidak ada yang terlewat.</div>
+      <div class="employee-status">Active — 24/7</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DASHBOARD PREVIEW ═══ -->
+<section class="section-dark">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="section-label" style="color:rgba(255,255,255,0.4)">Owner Dashboard</div>
+      <h2 class="section-title" style="color:#fff">Semua Angka Bisnis Anda, <span class="highlight">Satu Layar</span></h2>
+      <p class="section-sub" style="color:rgba(255,255,255,0.5)">Dashboard real-time yang menunjukkan performa bisnis, pipeline leads, dan revenue — tanpa perlu tanya ke tim.</p>
+    </div>
+    <div class="dashboard-preview stagger-1">
+      <div class="dashboard-header">
+        <div class="dashboard-dots">
+          <span class="dashboard-dot red"></span>
+          <span class="dashboard-dot yellow"></span>
+          <span class="dashboard-dot green"></span>
         </div>
-        <h3 class="card-title text-primary">Playbook Follow-Up WA yang Konversi</h3>
-        <p class="card-tag" style="color:var(--orange);font-weight:700;font-size:20px;margin:8px 0">Rp249.000</p>
-        <p class="card-body">5 strategi + 20 template WA follow-up siap copy-paste + kalkulator leads hilang. Dirangkum dari riset 42+ UMKM — ubah follow-up dari acak jadi sistem yang menutup penjualan.</p>
-        <div style="display:flex;align-items:center;gap:8px;margin-top:14px;padding-top:14px;border-top:1px solid #e5e7eb">
-          <span style="font-size:11px;font-weight:700;color:#16a34a;letter-spacing:0.04em">Hasil Nyata</span>
-          <span style="font-size:11px;color:#6b7280">· Bonus Notion tracker · Update gratis seumur hidup</span>
-        </div>
-        <a href="https://wa.me/6281907552758?text=Halo%2C%20saya%20tertarik%20Playbook%20Follow-Up%20WA.%20Bisa%20info%20lebih%20lanjut%3F" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px;padding:12px 20px;background:linear-gradient(135deg,#F57C00,#EA580C);color:#fff;border-radius:10px;font-weight:700;font-size:14px;font-family:inherit;text-decoration:none">Beli via WhatsApp →</a>
+        <div class="dashboard-title">CEO Dashboard — Real-Time</div>
+      </div>
+      <div class="dashboard-kpi">
+        <div class="kpi-card"><div class="kpi-label">Total Leads (24 jam)</div><div class="kpi-value">47<span class="trend-up">↑ 23%</span></div></div>
+        <div class="kpi-card"><div class="kpi-label">Respons Rate</div><div class="kpi-value">98.3%<span class="trend-up">↑ 12%</span></div></div>
+        <div class="kpi-card"><div class="kpi-label">Konversi ke Booking</div><div class="kpi-value">8<span class="trend-up">↑ 5x</span></div></div>
+      </div>
+      <table class="dashboard-table">
+        <thead><tr><th>Prospek</th><th>Sumber</th><th>Status</th><th>Last Contact</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr><td>Sari Beauty Clinic</td><td>WA Chat</td><td><span class="status active">● Hot</span></td><td>2 menit lalu</td><td>Booking</td></tr>
+          <tr><td>Studio 28 Fitness</td><td>Website</td><td><span class="status pending">● Follow-Up</span></td><td>1 jam lalu</td><td>Remind</td></tr>
+          <tr><td>Klinik dr. Amalia</td><td>Instagram</td><td><span class="status won">● Won</span></td><td>3 jam lalu</td><td>Invoice</td></tr>
+          <tr><td>Warung Sehat Catering</td><td>WA Chat</td><td><span class="status pending">● Baru</span></td><td>5 menit lalu</td><td>Qualify</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HOW IT WORKS ═══ -->
+<section class="section-warm">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="section-label">Cara Kerja</div>
+      <h2 class="section-title">Dari Chat ke Closing dalam <span class="highlight">3 Langkah</span></h2>
+      <p class="section-sub">Tanpa coding, tanpa instalasi rumit. Kami setup dalam 3 hari, Anda tinggal terima hasilnya.</p>
+    </div>
+    <div class="workflow-steps">
+      <div class="workflow-step stagger-1">
+        <div class="workflow-num">1</div>
+        <div class="workflow-title">AI Revenue Assessment</div>
+        <div class="workflow-desc">Kami audit WhatsApp bisnis Anda — temukan pola leads yang hilang, bottleneck respons, dan celah revenue yang bisa langsung ditutup.</div>
+      </div>
+      <div class="workflow-step stagger-2">
+        <div class="workflow-num">2</div>
+        <div class="workflow-title">Setup & Integrasi</div>
+        <div class="workflow-desc">Kami pasang AI Workforce ke WhatsApp, website, dan CRM Anda. Selesai dalam 3 hari tanpa mengganggu operasional bisnis.</div>
+      </div>
+      <div class="workflow-step stagger-3">
+        <div class="workflow-num">3</div>
+        <div class="workflow-title">Revenue Activation</div>
+        <div class="workflow-desc">Sistem berjalan 24/7. AI menangani leads, follow-up, dan data — Anda fokus pada pengembangan bisnis.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FAQ -->
-<section id="faq" class="section bg-light" style="border-top:1px solid #e5e7eb">
-  <div class="section-inner">
-    <div class="section-header">
+<!-- ═══ FEATURES ═══ -->
+<section>
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="section-label">Fitur Sistem</div>
+      <h2 class="section-title">Bukan Sekadar Chatbot — Ini <span class="highlight">Sistem Operasi Bisnis</span></h2>
+      <p class="section-sub">Modul yang saling terintegrasi membentuk satu ekosistem AI yang mengelola seluruh komunikasi bisnis Anda.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card stagger-1"><div class="feature-icon">🤖</div><div class="feature-title">AI WhatsApp Frontliner</div><div class="feature-desc">Balas otomatis, kualifikasi leads, dan arahkan chat — 24 jam, 7 hari. Bahasa Indonesia natural, bukan robotik.</div></div>
+      <div class="feature-card stagger-2"><div class="feature-icon">🔄</div><div class="feature-title">Follow-Up Otomatis</div><div class="feature-desc">Leads yang tidak balas dalam 1 jam akan di-follow-up otomatis. Pola 3 sentuhan yang terbukti naikkan closing rate.</div></div>
+      <div class="feature-card stagger-3"><div class="feature-icon">📊</div><div class="feature-title">CRM Real-Time</div><div class="feature-desc">Setiap chat, leads, dan transaksi tercatat otomatis. Tidak ada lagi copy-paste ke spreadsheet manual.</div></div>
+      <div class="feature-card stagger-1"><div class="feature-icon">📱</div><div class="feature-title">Dashboard Owner</div><div class="feature-desc">Pantau leads, konversi, dan revenue real-time dari HP. Tanpa perlu tanya ke tim.</div></div>
+      <div class="feature-card stagger-2"><div class="feature-icon">🔗</div><div class="feature-title">Integrasi Multi-Channel</div><div class="feature-desc">WhatsApp, website, Instagram, Facebook — semua masuk ke satu pipeline yang dikelola AI.</div></div>
+      <div class="feature-card stagger-3"><div class="feature-icon">🛡️</div><div class="feature-title">Data Aman & Private</div><div class="feature-desc">Data pelanggan Anda tidak dijual, tidak dibagikan. Sesuai standar kebijakan privasi Indonesia.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PRICING ═══ -->
+<section class="section-warm" id="pricing">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="section-label">Harga</div>
+      <h2 class="section-title">Mulai dari <span class="highlight">Rp990rb</span></h2>
+      <p class="section-sub">Satu kali setup, tanpa kontrak jangka panjang. Bayar bulanan hanya untuk infrastruktur.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card stagger-1">
+        <div class="pricing-name">STARTER</div>
+        <div class="pricing-sub">AI Frontliner + Website</div>
+        <div class="pricing-amount">Rp990<span>rb</span></div>
+        <div class="pricing-period">sekali setup · Rp299rb/bln</div>
+        <ul class="pricing-features">
+          <li>AI WhatsApp Frontliner 24/7</li>
+          <li>Website AI-ready</li>
+          <li>Lead Capture Otomatis</li>
+          <li>Setup 3 Hari</li>
+          <li>Support 2 Minggu</li>
+        </ul>
+        <button class="btn btn-primary btn-block" onclick="openChat()">Pilih Paket</button>
+      </div>
+      <div class="pricing-card featured stagger-2">
+        <div class="pricing-badge">PALING LARIS</div>
+        <div class="pricing-name">AUTOPILOT</div>
+        <div class="pricing-sub">Frontliner + CRM + Follow-Up</div>
+        <div class="pricing-amount">Rp2.5<span>jt</span></div>
+        <div class="pricing-period">sekali setup · Rp499rb/bln</div>
+        <ul class="pricing-features">
+          <li>Semua fitur Starter</li>
+          <li>AI Follow-Up Otomatis</li>
+          <li>CRM Pipeline Management</li>
+          <li>Dashboard Owner Real-Time</li>
+          <li>Prioritas Support</li>
+        </ul>
+        <button class="btn btn-accent btn-block" onclick="openChat()">Pilih Paket</button>
+      </div>
+      <div class="pricing-card stagger-3">
+        <div class="pricing-name">CUSTOM</div>
+        <div class="pricing-sub">AI Business Operating System</div>
+        <div class="pricing-amount">Custom</div>
+        <div class="pricing-period">konsultasi kebutuhan</div>
+        <ul class="pricing-features">
+          <li>Semua fitur Autopilot</li>
+          <li>AI Sales Department</li>
+          <li>Multi-Channel Integration</li>
+          <li>Custom Workflow</li>
+          <li>Dedicated Support</li>
+        </ul>
+        <button class="btn btn-primary btn-block" onclick="openChat()">Hubungi Kami</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section>
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="section-label">FAQ</div>
       <h2 class="section-title">Pertanyaan yang Sering Ditanyakan</h2>
-      <p class="section-sub">Hal-hal yang biasanya ingin dipastikan pemilik bisnis sebelum mulai. Masih ada yang mengganjal? <a href="#faq" onclick="trackLead();openChat();return false" style="color:#c2410c;font-weight:600;text-decoration:underline;text-underline-offset:2px">Tanya langsung lewat WhatsApp.</a></p>
     </div>
     <div class="faq-list">
-      <details class="faq-item stagger-1">
-        <summary>Berapa biaya untuk memulai?
-                  <svg class="faq-icon" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 5v14M5 12h14"/></svg>
-                </summary>
-                <div class="faq-answer">Mulai dari Rp990rb (sekali bayar) plus infrastruktur Rp299rb/bulan. Tidak ada biaya tersembunyi dan tidak ada kontrak jangka panjang — Anda bisa berhenti kapan saja. Ingin tahu modul mana yang paling cocok untuk bisnis Anda? Kami bisa bantu cek gratis lewat AI Revenue Assessment.</div>
-      </details>
-      <details class="faq-item stagger-2">
-        <summary>Berapa lama proses setup sampai sistem berjalan?
-          <svg class="faq-icon" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 5v14M5 12h14"/></svg>
-        </summary>
-        <div class="faq-answer">Paket starter diselesaikan dalam 3 hari kerja, tanpa mengganggu operasional bisnis yang sedang berjalan. Kami pasang, uji, lalu serahkan sistem yang sudah siap pakai.</div>
-      </details>
-      <details class="faq-item stagger-3">
-        <summary>Apakah saya butuh tim IT atau harus paham teknis?
-          <svg class="faq-icon" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 5v14M5 12h14"/></svg>
-        </summary>
-        <div class="faq-answer">Tidak. Kami yang memasang, mengonfigurasi, dan merawat sistemnya. Anda cukup menerima hasilnya lewat WhatsApp seperti biasa — tanpa perlu belajar tools baru atau menambah karyawan.</div>
-      </details>
-      <details class="faq-item">
-        <summary>Bagaimana jika sistemnya tidak berjalan sesuai harapan?
-          <svg class="faq-icon" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 5v14M5 12h14"/></svg>
-        </summary>
-        <div class="faq-answer">Kami perbaiki hingga berjalan sesuai spesifikasi yang disepakati di awal. Jika tetap tidak sesuai, biaya setup dikembalikan 100% — itu garansi kami.</div>
-      </details>
-      <details class="faq-item">
-        <summary>Apakah bisnis saya cocok dengan sistem ini?
-          <svg class="faq-icon" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 5v14M5 12h14"/></svg>
-        </summary>
-        <div class="faq-answer">Cocok untuk UMKM yang mengandalkan WhatsApp untuk menjaring leads dan melayani pelanggan — F&B, klinik, retail, jasa, properti, dan lainnya. Saat konsultasi gratis, kami cek dulu apakah sistem ini benar-benar relevan untuk bisnis Anda.</div>
-      </details>
-      <details class="faq-item">
-        <summary>Apakah data pelanggan saya aman?
-          <svg class="faq-icon" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 5v14M5 12h14"/></svg>
-        </summary>
-        <div class="faq-answer">Data Anda tidak dijual dan tidak dibagikan ke pihak ketiga, serta disimpan sesuai kebijakan privasi yang berlaku.</div>
-      </details>
+      <details class="faq-item"><summary>Berapa biaya untuk memulai?</summary><div class="faq-answer">Mulai dari Rp990rb (sekali bayar) plus infrastruktur Rp299rb/bulan. Tidak ada biaya tersembunyi dan tidak ada kontrak jangka panjang — Anda bisa berhenti kapan saja.</div></details>
+      <details class="faq-item"><summary>Apakah saya butuh tim IT?</summary><div class="faq-answer">Tidak. Kami yang memasang, mengonfigurasi, dan merawat sistemnya. Anda cukup terima hasilnya lewat WhatsApp seperti biasa.</div></details>
+      <details class="faq-item"><summary>Berapa lama proses setup?</summary><div class="faq-answer">Paket starter selesai dalam 3 hari kerja, tanpa mengganggu operasional bisnis yang sedang berjalan.</div></details>
+      <details class="faq-item"><summary>Bisnis saya cocok dengan sistem ini?</summary><div class="faq-answer">Cocok untuk UMKM yang mengandalkan WhatsApp — F&B, klinik, retail, jasa, properti. Saat AI Assessment gratis, kami cek dulu apakah cocok.</div></details>
+      <details class="faq-item"><summary>Bagaimana jika tidak sesuai harapan?</summary><div class="faq-answer">Kami perbaiki hingga sesuai spesifikasi. Jika tetap tidak, biaya setup dikembalikan 100% — itu garansi kami.</div></details>
+      <details class="faq-item"><summary>Apakah data pelanggan saya aman?</summary><div class="faq-answer">Data Anda tidak dijual dan tidak dibagikan ke pihak ketiga, serta disimpan sesuai kebijakan privasi yang berlaku.</div></details>
     </div>
   </div>
 </section>
 
-<!-- CTA FINAL -->
-<section id="screening" class="cta-final">
-  <div class="cta-final-bg"></div>
-  <div class="cta-final-inner">
-    <h2 class="cta-final-title">Gratis: <span>AI Revenue Screening</span> 15 Menit</h2>
-        <p class="cta-final-sub">Kami temukan 1 celah revenue terbesar di WhatsApp bisnis Anda. Tanpa sales pitch, tanpa komitmen. Hanya insight yang bisa langsung Anda praktekkan.</p>
-    <div style="display:flex;flex-direction:column;align-items:center;gap:24px">
-      <button class="btn-chat" onclick="trackLead();openChat()">
-        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
-        Jadwalkan Demo Gratis
-      </button>
-      <a href="https://wa.me/6281907552758" class="cta-phone">0819-0755-2758</a>
+<!-- ═══ CTA ═══ -->
+<section class="cta-section">
+  <div class="cta-inner fade-up">
+    <div class="tag" style="margin-bottom:20px;display:inline-flex">GRATIS — TANPA COMMITMENT</div>
+    <h2 class="cta-title">AI Revenue Assessment <span class="highlight">15 Menit</span></h2>
+    <p class="cta-sub">Kami temukan 1 celah revenue terbesar di WhatsApp bisnis Anda. Tanpa sales pitch, tanpa komitmen. Hanya insight yang bisa langsung Anda praktekkan.</p>
+    <div class="cta-btns">
+      <button class="btn btn-accent btn-lg" onclick="openChat()">Jadwalkan AI Assessment →</button>
+      <a href="https://wa.me/6281907552758" class="btn btn-ghost btn-lg" style="color:#fff;border-color:rgba(255,255,255,0.2);background:rgba(255,255,255,0.05)">0819-0755-2758</a>
     </div>
-    <p class="cta-note">Respon dalam 1×24 jam · Konsultasi gratis · Tanpa komitmen</p>
+    <p style="font-size:11px;color:rgba(255,255,255,0.4);margin-top:20px">Respon dalam 1×24 jam · Gratis · Tanpa komitmen</p>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ═══ FOOTER ═══ -->
 <footer>
   <div class="footer-inner">
     <div>
-      <p class="footer-brand-name">AI Marketing Strategic</p>
-            <p class="footer-brand-sub">AI Revenue Activation untuk UMKM Indonesia. Bukan sekadar chatbot — sistem AI yang mengubah WhatsApp bisnis Anda jadi mesin revenue 24/7.</p>
-      <div class="footer-socials">
-        <button class="footer-social" onclick="openChat()" aria-label="Chat">
-          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
-        </button>
-        <a class="footer-social" href="https://www.linkedin.com/company/aimarketingstrategic" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                  <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-                </a>
-                <!-- FOOTER (auto-rendered by nav-footer.js) -->
-        <div id="footer-placeholder"></div>
-              </div>
-            </div>
-          </div>
-        </footer>
+      <div class="footer-brand">aimarketing<span>strategic</span></div>
+      <p class="footer-desc">AI Business Operating System untuk UMKM Indonesia. Bukan chatbot biasa — sistem AI yang mengoperasikan WhatsApp, follow-up, CRM, dan dashboard bisnis Anda 24/7.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Menu</div>
+      <ul class="footer-links">
+        <li><a href="/">Beranda</a></li>
+        <li><a href="/tentang.html">Tentang</a></li>
+        <li><a href="/harga.html">Harga</a></li>
+        <li><a href="/hasil.html">Hasil</a></li>
+        <li><a href="/blog/">Blog</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Produk</div>
+      <ul class="footer-links">
+        <li><a href="/produk/follow-up-playbook.html">Playbook WA</a></li>
+        <li><a href="/harga.html">AI Frontliner</a></li>
+        <li><a href="/harga.html">AI Sales Department</a></li>
+        <li><a href="/demo.html">Coba Demo</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Kontak</div>
+      <ul class="footer-links">
+        <li><a href="https://wa.me/6281907552758">0819-0755-2758</a></li>
+        <li><a href="mailto:hallo@aimarketingstrategic.com">hallo@aimarketingstrategic.com</a></li>
+        <li><a href="/kontak.html">Konsultasi Gratis</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 aimarketingstrategic.com</p>
+    <div style="display:flex;gap:24px">
+      <a href="/privacy-policy.html" style="font-size:11px;color:var(--text-tertiary)">Privacy</a>
+      <button onclick="openModal('terms-modal')" style="font-size:11px;color:var(--text-tertiary);background:none;border:none;cursor:pointer">Terms</button>
+    </div>
+  </div>
+</footer>
 
-        <!-- CHAT MODAL -->
+<!-- ═══ CHAT MODAL ═══ -->
 <div class="modal-overlay" id="chat-modal">
-  <div class="modal-box modal-chat-box" style="max-width:480px">
-    <div class="modal-header">
-      <div>
-        <p class="modal-header-badge">AI Marketing Strategic</p>
-        <h3 class="modal-header-title">Konsultasi Gratis 15 Menit</h3>
-        <p class="modal-header-sub">Ceritakan kondisi bisnis Anda — kami kasih rekomendasi modul AI yang paling cepat berdampak.</p>
-      </div>
-      <button class="modal-close" onclick="closeModal('chat-modal')">✕</button>
-    </div>
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('chat-modal')">✕</button>
+    <div class="modal-title">AI Assessment Gratis</div>
+    <p class="modal-sub">Ceritakan kondisi bisnis Anda — kami temukan 1 celah revenue terbesar di WhatsApp Anda.</p>
     <div class="modal-body">
-      <div style="display:flex;flex-direction:column;gap:10px">
-        <a href="https://wa.me/6281907552758" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:14px;padding:16px;background:#25D366;color:#fff;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none">
-          <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.822 11.822 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-          Chat via WhatsApp
-        </a>
-        <a href="mailto:hallo@aimarketingstrategic.com" style="display:flex;align-items:center;gap:14px;padding:16px;background:rgba(11,42,74,.05);color:var(--primary);border-radius:12px;font-weight:700;font-size:15px;justify-content:center">
-          hallo@aimarketingstrategic.com
-        </a>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:8px;margin-top:16px">
-        <p style="font-size:12px;color:#6b7280;font-weight:600;text-align:center">Atau tinggalkan kontak, kami hubungi balik:</p>
-        <input type="text" id="chat-nama" placeholder="Nama Anda" style="width:100%;padding:12px 14px;border:1px solid #e5e7eb;border-radius:8px;font-size:14px;font-family:inherit">
-        <input type="tel" id="chat-wa" placeholder="No. WhatsApp (08xx)" style="width:100%;padding:12px 14px;border:1px solid #e5e7eb;border-radius:8px;font-size:14px;font-family:inherit">
-        <button onclick="trackLead();var n=document.getElementById('chat-nama').value;var w=document.getElementById('chat-wa').value;var msg=encodeURIComponent('Halo, saya '+n+(w?' (WA: '+w+')':'')+' ingin konsultasi sistem AI.');window.open('https://wa.me/6281907552758?text='+msg,'_blank');closeModal('chat-modal')" style="width:100%;padding:14px;background:linear-gradient(135deg,#F57C00,#EA580C);color:#fff;border:none;border-radius:10px;font-weight:700;font-size:15px;font-family:inherit;cursor:pointer;margin-top:4px">Kirim & Buka WhatsApp →</button>
+      <a href="https://wa.me/6281907552758" class="btn btn-accent" target="_blank" rel="noopener" style="justify-content:center;background:#25D366">💬 Chat via WhatsApp</a>
+      <a href="mailto:hallo@aimarketingstrategic.com" class="btn btn-ghost" style="justify-content:center">✉️ hallo@aimarketingstrategic.com</a>
+      <div style="border-top:1px solid var(--border-light);padding-top:16px;margin-top:8px">
+        <p style="font-size:12px;color:var(--text-tertiary);text-align:center;margin-bottom:12px">Atau tinggalkan kontak:</p>
+        <input type="text" class="modal-input" id="chat-nama" placeholder="Nama Anda">
+        <input type="tel" class="modal-input" id="chat-wa" placeholder="No. WhatsApp (08xx)" style="margin-top:8px">
+        <button onclick="submitLead()" class="btn btn-primary btn-block" style="margin-top:12px;justify-content:center">Kirim & Buka WhatsApp →</button>
       </div>
     </div>
   </div>
 </div>
 
+<!-- ═══ TERMS MODAL ═══ -->
 <div class="modal-overlay" id="terms-modal">
-  <div class="modal-box modal-terms-box" style="max-width:640px">
-    <div class="modal-header">
-      <h3 class="modal-header-title">Syarat & Ketentuan</h3>
-      <button class="modal-close" onclick="closeModal('terms-modal')">✕</button>
-    </div>
-    <div class="modal-body">
-      <div style="font-size:14px;color:#374151;line-height:1.8">
-        <p style="font-weight:700;color:#0B2A4A;margin-bottom:8px">1. Layanan</p>
-        <p style="margin-bottom:16px">AI Marketing Strategic menyediakan layanan pembuatan website AI-ready, setup chatbot automation, dan konsultasi sistem bisnis untuk UMKM Indonesia.</p>
-        <p style="font-weight:700;color:#0B2A4A;margin-bottom:8px">2. Biaya & Pembayaran</p>
-        <p style="margin-bottom:16px">Biaya setup dibayar sekali di awal. Biaya infrastruktur bulanan dikenakan terpisah. Tidak ada biaya tersembunyi dan tidak ada kontrak jangka panjang — klien dapat berhenti berlangganan kapan saja.</p>
-        <p style="font-weight:700;color:#0B2A4A;margin-bottom:8px">3. Garansi</p>
-        <p style="margin-bottom:16px">Setup standar diselesaikan dalam 3 hari kerja. Jika sistem tidak berjalan sesuai spesifikasi tertulis, kami perbaiki hingga berjalan atau uang setup dikembalikan 100%.</p>
-        <p style="font-weight:700;color:#0B2A4A;margin-bottom:8px">4. Data & Privasi</p>
-        <p style="margin-bottom:16px">Data klien tidak dijual, tidak dibagikan ke pihak ketiga, dan disimpan sesuai kebijakan privasi yang berlaku. Silakan baca <a href="/privacy-policy.html" target="_blank" style="color:var(--orange)">Kebijakan Privasi</a> untuk detail.</p>
-        <p style="font-weight:700;color:#0B2A4A;margin-bottom:8px">5. Dukungan</p>
-        <p style="margin-bottom:8px">Kami memberikan dukungan 2 minggu setelah sistem live untuk perbaikan bug, penyesuaian flow AI, dan konsultasi WhatsApp.</p>
-        <p style="font-size:12px;color:#9ca3af;margin-top:20px">Terakhir diperbarui: Juli 2026</p>
-      </div>
+  <div class="modal-box" style="max-width:560px">
+    <button class="modal-close" onclick="closeModal('terms-modal')">✕</button>
+    <div class="modal-title" style="margin-bottom:16px">Syarat & Ketentuan</div>
+    <div style="font-size:13px;color:var(--text-secondary);line-height:1.8;max-height:60vh;overflow-y:auto">
+      <p style="font-weight:600;color:var(--text-primary);margin-bottom:8px">1. Layanan</p>
+      <p style="margin-bottom:16px">AI Marketing Strategic menyediakan layanan AI Business Operating System untuk UMKM Indonesia — termasuk chatbot WhatsApp, CRM, follow-up otomatis, dan dashboard.</p>
+      <p style="font-weight:600;color:var(--text-primary);margin-bottom:8px">2. Biaya & Pembayaran</p>
+      <p style="margin-bottom:16px">Biaya setup dibayar sekali di awal. Biaya infrastruktur bulanan dikenakan terpisah. Tidak ada biaya tersembunyi dan tidak ada kontrak jangka panjang.</p>
+      <p style="font-weight:600;color:var(--text-primary);margin-bottom:8px">3. Garansi</p>
+      <p style="margin-bottom:16px">Setup standar diselesaikan dalam 3 hari kerja. Jika sistem tidak berjalan sesuai spesifikasi tertulis, uang setup dikembalikan 100%.</p>
+      <p style="font-weight:600;color:var(--text-primary);margin-bottom:8px">4. Data & Privasi</p>
+      <p style="margin-bottom:16px">Data klien tidak dijual, tidak dibagikan ke pihak ketiga, dan disimpan sesuai kebijakan privasi yang berlaku.</p>
+      <p style="font-size:11px;color:var(--text-tertiary);margin-top:16px">Terakhir diperbarui: Juli 2026</p>
     </div>
   </div>
 </div>
 
-<button id="scroll-top" onclick="scrollTop()" aria-label="Scroll to top">
-  <svg class="icon" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
-</button>
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=GA4_ID"></script>
+<!-- ═══ SCRIPTS ═══ -->
 <script>
-window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','GA4_ID');
-</script>
+function toggleMenu() {
+  var m = document.getElementById('mobile-menu');
+  m.style.display = m.style.display === 'none' ? 'block' : 'none';
+}
+function openModal(id) { document.getElementById(id).classList.add('open'); }
+function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+function openChat() { openModal('chat-modal'); }
+function submitLead() {
+  var n = document.getElementById('chat-nama').value;
+  var w = document.getElementById('chat-wa').value;
+  var msg = encodeURIComponent('Halo, saya ' + n + (w ? ' (WA: ' + w + ')' : '') + ' ingin jadwalkan AI Revenue Assessment.');
+  window.open('https://wa.me/6281907552758?text=' + msg, '_blank');
+  closeModal('chat-modal');
+}
+function trackLead() { /* placeholder for analytics */ }
 
-<!-- Reveal observer for scroll-triggered animations -->
-<script>
+// Close modals on overlay click
+document.querySelectorAll('.modal-overlay').forEach(function(el) {
+  el.addEventListener('click', function(e) {
+    if (e.target === this) this.classList.remove('open');
+  });
+});
+
+// Close mobile menu on outside click
+document.addEventListener('click', function(e) {
+  var menu = document.getElementById('mobile-menu');
+  if (menu.style.display === 'block' && !menu.contains(e.target) && !e.target.closest('.hamburger')) {
+    menu.style.display = 'none';
+  }
+});
+
+// Reveal observer for scroll animations
 (function() {
-  var els = document.querySelectorAll('.reveal');
+  var els = document.querySelectorAll('.fade-up, .stagger-1, .stagger-2, .stagger-3, .stagger-4');
   if (els.length) {
     var obs = new IntersectionObserver(function(entries) {
       entries.forEach(function(e) {
         if (e.isIntersecting) {
-          e.target.classList.add('visible');
+          e.target.style.animationPlayState = 'running';
           obs.unobserve(e.target);
         }
       });
-    }, { threshold: 0.15 });
-    els.forEach(function(el) { obs.observe(el); });
+    }, { threshold: 0.1 });
+    els.forEach(function(el) { el.style.animationPlayState = 'paused'; obs.observe(el); });
   }
 })();
 </script>
-
-<script src="/js/script.js"></script>
-<script src="/js/nav-footer.js"></script>
 </body>
 </html>
