@@ -92,7 +92,48 @@ footer{background:var(--bg-warm);border-top:1px solid var(--border-light);paddin
 .footer-bottom{max-width:var(--max-w);margin:40px auto 0;padding:24px 24px 0;border-top:1px solid var(--border-light);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
 .footer-copy{font-size:12px;color:var(--text-tertiary)}
 .modal-iframe{width:100%;height:480px;border:none;border-radius:0 0 var(--radius-xl) var(--radius-xl);display:block}
-@media(max-width:767px){section{padding:60px 0}.metrics-grid{grid-template-columns:1fr}.footer-inner{grid-template-columns:1fr 1fr}}
+
+/* Demo Simulator */
+.demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;max-width:1100px;margin:0 auto}
+.phone-frame{width:280px;height:580px;background:#1a1a2e;border-radius:44px;border:10px solid #0F172A;box-shadow:0 50px 100px rgba(0,0,0,.5);position:relative;overflow:hidden;margin:0 auto}
+.phone-notch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:80px;height:24px;background:#0F172A;border-radius:0 0 16px 16px;z-index:10}
+.phone-header{background:#1f2c34;padding:12px 16px;padding-top:36px;display:flex;align-items:center;gap:12px;position:relative;z-index:5}
+.phone-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#f57c00,#0a0a0b);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;color:#fff;border:1px solid rgba(255,255,255,.2);flex-shrink:0}
+.phone-bot-name{color:#fff;font-weight:700;font-size:13px;line-height:1.2}
+.phone-status{display:flex;align-items:center;gap:6px;font-size:10px;color:#25d366;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-top:2px}
+.phone-status-dot{width:6px;height:6px;border-radius:50%;background:#25d366}
+.phone-chat{height:calc(100% - 120px);background:#0b141a;padding:16px;overflow-y:auto;display:flex;flex-direction:column;gap:10px;scroll-behavior:smooth}
+.phone-chat::-webkit-scrollbar{display:none}
+.chat-msg{max-width:85%;padding:10px 14px;border-radius:16px;font-size:12px;line-height:1.6;font-weight:400;white-space:pre-wrap}
+.chat-msg.bot{align-self:flex-start;background:#2a3942;color:#fff;border-top-left-radius:4px}
+.chat-msg.user{align-self:flex-end;background:#005c4b;color:#fff;border-top-right-radius:4px}
+.chat-time{font-size:8px;opacity:.35;text-align:right;margin-top:4px;letter-spacing:.1em}
+.typing-bubble{align-self:flex-start;background:#1f2c34;padding:10px 14px;border-radius:16px;border-top-left-radius:4px;display:none;gap:4px}
+.typing-bubble.show{display:flex}
+.typing-dot{width:6px;height:6px;background:#9ca3af;border-radius:50%;animation:bounce .6s infinite}
+.typing-dot:nth-child(2){animation-delay:.2s}
+.typing-dot:nth-child(3){animation-delay:.4s}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.phone-input{position:absolute;bottom:0;left:0;right:0;padding:12px;background:#0b141a;border-top:1px solid rgba(255,255,255,.05);display:flex;align-items:center;gap:8px;z-index:5}
+.phone-input-bar{flex:1;height:36px;background:#1f2c34;border-radius:100px;opacity:.5}
+.phone-send{width:36px;height:36px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0}
+.demo-controls{background:var(--bg-white);border:1px solid var(--border);padding:40px;border-radius:var(--radius-xl);box-shadow:var(--shadow-md)}
+.demo-ind-label{font-size:11px;font-weight:600;color:var(--accent);letter-spacing:.15em;text-transform:uppercase;margin-bottom:20px}
+.industry-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:28px}
+.ind-btn{padding:12px;border-radius:var(--radius-md);border:1px solid rgba(245,124,0,.3);color:var(--accent);background:transparent;font-family:var(--font);font-size:11px;font-weight:600;text-align:center;transition:all .2s;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px}
+.ind-btn:hover,.ind-btn.active{background:var(--accent);border-color:var(--accent);color:#fff}
+.demo-btn-run{width:100%;padding:16px;background:var(--accent);color:#fff;border-radius:var(--radius-md);font-family:var(--font);font-size:13px;font-weight:600;border:none;cursor:pointer;transition:all .2s;margin-bottom:10px}
+.demo-btn-run:hover{background:var(--accent-hover)}
+.demo-btn-run:disabled{opacity:.5;cursor:not-allowed}
+.demo-btn-reset{width:100%;padding:6px;color:var(--text-tertiary);font-family:var(--font);font-size:11px;font-weight:500;background:none;border:none;cursor:pointer;transition:color .2s}
+.demo-btn-reset:hover{color:var(--text-primary)}
+.demo-checks{border-top:1px solid var(--border-light);padding-top:20px;margin:20px 0;display:flex;flex-direction:column;gap:10px}
+.demo-check{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--text-secondary);font-weight:500}
+.demo-check-icon{color:var(--green);flex-shrink:0;width:16px;height:16px}
+.demo-quote{font-size:12px;color:var(--text-tertiary);font-style:italic;text-align:center;margin-bottom:28px;line-height:1.6}
+.demo-install-btn{width:100%;background:transparent;border:2px solid var(--accent);color:var(--accent);padding:14px;border-radius:var(--radius-md);font-family:var(--font);font-size:12px;font-weight:600;cursor:pointer;transition:all .2s}
+.demo-install-btn:hover{background:var(--accent);color:#fff}
+@media(max-width:767px){.demo-grid{grid-template-columns:1fr}.phone-frame{width:240px;height:500px}section{padding:60px 0}.metrics-grid{grid-template-columns:1fr}.footer-inner{grid-template-columns:1fr 1fr}}
 @media(max-width:480px){.footer-inner{grid-template-columns:1fr}}
 </style>
 </head>
@@ -114,7 +155,7 @@ footer{background:var(--bg-warm);border-top:1px solid var(--border-light);paddin
   <div class="container">
     <div class="tag" style="margin-bottom:20px">BUKAN TEORI — INI DAMPAK NYATA</div>
     <h1 class="hero-h1">Yang Bisa AI Lakukan untuk <span class="highlight">Bisnis Anda</span></h1>
-    <p class="section-sub">Belum ada klien yang menggunakan sistem ini? Tepat. Anda bisa jadi yang pertama. Tapi kami sudah hitung dampaknya dari pola ribuan interaksi bisnis serupa.</p>
+    <p class="section-sub">Kami sudah hitung dampaknya dari pola ribuan interaksi bisnis serupa. Response time dari 4 jam jadi 2 detik, leads 100% tercatat, dan follow-up otomatis tanpa staf tambahan.</p>
   </div>
 </section>
 
@@ -128,6 +169,58 @@ footer{background:var(--bg-warm);border-top:1px solid var(--border-light);paddin
       <div class="metric-card stagger-1"><div class="metric-value"><span>2</span> Detik</div><div class="metric-label">Response WA — dari rata-rata 4 jam</div></div>
       <div class="metric-card stagger-2"><div class="metric-value"><span>100</span>%</div><div class="metric-label">Leads tercatat otomatis — 0% bocor</div></div>
       <div class="metric-card stagger-3"><div class="metric-value"><span>20+</span> Jam</div><div class="metric-label">Hemat per minggu — setara ½ staf</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- DEMO SIMULATOR -->
+<section style="background:#0a0a0b;padding:80px 0">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:48px">
+      <div style="display:inline-flex;align-items:center;gap:8px;padding:6px 14px;background:rgba(245,124,0,0.1);border:1px solid rgba(245,124,0,0.2);border-radius:100px;margin-bottom:20px">
+        <span style="width:6px;height:6px;border-radius:50%;background:#f57c00;display:inline-block"></span>
+        <span style="font-size:11px;font-weight:600;color:#f57c00;letter-spacing:0.08em;text-transform:uppercase">LIVE DEMO SIMULATION</span>
+      </div>
+      <h2 style="font-size:clamp(24px,3vw,32px);font-weight:700;letter-spacing:-0.03em;color:#fff;margin-bottom:12px">Lihat AI Frontliner Bekerja</h2>
+      <p style="font-size:15px;color:rgba(255,255,255,0.5);max-width:480px;margin:0 auto">Simulasi percakapan nyata — persis seperti yang akan terjadi di bisnis Anda</p>
+    </div>
+    <div class="demo-grid">
+      <div style="display:flex;justify-content:center;order:2">
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-header">
+            <div class="phone-avatar">AI</div>
+            <div>
+              <div class="phone-bot-name" id="bot-name">AI Frontliner — Properti</div>
+              <div class="phone-status"><span class="phone-status-dot"></span>online</div>
+            </div>
+          </div>
+          <div class="phone-chat" id="phone-chat">
+            <div class="typing-bubble" id="typing-bubble"><span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span></div>
+          </div>
+          <div class="phone-input"><div class="phone-input-bar"></div><div class="phone-send"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></div></div>
+        </div>
+      </div>
+      <div style="order:1">
+        <div class="demo-controls">
+          <div class="demo-ind-label">Pilih industri untuk simulasi:</div>
+          <div class="industry-grid">
+            <button class="ind-btn active" data-ind="properti" onclick="selectIndustry(this)">🏠 Properti</button>
+            <button class="ind-btn" data-ind="klinik" onclick="selectIndustry(this)">🏥 Klinik</button>
+            <button class="ind-btn" data-ind="toko" onclick="selectIndustry(this)">🛒 Toko Online</button>
+            <button class="ind-btn" data-ind="b2b" onclick="selectIndustry(this)">🏢 Jasa &amp; Profesional</button>
+          </div>
+          <button class="demo-btn-run" id="demo-run-btn" onclick="runDemo()">▶ Mulai Simulasi</button>
+          <button class="demo-btn-reset" onclick="resetDemo()">↺ Reset</button>
+          <div class="demo-checks">
+            <div class="demo-check"><svg class="demo-check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> AI merespons dalam hitungan detik</div>
+            <div class="demo-check"><svg class="demo-check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Kualifikasi leads otomatis 24/7</div>
+            <div class="demo-check"><svg class="demo-check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Tidak perlu admin tambahan</div>
+          </div>
+          <p class="demo-quote">"Ini bukan rekaman — sistem yang sama akan bekerja di bisnis Anda"</p>
+          <button class="demo-install-btn" onclick="openChat()">Pasang di Bisnis Saya →</button>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -194,6 +287,14 @@ function openChat(){openModal('chat-modal')}
 function openModal(id){document.getElementById(id).classList.add('open')}
 function closeModal(id){document.getElementById(id).classList.remove('open')}
 document.addEventListener('click',function(e){var m=document.getElementById('mobile-menu');if(m&&m.style.display==='block'&&!m.contains(e.target)&&!e.target.closest('.hamburger')){m.style.display='none'}});
+
+// DEMO SIMULATOR
+var SCENARIOS = {properti:{botName:'AI Frontliner — Properti',messages:[{type:'user',text:'Halo, saya lihat iklan rumah di Antapani. Harganya berapa?'},{type:'typing',delay:800},{type:'bot',text:'👋 Halo! Selamat datang.\n\nUntuk info harga terkini, boleh saya tanya dulu:\n1️⃣ Budget yang disiapkan?\n2️⃣ Untuk keluarga berapa orang?\n\nSaya carikan unit yang paling sesuai!'},{type:'user',text:'Budget 500 juta, untuk 4 orang',delay:1200},{type:'typing',delay:1000},{type:'bot',text:'✅ Ada 2 unit cocok untuk Anda:\n\n🏡 Tipe 36/72 — Rp 485 juta\n• 2 kamar tidur, KPR BTN ready\n\n🏡 Tipe 45/90 — Rp 520 juta\n• 3 kamar tidur, cocok 2 anak\n\nMau saya kirim brosur lengkapnya?'},{type:'user',text:'Mau dong!',delay:1000},{type:'typing',delay:600},{type:'bot',text:'📄 Brosur terkirim!\n\nAgen kami akan hubungi Anda dalam 10 menit untuk jadwal survey gratis 🏠'}]},klinik:{botName:'AI Frontliner — Klinik',messages:[{type:'user',text:'Dok, bisa konsultasi gigi hari ini?'},{type:'typing',delay:700},{type:'bot',text:'👋 Halo! Selamat datang di Klinik.\n\nUntuk jadwal konsultasi gigi, ada slot tersedia:\n\n⏰ Hari ini: 14.00 & 16.30 WIB\n⏰ Besok: 09.00, 11.00, 15.00 WIB\n\nJam berapa yang paling nyaman?'},{type:'user',text:'Jam 14.00 bisa',delay:1000},{type:'typing',delay:800},{type:'bot',text:'✅ Slot 14.00 hari ini dikonfirmasi!\n\nBoleh saya catat:\n1️⃣ Nama lengkap?\n2️⃣ Keluhan utama?\n\nReminder otomatis akan dikirim 1 jam sebelumnya 🦷'},{type:'user',text:'Andi, sakit gigi geraham kiri',delay:1200},{type:'typing',delay:600},{type:'bot',text:'📋 Tercatat! Andi — Konsultasi gigi 14.00 hari ini. Dokter: drg. Sarah. Sampai jumpa! 😊'}]},toko:{botName:'AI Frontliner — Toko Online',messages:[{type:'user',text:'Kak, sepatu size 42 masih ada stok?'},{type:'typing',delay:600},{type:'bot',text:'👟 Halo!\n\nUntuk size 42, masih tersedia:\n✅ Putih — 3 pcs\n✅ Hitam — 1 pcs (hampir habis!)\n❌ Navy — habis\n\nMau yang warna apa?'},{type:'user',text:'Yang hitam masih ada? Berapa harganya?',delay:1000},{type:'typing',delay:700},{type:'bot',text:'🔥 Hitam size 42 masih 1 pcs!\nHarga: Rp 285.000 (termasuk ongkir Jabodetabek)\n\nMau langsung order?'},{type:'user',text:'Iya mau order sekarang',delay:900},{type:'typing',delay:500},{type:'bot',text:'✅ Siap! Stok sudah dicadangkan. Link pembayaran akan dikirim ke WhatsApp Anda 🚀'}]},b2b:{botName:'AI Frontliner — B2B',messages:[{type:'user',text:'Halo, kami butuh jasa cleaning kantor. Bisa survey?'},{type:'typing',delay:800},{type:'bot',text:'👋 Halo! Untuk cleaning kantor, info:\n1️⃣ Luas area (m²)?\n2️⃣ Lokasi kantor?\n3️⃣ Frekuensi: harian/mingguan?'},{type:'user',text:'500m2, di Bandung, mingguan',delay:1200},{type:'typing',delay:900},{type:'bot',text:'📊 Estimasi: Rp 1,8 – 2,2 juta/bulan. Mau jadwalkan survey gratis?'},{type:'user',text:'Bisa, kapan?',delay:1000},{type:'typing',delay:600},{type:'bot',text:'📅 Besok: 10.00 atau 14.00. Lusa: 09.00 atau 13.00. Mau booking sekarang?'}]}};
+var currentIndustry='properti',isPlaying=false,demoTimeouts=[];
+function selectIndustry(b){document.querySelectorAll('.ind-btn').forEach(function(x){x.classList.remove('active')});b.classList.add('active');currentIndustry=b.dataset.ind;document.getElementById('bot-name').textContent=SCENARIOS[currentIndustry].botName;resetDemo()}
+function resetDemo(){demoTimeouts.forEach(clearTimeout);demoTimeouts=[];isPlaying=false;var c=document.getElementById('phone-chat');c.innerHTML='<div class=\"typing-bubble\" id=\"typing-bubble\"><span class=\"typing-dot\"></span><span class=\"typing-dot\"></span><span class=\"typing-dot\"></span></div>';var b=document.getElementById('demo-run-btn');b.disabled=false;b.textContent='▶ Mulai Simulasi'}
+function runDemo(){if(isPlaying)return;resetDemo();isPlaying=true;var btn=document.getElementById('demo-run-btn');btn.disabled=true;btn.textContent='⏸ Berjalan...';var msgs=SCENARIOS[currentIndustry].messages;var delay=0;msgs.forEach(function(msg,i){if(msg.type==='typing'){var d=delay;demoTimeouts.push(setTimeout(function(){document.getElementById('typing-bubble').classList.add('show')},d));delay+=msg.delay||800;demoTimeouts.push(setTimeout(function(){document.getElementById('typing-bubble').classList.remove('show')},delay))}else{var d2=delay+(i===0?0:1200);delay=d2;(function(m,d){demoTimeouts.push(setTimeout(function(){addMessage(m.type,m.text)},d))})(msg,d2)}});demoTimeouts.push(setTimeout(function(){isPlaying=false;btn.disabled=false;btn.textContent='↺ Putar Ulang'},delay+1500))}
+function addMessage(t,txt){var c=document.getElementById('phone-chat');var tp=document.getElementById('typing-bubble');var d=document.createElement('div');d.className='chat-msg '+(t==='bot'?'bot':'user');d.innerHTML='<div>'+txt.replace(/\n/g,'<br>')+'</div><div class=\"chat-time\">Selesai</div>';c.insertBefore(d,tp);setTimeout(function(){c.scrollTop=c.scrollHeight},50)}
 </script>
 </body>
 </html>
