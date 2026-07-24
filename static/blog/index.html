@@ -1,498 +1,152 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="facebook-domain-verification" content="2n1msy4uivoghk0v44i2ce8tt89jyh" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog AI Marketing Strategic — Panduan AI Automation untuk UMKM Indonesia</title>
-<meta name="description" content="Artikel, tutorial, dan panduan lengkap tentang AI automation untuk UMKM Indonesia. Chatbot WhatsApp, CRM otomatis, lead management, dan strategi marketing digital.">
-<meta name="keywords" content="blog AI automation, tutorial chatbot WhatsApp, AI untuk UMKM, otomasi marketing Indonesia, AI marketing strategic">
-<meta name="author" content="AI Marketing Strategic">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://aimarketingstrategic.com/blog/">
-<meta property="og:title" content="Blog AI Marketing Strategic — Panduan AI Automation untuk UMKM Indonesia">
-<meta property="og:description" content="Artikel, tutorial, dan panduan lengkap tentang AI automation untuk UMKM Indonesia.">
-<meta property="og:image" content="https://aimarketingstrategic.com/images/og-card.png">
-<meta property="og:locale" content="id_ID">
-<link rel="canonical" href="https://aimarketingstrategic.com/blog/">
-<link rel="stylesheet" href="/css/style.css">
-<style>
-/* ===== BLOG INDEX — Editorial refresh v2 (redesign 2026-07-05) ===== */
-/* HERO */
-.blog-hero{position:relative;background:var(--bg-dark);color:#fff;padding:150px 24px 74px;text-align:center;overflow:hidden}
-.blog-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(58% 120% at 50% -10%,rgba(245,124,0,.20),transparent 62%);pointer-events:none}
-.blog-hero-inner{position:relative;max-width:780px;margin:0 auto}
-.blog-kicker{display:inline-flex;align-items:center;gap:12px;font-family:'Orbitron',sans-serif;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--orange);margin-bottom:22px}
-.blog-kicker::before,.blog-kicker::after{content:"";height:1px;width:30px;background:rgba(245,124,0,.45)}
-.blog-hero h1{font-size:clamp(30px,5.2vw,54px);line-height:1.06;letter-spacing:-.02em;margin-bottom:18px;color:#fff;text-wrap:balance}
-.blog-hero p{color:rgba(255,255,255,.70);font-size:clamp(15px,2vw,18px);max-width:560px;margin:0 auto;line-height:1.6}
-.blog-hero-meta{margin-top:28px;display:inline-flex;gap:22px;flex-wrap:wrap;justify-content:center;font-size:13px;color:rgba(255,255,255,.55)}
-.blog-hero-meta b{color:var(--orange);font-weight:700}
-/* SECTION + FILTER TOOLBAR */
-.blog-grid-section{max-width:1200px;margin:0 auto;padding:44px 24px 76px}
-.blog-toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:30px}
-.blog-toolbar .label{font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#94a3b8;margin-right:4px}
-.chip{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;color:var(--primary);background:#fff;border:1px solid #e2e8f0;border-radius:100px;padding:8px 16px;cursor:pointer;transition:background .2s,color .2s,border-color .2s,transform .15s}
-.chip:hover{border-color:var(--orange);transform:translateY(-1px)}
-.chip[aria-pressed="true"]{background:var(--primary);color:#fff;border-color:var(--primary)}
-/* GRID */
-.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px}
-/* CARD */
-.blog-card{border:1px solid #e8edf3;border-radius:16px;background:#fff;overflow:hidden;display:flex;flex-direction:column;opacity:0;animation:cardIn .5s cubic-bezier(.2,.7,.2,1) forwards;transition:transform .25s cubic-bezier(.2,.7,.2,1),box-shadow .25s}
-.blog-card:hover{transform:translateY(-5px);box-shadow:0 18px 44px -20px rgba(11,42,74,.45)}
-.blog-card-body{padding:26px;flex:1;display:flex;flex-direction:column}
-.blog-card-cat{align-self:flex-start;font-family:'Orbitron',sans-serif;font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);background:rgba(245,124,0,.09);border-radius:100px;padding:5px 11px;margin-bottom:16px}
-.blog-card-title{font-size:19px;font-weight:700;color:var(--primary);margin-bottom:12px;line-height:1.32;font-family:'Orbitron',sans-serif;letter-spacing:0}
-.blog-card-title a{color:inherit;text-decoration:none}
-.blog-card-title a:hover{color:var(--orange)}
-.blog-card-excerpt{font-size:14px;color:#475569;line-height:1.7;flex:1;margin-bottom:18px}
-.blog-card-meta{display:flex;align-items:center;gap:10px;font-size:12.5px;color:#64748b;padding-top:16px;border-top:1px solid #eef2f7}
-.blog-card-read{display:inline-flex;align-items:center;gap:7px;color:var(--orange);font-size:13px;font-weight:700;margin-top:18px;text-decoration:none}
-.blog-card-read svg{transition:transform .2s}
-.blog-card:hover .blog-card-read svg{transform:translateX(4px)}
-.blog-card.hide{display:none}
-/* FEATURED (newest) — breaks the uniform grid; only when not filtering */
-.blog-grid:not(.filtered) article:first-child{grid-column:1/-1;background:linear-gradient(120deg,#081d33,#0B2A4A);border:none}
-.blog-grid:not(.filtered) article:first-child .blog-card-body{padding:40px}
-.blog-grid:not(.filtered) article:first-child .blog-card-cat{color:#fff;background:rgba(245,124,0,.92)}
-.blog-grid:not(.filtered) article:first-child .blog-card-title{color:#fff;font-size:clamp(22px,3.4vw,32px);line-height:1.18;max-width:22ch}
-.blog-grid:not(.filtered) article:first-child .blog-card-excerpt{color:rgba(255,255,255,.74);font-size:15.5px;max-width:64ch}
-.blog-grid:not(.filtered) article:first-child .blog-card-meta{color:rgba(255,255,255,.55);border-color:rgba(255,255,255,.14)}
-.blog-grid:not(.filtered) article:first-child:hover{transform:translateY(-4px);box-shadow:0 30px 60px -30px rgba(6,22,38,.75)}
-@media(min-width:820px){.blog-grid:not(.filtered) article:first-child .blog-card-body{max-width:780px}}
-/* MOTION */
-@keyframes cardIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.blog-card:nth-child(1){animation-delay:.02s}
-.blog-card:nth-child(2){animation-delay:.08s}
-.blog-card:nth-child(3){animation-delay:.14s}
-.blog-card:nth-child(4){animation-delay:.20s}
-.blog-card:nth-child(5){animation-delay:.26s}
-.blog-card:nth-child(n+6){animation-delay:.30s}
-.blog-empty{text-align:center;padding:80px 24px;color:#94a3b8}
-.blog-empty h3{font-size:20px;color:var(--primary);margin-bottom:12px}
-.nav-links a.active{color:var(--orange)}
-@media (prefers-reduced-motion:reduce){.blog-card{opacity:1;animation:none}.blog-card:hover,.blog-grid:not(.filtered) article:first-child:hover{transform:none}.chip:hover{transform:none}}
-</style>
-<link rel="stylesheet" href="/assets/css/blog-footer.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Blog AI Marketing Strategic: Strategi AI Automation untuk UMKM Indonesia. Chatbot WhatsApp, Follow-up Otomatis, Booking System, Studi Kasus Laundry, Kuliner, Bengkel, Klinik.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://aimarketingstrategic.com/static/blog/">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <title>Blog AI Marketing Strategic | AI Automation untuk UMKM Indonesia</title>
 
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1032082533057403');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1032082533057403&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+  <!-- GEO: Article List Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "AI Marketing Strategic Blog",
+    "description": "Strategi AI Automation untuk UMKM Indonesia. Chatbot WhatsApp, Follow-up Otomatis, Booking System, Studi Kasus Laundry, Kuliner, Bengkel, Klinik.",
+    "url": "https://aimarketingstrategic.com/static/blog/",
+    "publisher": {"@type": "Organization", "name": "AI Marketing Strategic"},
+    "blogPosts": [
+      {
+        "@type": "BlogPosting",
+        "headline": "Berapa Leads Laundry yang Hilang Karena WA Lambat Dibalas?",
+        "url": "https://aimarketingstrategic.com/static/blog/berapa-leads-laundry-hilang-karena-wa-lambat-dibalas.html",
+        "datePublished": "2025-07-22",
+        "author": {"@type": "Organization", "name": "AI Marketing Strategic"},
+        "description": "Laundry kilatan yang lambat balas WA kehilangan 15-30% order per bulan. Chatbot AI WhatsApp balas 2 detik selamatkan Rp 5-15 juta/bulan."
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
-<!-- NAVBAR -->
-<nav id="navbar">
-  <div class="nav-inner">
-    <a class="nav-logo" href="/index.html">
-      <img src="https://aimarketingstrategic.com/images/logo%20aims.png" alt="AI Marketing Strategic" height="44">
-    </a>
-    <div class="nav-links">
-      <a href="/index.html">Beranda</a>
-      <a href="/hasil.html">Hasil</a>
-      <a href="/harga.html">Harga</a>
-      <a href="/tentang.html">Tentang</a>
-      <a href="/blog/" class="active">Blog</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo" aria-label="AI Marketing Strategic - Home">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#2563EB"/><path d="M8 16L14 22L24 10" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>AI Marketing Strategic</span>
+      </a>
+      <nav class="nav" aria-label="Navigasi utama">
+        <a href="/#services" class="nav-link">Layanan</a>
+        <a href="/#cases" class="nav-link">Studi Kasus</a>
+        <a href="/static/blog/" class="nav-link active">Blog</a>
+        <a href="/#contact" class="nav-link btn-primary">Konsultasi Gratis</a>
+      </nav>
     </div>
-    <button class="nav-cta" onclick="trackLead();openChat()">Demo Gratis</button>
-    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
-      <svg id="ham-icon" class="icon" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
-    </button>
-  </div>
-</nav>
-<div id="overlay" onclick="closeMenu()"></div>
-<div id="mobile-menu">
-  <a href="/index.html" onclick="closeMenu()">Beranda</a>
-  <a href="/hasil.html" onclick="closeMenu()">Hasil</a>
-  <a href="/harga.html" onclick="closeMenu()">Harga</a>
-  <a href="/tentang.html" onclick="closeMenu()">Tentang</a>
-  <a href="/blog/" onclick="closeMenu()">Blog</a>
-  <div class="menu-cta-wrap">
-    <button class="menu-cta-btn" onclick="trackLead();openChat();closeMenu()">Konsultasi Gratis</button>
-  </div>
-</div>
+  </header>
 
-<!-- HERO -->
-<section class="blog-hero">
-  <div class="blog-hero-inner">
-    <div class="blog-kicker">Knowledge Base</div>
-    <h1>Panduan &amp; Insight<br>AI Automation UMKM</h1>
-    <p>Tutorial, studi kasus, dan strategi praktis untuk mengotomatiskan WhatsApp, leads, dan penjualan bisnis Indonesia.</p>
-    <div class="blog-hero-meta"><span><b id="art-count">16</b> artikel</span><span>Diperbarui tiap minggu</span></div>
-  </div>
-</section>
+  <main class="container blog-index">
+    <header class="page-header">
+      <h1>Blog AI Marketing Strategic</h1>
+      <p class="page-subtitle">Strategi AI Automation & Chatbot WhatsApp untuk UMKM Indonesia. Data nyata, studi kasus nyata, ROI nyata.</p>
+    </header>
 
-<!-- POSTS GRID -->
-<section class="blog-grid-section">
-  <div class="blog-toolbar" id="blog-filter">
-    <span class="label">Topik</span>
-    <button class="chip" data-cat="all" aria-pressed="true">Semua</button>
-    <button class="chip" data-cat="panduan" aria-pressed="false">Panduan</button>
-    <button class="chip" data-cat="tutorial" aria-pressed="false">Tutorial</button>
-    <button class="chip" data-cat="case study" aria-pressed="false">Case Study</button>
-    <button class="chip" data-cat="insight" aria-pressed="false">Insight</button>
-    <button class="chip" data-cat="perbandingan" aria-pressed="false">Perbandingan</button>
-  </div>
-  <div class="blog-grid" id="blog-grid">
-    <article class="blog-card">
-      <div class="blog-card-body">
-        <div class="blog-card-cat">Insight</div>
-        <h3 class="blog-card-title"><a href="/blog/omzet-hilang-restoran-lambat-balas-wa-solusi-ai-chatbot-fnb.html">Berapa Omzet yang Hilang Karena Restoran & Kafe Lambat Balas WhatsApp?</a></h3>
-        <p class="blog-card-excerpt">Restoran dan kafe di Indonesia kehilangan Rp 10-40 juta per bulan karena WA lambat dibalas. Hitung kerugiannya + solusi AI chatbot WhatsApp untuk F&B di sini.</p>
-        <div class="blog-card-meta">
-          <span>18 Jul 2026</span>
-          <span>·</span>
-          <span>8 menit baca</span>
+    <section class="featured-article">
+      <article class="article-card featured">
+        <div class="article-meta">
+          <span class="category-tag geo-tag">GEO Article</span>
+          <span class="category-tag sector-tag">UMKM Laundry</span>
+          <time datetime="2025-07-22">22 Juli 2025</time>
         </div>
-        <a href="/blog/omzet-hilang-restoran-lambat-balas-wa-solusi-ai-chatbot-fnb.html" class="blog-card-read">
-          Baca Artikel
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-    </article>
-    <article class="blog-card">
-      <div class="blog-card-body">
-        <div class="blog-card-cat">Insight</div>
-        <h3 class="blog-card-title"><a href="/blog/5-tanda-klinik-kecantikan-butuh-ai-whatsapp.html">Apa 5 Tanda Klinik Kecantikan Anda Butuh AI WhatsApp Sebelum Terlambat?</a></h3>
-        <p class="blog-card-excerpt">5 tanda klinik kecantikan Anda sudah butuh AI WhatsApp — dari WA penuh dan slow response sampai no-show tinggi. Simak tanda, kerugian per bulan, dan solusinya s...</p>
-        <div class="blog-card-meta">
-          <span>11 Jul 2026</span>
-          <span>·</span>
-          <span>9 menit baca</span>
+        <h2><a href="/static/blog/berapa-leads-laundry-hilang-karena-wa-lambat-dibalas.html">Berapa Leads Laundry yang Hilang Karena WA Lambat Dibalas?</a></h2>
+        <p class="article-excerpt"><strong>Laundry kilatan yang lambat balas WA kehilangan 15–30% order per bulan.</strong> Sebuah laundry menengah (200 kg/bulan) di Jakarta bisa kehilangan Rp 5–15 juta per bulan hanya karena chat WA tidak terbalas >2 jam. Chatbot AI WhatsApp balas 2 detik selamatkan 90% leads tersebut dengan biaya mulai Rp 299.000/bulan — jauh di bawah biaya admin CS full-time Rp 2,5–3,5 juta/bulan.</p>
+        <div class="article-stats">
+          <span class="stat"><span class="stat-value">15–30%</span> order hilang/bulan</span>
+          <span class="stat"><span class="stat-value">Rp 5–15 juta</span> rugi/bulan</span>
+          <span class="stat"><span class="stat-value">2 detik</span> response AI</span>
+          <span class="stat"><span class="stat-value">Rp 299rb</span>/bulan biaya bot</span>
         </div>
-        <a href="/blog/5-tanda-klinik-kecantikan-butuh-ai-whatsapp.html" class="blog-card-read">
-          Baca Artikel
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-    </article>
-    <article class="blog-card">
-      <div class="blog-card-body">
-        <div class="blog-card-cat">Panduan</div>
-        <h3 class="blog-card-title"><a href="/blog/cara-chatbot-ai-bantu-klinik-kecantikan-handle-100-plus-booking-wa-per-hari.html">Bagaimana Chatbot AI Bantu Klinik Kecantikan Handle 100+ Booking WA per Hari?</a></h3>
-        <p class="blog-card-excerpt">Chatbot AI WhatsApp bisa handle 100+ booking klinik kecantikan per hari secara otomatis 24 jam. Simak cara kerja, biaya, dan hasil nyata dari klinik yang sudah ...</p>
-        <div class="blog-card-meta">
-          <span>9 Jul 2026</span>
-          <span>·</span>
-          <span>7 menit baca</span>
-        </div>
-        <a href="/blog/cara-chatbot-ai-bantu-klinik-kecantikan-handle-100-plus-booking-wa-per-hari.html" class="blog-card-read">
-          Baca Artikel
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-    </article>
-    <article class="blog-card">
-      <div class="blog-card-body">
-        <div class="blog-card-cat">Insight</div>
-        <h3 class="blog-card-title"><a href="/blog/berapa-leads-yang-hilang-karena-wa-klinik-lambat-dibalas.html">Berapa Leads yang Hilang Karena WA Klinik Lambat Dibalas? Hitungan Ruginya</a></h3>
-        <p class="blog-card-excerpt">Klinik kecantikan kehilangan Rp 15-30 juta per bulan karena WA lambat dibalas. Hitung sendiri kerugian leads Anda &amp; solusi AI chatbot WhatsApp 24 jam.</p>
-        <div class="blog-card-meta">
-          <span>7 Jul 2026</span>
-          <span>·</span>
-          <span>6 menit baca</span>
-        </div>
-        <a href="/blog/berapa-leads-yang-hilang-karena-wa-klinik-lambat-dibalas.html" class="blog-card-read">
-          Baca Artikel
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-    </article>
-    <article class="blog-card">
-      <div class="blog-card-body">
-        <div class="blog-card-cat">Panduan</div>
-        <h3 class="blog-card-title"><a href="/blog/panduan-lengkap-chatbot-whatsapp-ai-untuk-umkm-indonesia.html">Panduan Lengkap Chatbot WhatsApp AI untuk UMKM Indonesia</a></h3>
-        <p class="blog-card-excerpt">Panduan lengkap implementasi chatbot WhatsApp AI untuk UMKM Indonesia. Dari cara kerja, setup, sampai strategi optimal — tanpa coding, tanpa tim IT.</p>
-        <div class="blog-card-meta">
-          <span>5 Jul 2026</span>
-          <span>·</span>
-          <span>8 menit baca</span>
-        </div>
-        <a href="/blog/panduan-lengkap-chatbot-whatsapp-ai-untuk-umkm-indonesia.html" class="blog-card-read">
-          Baca Artikel
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-    </article>
-    <article class="blog-card">
-      <div class="blog-card-body">
-        <div class="blog-card-cat">Insight</div>
-        <h3 class="blog-card-title"><a href="/blog/ai-untuk-umkm-mitos-fakta.html">AI untuk UMKM: 5 Mitos &amp; Fakta yang Wajib Diketahui</a></h3>
-        <p class="blog-card-excerpt">Banyak pemilik UMKM masih ragu pakai AI karena mitos yang beredar. Yuk bedah 5 mitos vs fakta AI untuk bisnis kecil Indonesia.</p>
-        <div class="blog-card-meta">
-          <span>4 Jul 2026</span>
-          <span>·</span>
-          <span>6 menit baca</span>
-        </div>
-        <a href="/blog/ai-untuk-umkm-mitos-fakta.html" class="blog-card-read">
-          Baca Artikel
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-    </article>
-    <article class="blog-card">
-      <div class="blog-card-body">
-        <div class="blog-card-cat">Insight</div>
-        <h3 class="blog-card-title"><a href="/blog/ai-voice-follow-up-leads-tren-otomasi-umkm-2026.html">AI Voice untuk Follow Up Leads: Tren UMKM 2026</a></h3>
-        <p class="blog-card-excerpt">AI voice assistant untuk follow up leads UMKM 2026: otomasi telepon follow-up, konfirmasi order, dan customer service dengan suara natural tanpa coding.</p>
-        <div class="blog-card-meta">
-          <span>3 Jul 2026</span>
-          <span>·</span>
-          <span>5 menit baca</span>
-        </div>
-        <a href="/blog/ai-voice-follow-up-leads-tren-otomasi-umkm-2026.html" class="blog-card-read">
-          Baca Artikel
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-    </article>
-    <article class="blog-card">
-      <div class="blog-card-body">
-        <div class="blog-card-cat">Perbandingan</div>
-        <h3 class="blog-card-title"><a href="/blog/investasi-chatbot-ai-vs-tambah-admin-umkm.html">Investasi Chatbot AI vs Tambah Admin: Mana Lebih Untung untuk UMKM?</a></h3>
-        <p class="blog-card-excerpt">Perbandingan biaya chatbot AI vs rekrut admin baru untuk UMKM. Hitung sendiri ROI dari investasi otomasi WhatsApp untuk bisnis kamu.</p>
-        <div class="blog-card-meta">
-          <span>2 Jul 2026</span>
-          <span>·</span>
-          <span>5 menit baca</span>
-        </div>
-        <a href="/blog/investasi-chatbot-ai-vs-tambah-admin-umkm.html" class="blog-card-read">
-          Baca Artikel
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-    </article>
-    <article class="blog-card">
-      <div class="blog-card-body">
-        <div class="blog-card-cat">Case Study</div>
-        <h3 class="blog-card-title"><a href="/blog/ai-chatbot-naikkan-omzet-toko-oleh-oleh.html">AI Chatbot Naikkan Omzet Toko Oleh-Oleh 320% — Ini Kisahnya</a></h3>
-        <p class="blog-card-excerpt">Toko oleh-oleh kehilangan 200+ leads WA per bulan. Simak bagaimana AI chatbot berhasil naikkan konversi dari 8% jadi 52% dalam 30 hari.</p>
-        <div class="blog-card-meta">
-          <span>1 Jul 2026</span>
-          <span>·</span>
-          <span>5 menit baca</span>
-        </div>
-        <a href="/blog/ai-chatbot-naikkan-omzet-toko-oleh-oleh.html" class="blog-card-read">
-          Baca Artikel
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-    </article>
-    <article class="blog-card">
-      <div class="blog-card-body">
-        <div class="blog-card-cat">Case Study</div>
-        <h3 class="blog-card-title"><a href="/blog/studi-kasus-ai-marketing-properti-leads-naik-3x.html">Studi Kasus AI Marketing Properti: Leads Naik 3x dalam 30 Hari</a></h3>
-        <p class="blog-card-excerpt">Studi kasus nyata agen properti Jakarta: dari 80% leads hilang ke closing rate naik 275% pakai AI WhatsApp otomatis. Cek angka dan pelajarannya.</p>
-        <div class="blog-card-meta">
-          <span>1 Jul 2026</span>
-          <span>·</span>
-          <span>6 menit baca</span>
-        </div>
-        <a href="/blog/studi-kasus-ai-marketing-properti-leads-naik-3x.html" class="blog-card-read">
-          Baca Artikel
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-    </article>
-    <article class="blog-card">
-      <div class="blog-card-body">
-        <div class="blog-card-cat">Insight</div>
-        <h3 class="blog-card-title"><a href="/blog/kehilangan-leads-telat-balas-wa-solusi-ai-umkm.html">Kehilangan Leads karena Telat Balas WA? Ini Solusi AI-nya</a></h3>
-        <p class="blog-card-excerpt">Ratusan leads UMKM hilang karena telat balas WhatsApp? AI automation solusinya. Auto follow-up 24 jam & konversi naik hingga 3x lipat. Baca selengkapnya.</p>
-        <div class="blog-card-meta">
-          <span>30 Jun 2026</span>
-          <span>·</span>
-          <span>5 menit baca</span>
-        </div>
-        <a href="/blog/kehilangan-leads-telat-balas-wa-solusi-ai-umkm.html" class="blog-card-read">
-          Baca Artikel
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-    </article>
-    <article class="blog-card">
-      <div class="blog-card-body">
-        <div class="blog-card-cat">Tutorial</div>
-        <h3 class="blog-card-title"><a href="/blog/cara-setup-chatbot-wa-untuk-umkm-panduan-5-langkah.html">Cara Setup Chatbot WA untuk UMKM: Panduan 5 Langkah</a></h3>
-        <p class="blog-card-excerpt">Pelajari cara setup chatbot WhatsApp untuk UMKM dalam 5 langkah mudah. Otomatiskan balas chat, follow-up leads, dan tingkatkan konversi tanpa coding.</p>
-        <div class="blog-card-meta">
-          <span>29 Jun 2026</span>
-          <span>·</span>
-          <span>6 menit baca</span>
-        </div>
-        <a href="/blog/cara-setup-chatbot-wa-untuk-umkm-panduan-5-langkah.html" class="blog-card-read">
-          Baca Artikel
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-    </article>
-    <article class="blog-card">
-      <div class="blog-card-body">
-        <div class="blog-card-cat">Panduan</div>
-        <h3 class="blog-card-title"><a href="/blog/panduan-lengkap-chatbot-ai-whatsapp-sales-umkm-2026.html">Panduan Lengkap Chatbot AI WhatsApp untuk Sales UMKM 2026</a></h3>
-        <p class="blog-card-excerpt">Panduan lengkap chatbot AI WhatsApp untuk follow-up leads UMKM. Cara kerja, biaya mulai Rp100rb/bln, fitur wajib, sampai hasil nyata — semua lengkap.</p>
-        <div class="blog-card-meta">
-          <span>28 Jun 2026</span>
-          <span>·</span>
-          <span>12 menit baca</span>
-        </div>
-        <a href="/blog/panduan-lengkap-chatbot-ai-whatsapp-sales-umkm-2026.html" class="blog-card-read">
-          Baca Artikel
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-    </article>
-    <article class="blog-card">
-      <div class="blog-card-body">
-        <div class="blog-card-cat">Panduan</div>
-        <h3 class="blog-card-title"><a href="/blog/5-mitos-ai-umkm-fakta-vs-fiksi.html">5 Mitos AI UMKM: Fakta vs Fiksi yang Bikin Kamu Ragu</a></h3>
-        <p class="blog-card-excerpt">Banyak mitos AI untuk UMKM yang bikin pemilik bisnis ragu mengadopsi teknologi ini. Simak fakta vs fiksi — dari biaya, coding, sampai cara kerja AI.</p>
-        <div class="blog-card-meta">
-          <span>27 Jun 2026</span>
-          <span>·</span>
-          <span>6 menit baca</span>
-        </div>
-        <a href="/blog/5-mitos-ai-umkm-fakta-vs-fiksi.html" class="blog-card-read">
-          Baca Artikel
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-    </article>
-    <article class="blog-card">
-      <div class="blog-card-body">
-        <div class="blog-card-cat">Insight</div>
-        <h3 class="blog-card-title"><a href="/blog/tren-ai-untuk-umkm-2026-data-prediksi-otomasi-bisnis.html">Tren AI untuk UMKM 2026: Data & Prediksi Otomasi Bisnis</a></h3>
-        <p class="blog-card-excerpt">Tren AI untuk UMKM Indonesia 2026: data adopsi, prediksi pertumbuhan, dan cara otomasi WhatsApp, leads, dan operasional bisnis tanpa coding.</p>
-        <div class="blog-card-meta">
-          <span>26 Jun 2026</span>
-          <span>·</span>
-          <span>6 menit baca</span>
-        </div>
-        <a href="/blog/tren-ai-untuk-umkm-2026-data-prediksi-otomasi-bisnis.html" class="blog-card-read">
-          Baca Artikel
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-    </article>
-    <article class="blog-card">
-      <div class="blog-card-body">
-        <div class="blog-card-cat">Perbandingan</div>
-        <h3 class="blog-card-title"><a href="/blog/ai-chatbot-vs-follow-up-manual-umkm.html">AI Chatbot vs Follow-Up Manual: Perbandingan untuk UMKM</a></h3>
-        <p class="blog-card-excerpt">Perbandingan lengkap chatbot AI vs follow-up manual untuk UMKM: biaya, kecepatan, konversi leads, dan skalabilitas. Mana yang lebih menguntungkan bisnismu?</p>
-        <div class="blog-card-meta">
-          <span>25 Jun 2026</span>
-          <span>·</span>
-          <span>6 menit baca</span>
-        </div>
-        <a href="/blog/ai-chatbot-vs-follow-up-manual-umkm.html" class="blog-card-read">
-          Baca Artikel
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-    </article>
-    <article class="blog-card">
-      <div class="blog-card-body">
-        <div class="blog-card-cat">Case Study</div>
-        <h3 class="blog-card-title"><a href="/blog/dari-8-ke-45-leads-per-minggu-ai-whatsapp-untuk-umkm.html">Dari 8 ke 45 Leads per Minggu — AI WhatsApp untuk UMKM</a></h3>
-        <p class="blog-card-excerpt">Case study nyata: Toko oleh-oleh di Bandung berhasil naikkan leads dari 8 jadi 45/minggu setelah pakai AI WhatsApp automation. Simak strategi dan hasilnya.</p>
-        <div class="blog-card-meta">
-          <span>24 Jun 2026</span>
-          <span>·</span>
-          <span>5 menit baca</span>
-        </div>
-        <a href="/blog/dari-8-ke-45-leads-per-minggu-ai-whatsapp-untuk-umkm.html" class="blog-card-read">
-          Baca Artikel
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-    </article>
-  </div>
-</section>
+        <a href="/static/blog/berapa-leads-laundry-hilang-karena-wa-lambat-dibalas.html" class="btn-secondary">Baca Artikellengkap →</a>
+      </article>
+    </section>
 
-<!-- CTA -->
-<section style="background:var(--bg-dark);padding:60px 24px;text-align:center;color:#fff">
-  <h2 style="font-size:28px;margin-bottom:12px;color:#fff">Siap Otomatiskan Bisnis Kamu?</h2>
-  <p style="color:rgba(255,255,255,.6);margin-bottom:28px;font-size:16px">Konsultasi gratis 15 menit. Tidak ada pitch sales, tidak ada kontrak panjang.</p>
-  <button onclick="trackLead();openChat()" style="background:var(--orange);color:#fff;padding:14px 32px;border-radius:12px;font-family:'Orbitron',sans-serif;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;border:none">Konsultasi Gratis Sekarang</button>
-</section>
+    <section class="upcoming-articles">
+      <h2>Artikel Mendatang (Pipeline GEO)</h2>
+      <div class="upcoming-grid">
+        <article class="upcoming-card">
+          <span class="sector-badge">Kuliner / Warung Makan</span>
+          <h3>Berapa Pesanan Warung Makan Hilang Karena WA Tidak Dibalas Malam Hari?</h3>
+          <p>Studi kasus warung makan 50-100 porsi/hari. Peak order jam 18-21 saat owner sibuk masak. Chatbot handle booking meja, pesan antar, FAQ menu.</p>
+          <span class="status-badge">Drafting</span>
+        </article>
+        <article class="upcoming-card">
+          <span class="sector-badge">Bengkel Motor / Mobil</span>
+          <h3>Berapa Servis Bengkel Hilang Karena Customer Tidak Dapat Info Status?</h3>
+          <p>Customer tanya "sudah selesai belum?" 3x per servis. Bot kirim notif otomatis: parts datang, proses, siap ambil. Mengurangi telpon masuk 80%.</p>
+          <span class="status-badge">Research</span>
+        </article>
+        <article class="upcoming-card">
+          <span class="sector-badge">Klinik Kecantikan / Estetika</span>
+          <h3>Berapa Leads Klinik Estetika Hilang Karena WA Lambat Balas Konsultasi?</h3>
+          <p>Konsultasi treatment butuh response <5 menit. Bot handle FAQ harga, durasi, downtime, booking konsultasi dokter 24/7. Case study klinik 2 cabang.</p>
+          <span class="status-badge">Planned</span>
+        </article>
+        <article class="upcoming-card">
+          <span class="sector-badge">Pendidikan / Kursus / Bimbel</span>
+          <h3>Berapa Pendaftar Kursus Hilang Karena Admin Tidak Online Saat Jam Kerja Orang Tua?</h3>
+          <p>Orang tua tanya jam 20-22. Bot handle FAQ kurikulum, jadwal, biaya, booking trial class, kirim materi gratis sebagai lead magnet.</p>
+          <span class="status-badge">Planned</span>
+        </article>
+        <article class="upcoming-card">
+          <span class="sector-badge">Properti / Rental Kos / Kontrakan</span>
+          <h3>Berapa Penyewa Kos Hilang Karena Pemilik Tidak Bisa Buat Viewing Malam/Hari Libur?</h3>
+          <p>Bot handle FAQ fasilitas, harga, aturan, booking viewing virtual/video call, kirim kontrak digital, collect deposit otomatis.</p>
+          <span class="status-badge">Research</span>
+        </article>
+        <article class="upcoming-card">
+          <span class="sector-badge">E-commerce / Reseller / Dropship</span>
+          <h3>Berapa Order Dropship Hilang Karena Belum Konfirmasi Pembayaran Otomatis?</h3>
+          <p>Bot cek payment gateway, kirim invoice, update status "diproses-dikirim-sampai", handle komplain resi, upsell produk terkait.</p>
+          <span class="status-badge">Planned</span>
+        </article>
+      </div>
+    </section>
 
-<!-- CHAT MODAL -->
-<div id="chat-modal" class="modal-overlay">
-  <div class="modal-box modal-chat-box">
-    <div class="modal-header">
-      <span class="modal-title">Konsultasi Gratis</span>
-      <button onclick="closeModal('chat-modal')" class="modal-close">
-        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
-      </button>
+    <section class="blog-cta">
+      <h2>Mau Kasus UMKM Anda Jadi Studi Kasus Blog Kami?</h2>
+      <p>Kami cari 5 UMKM Indonesia (laundry, kuliner, bengkel, klinik, kursus, kos, e-commerce) untuk pilot project chatbot AI WhatsApp gratis setup 3 bulan. Imbalan: jadi case study blog + testimoni video.</p>
+      <a href="/#contact" class="btn-primary btn-large">Daftar Pilot Project Gratis →</a>
+    </section>
+
+    <section class="newsletter-signup">
+      <h3>Dapatkan Insight AI UMKM Mingguan</h3>
+      <p>Data nyata, kalkulasi ROI, template flow chatbot, update fitur WA Business API. Gratis, unsubscribe kapan saja.</p>
+      <form class="newsletter-form" action="/api/newsletter" method="POST">
+        <input type="email" name="email" placeholder="email@umkm-anda.com" required>
+        <button type="submit" class="btn-primary">Langganan</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo"><svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#2563EB"/><path d="M8 16L14 22L24 10" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg> AI Marketing Strategic</a>
+        <p>AI Automation untuk UMKM Indonesia. Chatbot WhatsApp, Follow-up Otomatis, Booking & Order Otomatis.</p>
+      </div>
+      <nav class="footer-nav">
+        <div><h5>Layanan</h5><ul><li><a href="/#services">Chatbot WhatsApp AI</a></li><li><a href="/#services">Follow-up Otomatis</a></li><li><a href="/#services">Booking & Order System</a></li><li><a href="/#services">AI Voice Calling</a></li></ul></div>
+        <div><h5>Sumber Daya</h5><ul><li><a href="/static/blog/">Blog GEO</a></li><li><a href="/#cases">Studi Kasus</a></li><li><a href="/#resources">Kalkulator ROI</a></li><li><a href="/#resources">Template Gratis</a></li></ul></div>
+        <div><h5>Perusahaan</h5><ul><li><a href="/#about">Tentang Kami</a></li><li><a href="/#contact">Kontak</a></li><li><a href="/privacy.html">Kebijakan Privasi</a></li><li><a href="/terms.html">Syarat & Ketentuan</a></li></ul></div>
+      </nav>
     </div>
-    <iframe class="modal-iframe" src="https://ai.newton.co.id/webhook/f263072c-d9fd-47e0-82e5-a85af72df984/chat" allow="microphone"></iframe>
-  </div>
-</div>
-
-<button id="scroll-top" onclick="scrollTop()" aria-label="Scroll to top">
-  <svg class="icon" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
-</button>
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HPCDWE0YDD"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  window.gtag = gtag;
-  gtag('js', new Date());
-  gtag('config', 'G-HPCDWE0YDD');
-</script>
-<!-- BLOG FILTER + COUNT -->
-<script>
-(function(){
-  var grid=document.getElementById('blog-grid');
-  if(!grid) return;
-  var cards=grid.querySelectorAll('.blog-card');
-  var cnt=document.getElementById('art-count');
-  if(cnt) cnt.textContent=cards.length;
-  var chips=document.querySelectorAll('#blog-filter .chip');
-  chips.forEach(function(c){
-    c.addEventListener('click',function(){
-      chips.forEach(function(x){x.setAttribute('aria-pressed','false');});
-      c.setAttribute('aria-pressed','true');
-      var cat=c.getAttribute('data-cat');
-      grid.classList.toggle('filtered',cat!=='all');
-      cards.forEach(function(card){
-        var el=card.querySelector('.blog-card-cat');
-        var cc=el?el.textContent.trim().toLowerCase():'';
-        card.classList.toggle('hide',!(cat==='all'||cc===cat));
-      });
-    });
-  });
-})();
-</script>
-<script src="/assets/js/main.js" defer></script>
-<script src="/assets/js/tracking.js" defer></script>
-<div id="footer-placeholder"></div>
-
-<div id="terms-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Syarat dan Ketentuan">
-  <div class="modal-box" style="max-width:560px;padding:40px">
-    <button class="modal-close" onclick="closeModal('terms-modal')" style="float:right;background:#f3f4f6;color:#475569;border:1px solid #e2e8f0" aria-label="Tutup syarat dan ketentuan">&#10005;</button>
-    <div style="font-size:20px;font-weight:700;margin-bottom:16px;color:var(--text-dark)">Syarat &amp; Ketentuan</div>
-    <div style="font-size:14px;color:var(--text-medium);line-height:1.8;max-height:60vh;overflow-y:auto">
-      <p style="font-weight:600;color:var(--text-dark);margin-bottom:8px">1. Layanan</p><p style="margin-bottom:16px">AI Marketing Strategic menyediakan layanan AI Business Operating System untuk UMKM Indonesia.</p>
-      <p style="font-weight:600;color:var(--text-dark);margin-bottom:8px">2. Biaya &amp; Pembayaran</p><p style="margin-bottom:16px">Biaya setup dibayar sekali di awal. Biaya infrastruktur bulanan dikenakan terpisah. Tidak ada kontrak jangka panjang.</p>
-      <p style="font-weight:600;color:var(--text-dark);margin-bottom:8px">3. Garansi</p><p style="margin-bottom:16px">Jika sistem tidak berjalan sesuai spesifikasi tertulis, uang setup dikembalikan 100%.</p>
-      <p style="font-weight:600;color:var(--text-dark);margin-bottom:8px">4. Data &amp; Privasi</p><p style="margin-bottom:16px">Data klien tidak dijual, tidak dibagikan ke pihak ketiga.</p>
+    <div class="container footer-bottom">
+      <p>&copy; 2025 AI Marketing Strategic. Semua hak dilindungi.</p>
     </div>
-  </div>
-</div>
+  </footer>
 
+  <script src="/static/js/main.js"></script>
 </body>
 </html>
