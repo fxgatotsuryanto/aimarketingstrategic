@@ -77,11 +77,11 @@ await page.goto(`http://127.0.0.1:${PORT}/`, {
   timeout: 60000,
 });
 
-// Wait for React to mount its root content
-await page.waitForSelector('#root > *', { timeout: 15000 });
+// Wait for React to mount its root content - wait for actual children in #root
+await page.waitForSelector('#root > *', { timeout: 30000 });
 
-// Additional wait for animations/deferred renders
-await new Promise((r) => setTimeout(r, 2000));
+// Additional wait for Framer Motion animations to settle
+await new Promise((r) => setTimeout(r, 5000));
 
 const html = await page.content();
 

@@ -60,6 +60,7 @@
 .post-nav a:hover{background:rgba(245,124,0,.08)}
 @media(max-width:640px){.post-body{font-size:16px;padding:40px 20px 60px}.blog-post-hero h1{font-size:26px}}
 </style>
+<link rel="stylesheet" href="/assets/css/blog-footer.css">
 </head>
 <body>
 <!-- NAVBAR -->
@@ -244,8 +245,29 @@
   <svg class="icon" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
 </button>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=GA4_ID"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','GA4_ID');</script>
-<script src="/js/script.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HPCDWE0YDD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', 'G-HPCDWE0YDD');
+</script>
+<script src="/assets/js/main.js" defer></script>
+<div id="footer-placeholder"></div>
+
+<div id="terms-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Syarat dan Ketentuan">
+  <div class="modal-box" style="max-width:560px;padding:40px">
+    <button class="modal-close" onclick="closeModal('terms-modal')" style="float:right;background:#f3f4f6;color:#475569;border:1px solid #e2e8f0" aria-label="Tutup syarat dan ketentuan">&#10005;</button>
+    <div style="font-size:20px;font-weight:700;margin-bottom:16px;color:var(--text-dark)">Syarat &amp; Ketentuan</div>
+    <div style="font-size:14px;color:var(--text-medium);line-height:1.8;max-height:60vh;overflow-y:auto">
+      <p style="font-weight:600;color:var(--text-dark);margin-bottom:8px">1. Layanan</p><p style="margin-bottom:16px">AI Marketing Strategic menyediakan layanan AI Business Operating System untuk UMKM Indonesia.</p>
+      <p style="font-weight:600;color:var(--text-dark);margin-bottom:8px">2. Biaya &amp; Pembayaran</p><p style="margin-bottom:16px">Biaya setup dibayar sekali di awal. Biaya infrastruktur bulanan dikenakan terpisah. Tidak ada kontrak jangka panjang.</p>
+      <p style="font-weight:600;color:var(--text-dark);margin-bottom:8px">3. Garansi</p><p style="margin-bottom:16px">Jika sistem tidak berjalan sesuai spesifikasi tertulis, uang setup dikembalikan 100%.</p>
+      <p style="font-weight:600;color:var(--text-dark);margin-bottom:8px">4. Data &amp; Privasi</p><p style="margin-bottom:16px">Data klien tidak dijual, tidak dibagikan ke pihak ketiga.</p>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>

@@ -20,10 +20,70 @@
 <meta name="twitter:title" content="AI Marketing Strategic — AI Business Operating System untuk UMKM Indonesia">
 <meta name="twitter:description" content="AI Business Operating System untuk UMKM. Bukan chatbot biasa — sistem AI yang mengoperasikan WhatsApp, follow-up, CRM, dan dashboard bisnis Anda 24/7.">
 <meta name="twitter:image" content="https://aimarketingstrategic.com/images/og-card.png">
+<meta name="robots" content="index, follow">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Shared CSS -->
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/components.css">
+<link rel="stylesheet" href="/assets/css/responsive.css">
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HPCDWE0YDD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', 'G-HPCDWE0YDD');
+</script>
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "AI Marketing Strategic",
+  "alternateName": "AIMS",
+  "description": "AI Business Operating System untuk UMKM Indonesia. AI Workforce yang mengoperasikan WhatsApp, follow-up, CRM, dan dashboard bisnis 24/7.",
+  "url": "https://aimarketingstrategic.com",
+  "logo": "https://aimarketingstrategic.com/images/logo%20aims.png",
+  "telephone": "+6281907552758",
+  "email": "hallo@aimarketingstrategic.com",
+  "address": { "@type": "PostalAddress", "addressCountry": "ID" },
+  "priceRange": "Rp990.000 – Rp2.500.000",
+  "sameAs": [
+    "https://www.linkedin.com/company/aimarketingstrategic",
+    "https://www.youtube.com/@AIMarketingStrategic"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "AI Marketing Strategic",
+  "description": "AI Business Operating System untuk UMKM Indonesia — AI Marketing, AI Sales, AI Operations terintegrasi.",
+  "url": "https://aimarketingstrategic.com",
+  "telephone": "+6281907552758",
+  "priceRange": "Rp990.000 – Rp2.500.000"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Berapa biaya untuk memulai?", "acceptedAnswer": { "@type": "Answer", "text": "Mulai dari Rp990rb (sekali bayar) plus infrastruktur Rp299rb/bulan. Tidak ada biaya tersembunyi dan tidak ada kontrak jangka panjang." } },
+    { "@type": "Question", "name": "Apakah saya butuh tim IT?", "acceptedAnswer": { "@type": "Answer", "text": "Tidak. Kami yang memasang, mengonfigurasi, dan merawat sistemnya. Anda cukup terima hasilnya lewat WhatsApp seperti biasa." } },
+    { "@type": "Question", "name": "Berapa lama proses setup?", "acceptedAnswer": { "@type": "Answer", "text": "Paket starter selesai dalam 3 hari kerja, tanpa mengganggu operasional bisnis yang sedang berjalan." } },
+    { "@type": "Question", "name": "Apakah data pelanggan saya aman?", "acceptedAnswer": { "@type": "Answer", "text": "Data Anda tidak dijual, tidak dibagikan ke pihak ketiga, dan disimpan sesuai kebijakan privasi yang berlaku." } }
+  ]
+}
+</script>
 
 <style>
 /* ═══════════════════════════════════════════════
@@ -332,33 +392,10 @@ footer{background:var(--bg-warm);border-top:1px solid var(--border-light);paddin
 </head>
 <body>
 
-<!-- ═══ NAVBAR ═══ -->
-<nav>
-  <div class="nav-inner">
-    <a href="/" class="nav-logo">aimarketing<span>strategic</span></a>
-    <div class="nav-links">
-      <a href="/">Beranda</a>
-      <a href="/tentang.html">Tentang</a>
-      <a href="/harga.html">Harga</a>
-      <a href="/hasil.html">Hasil</a>
-      <a href="/blog/">Blog</a>
-    </div>
-    <button class="btn btn-accent nav-cta" onclick="openChat()">AI Assessment Gratis</button>
-    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
-      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-    </button>
-  </div>
-</nav>
-
-<!-- ═══ MOBILE MENU ═══ -->
-<div id="mobile-menu" style="display:none;position:fixed;top:64px;right:16px;width:260px;background:var(--bg-white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px;z-index:200;box-shadow:var(--shadow-xl)">
-  <a href="/" style="display:block;padding:10px 0;font-size:14px;font-weight:500;color:var(--text-primary);border-bottom:1px solid var(--border-light)">Beranda</a>
-  <a href="/tentang.html" style="display:block;padding:10px 0;font-size:14px;font-weight:500;color:var(--text-secondary);border-bottom:1px solid var(--border-light)">Tentang</a>
-  <a href="/harga.html" style="display:block;padding:10px 0;font-size:14px;font-weight:500;color:var(--text-secondary);border-bottom:1px solid var(--border-light)">Harga</a>
-  <a href="/hasil.html" style="display:block;padding:10px 0;font-size:14px;font-weight:500;color:var(--text-secondary);border-bottom:1px solid var(--border-light)">Hasil</a>
-  <a href="/blog/" style="display:block;padding:10px 0;font-size:14px;font-weight:500;color:var(--text-secondary);margin-bottom:12px">Blog</a>
-  <button class="btn btn-accent btn-block" onclick="openChat()" style="padding:12px">AI Assessment Gratis</button>
-</div>
+<!-- ═══ NAVBAR PLACEHOLDERS (injected by JS) ═══ -->
+<div id="nav-placeholder" role="navigation" aria-label="Navigasi utama"></div>
+<div id="mobile-placeholder"></div>
+<div id="overlay" class="mobile-overlay"></div>
 
 <!-- ═══ HERO ═══ -->
 <section id="hero">
@@ -420,42 +457,42 @@ footer{background:var(--bg-warm);border-top:1px solid var(--border-light);paddin
   <div class="workforce-grid">
     <div class="employee-card orange stagger-1">
           <div class="employee-avatar orange">🤖</div>
-          <div class="employee-name">AURA — AI Frontliner</div>
+          <h3 class="employee-name">AURA — AI Frontliner</h3>
           <div class="employee-role">RESEPSIONIS DIGITAL</div>
           <div class="employee-desc">Menyambut, menyaring, dan menjawab pertanyaan pelanggan di WhatsApp 24 jam. Komplain ke tim teknis, prospek panas ke sales.</div>
           <div class="employee-status">Active — 24/7</div>
         </div>
         <div class="employee-card blue stagger-2">
           <div class="employee-avatar blue">📊</div>
-          <div class="employee-name">SONIA — AI Sales</div>
+          <h3 class="employee-name">SONIA — AI Sales</h3>
           <div class="employee-role">KUALIFIKASI & CLOSING</div>
           <div class="employee-desc">Mengkualifikasi leads, menjawab pertanyaan harga & jadwal, dan mengarahkan prospek panas ke booking. Bekerja seperti sales senior.</div>
           <div class="employee-status">Active — 24/7</div>
         </div>
         <div class="employee-card green stagger-3">
           <div class="employee-avatar green">📧</div>
-          <div class="employee-name">MIRA — AI Follow-Up</div>
+          <h3 class="employee-name">MIRA — AI Follow-Up</h3>
           <div class="employee-role">LEADS RETARGETING</div>
           <div class="employee-desc">Follow-up otomatis ke leads yang belum balas dalam 1 jam, 24 jam, dan 3 hari. Pola terbukti naikkan closing rate 3x lipat.</div>
           <div class="employee-status">Active — 24/7</div>
         </div>
         <div class="employee-card purple stagger-4">
               <div class="employee-avatar purple">📋</div>
-              <div class="employee-name">NOVA — AI CRM</div>
+              <h3 class="employee-name">NOVA — AI CRM</h3>
               <div class="employee-role">DATA & PIPELINE</div>
               <div class="employee-desc">Mencatat setiap interaksi pelanggan ke CRM otomatis. Dari leads pertama sampai closing — semua tercatat, tidak ada yang terlewat.</div>
               <div class="employee-status">Active — 24/7</div>
             </div>
             <div class="employee-card orange stagger-1">
               <div class="employee-avatar orange">📊</div>
-              <div class="employee-name">VERA — AI Dashboard</div>
+              <h3 class="employee-name">VERA — AI Dashboard</h3>
               <div class="employee-role">OWNER CONTROL CENTER</div>
               <div class="employee-desc">Semua angka bisnis dalam satu layar: leads masuk, konversi, revenue, performa tim — real-time dari HP. Tanpa perlu tanya ke staf.</div>
               <div class="employee-status">Active — 24/7</div>
             </div>
             <div class="employee-card blue stagger-2">
               <div class="employee-avatar blue">🔍</div>
-              <div class="employee-name">DEX — AI Analytics</div>
+              <h3 class="employee-name">DEX — AI Analytics</h3>
               <div class="employee-role">INSIGHT & REPORTING</div>
               <div class="employee-desc">Menganalisis pola leads, jam sibuk, sumber traffic terbaik, dan memberikan rekomendasi strategi yang bisa langsung ditindaklanjuti.</div>
               <div class="employee-status">Active — 24/7</div>
@@ -509,17 +546,17 @@ footer{background:var(--bg-warm);border-top:1px solid var(--border-light);paddin
     <div class="workflow-steps">
       <div class="workflow-step stagger-1">
         <div class="workflow-num">1</div>
-        <div class="workflow-title">AI Revenue Assessment</div>
+        <h3 class="workflow-title">AI Revenue Assessment</h3>
         <div class="workflow-desc">Kami audit WhatsApp bisnis Anda — temukan pola leads yang hilang, bottleneck respons, dan celah revenue yang bisa langsung ditutup.</div>
       </div>
       <div class="workflow-step stagger-2">
         <div class="workflow-num">2</div>
-        <div class="workflow-title">Setup & Integrasi</div>
+        <h3 class="workflow-title">Setup & Integrasi</h3>
         <div class="workflow-desc">Kami pasang AI Workforce ke WhatsApp, website, dan CRM Anda. Selesai dalam 3 hari tanpa mengganggu operasional bisnis.</div>
       </div>
       <div class="workflow-step stagger-3">
         <div class="workflow-num">3</div>
-        <div class="workflow-title">Revenue Activation</div>
+        <h3 class="workflow-title">Revenue Activation</h3>
         <div class="workflow-desc">Sistem berjalan 24/7. AI menangani leads, follow-up, dan data — Anda fokus pada pengembangan bisnis.</div>
       </div>
     </div>
@@ -536,7 +573,7 @@ footer{background:var(--bg-warm);border-top:1px solid var(--border-light);paddin
     </div>
     <div class="pricing-grid">
       <div class="pricing-card stagger-1">
-        <div class="pricing-name">STARTER</div>
+        <h3 class="pricing-name">STARTER</h3>
         <div class="pricing-sub">AI Frontliner + Website</div>
         <div class="pricing-amount">Rp990<span>rb</span></div>
         <div class="pricing-period">sekali setup · Rp299rb/bln</div>
@@ -551,7 +588,7 @@ footer{background:var(--bg-warm);border-top:1px solid var(--border-light);paddin
       </div>
       <div class="pricing-card featured stagger-2">
         <div class="pricing-badge">PALING LARIS</div>
-        <div class="pricing-name">AUTOPILOT</div>
+        <h3 class="pricing-name">AUTOPILOT</h3>
         <div class="pricing-sub">Frontliner + CRM + Follow-Up</div>
         <div class="pricing-amount">Rp2.5<span>jt</span></div>
         <div class="pricing-period">sekali setup · Rp499rb/bln</div>
@@ -565,7 +602,7 @@ footer{background:var(--bg-warm);border-top:1px solid var(--border-light);paddin
         <button class="btn btn-accent btn-block" onclick="openChat()">Paling Populer →</button>
       </div>
       <div class="pricing-card stagger-3">
-        <div class="pricing-name">CUSTOM</div>
+        <h3 class="pricing-name">CUSTOM</h3>
         <div class="pricing-sub">AI Business Operating System</div>
         <div class="pricing-amount">Custom</div>
         <div class="pricing-period">konsultasi kebutuhan</div>
@@ -639,65 +676,24 @@ footer{background:var(--bg-warm);border-top:1px solid var(--border-light);paddin
   </div>
 </section>
 
-<!-- ═══ FOOTER ═══ -->
-<footer>
-  <div class="footer-inner">
-    <div>
-      <div class="footer-brand">aimarketing<span>strategic</span></div>
-      <p class="footer-desc">AI Business Operating System untuk UMKM Indonesia. Bukan chatbot biasa — sistem AI yang mengoperasikan WhatsApp, follow-up, CRM, dan dashboard bisnis Anda 24/7.</p>
-    </div>
-    <div>
-      <div class="footer-col-title">Menu</div>
-      <ul class="footer-links">
-        <li><a href="/">Beranda</a></li>
-        <li><a href="/tentang.html">Tentang</a></li>
-        <li><a href="/harga.html">Harga</a></li>
-        <li><a href="/hasil.html">Hasil</a></li>
-        <li><a href="/blog/">Blog</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-col-title">Produk</div>
-      <ul class="footer-links">
-        <li><a href="/produk/follow-up-playbook.html">Playbook WA</a></li>
-        <li><a href="/harga.html">AI Frontliner</a></li>
-        <li><a href="/harga.html">AI Sales Department</a></li>
-        <li><a href="/demo.html">Coba Demo</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-col-title">Kontak</div>
-      <ul class="footer-links">
-        <li><a href="https://wa.me/6281907552758">0819-0755-2758</a></li>
-        <li><a href="mailto:hallo@aimarketingstrategic.com">hallo@aimarketingstrategic.com</a></li>
-        <li><a href="/kontak.html">Konsultasi Gratis</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p class="footer-copy">© 2026 aimarketingstrategic.com</p>
-    <div style="display:flex;gap:24px">
-      <a href="/privacy-policy.html" style="font-size:11px;color:var(--text-tertiary)">Privacy</a>
-      <button onclick="openModal('terms-modal')" style="font-size:11px;color:var(--text-tertiary);background:none;border:none;cursor:pointer">Terms</button>
-    </div>
-  </div>
-</footer>
+<!-- ═══ FOOTER PLACEHOLDER (injected by JS) ═══ -->
+<div id="footer-placeholder" role="contentinfo"></div>
 
 <!-- ═══ CHAT MODAL ═══ -->
-<div class="modal-overlay" id="chat-modal">
+<div class="modal-overlay" id="chat-modal" role="dialog" aria-modal="true" aria-label="AI Assessment Gratis">
   <div class="modal-box" style="padding:0;overflow:hidden">
     <div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:var(--text-primary);color:#fff">
       <span style="font-size:14px;font-weight:600">AI Assessment Gratis</span>
-      <button onclick="closeModal('chat-modal')" style="width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px;cursor:pointer;border:none">✕</button>
+      <button onclick="closeModal('chat-modal')" aria-label="Tutup modal" style="width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px;cursor:pointer;border:none">✕</button>
     </div>
     <iframe class="modal-iframe" src="https://ai.newton.co.id/webhook/f263072c-d9fd-47e0-82e5-a85af72df984/chat" allow="microphone"></iframe>
   </div>
 </div>
 
 <!-- ═══ TERMS MODAL ═══ -->
-<div class="modal-overlay" id="terms-modal">
+<div class="modal-overlay" id="terms-modal" role="dialog" aria-modal="true" aria-label="Syarat dan Ketentuan">
   <div class="modal-box" style="max-width:560px">
-    <button class="modal-close" onclick="closeModal('terms-modal')">✕</button>
+    <button class="modal-close" onclick="closeModal('terms-modal')" aria-label="Tutup modal">✕</button>
     <div class="modal-title" style="margin-bottom:16px">Syarat & Ketentuan</div>
     <div style="font-size:13px;color:var(--text-secondary);line-height:1.8;max-height:60vh;overflow-y:auto">
       <p style="font-weight:600;color:var(--text-primary);margin-bottom:8px">1. Layanan</p>
@@ -714,53 +710,6 @@ footer{background:var(--bg-warm);border-top:1px solid var(--border-light);paddin
 </div>
 
 <!-- ═══ SCRIPTS ═══ -->
-<script>
-function toggleMenu() {
-  var m = document.getElementById('mobile-menu');
-  m.style.display = m.style.display === 'none' ? 'block' : 'none';
-}
-function openModal(id) { document.getElementById(id).classList.add('open'); }
-function closeModal(id) { document.getElementById(id).classList.remove('open'); }
-function openChat(){openModal('chat-modal')}
-function submitLead() {
-  var n = document.getElementById('chat-nama').value;
-  var w = document.getElementById('chat-wa').value;
-  var msg = encodeURIComponent('Halo, saya ' + n + (w ? ' (WA: ' + w + ')' : '') + ' ingin jadwalkan AI Revenue Assessment.');
-  window.open('https://wa.me/6281907552758?text=' + msg, '_blank');
-  closeModal('chat-modal');
-}
-function trackLead() { /* placeholder for analytics */ }
-
-// Close modals on overlay click
-document.querySelectorAll('.modal-overlay').forEach(function(el) {
-  el.addEventListener('click', function(e) {
-    if (e.target === this) this.classList.remove('open');
-  });
-});
-
-// Close mobile menu on outside click
-document.addEventListener('click', function(e) {
-  var menu = document.getElementById('mobile-menu');
-  if (menu.style.display === 'block' && !menu.contains(e.target) && !e.target.closest('.hamburger')) {
-    menu.style.display = 'none';
-  }
-});
-
-// Reveal observer for scroll animations
-(function() {
-  var els = document.querySelectorAll('.fade-up, .stagger-1, .stagger-2, .stagger-3, .stagger-4');
-  if (els.length) {
-    var obs = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) {
-          e.target.style.animationPlayState = 'running';
-          obs.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    els.forEach(function(el) { el.style.animationPlayState = 'paused'; obs.observe(el); });
-  }
-})();
-</script>
+<script src="/assets/js/main.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,128 @@
+/* ════════════════════════════════════════════════════════════════════
+   RESPONSIVE.CSS — All Media Queries
+   Organized by breakpoint ascending
+   ════════════════════════════════════════════════════════════════════ */
+
+/* ════════════════════════════════════════════════════════════════════
+   prefers-reduced-motion
+   ════════════════════════════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  /* Global override for blog cards */
+  .blog-card { opacity: 1; animation: none; }
+  .blog-card:hover,
+  .blog-grid:not(.filtered) article:first-child:hover { transform: none; }
+  .chip:hover { transform: none; }
+
+  /* FAQ icon (Design B) */
+  #faq .faq-icon { transition: none; }
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   max-width: 480px  —  Small mobile
+   ════════════════════════════════════════════════════════════════════ */
+@media (max-width: 480px) {
+  /* Footer — single column */
+  .footer-inner { grid-template-columns: 1fr; }
+
+  /* FAQ compact (Design B) */
+  #faq summary { padding: 16px 18px; font-size: 14px; }
+  #faq .faq-answer { padding: 0 18px 16px; }
+
+  /* Lead form — single column row */
+  .lead-form-row { grid-template-columns: 1fr; }
+
+  /* Privacy page — tighter padding */
+  .privacy-hero { padding: 120px 20px 48px; }
+  .privacy-content { padding: 32px 18px 48px; }
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   max-width: 640px  —  Mobile (wider)
+   ════════════════════════════════════════════════════════════════════ */
+@media (max-width: 640px) {
+  /* Footer — single column (Design A) */
+  .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+  .footer-brand { grid-column: auto; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .footer-legal { order: -1; }
+
+  /* Why grid (tentang) — single column */
+  .why-grid { grid-template-columns: 1fr !important; }
+
+  /* Blog post — smaller text & padding */
+  .post-body { font-size: 16px; padding: 40px 20px 60px; }
+  .blog-post-hero h1 { font-size: 26px; }
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   max-width: 767px  —  Tablet portrait & below
+   ════════════════════════════════════════════════════════════════════ */
+@media (max-width: 767px) {
+  /* General section padding reduction */
+  section { padding: 60px 0; }
+
+  /* Footer — 2 columns */
+  .footer-inner { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .footer-brand { grid-column: span 2; max-width: none; }
+
+  /* Pricing featured — remove scale */
+  .pricing-card.featured { transform: none; }
+
+  /* Demo simulator — single column */
+  .demo-grid { grid-template-columns: 1fr; }
+
+  /* Phone frame — smaller on mobile */
+  .phone-frame { width: 240px; height: 500px; }
+
+  /* Metrics grid — single column */
+  .metrics-grid { grid-template-columns: 1fr; }
+
+  /* Contact page — single column */
+  .contact-grid { grid-template-columns: 1fr; }
+
+  /* Founder card — vertical on mobile */
+  .founder-card { flex-direction: column; padding: 24px; }
+
+  /* Process flow — line repositioned */
+  .process-flow::before { left: 24px; }
+  .process-steps { grid-template-columns: 1fr; }
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   min-width: 768px  —  Tablet & above (desktop nav)
+   ════════════════════════════════════════════════════════════════════ */
+@media (min-width: 768px) {
+  /* Desktop navigation (Design A) */
+  .nav-links { display: flex; }
+  .nav-actions { display: flex; }
+  .hamburger { display: none; }
+  .mobile-overlay,
+  .mobile-menu { display: none !important; }
+
+  /* Desktop navigation (Design B) */
+  .nav-cta { display: inline-flex; }
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   min-width: 820px  —  Blog featured post constraint
+   ════════════════════════════════════════════════════════════════════ */
+@media (min-width: 820px) {
+  .blog-grid:not(.filtered) article:first-child .blog-card-body { max-width: 780px; }
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   max-width: 1024px  —  Tablet landscape
+   ════════════════════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  /* Footer — 2 columns */
+  .footer-inner { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .footer-brand { grid-column: span 2; max-width: none; }
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   min-width: 1024px  —  Desktop
+   ════════════════════════════════════════════════════════════════════ */
+@media (min-width: 1024px) {
+  /* Hero heading size bump (Design B) */
+  .hero-h1 { font-size: clamp(28px, 4vw, 44px); }
+}

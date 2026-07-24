@@ -1,13 +1,14 @@
 
 import React, { useState, useCallback, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { 
-  Users, 
-  Workflow, 
-  CheckCircle2, 
-  TrendingUp, 
-  MessageCircle, 
-  LayoutDashboard, 
+import { trackEvent } from './index';
+import {
+  Users,
+  Workflow,
+  CheckCircle2,
+  TrendingUp,
+  MessageCircle,
+  LayoutDashboard,
   ArrowRight,
   Menu,
   X,
@@ -21,7 +22,10 @@ import {
   Youtube,
   Check,
   MessageSquare,
-  Lightbulb
+  Lightbulb,
+  Zap,
+  Activity,
+  ChevronDown
 } from 'lucide-react';
 
 // Chat Modal Component
@@ -425,12 +429,12 @@ const DemoSimulator: React.FC<{ onInstall: () => void }> = ({ onInstall }) => {
                             </div>
 
                             <div className="flex flex-col gap-4 mb-12">
-                                <button 
-                                    onClick={startDemo}
+                                <button
+                                    onClick={() => { trackEvent('Demo_Start', { location: 'demo_simulator' }); startDemo(); }}
                                     disabled={isPlaying}
                                     className={`w-full py-5 rounded-2xl font-black font-robot text-xs md:text-sm uppercase tracking-[0.2em] transition-all flex items-center justify-center gap-4 active:scale-95 ${
-                                        isPlaying 
-                                        ? 'bg-white/10 text-white/50 cursor-not-allowed border border-white/5' 
+                                        isPlaying
+                                        ? 'bg-white/10 text-white/50 cursor-not-allowed border border-white/5'
                                         : 'bg-orange-500 text-white shadow-[0_20px_40px_rgba(245,124,0,0.4)] hover:bg-orange-600'
                                     }`}
                                 >
@@ -465,9 +469,9 @@ const DemoSimulator: React.FC<{ onInstall: () => void }> = ({ onInstall }) => {
                                 "Ini bukan rekaman — sistem yang sama akan bekerja di bisnis Anda"
                             </p>
 
-                            <button 
-                                onClick={onInstall} 
-                                className="w-full bg-transparent border-2 border-orange-500 text-orange-500 py-4 rounded-xl font-black font-robot text-[10px] uppercase tracking-widest hover:bg-orange-500 hover:text-white transition-all active:scale-95"
+                            <button
+                                onClick={() => { trackEvent('Demo_Complete', { location: 'demo_simulator' }); onInstall(); }}
+                                className="w-full bg-transparent border-2 border-orange-500 text-orange-500 py-4 rounded-xl font-black font-robot text-[10px] uppercase tracking-widest hover:bg-orange-505 hover:text-white transition-all active:scale-95"
                             >
                                 Pasang di Bisnis Saya →
                             </button>
@@ -535,11 +539,11 @@ const App: React.FC = () => {
   }, []);
 
   const menuItems = [
-    { label: 'Solusi', href: '#ai-frontliner' },
+    { label: 'AI Frontliner', href: '#ai-frontliner' },
     { label: 'Simulasi', href: '#demo-simulator' },
-    { label: 'Modules', href: '#modul' },
+    { label: 'Modul AI', href: '#modul' },
     { label: 'Harga', href: '#harga' },
-    { label: 'Hasil', href: '#hasil' }
+    { label: 'Studi Kasus', href: '#hasil' }
   ];
 
   // Image Paths
@@ -552,24 +556,24 @@ const App: React.FC = () => {
       <header className="absolute top-0 left-0 right-0 bg-[#0B2A4A]/80 backdrop-blur-xl z-[100] border-b border-white/5 no-print">
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 h-16 md:h-20 flex items-center justify-between">
           <div className="flex items-center">
-            <button 
+            <button
               onClick={(e) => handleNavigation(e, 'home')}
               className="focus:outline-none hover:opacity-80 transition-opacity"
             >
-              <img 
-                src="https://aimarketingstrategic.com/images/logo%20aims.png" 
-                alt="AI Marketing Strategic Logo" 
+              <img
+                src="https://aimarketingstrategic.com/images/logo%20aims.png"
+                alt="AI Revenue Activation Logo"
                 className="h-8 md:h-12 w-auto"
               />
             </button>
           </div>
-          
+
           {/* Desktop Navigation - Priority sections for closing */}
           <nav className="hidden lg:flex items-center gap-8">
             {menuItems.map((item) => (
-              <a 
+              <a
                 key={item.label}
-                href={item.href} 
+                href={item.href}
                 onClick={(e) => handleNavigation(e, item.href)}
                 className="text-white/60 hover:text-orange-500 font-bold font-robot text-[10px] uppercase tracking-[0.2em] transition-all cursor-pointer"
               >
@@ -579,15 +583,15 @@ const App: React.FC = () => {
           </nav>
 
           <div className="flex items-center gap-4">
-            <button 
-              onClick={() => setIsChatOpen(true)}
+            <button
+              onClick={() => { trackEvent('AI_Assessment_Click', { location: 'header' }); setIsChatOpen(true); }}
               className="hidden sm:flex bg-[#F57C00] text-white px-6 py-2.5 rounded-xl font-bold font-robot text-[10px] hover:bg-orange-600 transition-all shadow-lg shadow-orange-900/20 uppercase tracking-widest active:scale-95 items-center gap-2"
             >
-              Demo Gratis
+              AI Assessment Gratis
             </button>
-            
+
             {/* Hamburger for mobile and extra menu access */}
-            <button 
+            <button
               className="lg:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors border border-white/10"
               onClick={toggleMenu}
               aria-label="Toggle menu"
@@ -646,11 +650,11 @@ const App: React.FC = () => {
                   </a>
                 ))}
                 <div className="pt-4 mt-2 border-t border-white/10">
-                  <button 
-                    onClick={() => { setIsChatOpen(true); closeMenu(); }}
+                  <button
+                    onClick={() => { trackEvent('AI_Assessment_Click', { location: 'mobile_menu' }); setIsChatOpen(true); closeMenu(); }}
                     className="w-full bg-[#F57C00] text-white py-3.5 rounded-xl font-bold font-robot text-[10px] hover:bg-orange-600 transition-all shadow-xl uppercase tracking-widest active:scale-95 text-center flex items-center justify-center gap-2"
                   >
-                    <MessageCircle size={14} /> Konsultasi Gratis
+                    <MessageCircle size={14} /> AI Assessment Gratis
                   </button>
                 </div>
               </nav>
@@ -682,40 +686,40 @@ const App: React.FC = () => {
                     <div className="lg:col-span-10 xl:col-span-8 animate-fade-in flex flex-col items-start text-left">
                     <div className="inline-flex items-center gap-3 px-4 py-2 bg-orange-500/10 border border-orange-500/20 rounded-full mb-8 backdrop-blur-sm">
                         <div className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
-                        <p className="text-orange-500 font-robot text-[10px] md:text-xs lg:text-sm uppercase tracking-[0.3em] font-black">AI Marketing Strategic</p>
+                        <p className="text-orange-500 font-robot text-[10px] md:text-xs lg:text-sm uppercase tracking-[0.3em] font-black">AI Revenue Activation</p>
                     </div>
-                    
+
                     <h1 className="text-xl md:text-2xl lg:text-3xl font-black font-robot leading-[1.1] mb-6 drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)] uppercase tracking-tight">
-                        WEBSITE, CHAT, DAN FOLLOW-UP <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-blue-200">MASIH BERJALAN SENDIRI-SENDIRI?</span>
+                        AI REVENUE ACTIVATION <br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-blue-200">UNTUK UMKM INDONESIA</span>
                     </h1>
-                    
+
                     <p className="text-base md:text-lg text-blue-50/90 mb-6 max-w-2xl leading-relaxed font-medium drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
-                        Bangun AI Frontliner yang menangkap leads, membalas chat, mengkualifikasi calon customer, dan menjalankan follow-up otomatis — tanpa menambah beban admin.
+                        Sistem AI yang menangkap leads, menjalankan follow-up, dan mengaktifkan revenue otomatis — setup 3 hari, mulai Rp 1,5 jt/bulan.
                     </p>
-                    
+
                     <p className="text-sm md:text-base text-orange-400 font-bold tracking-widest uppercase mb-10 drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
-                        Sistem AI siap pakai untuk bisnis yang ingin berkembang.
+                        AI Marketing + AI Sales + AI Operations — bekerja 24/7 tanpa tambah tim.
                     </p>
-                    
+
                     <div className="flex flex-col sm:flex-row gap-5 max-w-lg w-full items-start sm:items-center">
                         <div className="flex flex-col items-center gap-2 w-full sm:w-auto">
                             <div className="flex flex-col sm:flex-row gap-4 w-full">
-                                <button 
-                                  onClick={() => setIsChatOpen(true)}
+                                <button
+                                  onClick={() => { trackEvent('AI_Assessment_Click', { location: 'hero' }); setIsChatOpen(true); }}
                                   className="bg-[#F57C00] text-white px-8 py-4 rounded-xl font-bold font-robot text-xs md:text-sm hover:bg-orange-600 transition-all shadow-[0_15px_30px_rgba(245,124,0,0.5)] uppercase tracking-widest active:scale-95 flex items-center justify-center text-center w-full sm:w-auto gap-2"
                                 >
-                                  Jadwalkan Demo Gratis
+                                  🎯 AI Assessment Gratis — Temukan 1 Celah Revenue di 15 Menit
                                 </button>
-                                <a 
+                                <a
                                   href="#harga"
-                                  onClick={(e) => handleNavigation(e, '#harga')}
+                                  onClick={(e) => { trackEvent('Pricing_View', { location: 'hero' }); handleNavigation(e, '#harga'); }}
                                   className="bg-white/10 text-white border border-white/20 px-8 py-4 rounded-xl font-bold font-robot text-xs md:text-sm hover:bg-white/20 transition-all uppercase tracking-widest active:scale-95 flex items-center justify-center text-center w-full sm:w-auto gap-2 backdrop-blur-sm"
                                 >
                                   Lihat Paket & Harga
                                 </a>
                             </div>
-                            <span className="text-[10px] text-blue-200/70 uppercase tracking-widest font-bold mt-2">1 Modul AI Frontliner mulai Rp 1,5 juta · Setup 3 hari · Termasuk support 2 minggu</span>
+                            <span className="text-[10px] text-blue-200/70 uppercase tracking-widest font-bold mt-2">Setup 3 hari · AI Employee gaji Rp 350rb/bln · Support 2 minggu · Cancel kapan saja</span>
                         </div>
                     </div>
 
@@ -812,6 +816,83 @@ const App: React.FC = () => {
                 </div>
             </Section>
 
+            {/* 2.2 SECTION: 3-PILLAR FRAMEWORK VISUAL */}
+            <Section id="framework" title="Arsitektur AI Revenue Activation" subtitle="Tiga pilar terintegrasi yang bekerja bersama: menangkap leads, menjalankan sales, memantau performa — semua otomatis." bgType="light" className="border-y border-gray-100 -mt-6">
+                <div className="relative max-w-5xl mx-auto">
+                    {/* Center pillar visualization */}
+                    <div className="relative flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
+                        {/* Pillar 1: AI Marketing */}
+                        <div className="flex-1 text-center md:text-right relative z-10 group">
+                            <div className="mx-auto md:mx-0 mb-6 relative">
+                                <div className="w-40 h-40 md:w-48 md:h-48 bg-gradient-to-br from-blue-50 to-blue-100 rounded-3xl border-4 border-blue-200 flex items-center justify-center group-hover:border-blue-400 group-hover:shadow-2xl transition-all duration-500 relative">
+                                    <Zap size={48} className="text-blue-600 group-hover:text-blue-400 transition-colors" />
+                                    {/* Pulse ring */}
+                                    <div className="absolute inset-0 rounded-3xl border-2 border-blue-300/50 animate-pulse opacity-50" />
+                                </div>
+                                {/* Connecting line to center */}
+                                <div className="hidden md:block absolute top-1/2 right-0 w-full h-0.5 bg-gradient-to-r from-transparent via-blue-200 to-transparent z-0" />
+                            </div>
+                            <h3 className="text-xl md:text-2xl font-black font-robot text-primary uppercase mb-3">AI MARKETING</h3>
+                            <p className="text-primary font-bold text-sm uppercase tracking-wider mb-4">Menangkap Leads</p>
+                            <ul className="text-sm text-gray-600 space-y-2 text-right md:text-left mx-auto md:mx-0 max-w-xs">
+                                <li className="flex items-center justify-end md:justify-start gap-2"><Check size={14} className="text-green-500 flex-shrink-0" /> Webchat AI 24/7</li>
+                                <li className="flex items-center justify-end md:justify-start gap-2"><Check size={14} className="text-green-500 flex-shrink-0" /> Landing Page Konversi</li>
+                                <li className="flex items-center justify-end md:justify-start gap-2"><Check size={14} className="text-green-500 flex-shrink-0" /> Lead Magnet & Form Cerdas</li>
+                                <li className="flex items-center justify-end md:justify-start gap-2"><Check size={14} className="text-green-500 flex-shrink-0" /> CRM Intake Otomatis</li>
+                            </ul>
+                        </div>
+
+                        {/* Center: AI Sales */}
+                        <div className="relative flex-shrink-0 z-20">
+                            <div className="w-48 h-48 md:w-56 md:h-56 bg-gradient-to-br from-orange-500 via-orange-600 to-amber-600 rounded-3xl flex flex-col items-center justify-center text-white shadow-2xl relative overflow-hidden">
+                                <div className="absolute inset-0 bg-gradient-to-br from-orange-400/20 to-transparent" />
+                                <div className="absolute inset-0 bg-[url('https://aimarketingstrategic.com/images/background.png')] opacity-10" />
+                                <Zap size={56} className="relative mb-3 animate-pulse" />
+                                <h3 className="text-lg md:text-xl font-black font-robot uppercase tracking-wider relative">AI SALES</h3>
+                                <p className="text-orange-100 text-xs font-bold uppercase tracking-widest relative">Menjalankan Follow-Up</p>
+                            </div>
+                            {/* Rotating orbit indicators */}
+                            <div className="absolute inset-0 -inset-4 rounded-[50%] border-2 border-orange-300/30 animate-spin-slow" />
+                            <div className="absolute inset-0 -inset-8 rounded-[50%] border-2 border-orange-200/20 animate-spin-slow reverse" />
+                        </div>
+
+                        {/* Pillar 3: AI Operations */}
+                        <div className="flex-1 text-center md:text-left relative z-10 group">
+                            <div className="mx-auto md:mx-0 mb-6 relative">
+                                {/* Connecting line from center */}
+                                <div className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-green-200 to-transparent z-0" />
+                                <div className="w-40 h-40 md:w-48 md:h-48 bg-gradient-to-br from-green-50 to-green-100 rounded-3xl border-4 border-green-200 flex items-center justify-center group-hover:border-green-400 group-hover:shadow-2xl transition-all duration-500 relative mx-auto md:mx-0">
+                                    <Activity size={48} className="text-green-600 group-hover:text-green-400 transition-colors" />
+                                    <div className="absolute inset-0 rounded-3xl border-2 border-green-300/50 animate-pulse opacity-50" />
+                                </div>
+                            </div>
+                            <h3 className="text-xl md:text-2xl font-black font-robot text-primary uppercase mb-3">AI OPERATIONS</h3>
+                            <p className="text-primary font-bold text-sm uppercase tracking-wider mb-4">Memantau Performa</p>
+                            <ul className="text-sm text-gray-600 space-y-2 text-left mx-auto md:mx-0 max-w-xs">
+                                <li className="flex items-center gap-2"><Check size={14} className="text-green-500 flex-shrink-0" /> Dashboard Owner Real-time</li>
+                                <li className="flex items-center gap-2"><Check size={14} className="text-green-500 flex-shrink-0" /> Cash Flow & AR Tracking</li>
+                                <li className="flex items-center gap-2"><Check size={14} className="text-green-500 flex-shrink-0" /> Anomali Ops Alert (WA/Email)</li>
+                                <li className="flex items-center gap-2"><Check size={14} className="text-green-500 flex-shrink-0" /> Laporan Mingguan Otomatis</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    {/* Flow arrows description */}
+                    <div className="mt-12 md:mt-16 text-center">
+                        <div className="inline-flex items-center gap-6 text-sm text-gray-500 font-medium">
+                            <span className="flex items-center gap-2"><Zap size={16} className="text-blue-500" /> Leads Masuk</span>
+                            <ArrowRight size={20} className="text-orange-500" />
+                            <span className="flex items-center gap-2"><Zap size={16} className="text-orange-500" /> Follow-Up Otomatis</span>
+                            <ArrowRight size={20} className="text-green-500" />
+                            <span className="flex items-center gap-2"><Activity size={16} className="text-green-500" /> Revenue Terverifikasi</span>
+                        </div>
+                        <p className="mt-4 text-gray-500 text-sm max-w-2xl mx-auto">
+                            Tidak ada silo. AI Marketing mengumpulkan & mengkualifikasi. AI Sales mengeksekusi follow-up & closing ringan. AI Operations memberi visibilitas penuh ke Owner. Semua terhubung via webhook & database terpusat — <strong className="text-primary font-bold">setup sekali, jalan otomatis 24/7</strong>.
+                        </p>
+                    </div>
+                </div>
+            </Section>
+
             {/* 2.5 SECTION: AI WEBSITE FRONTLINER */}
             <Section id="ai-frontliner" title="WEBSITE BIASA HANYA DILIHAT. AI WEBSITE FRONTLINER BEKERJA." subtitle="Website modern bukan lagi brosur digital. Ia harus mampu menangkap leads, menjawab otomatis, mengarahkan calon customer, dan bekerja 24/7." bgType="light" className="border-t border-gray-100">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
@@ -886,6 +967,7 @@ const App: React.FC = () => {
                 </div>
             </Section>
 
+            
             {/* 3. SECTION: MODUL BISNIS AUTOPILOT */}
             <Section id="modul" title="Modul Bisnis Autopilot" subtitle="Sistem siap pakai yang mengotomatiskan bisnis Anda — mulai dari menjaring pembeli sampai memantau hasilnya." bgType="white" className="border-y border-gray-100">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
@@ -950,10 +1032,10 @@ const App: React.FC = () => {
                             <div className="bg-blue-50/50 p-6 rounded-3xl border border-blue-100">
                                 <div className="text-[10px] text-primary font-bold uppercase tracking-[0.2em] mb-2">Investasi Bulan Pertama</div>
                                 <div className="text-3xl font-black text-primary mb-1">Rp 1.850.000</div>
-                                <div className="text-xs text-gray-500 font-medium tracking-normal italic">Selanjutnya Rp 350.000 / bulan</div>
+                                <div className="text-xs text-gray-500 font-medium tracking-normal italic">Selanjutnya gaji AI Employee Rp 350.000 / bulan</div>
                             </div>
                             <div className="mt-4 px-4 space-y-1">
-                                <p className="text-[10px] text-gray-400 uppercase font-bold tracking-widest leading-relaxed">Breakdown: Rp 1,5jt (Setup) + Rp 350rb (Infra)</p>
+                                <p className="text-[10px] text-gray-400 uppercase font-bold tracking-widest leading-relaxed">Breakdown: Rp 1,5jt (Setup Once) + Rp 350rb/bln (AI Employee)</p>
                             </div>
                         </div>
 
@@ -965,8 +1047,8 @@ const App: React.FC = () => {
                             <li className="flex items-start gap-3 text-sm text-gray-600"><Check className="text-green-500 shrink-0" size={18} /> <span className="pt-0.5">Setup & Konfigurasi Selesai 3 Hari</span></li>
                         </ul>
                         
-                        <button 
-                            onClick={() => setIsChatOpen(true)}
+                        <button
+                            onClick={() => { trackEvent('Pricing_View', { package: 'Frontliner' }); setIsChatOpen(true); }}
                             className="w-full bg-white text-primary border-2 border-primary py-4 rounded-xl font-bold font-robot text-xs hover:bg-primary hover:text-white transition-all uppercase tracking-widest flex justify-center items-center gap-2"
                         >
                             Mulai dengan Paket Ini
@@ -988,10 +1070,10 @@ const App: React.FC = () => {
                             <div className="bg-white/10 p-6 rounded-3xl border border-white/10 backdrop-blur-sm">
                                 <div className="text-[10px] text-orange-400 font-bold uppercase tracking-[0.2em] mb-2">Investasi Bulan Pertama</div>
                                 <div className="text-3xl font-black text-white mb-1">Rp 5.000.000</div>
-                                <div className="text-xs text-blue-200 font-medium tracking-normal italic">Selanjutnya Rp 500.000 / bulan</div>
+                                <div className="text-xs text-blue-200 font-medium tracking-normal italic">Selanjutnya gaji AI Employee Rp 500.000 / bulan</div>
                             </div>
                             <div className="mt-4 px-4 space-y-1">
-                                <p className="text-[10px] text-blue-300/50 uppercase font-bold tracking-widest leading-relaxed">Breakdown: Rp 4,5jt (Setup) + Rp 500rb (Infra)</p>
+                                <p className="text-[10px] text-blue-300/50 uppercase font-bold tracking-widest leading-relaxed">Breakdown: Rp 4,5jt (Setup Once) + Rp 500rb/bln (AI Employee)</p>
                             </div>
                         </div>
 
@@ -1003,8 +1085,8 @@ const App: React.FC = () => {
                             <li className="flex items-start gap-3 text-sm text-blue-50"><Check className="text-orange-500 shrink-0" size={18} /> <span className="pt-0.5">WhatsApp CRM Intake Integration</span></li>
                         </ul>
                         
-                        <button 
-                            onClick={() => setIsChatOpen(true)}
+                        <button
+                            onClick={() => { trackEvent('Pricing_View', { package: 'Autopilot_Sales' }); setIsChatOpen(true); }}
                             className="w-full bg-orange-500 text-white py-4 rounded-xl font-bold font-robot text-xs hover:bg-orange-600 transition-all shadow-[0_15px_30px_rgba(245,124,0,0.4)] uppercase tracking-widest flex justify-center items-center gap-2"
                         >
                             Mulai dengan Paket Ini
@@ -1040,8 +1122,8 @@ const App: React.FC = () => {
                             </div>
                         </div>
                         
-                        <button 
-                            onClick={() => setIsChatOpen(true)}
+                        <button
+                            onClick={() => { trackEvent('Pricing_View', { package: 'Custom_AI_Operations' }); setIsChatOpen(true); }}
                             className="w-full relative z-10 bg-transparent text-blue-300 border-2 border-blue-800/60 py-4 rounded-xl font-bold font-robot text-xs hover:bg-blue-900/40 hover:text-white transition-all uppercase tracking-widest flex justify-center items-center gap-2"
                         >
                             Diskusikan Workflow Anda
@@ -1055,7 +1137,7 @@ const App: React.FC = () => {
                             <Cpu className="text-primary" size={24} />
                         </div>
                         <p className="text-sm text-gray-600 leading-relaxed m-0">
-                            <strong>AI Infrastructure</strong> adalah biaya operasional sistem yang mencakup automation engine, workflow orchestration, monitoring, dan maintenance ringan agar sistem tetap berjalan stabil.
+                            <strong>Gaji AI Employee</strong> adalah biaya bulanan untuk AI yang bekerja 24/7: auto-reply, follow-up, CRM sync, dashboard — tanpa lembur, tanpa cuti, tanpa resign.
                         </p>
                     </div>
                     <p className="text-xs text-gray-400 italic">
@@ -1102,7 +1184,7 @@ const App: React.FC = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="text-xs text-gray-400 font-medium mt-4">Modul: AI Penjaga Garis Depan</div>
+                            <div className="text-xs text-gray-400 font-medium mt-4">Modul: AI Penjaga Garis Depan · *Estimasi berdasarkan data industri UMKM distribusi</div>
                         </div>
                     </div>
 
@@ -1140,10 +1222,88 @@ const App: React.FC = () => {
                                         </div>
                                     </div>
                                 </div>
+                                <div className="bg-white p-3 rounded-xl border border-green-200 border-dashed mt-2">
+                                    <div className="text-[10px] text-gray-500 uppercase font-bold mb-1">Pendapatan Terkunci</div>
+                                    <div className="flex items-center gap-2">
+                                        <span className="text-xs text-red-400 line-through">Rp0</span>
+                                        <ArrowRight size={12} className="text-gray-400" />
+                                        <span className="text-sm font-black text-green-600">Rp4.8jt/bln</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div className="text-xs text-gray-400 font-medium mt-4">Modul: Mesin Follow-Up Otomatis</div>
+                            <div className="text-xs text-gray-400 font-medium mt-4">Modul: Mesin Follow-Up Otomatis *Estimasi pendapatan tertahan dari tagihan tertagih tepat waktu</div>
                         </div>
                     </div>
+                </div>
+            </Section>
+
+            {/* VIDEO PROOF SECTION */}
+            <Section id="video-proof" title="Bukti Nyata dari Lapangan" subtitle="YouTube Shorts harian dari tim Video Producer AI kami — menampilkan kasus nyata, demo sistem, dan wawasan UMKM Indonesia." bgType="dark" className="border-t border-white/5">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+                    {[
+                        {
+                            title: "AI Auto-Reply Properti 24 Jam",
+                            desc: "Agen properti tak lagi kehilangan closing karena telat balas chat malam hari. AI menjawab & jadwalkan viewing otomatis.",
+                            videoId: "n6ge3QTv3tU",
+                            duration: "0:58",
+                            sector: "Properti"
+                        },
+                        {
+                            title: "Follow-Up Otomatis Jasa B2B",
+                            desc: "Owner jasa simpan 120 menit/hari input data manual. AI ekstrak WA → Sheet → reminder otomatis H-3 & H-1.",
+                            videoId: "n6ge3QTv3tU",
+                            duration: "1:02",
+                            sector: "Jasa B2B"
+                        },
+                        {
+                            title: "Chatbot F&B Tangani 100+ Booking",
+                            desc: "Restoran ramai tapi chat tak terjawab. AI chatbot handle booking, menu, alergi, & konfirmasi meja 24/7.",
+                            videoId: "n6ge3QTv3tU",
+                            duration: "0:55",
+                            sector: "F&B"
+                        }
+                    ].map((video, idx) => (
+                        <div key={idx} className="group bg-[#0A1F3A] rounded-[40px] border border-blue-900/50 overflow-hidden hover:border-orange-500/50 transition-all">
+                            <div className="relative aspect-video bg-black/50">
+                                <iframe
+                                    src={`https://www.youtube.com/embed/${video.videoId}?rel=0&modestbranding=1&controls=1`}
+                                    title={video.title}
+                                    className="absolute inset-0 w-full h-full"
+                                    frameBorder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
+                                />
+                                <div className="absolute bottom-3 right-3 bg-black/80 text-white text-[10px] font-robot font-bold px-2 py-1 rounded tracking-wider">
+                                    {video.duration}
+                                </div>
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                            </div>
+                            <div className="p-6 space-y-3">
+                                <span className="inline-block px-3 py-1 bg-orange-500/20 text-orange-400 text-[10px] font-bold font-robot uppercase tracking-wider rounded-full">
+                                    {video.sector}
+                                </span>
+                                <h4 className="text-white font-black font-robot text-base leading-tight group-hover:text-orange-500 transition-colors">
+                                    {video.title}
+                                </h4>
+                                <p className="text-blue-200/70 text-sm leading-relaxed">{video.desc}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+                <div className="text-center mt-10">
+                    <a
+                        href={youtubeLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-3 bg-white/5 hover:bg-white/10 border border-white/10 text-white px-8 py-4 rounded-2xl font-bold font-robot uppercase tracking-widest transition-all"
+                    >
+                        <Youtube size={20} className="text-red-500" />
+                        Lihat Semua Video di Channel YouTube
+                        <ArrowRight size={20} />
+                    </a>
+                    <p className="text-blue-200/50 text-xs mt-4 uppercase tracking-widest font-medium">
+                        Video baru setiap hari jam 06:10 WIB — Produksi otomatis via AI Video Producer
+                    </p>
                 </div>
             </Section>
 
@@ -1230,7 +1390,77 @@ const App: React.FC = () => {
                     ))}
                 </div>
             </Section>
-            
+
+            {/* FAQ / OBJECTION HANDLING */}
+            <Section id="faq" title="Pertanyaan yang Sering Diajukan" subtitle="Jawaban jujur untuk keberatan yang wajar dari pemilik bisnis yang hati-hati." bgType="light" className="border-t border-gray-100">
+                <div className="max-w-4xl mx-auto">
+                    <details className="group bg-white rounded-2xl border border-gray-100 overflow-hidden mb-4 open:bg-green-50 open:border-green-200 transition-all">
+                        <summary className="flex items-center justify-between p-6 cursor-pointer list-none select-none">
+                            <h3 className="text-base font-bold text-gray-900 group-open:text-green-800 flex-1 pr-4">Apakah AI ini akan menggantikan karyawan saya?</h3>
+                            <ChevronDown className="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform flex-shrink-0" />
+                        </summary>
+                        <div className="px-6 pb-6 text-gray-600 text-sm leading-relaxed border-t border-gray-100 group-open:border-green-100">
+                            <p className="font-medium text-green-800 mb-2">Tidak. AI ini adalah "karyawan AI" yang menangani tugas repetitif: balas chat 24/7, input data, kirim reminder.</p>
+                            <p>Tim Anda beralih ke tugas bernilai tinggi: closing, strategi, hubungan pelanggan. AI mengurangi beban, bukan menggantikan manusia.</p>
+                        </div>
+                    </details>
+                    <details className="group bg-white rounded-2xl border border-gray-100 overflow-hidden mb-4 open:bg-green-50 open:border-green-200 transition-all">
+                        <summary className="flex items-center justify-between p-6 cursor-pointer list-none select-none">
+                            <h3 className="text-base font-bold text-gray-900 group-open:text-green-800 flex-1 pr-4">Apakah pelanggan tahu mereka bicara dengan AI?</h3>
+                            <ChevronDown className="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform flex-shrink-0" />
+                        </summary>
+                        <div className="px-6 pb-6 text-gray-600 text-sm leading-relaxed border-t border-gray-100 group-open:border-green-100">
+                            <p className="font-medium text-green-800 mb-2">Transparansi adalah prinsip kami.</p>
+                            <p>AI memperkenalkan diri sebagai "Asisten Virtual [Nama Bisnis]" di pesan pertama. Pelanggan Indonesia sudah terbiasa dengan chatbot bisnis — yang mereka butuhkan adalah jawaban cepat dan akurat, bukan siapa yang menjawab.</p>
+                        </div>
+                    </details>
+                    <details className="group bg-white rounded-2xl border border-gray-100 overflow-hidden mb-4 open:bg-green-50 open:border-green-200 transition-all">
+                        <summary className="flex items-center justify-between p-6 cursor-pointer list-none select-none">
+                            <h3 className="text-base font-bold text-gray-900 group-open:text-green-800 flex-1 pr-4">Berapa lama setup sampai bisa pakai?</h3>
+                            <ChevronDown className="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform flex-shrink-0" />
+                        </summary>
+                        <div className="px-6 pb-6 text-gray-600 text-sm leading-relaxed border-t border-gray-100 group-open:border-green-100">
+                            <p className="font-medium text-green-800 mb-2">Setup standar: 3 hari kerja.</p>
+                            <p>Hari 1: Audit alur kerja & mapping skenario. Hari 2: Setup modul AI & integrasi WA/CRM. Hari 3: Uji coba live dengan tim Anda & handover. Modul custom (integrasi ERP/akuntansi khusus) butuh 5-7 hari.</p>
+                        </div>
+                    </details>
+                    <details className="group bg-white rounded-2xl border border-gray-100 overflow-hidden mb-4 open:bg-green-50 open:border-green-200 transition-all">
+                        <summary className="flex items-center justify-between p-6 cursor-pointer list-none select-none">
+                            <h3 className="text-base font-bold text-gray-900 group-open:text-green-800 flex-1 pr-4">Bagaimana jika AI salah jawab atau keliru?</h3>
+                            <ChevronDown className="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform flex-shrink-0" />
+                        </summary>
+                        <div className="px-6 pb-6 text-gray-600 text-sm leading-relaxed border-t border-gray-100 group-open:border-green-100">
+                            <p className="font-medium text-green-800 mb-2">Sistem punya 3 lapisan keamanan:</p>
+                            <ol className="list-decimal list-inside space-y-1 ml-4">
+                                <li>Knowledge base hanya dari dokumen bisnis Anda (bukan internet umum)</li>
+                                <li>Fallback ke human: jika confidence {'<'} 80%, chat diteruskan ke tim Anda otomatis</li>
+                                <li>Dashboard monitoring real-time — Anda lihat semua percakapan & bisa intervensi kapan saja</li>
+                            </ol>
+                        </div>
+                    </details>
+                    <details className="group bg-white rounded-2xl border border-gray-100 overflow-hidden mb-4 open:bg-green-50 open:border-green-200 transition-all">
+                        <summary className="flex items-center justify-between p-6 cursor-pointer list-none select-none">
+                            <h3 className="text-base font-bold text-gray-900 group-open:text-green-800 flex-1 pr-4">Apakah data pelanggan saya aman?</h3>
+                            <ChevronDown className="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform flex-shrink-0" />
+                        </summary>
+                        <div className="px-6 pb-6 text-gray-600 text-sm leading-relaxed border-t border-gray-100 group-open:border-green-100">
+                            <p className="font-medium text-green-800 mb-2">Ya. Data tidak keluar dari infrastruktur Anda.</p>
+                            <p>WA Business API terhubung langsung ke server WhatsApp Meta. Knowledge base disimpan di database terenkripsi (Supabase/PostgreSQL) di region Singapore. Kami tidak menjual, membagikan, atau melatih model AI dengan data bisnis Anda. Kontrak kerahasiaan data (NDA) disertakan di kontrak.</p>
+                        </div>
+                    </details>
+                    <details className="group bg-white rounded-2xl border border-gray-100 overflow-hidden open:bg-green-50 open:border-green-200 transition-all">
+                        <summary className="flex items-center justify-between p-6 cursor-pointer list-none select-none">
+                            <h3 className="text-base font-bold text-gray-900 group-open:text-green-800 flex-1 pr-4">Bagaimana kalau nanti ingin berhenti berlangganan?</h3>
+                            <ChevronDown className="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform flex-shrink-0" />
+                        </summary>
+                        <div className="px-6 pb-6 text-gray-600 text-sm leading-relaxed border-t border-gray-100 group-open:border-green-100">
+                            <p className="font-medium text-green-800 mb-2">Tanpa denda, tanpa kontrak mengikat panjang.</p>
+                            <p>Berlangganan bulanan — berhenti kapan saja, data & CRM tetap milik Anda. Kami bantu ekspor data & handover ke tim internal Anda. Tidak ada vendor lock-in: sistem dibangun di atas standar terbuka (WA API, Supabase, n8n/Make).</p>
+                        </div>
+                    </details>
+                </div>
+            </Section>
+
             {/* 5. CTA FINAL */}
             <Section id="screening" bgType="dark" className="border-t border-white/5 py-16 relative overflow-hidden">
                 <div className="absolute inset-0 bg-[url('https://aimarketingstrategic.com/images/background.png')] opacity-10 bg-cover bg-center"></div>
@@ -1289,10 +1519,10 @@ const App: React.FC = () => {
           <div className="col-span-1 lg:col-span-2">
             <div className="max-w-sm mb-12 space-y-4">
               <h4 className="text-white font-robot text-lg font-bold uppercase tracking-wider">
-                AI Marketing Strategic
+                AI Revenue Activation
               </h4>
               <p className="text-blue-100/60 text-sm leading-relaxed">
-                Solusi Digital Praktis untuk UMKM Indonesia. Membantu bisnis kecil naik kelas dengan teknologi sederhana yang berdampak nyata.
+                AI Marketing + AI Sales + AI Operations untuk UMKM Indonesia. Sistem AI yang menangkap leads, menjalankan follow-up, dan mengaktifkan revenue otomatis 24/7.
               </p>
             </div>
             <div className="flex gap-4 no-print">
