@@ -29,7 +29,7 @@
     { href: '/blog/',        label: 'Blog' }
   ];
 
-  /** Build the fixed top navigation bar — Light minimal style */
+  /** Build the fixed top navigation bar — Dark navy with logo image */
   function buildNav() {
     var header = document.createElement('header');
     header.className = 'site-header';
@@ -37,11 +37,13 @@
     var inner = document.createElement('div');
     inner.className = 'header-inner';
 
-    // Logo — text-based, good contrast
+    // Logo — image + white brand text
     var logo = document.createElement('a');
     logo.className = 'header-logo';
     logo.href = '/';
-    logo.innerHTML = 'aimarketing<span>strategic</span>';
+    logo.innerHTML =
+      '<img src="https://aimarketingstrategic.com/images/logo%20aims.png" alt="AI Revenue Activation" height="32">' +
+      '<span class="header-logo-text">AI&nbsp;Marketing<span>Strategic</span></span>';
     inner.appendChild(logo);
 
     // Desktop nav links
@@ -80,7 +82,7 @@
     return header;
   }
 
-  /** Build the mobile popup menu — Light minimal style */
+  /** Build the mobile popup menu — Dark style matching header */
   function buildMobileMenu() {
     var overlay = document.createElement('div');
     overlay.id = 'mobile-overlay';
@@ -96,15 +98,17 @@
       a.href = item.href;
       a.textContent = item.label;
       a.onclick = closeMenu;
-      a.style.cssText = 'display:block;padding:12px 0;font-size:14px;font-weight:500;color:var(--text-primary);border-bottom:1px solid var(--border-light);text-decoration:none';
+      a.style.cssText = 'display:block;padding:14px 0;font-size:14px;font-weight:500;color:rgba(255,255,255,0.8);border-bottom:1px solid rgba(255,255,255,0.06);text-decoration:none;transition:color 0.2s';
+      a.onmouseover = function () { a.style.color = '#F57C00'; };
+      a.onmouseout = function () { a.style.color = 'rgba(255,255,255,0.8)'; };
       menu.appendChild(a);
     });
 
     var cta = document.createElement('button');
     cta.onclick = function () { trackLead(); openChat(); closeMenu(); };
     cta.textContent = 'AI Assessment Gratis';
-    cta.className = 'btn btn-accent btn-block';
-    cta.style.cssText = 'padding:12px;margin-top:12px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;font-size:14px;font-weight:500;border-radius:var(--radius-sm)';
+    cta.style.cssText = 'width:100%;padding:14px;margin-top:16px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;font-size:14px;font-weight:600;border-radius:10px;background:#F57C00;color:#fff';
+
     menu.appendChild(cta);
 
     var frag = document.createDocumentFragment();
@@ -113,7 +117,7 @@
     return frag;
   }
 
-  /** Build the site footer — Light warm style */
+  /** Build the site footer — Dark navy style */
   function buildFooter() {
     var footer = document.createElement('footer');
     footer.className = 'site-footer';
@@ -174,8 +178,8 @@
     bottom.innerHTML =
       '<p class="footer-copy">&copy; 2026 aimarketingstrategic.com</p>' +
       '<div style="display:flex;gap:24px">' +
-        '<a href="/privacy-policy.html" style="font-size:11px;color:var(--text-tertiary)">Privacy</a>' +
-        '<button onclick="openModal(\'terms-modal\')" style="font-size:11px;color:var(--text-tertiary);background:none;border:none;cursor:pointer">Terms</button>' +
+        '<a href="/privacy-policy.html" style="font-size:11px;color:rgba(255,255,255,0.35);text-decoration:none">Privacy</a>' +
+        '<button onclick="openModal(\'terms-modal\')" style="font-size:11px;color:rgba(255,255,255,0.35);background:none;border:none;cursor:pointer">Terms</button>' +
       '</div>';
     footer.appendChild(bottom);
 
