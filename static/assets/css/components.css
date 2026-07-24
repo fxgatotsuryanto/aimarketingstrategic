@@ -67,6 +67,9 @@
   border-bottom: 1px solid var(--border-light);
 }
 
+/* Offset for fixed header — push all content down by header height */
+body { padding-top: 64px; }
+
 .header-inner {
   max-width: var(--max-w);
   margin: 0 auto;

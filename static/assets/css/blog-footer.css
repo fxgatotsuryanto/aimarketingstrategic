@@ -4,6 +4,9 @@
    ════════════════════════════════════════════════════════════════════ */
 
 /* ═══ HEADER (Light warm) ═══ */
+/* Offset for fixed header */
+body { padding-top: 64px; }
+
 .site-header {
   position: fixed;
   top: 0;

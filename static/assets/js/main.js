@@ -45,7 +45,7 @@
     inner.appendChild(logo);
 
     // Desktop nav links
-    var nav = document.createElement('nav');
+    var nav = document.createElement('div');
     nav.className = 'header-nav';
     NAV_LINKS.forEach(function (item) {
       var a = document.createElement('a');
