@@ -14,23 +14,22 @@
      ============================================= */
 
   var NAV_LINKS = [
-    { href: '/index.html',   label: 'Beranda' },
-    { href: '/demo.html',    label: 'Demo' },
+    { href: '/',             label: 'Beranda' },
+    { href: '/tentang.html', label: 'Tentang' },
     { href: '/harga.html',   label: 'Harga' },
     { href: '/hasil.html',   label: 'Hasil' },
-    { href: '/tentang.html', label: 'Tentang' },
     { href: '/blog/',        label: 'Blog' }
   ];
 
   var FOOTER_LINKS = [
-    { href: '/index.html',   label: 'Beranda' },
-    { href: '/demo.html',    label: 'Demo' },
-    { href: '/hasil.html',   label: 'Hasil' },
+    { href: '/',             label: 'Beranda' },
+    { href: '/tentang.html', label: 'Tentang' },
     { href: '/harga.html',   label: 'Harga' },
-    { href: '/tentang.html', label: 'Tentang' }
+    { href: '/hasil.html',   label: 'Hasil' },
+    { href: '/blog/',        label: 'Blog' }
   ];
 
-  /** Build the fixed top navigation bar — React-style dark */
+  /** Build the fixed top navigation bar — Light minimal style */
   function buildNav() {
     var header = document.createElement('header');
     header.className = 'site-header';
@@ -38,11 +37,11 @@
     var inner = document.createElement('div');
     inner.className = 'header-inner';
 
-    // Logo
+    // Logo — text-based, good contrast
     var logo = document.createElement('a');
     logo.className = 'header-logo';
-    logo.href = '/index.html';
-    logo.innerHTML = '<img src="https://aimarketingstrategic.com/images/logo%20aims.png" alt="AI Marketing Strategic Logo" height="32">';
+    logo.href = '/';
+    logo.innerHTML = 'aimarketing<span>strategic</span>';
     inner.appendChild(logo);
 
     // Desktop nav links
@@ -73,7 +72,7 @@
     ham.className = 'header-hamburger';
     ham.onclick = toggleMenu;
     ham.setAttribute('aria-label', 'Menu');
-    ham.innerHTML = '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>';
+    ham.innerHTML = '<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>';
     actions.appendChild(ham);
 
     inner.appendChild(actions);
@@ -81,7 +80,7 @@
     return header;
   }
 
-  /** Build the mobile popup menu — React-style */
+  /** Build the mobile popup menu — Light minimal style */
   function buildMobileMenu() {
     var overlay = document.createElement('div');
     overlay.id = 'mobile-overlay';
@@ -92,21 +91,20 @@
     menu.id = 'mobile-menu';
     menu.className = 'menu-popup';
 
-    var nav = document.createElement('nav');
-    nav.className = 'menu-popup-nav';
     NAV_LINKS.forEach(function (item) {
       var a = document.createElement('a');
       a.href = item.href;
       a.textContent = item.label;
       a.onclick = closeMenu;
-      nav.appendChild(a);
+      a.style.cssText = 'display:block;padding:12px 0;font-size:14px;font-weight:500;color:var(--text-primary);border-bottom:1px solid var(--border-light);text-decoration:none';
+      menu.appendChild(a);
     });
-    menu.appendChild(nav);
 
     var cta = document.createElement('button');
-    cta.className = 'menu-popup-cta';
     cta.onclick = function () { trackLead(); openChat(); closeMenu(); };
     cta.textContent = 'AI Assessment Gratis';
+    cta.className = 'btn btn-accent btn-block';
+    cta.style.cssText = 'padding:12px;margin-top:12px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;font-size:14px;font-weight:500;border-radius:var(--radius-sm)';
     menu.appendChild(cta);
 
     var frag = document.createDocumentFragment();
@@ -115,7 +113,7 @@
     return frag;
   }
 
-  /** Build the site footer — React-style dark */
+  /** Build the site footer — Light warm style */
   function buildFooter() {
     var footer = document.createElement('footer');
     footer.className = 'site-footer';
@@ -124,27 +122,15 @@
     inner.className = 'footer-inner';
 
     // Brand column
-    var brandCol = document.createElement('div');
-    brandCol.className = 'footer-brand-col';
-    brandCol.innerHTML =
-      '<h4 class="footer-heading">AI Revenue Activation</h4>' +
-      '<p class="footer-desc">AI Marketing + AI Sales + AI Operations untuk UMKM Indonesia. Sistem AI yang menangkap leads, menjalankan follow-up, dan mengaktifkan revenue otomatis 24/7.</p>' +
-      '<div class="footer-social">' +
-        '<a href="https://wa.me/6281907552758" target="_blank" rel="noopener" class="social-icon" aria-label="WhatsApp">' +
-          '<svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>' +
-        '</a>' +
-        '<a href="https://www.linkedin.com/company/aimarketingstrategic" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">' +
-          '<svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>' +
-        '</a>' +
-        '<a href="https://www.youtube.com/@AIMarketingStrategic" target="_blank" rel="noopener" class="social-icon" aria-label="YouTube">' +
-          '<svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.376-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>' +
-        '</a>' +
-      '</div>';
-    inner.appendChild(brandCol);
+    var brandDiv = document.createElement('div');
+    brandDiv.innerHTML =
+      '<div class="footer-brand">aimarketing<span>strategic</span></div>' +
+      '<p class="footer-desc">AI Business Operating System untuk UMKM Indonesia. Bukan chatbot biasa — sistem AI yang mengoperasikan WhatsApp, follow-up, CRM, dan dashboard bisnis Anda 24/7.</p>';
+    inner.appendChild(brandDiv);
 
     // Menu column
-    var menuCol = document.createElement('div');
-    menuCol.innerHTML = '<h4 class="footer-heading">Menu</h4>';
+    var menuDiv = document.createElement('div');
+    menuDiv.innerHTML = '<div class="footer-col-title">Menu</div>';
     var menuUl = document.createElement('ul');
     menuUl.className = 'footer-links';
     FOOTER_LINKS.forEach(function (item) {
@@ -155,17 +141,30 @@
       li.appendChild(a);
       menuUl.appendChild(li);
     });
-    menuCol.appendChild(menuUl);
-    inner.appendChild(menuCol);
+    menuDiv.appendChild(menuUl);
+    inner.appendChild(menuDiv);
 
-    // Contact column
-    var contactCol = document.createElement('div');
-    contactCol.innerHTML =
-      '<h4 class="footer-heading">Kontak</h4>' +
-      '<p class="footer-label">WhatsApp Business</p>' +
-      '<a href="https://wa.me/6281907552758" target="_blank" rel="noopener" class="footer-phone">0819-0755-2758</a>' +
-      '<p class="footer-hours">&#x1F552; Senin - Sabtu (09.00 - 17.00)</p>';
-    inner.appendChild(contactCol);
+    // Produk column
+    var produkDiv = document.createElement('div');
+    produkDiv.innerHTML =
+      '<div class="footer-col-title">Produk</div>' +
+      '<ul class="footer-links">' +
+        '<li><a href="/harga.html">AI Frontliner</a></li>' +
+        '<li><a href="/harga.html">AI Sales Department</a></li>' +
+        '<li><a href="/demo.html">Coba Demo</a></li>' +
+      '</ul>';
+    inner.appendChild(produkDiv);
+
+    // Kontak column
+    var kontakDiv = document.createElement('div');
+    kontakDiv.innerHTML =
+      '<div class="footer-col-title">Kontak</div>' +
+      '<ul class="footer-links">' +
+        '<li><a href="https://wa.me/6281907552758">0819-0755-2758</a></li>' +
+        '<li><a href="mailto:hallo@aimarketingstrategic.com">hallo@aimarketingstrategic.com</a></li>' +
+        '<li><a href="/kontak.html">Konsultasi Gratis</a></li>' +
+      '</ul>';
+    inner.appendChild(kontakDiv);
 
     footer.appendChild(inner);
 
@@ -174,9 +173,9 @@
     bottom.className = 'footer-bottom';
     bottom.innerHTML =
       '<p class="footer-copy">&copy; 2026 aimarketingstrategic.com</p>' +
-      '<div class="footer-legal">' +
-        '<a href="/privacy-policy.html" target="_blank" rel="noopener">Privacy</a>' +
-        '<button onclick="openModal(\'terms-modal\')">Terms</button>' +
+      '<div style="display:flex;gap:24px">' +
+        '<a href="/privacy-policy.html" style="font-size:11px;color:var(--text-tertiary)">Privacy</a>' +
+        '<button onclick="openModal(\'terms-modal\')" style="font-size:11px;color:var(--text-tertiary);background:none;border:none;cursor:pointer">Terms</button>' +
       '</div>';
     footer.appendChild(bottom);
 
@@ -197,7 +196,7 @@
 
 
 /* =============================================
-   MOBILE MENU — Toggle / Close (React-style popup)
+   MOBILE MENU — Toggle / Close (Light popup)
    ============================================= */
 
 function toggleMenu() {
