@@ -101,6 +101,11 @@
 
   /* Desktop navigation (Design B) */
   .nav-cta { display: inline-flex; }
+
+  /* Desktop navigation — React-style (new) */
+  .header-nav { display: flex; }
+  .header-cta { display: inline-flex; }
+  .header-hamburger { display: none; }
 }
 
 /* ════════════════════════════════════════════════════════════════════
