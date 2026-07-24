@@ -3,6 +3,10 @@ import React from 'react';
 import { createRoot, hydrateRoot } from 'react-dom/client';
 import App from './App';
 
+// Meta Pixel Event Tracking (vanilla JS)
+import { startTracking } from './src/js/tracking/index.js';
+startTracking();
+
 // GA4 Analytics
 const GA_MEASUREMENT_ID = 'G-HPCDWE0YDD'; // Replace with actual GA4 ID
 

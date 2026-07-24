@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "postbuild": "node scripts/prerender.mjs",
+    "build:tracking": "vite build --config vite.tracking.config.ts",
     "preview": "vite preview"
   },
   "dependencies": {
