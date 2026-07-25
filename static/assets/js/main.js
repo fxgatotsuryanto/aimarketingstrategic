@@ -126,7 +126,7 @@
     // Brand column
     var brandDiv = document.createElement('div');
     brandDiv.innerHTML =
-      '<div class="footer-brand">aimarketing<span>strategic</span></div>' +
+      '<img src="https://aimarketingstrategic.com/images/logo%20aims.png" alt="AI Marketing Strategic" height="36" style="margin-bottom:12px">' +
       '<p class="footer-desc">AI Business Operating System untuk UMKM Indonesia. Bukan chatbot biasa — sistem AI yang mengoperasikan WhatsApp, follow-up, CRM, dan dashboard bisnis Anda 24/7.</p>';
     inner.appendChild(brandDiv);
 
