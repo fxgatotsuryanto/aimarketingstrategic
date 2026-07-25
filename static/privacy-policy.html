@@ -21,7 +21,13 @@
 <meta name="twitter:description" content="Kebijakan privasi AI Marketing Strategic — bagaimana kami mengumpulkan, menggunakan, dan melindungi data klien UMKM Indonesia.">
 <meta name="twitter:image" content="https://aimarketingstrategic.com/images/og-card.png">
 
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/components.css">
+<link rel="stylesheet" href="/assets/css/responsive.css">
+<link rel="stylesheet" href="/assets/css/blog-footer.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 .privacy-hero{padding:140px 24px 60px;background:var(--bg-dark);color:#fff;text-align:center}
 .privacy-hero h1{font-family:'Orbitron',sans-serif;font-size:clamp(22px,3.5vw,36px);letter-spacing:.03em;margin-bottom:12px}
@@ -59,29 +65,8 @@ src="https://www.facebook.com/tr?id=1032082533057403&ev=PageView&noscript=1"
 </head>
 <body>
 <!-- NAVBAR -->
-<nav id="navbar">
-  <div class="nav-inner">
-    <a class="nav-logo" href="/index.html">
-      <img src="https://aimarketingstrategic.com/images/logo%20aims.png" alt="AI Marketing Strategic" height="44">
-    </a>
-    <div class="nav-links">
-      <a href="/index.html">Beranda</a>
-      <a href="/hasil.html">Hasil</a>
-      <a href="/harga.html">Harga</a>
-      <a href="/tentang.html">Tentang</a>
-      <a href="/blog/">Blog</a>
-    </div>
-    <button class="nav-cta" onclick="openChat()">Konsultasi Gratis</button>
-    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
-      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
-    </button>
-  </div>
-</nav>
-
-<div id="mobile-overlay" class="menu-overlay" onclick="closeMenu()"></div>
-<div id="mobile-menu">
-  <a href="/index.html" onclick="closeMenu()">Beranda</a>
-  <a href="/hasil.html" onclick="closeMenu()">Hasil Nyata</a>
+<div id="nav-placeholder"></div>
+<div id="mobile-placeholder"></div>
   <a href="/harga.html" onclick="closeMenu()">Harga & Paket</a>
   <a href="/tentang.html" onclick="closeMenu()">Tentang Kami</a>
   <a href="/kontak.html" onclick="closeMenu()">Kontak</a>
@@ -177,49 +162,7 @@ src="https://www.facebook.com/tr?id=1032082533057403&ev=PageView&noscript=1"
 </section>
 
 <!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div>
-      <p class="footer-brand-name">AI Marketing Strategic</p>
-      <p class="footer-brand-sub">Solusi AI automation untuk UMKM Indonesia. Otomatiskan WhatsApp, CRM, dan follow-up bisnis Anda tanpa ribet.</p>
-      <div class="footer-socials">
-        <button class="footer-social" onclick="openChat()" aria-label="Chat">
-          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
-        </button>
-        <a class="footer-social" href="https://www.linkedin.com/company/aimarketingstrategic" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-        </a>
-        <a class="footer-social" href="https://www.youtube.com/@AIMarketingStrategic" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon fill="#fff" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
-        </a>
-      </div>
-    </div>
-    <div>
-      <p class="footer-col-title">Menu</p>
-      <ul class="footer-links">
-        <li><a href="/index.html">Beranda</a></li>
-        <li><a href="/hasil.html">Hasil Nyata</a></li>
-        <li><a href="/harga.html">Harga & Paket</a></li>
-        <li><a href="/tentang.html">Tentang Kami</a></li>
-      </ul>
-    </div>
-    <div>
-      <p class="footer-col-title">Kontak</p>
-      <div style="margin-bottom:24px">
-        <p class="footer-contact-label">WhatsApp Business</p>
-        <a href="https://wa.me/6281907552758" target="_blank" rel="noopener noreferrer" class="footer-phone">0819-0755-2758</a>
-      </div>
-      <p class="footer-hours">🕒 Senin - Sabtu (09.00 - 17.00)</p>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p class="footer-copy">© 2026 aimarketingstrategic.com</p>
-    <div class="footer-legal">
-      <a href="/privacy-policy.html" target="_blank" rel="noopener" style="font-family:'Orbitron',sans-serif;font-size:10px;color:var(--orange);letter-spacing:.3em;text-transform:uppercase;text-decoration:none">Privacy</a>
-      <button onclick="openModal('terms-modal')" style="font-family:'Orbitron',sans-serif;font-size:10px;color:rgba(191,219,254,.25);letter-spacing:.3em;text-transform:uppercase;background:none;border:none;cursor:pointer;transition:color .2s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(191,219,254,.25)'">Terms</button>
-    </div>
-  </div>
-</footer>
+<div id="footer-placeholder"></div>
 
 <!-- CHAT MODAL -->
 <div class="modal-overlay" id="chat-modal">
@@ -281,10 +224,11 @@ src="https://www.facebook.com/tr?id=1032082533057403&ev=PageView&noscript=1"
   <svg class="icon" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
 </button>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=GA4_ID"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HPCDWE0YDD"></script>
 <script>
-window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','GA4_ID');
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-HPCDWE0YDD');
 </script>
-<script src="/js/script.js"></script>
+<script src="/assets/js/main.js" defer></script>
+<script src="/assets/js/tracking.js" defer></script>
 </body>
 </html>

@@ -32,6 +32,11 @@
 }
 </script>
 <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/assets/css/components.css">
+<link rel="stylesheet" href="/assets/css/responsive.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 .blog-post-hero{background:var(--bg-dark);color:#fff;padding:140px 24px 60px;text-align:center}
 .blog-post-hero .post-cat{display:inline-flex;align-items:center;gap:8px;background:rgba(245,124,0,.1);border:1px solid rgba(245,124,0,.3);border-radius:100px;padding:5px 14px;font-size:10px;font-family:'Orbitron',sans-serif;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--orange);margin-bottom:20px}
@@ -81,35 +86,8 @@ src="https://www.facebook.com/tr?id=1032082533057403&ev=PageView&noscript=1"
 <!-- End Meta Pixel Code -->
 </head>
 <body>
-<!-- NAVBAR -->
-<nav id="navbar">
-  <div class="nav-inner">
-    <a class="nav-logo" href="/index.html">
-      <img src="https://aimarketingstrategic.com/images/logo%20aims.png" alt="AI Marketing Strategic" height="44">
-    </a>
-    <div class="nav-links">
-      <a href="/index.html">Beranda</a>
-      <a href="/hasil.html">Hasil</a>
-      <a href="/harga.html">Harga</a>
-      <a href="/tentang.html">Tentang</a>
-      <a href="/blog/" class="active">Blog</a>
-    </div>
-    <button class="nav-cta" onclick="trackLead();openChat()">Demo Gratis</button>
-    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
-      <svg id="ham-icon" class="icon" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
-    </button>
-  </div>
-</nav>
-<div id="mobile-overlay" class="menu-overlay" onclick="closeMenu()"></div>
-<div id="mobile-menu">
-  <a href="/index.html" onclick="closeMenu()">Beranda</a>
-  <a href="/hasil.html" onclick="closeMenu()">Hasil</a>
-  <a href="/harga.html" onclick="closeMenu()">Harga</a>
-  <a href="/tentang.html" onclick="closeMenu()">Tentang</a>
-  <a href="/blog/" onclick="closeMenu()">Blog</a>
-  <div class="menu-cta-wrap">
-    <button class="menu-cta-btn" onclick="trackLead();openChat();closeMenu()">Konsultasi Gratis</button>
-  </div>
+<div id="nav-placeholder"></div>
+<div id="mobile-placeholder"></div>
 </div>
 
 <!-- HERO -->
