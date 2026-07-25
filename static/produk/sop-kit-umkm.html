@@ -17,302 +17,119 @@
 <meta name="twitter:title" content="SOP Kit UMKM — AI Marketing Strategic">
 <meta name="twitter:description" content="15 template SOP siap edit untuk operasional bisnis UMKM. Rp199.000.">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css">
 <link rel="stylesheet" href="/assets/css/components.css">
 <link rel="stylesheet" href="/assets/css/responsive.css">
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-.produk-page {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 120px 24px 80px;
-}
-.page-header {
-  text-align: center;
-  margin-bottom: 48px;
-}
-.page-header h1 {
-  font-family: 'Orbitron', sans-serif;
-  font-size: clamp(24px, 3.5vw, 36px);
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--primary);
-  margin-bottom: 12px;
-}
-.page-header h1 span { color: var(--orange); }
-.price-badge {
-  display: inline-block;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 24px;
-  font-weight: 700;
-  color: #fff;
-  background: var(--orange);
-  padding: 8px 24px;
-  border-radius: 12px;
-  margin-bottom: 16px;
-}
-.price-badge small { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 14px; opacity: 0.8; }
-.produk-hero-sub {
-  font-family: 'Inter', sans-serif;
-  font-size: 17px;
-  color: var(--text-medium);
-  line-height: 1.7;
-  max-width: 600px;
-  margin: 0 auto 28px;
-}
-.btn-buy {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 14px 32px;
-  background: var(--primary);
-  color: #fff;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  border-radius: 12px;
-  text-decoration: none;
-  transition: all 0.2s;
-  cursor: pointer;
-  border: none;
-}
-.btn-buy:hover { background: var(--orange); transform: translateY(-2px); }
-.btn-buy-orange { background: var(--orange); }
-.btn-buy-orange:hover { background: #e07000; }
-
-.section-title {
-  font-family: 'Orbitron', sans-serif;
-  font-size: clamp(20px, 2.5vw, 28px);
-  font-weight: 800;
-  letter-spacing: 0.03em;
-  color: var(--primary);
-  text-align: center;
-  margin-bottom: 36px;
-}
-.section-title span { color: var(--orange); }
-
-.feature-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-  margin-bottom: 48px;
-}
-.feature-card {
-  background: #fff;
-  border: 1px solid var(--border-light, #e2e8f0);
-  border-radius: 16px;
-  padding: 28px 24px;
-  box-shadow: 0 4px 16px rgba(11,42,74,0.04);
-  transition: all 0.2s;
-}
-.feature-card:hover { box-shadow: 0 6px 24px rgba(11,42,74,0.1); }
-.feature-card h3 {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  color: var(--primary);
-  margin-bottom: 8px;
-}
-.feature-card p {
-  font-family: 'Inter', sans-serif;
-  font-size: 13px;
-  color: var(--text-medium);
-  line-height: 1.65;
-}
-
-/* ─── SOP List ─── */
-.sop-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 8px;
-  margin-bottom: 48px;
-}
-.sop-item {
-  background: #fff;
-  border: 1px solid var(--border-light, #e2e8f0);
-  border-radius: 10px;
-  padding: 12px 16px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.sop-item .num {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--orange);
-  min-width: 24px;
-}
-.sop-item .name {
-  font-family: 'Inter', sans-serif;
-  font-size: 13px;
-  color: var(--text-dark);
-}
-
-/* ─── Why Grid ─── */
-.why-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  margin-bottom: 48px;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.cta-card {
-  text-align: center;
-  padding: 48px 32px;
-  background: linear-gradient(135deg, var(--primary), #163a5f);
-  border-radius: 20px;
-  margin-top: 48px;
-}
-.cta-card h3 {
-  font-family: 'Orbitron', sans-serif;
-  font-size: clamp(20px, 2.5vw, 26px);
-  font-weight: 800;
-  letter-spacing: 0.03em;
-  color: #fff;
-  margin-bottom: 10px;
-}
-.cta-card p {
-  font-family: 'Inter', sans-serif;
-  font-size: 15px;
-  color: rgba(255,255,255,0.7);
-  margin-bottom: 24px;
-}
+.blog-post-hero{background:var(--bg-dark);color:#fff;padding:140px 24px 60px;text-align:center}
+.blog-post-hero .post-cat{display:inline-flex;align-items:center;gap:8px;background:rgba(245,124,0,.1);border:1px solid rgba(245,124,0,.3);border-radius:100px;padding:5px 14px;font-size:10px;font-family:'Orbitron',sans-serif;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--orange);margin-bottom:20px}
+.blog-post-hero h1{font-size:clamp(24px,4vw,42px);max-width:800px;margin:0 auto 20px;line-height:1.25;color:#fff}
+.post-body{max-width:780px;margin:0 auto;padding:56px 24px 80px;font-size:17px;line-height:1.85;color:#1f2937}
+.post-body h2{font-size:26px;color:var(--primary);margin:48px 0 16px;padding-top:8px;border-top:2px solid rgba(11,42,74,.08);font-family:'Orbitron',sans-serif;font-weight:800;letter-spacing:.02em}
+.post-body h2 span{color:var(--orange)}
+.post-body h3{font-size:18px;color:var(--primary);margin:32px 0 12px;font-family:'Orbitron',sans-serif;font-weight:700}
+.post-body p{margin-bottom:20px;font-size:15px}
+.post-body .highlight-box{background:linear-gradient(135deg,#f0f7ff,#e8f4ff);border:1px solid rgba(11,42,74,.15);border-radius:16px;padding:24px;margin:28px 0}
+.post-body .highlight-box h4{color:var(--primary);font-family:'Orbitron',sans-serif;font-size:12px;letter-spacing:.15em;text-transform:uppercase;margin-bottom:12px}
+.post-body .highlight-box p{font-size:14px;margin-bottom:0}
+.grid-3{display:grid;grid-template-columns:1fr;gap:16px;margin:24px 0}
+@media(min-width:640px){.grid-3{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:900px){.grid-3{grid-template-columns:repeat(3,1fr)}}
+.grid-item{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:20px;transition:border-color .2s}
+.grid-item:hover{border-color:var(--orange)}
+.grid-item h4{font-family:'Orbitron',sans-serif;font-size:12px;font-weight:700;color:var(--primary);margin-bottom:6px}
+.grid-item p{font-size:13px;color:#475569;margin-bottom:0;line-height:1.6}
+.grid-2{display:grid;grid-template-columns:1fr;gap:16px;margin:24px 0}
+@media(min-width:640px){.grid-2{grid-template-columns:repeat(2,1fr)}}
+.post-cta{background:linear-gradient(135deg,var(--primary),#163a5f);color:#fff;border-radius:20px;padding:40px;text-align:center;margin:48px 0}
+.post-cta h3{font-size:22px;color:#fff;margin-bottom:10px}
+.post-cta p{color:rgba(255,255,255,.7);margin-bottom:24px;font-size:15px}
+.post-cta .btn-large{padding:18px 40px;font-size:13px}
+.price-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(245,124,0,.1);border:1px solid rgba(245,124,0,.3);border-radius:100px;padding:5px 14px;font-size:12px;font-family:'Orbitron',sans-serif;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);margin-bottom:12px}
+.price-big{font-family:'Orbitron',sans-serif;font-size:36px;font-weight:700;color:var(--orange);margin-bottom:20px}
+.price-big small{font-size:16px;font-weight:400;opacity:.7}
+.sop-list{display:grid;grid-template-columns:1fr;gap:6px;margin:24px 0}
+@media(min-width:640px){.sop-list{grid-template-columns:repeat(2,1fr)}}
+.sop-item{background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:10px 14px;display:flex;align-items:center;gap:8px;font-size:14px;color:#1f2937}
+.sop-item .num{font-family:'Orbitron',sans-serif;font-size:13px;font-weight:600;color:var(--orange);min-width:24px}
 </style>
 </head>
 <body>
 <div id="nav-placeholder"></div>
 <div id="mobile-placeholder"></div>
 
-<main class="produk-page">
-  <!-- HERO -->
-  <header class="page-header">
-    <div class="price-badge">Rp199.000 <small>· 15 Template SOP</small></div>
-    <h1>SOP Kit <span>UMKM</span></h1>
-    <p class="produk-hero-sub">15 template SOP siap edit untuk operasional bisnis Anda. Dari order masuk sampai standar layanan — Google Docs, tinggal duplikat dan pakai.</p>
-    <a class="btn-buy btn-buy-orange" href="https://wa.me/6281907552758?text=Mau%20beli%20SOP%20Kit%20UMKM%20-%20Rp199rb" target="_blank">Beli via WA — Rp199.000 →</a>
-  </header>
+<section class="blog-post-hero">
+  <div class="price-tag">Rp199.000 · 15 Template SOP</div>
+  <h1>SOP Kit UMKM</h1>
+  <div class="price-big">Rp199.000 <small>· sekali bayar</small></div>
+  <a href="https://wa.me/6281907552758?text=Mau%20beli%20SOP%20Kit%20UMKM%20-%20Rp199rb" class="btn-primary btn-large" target="_blank">Beli via WA →</a>
+</section>
 
-  <!-- WHY SOP -->
-  <h2 class="section-title">Fondasi Bisnis <span>yang Bisa Scale</span></h2>
-  <p style="text-align:center;font-family:'Inter',sans-serif;font-size:14px;color:var(--text-medium);max-width:600px;margin:0 auto 36px;line-height:1.7">70% UMKM tutup di tahun pertama karena operasional tidak terstandarisasi (sumber: BPS). SOP Kit ini adalah asuransi operasional termurah yang bisa Anda beli.</p>
-  <div class="why-grid">
-    <div class="feature-card" style="text-align:center">
-      <div style="font-size:32px;margin-bottom:10px">👤</div>
-      <h3>Gak Tegantung 1 Orang</h3>
-      <p>Kalau cuma 1 orang yang tahu cara handle order, libur = chaos. SOP bikin siapapun bisa ganti dengan standar yang sama.</p>
+<article class="post-body">
+  <p style="font-size:18px;font-weight:500;color:var(--primary)">15 template SOP siap edit untuk operasional bisnis Anda. Dari order masuk sampai standar layanan — Google Docs, tinggal duplikat dan pakai.</p>
+
+  <h2>Fondasi Bisnis <span>yang Bisa Scale</span></h2>
+  <p>70% UMKM tutup di tahun pertama karena operasional tidak terstandarisasi (sumber: BPS). SOP Kit ini adalah asuransi operasional termurah yang bisa Anda beli — Rp199rb, lebih murah dari 2 kali makan berdua di restoran.</p>
+
+  <div class="grid-3">
+    <div class="grid-item" style="text-align:center">
+      <div style="font-size:28px;margin-bottom:8px">👤</div>
+      <h4>Gak Tegantung 1 Orang</h4>
+      <p>Kalau cuma 1 orang yang tahu cara handle order, libur = chaos. SOP bikin siapapun bisa ganti.</p>
     </div>
-    <div class="feature-card" style="text-align:center">
-      <div style="font-size:32px;margin-bottom:10px">⚡</div>
-      <h3>Lebih Cepat 3x</h3>
-      <p>Tim yang punya SOP jelas bekerja lebih cepat karena tidak perlu nebak-nebak. Semua prosedur sudah tertulis, tinggal eksekusi.</p>
+    <div class="grid-item" style="text-align:center">
+      <div style="font-size:28px;margin-bottom:8px">⚡</div>
+      <h4>Lebih Cepat 3x</h4>
+      <p>Tim kerja lebih cepat karena tidak perlu nebak-nebak. Semua prosedur tertulis, tinggal eksekusi.</p>
     </div>
-    <div class="feature-card" style="text-align:center">
-      <div style="font-size:32px;margin-bottom:10px">📈</div>
-      <h3>Scale dengan Konsisten</h3>
-      <p>Bisnis yang bisa di-scale adalah bisnis yang terstandarisasi. SOP adalah fondasi sebelum Anda punya 5+ karyawan.</p>
+    <div class="grid-item" style="text-align:center">
+      <div style="font-size:28px;margin-bottom:8px">📈</div>
+      <h4>Scale dengan Konsisten</h4>
+      <p>Bisnis yang bisa di-scale adalah yang terstandarisasi. SOP fondasi sebelum Anda punya 5+ karyawan.</p>
     </div>
   </div>
 
-  <!-- SOP LIST -->
-  <h2 class="section-title">15 Template <span>SOP Siap Pakai</span></h2>
+  <h2>15 Template <span>SOP Siap Pakai</span></h2>
   <div class="sop-list">
-    <div class="sop-item"><span class="num">01</span><span class="name">Penerimaan Order via WA</span></div>
-    <div class="sop-item"><span class="num">02</span><span class="name">Konfirmasi & Verifikasi Pembayaran</span></div>
-    <div class="sop-item"><span class="num">03</span><span class="name">Proses Packing & Pengiriman</span></div>
-    <div class="sop-item"><span class="num">04</span><span class="name">Follow-Up Pelanggan Pasca-Beli</span></div>
-    <div class="sop-item"><span class="num">05</span><span class="name">Handling Komplain & Retur</span></div>
-    <div class="sop-item"><span class="num">06</span><span class="name">Standar Layanan Pelanggan</span></div>
-    <div class="sop-item"><span class="num">07</span><span class="name">Manajemen Stok Barang</span></div>
-    <div class="sop-item"><span class="num">08</span><span class="name">Rekrutmen Karyawan Baru</span></div>
-    <div class="sop-item"><span class="num">09</span><span class="name">Onboarding Karyawan Baru</span></div>
-    <div class="sop-item"><span class="num">10</span><span class="name">Rapat Tim Mingguan</span></div>
-    <div class="sop-item"><span class="num">11</span><span class="name">Manajemen Media Sosial</span></div>
-    <div class="sop-item"><span class="num">12</span><span class="name">Penanganan Leads WA</span></div>
-    <div class="sop-item"><span class="num">13</span><span class="name">Pencatatan Keuangan Harian</span></div>
-    <div class="sop-item"><span class="num">14</span><span class="name">Kebersihan & Kerapihan Tempat</span></div>
-    <div class="sop-item"><span class="num">15</span><span class="name">Evaluasi Bulanan Bisnis</span></div>
+    <div class="sop-item"><span class="num">01</span>Penerimaan Order via WA</div>
+    <div class="sop-item"><span class="num">02</span>Konfirmasi &amp; Verifikasi Pembayaran</div>
+    <div class="sop-item"><span class="num">03</span>Proses Packing &amp; Pengiriman</div>
+    <div class="sop-item"><span class="num">04</span>Follow-Up Pelanggan Pasca-Beli</div>
+    <div class="sop-item"><span class="num">05</span>Handling Komplain &amp; Retur</div>
+    <div class="sop-item"><span class="num">06</span>Standar Layanan Pelanggan</div>
+    <div class="sop-item"><span class="num">07</span>Manajemen Stok Barang</div>
+    <div class="sop-item"><span class="num">08</span>Rekrutmen Karyawan Baru</div>
+    <div class="sop-item"><span class="num">09</span>Onboarding Karyawan Baru</div>
+    <div class="sop-item"><span class="num">10</span>Rapat Tim Mingguan</div>
+    <div class="sop-item"><span class="num">11</span>Manajemen Media Sosial</div>
+    <div class="sop-item"><span class="num">12</span>Penanganan Leads WA</div>
+    <div class="sop-item"><span class="num">13</span>Pencatatan Keuangan Harian</div>
+    <div class="sop-item"><span class="num">14</span>Kebersihan &amp; Kerapihan Tempat</div>
+    <div class="sop-item"><span class="num">15</span>Evaluasi Bulanan Bisnis</div>
   </div>
 
-  <!-- BONUS FEATURES -->
-  <h2 class="section-title">Lebih dari <span>Sekadar Template</span></h2>
-  <div class="feature-grid">
-    <div class="feature-card">
-      <h3>📄 Google Docs Siap Edit</h3>
-      <p>Bukan PDF mati — setiap SOP adalah Google Docs. Copy, edit sesuai bisnis Anda, langsung pakai.</p>
-    </div>
-    <div class="feature-card">
-      <h3>📋 Format Standar Industri</h3>
-      <p>Setiap SOP punya format: tujuan, ruang lingkup, prosedur langkah demi langkah, dan KPI.</p>
-    </div>
-    <div class="feature-card">
-      <h3>🎯 Customizable</h3>
-      <p>Tinggal ganti nama bisnis, nomor WA, dan detail operasional Anda. Siap pakai dalam 1 jam.</p>
-    </div>
-    <div class="feature-card">
-      <h3>🚀 Panduan Implementasi</h3>
-      <p>Bonus PDF cara implementasi SOP ke tim: dari sosialisasi, training, sampai evaluasi rutin.</p>
-    </div>
-    <div class="feature-card">
-      <h3>📱 Bisa di HP & Laptop</h3>
-      <p>Google Docs bisa diakses dari mana saja. Karyawan tinggal buka HP — SOP selalu di genggaman.</p>
-    </div>
-    <div class="feature-card">
-      <h3>🔄 Update Gratis 1 Tahun</h3>
-      <p>Dapatkan update template baru dan revisi selama 1 tahun tanpa biaya tambahan.</p>
-    </div>
+  <h2>Lebih dari <span>Sekadar Template</span></h2>
+  <div class="grid-3">
+    <div class="grid-item"><h4>📄 Google Docs</h4><p>Bukan PDF mati — edit sesuai bisnis Anda, langsung pakai. Tidak perlu desain dari nol.</p></div>
+    <div class="grid-item"><h4>📋 Format Standar</h4><p>Setiap SOP punya: tujuan, ruang lingkup, prosedur langkah demi langkah, KPI.</p></div>
+    <div class="grid-item"><h4>🎯 Customizable</h4><p>Tinggal ganti nama bisnis, nomor WA, dan detail operasional Anda.</p></div>
+    <div class="grid-item"><h4>🚀 Panduan Implementasi</h4><p>Bonus cara implementasi SOP ke tim — sosialisasi, training, evaluasi rutin.</p></div>
+    <div class="grid-item"><h4>📱 Bisa di HP</h4><p>Google Docs bisa diakses dari mana saja. SOP selalu di genggaman karyawan.</p></div>
+    <div class="grid-item"><h4>🔄 Update Gratis</h4><p>Update template baru &amp; revisi selama 1 tahun tanpa biaya tambahan.</p></div>
   </div>
 
-  <!-- CTA -->
-  <div class="cta-card">
+  <div class="post-cta">
     <h3>Standarisasi Operasional Bisnis Anda</h3>
     <p>15 template SOP Google Docs + panduan implementasi. Copy, edit, pakai — mulai besok.</p>
-    <a class="btn-buy btn-buy-orange" href="https://wa.me/6281907552758?text=Mau%20beli%20SOP%20Kit%20UMKM%20-%20Rp199rb" target="_blank">📍 Beli Rp199.000 via WA</a>
+    <a href="https://wa.me/6281907552758?text=Mau%20beli%20SOP%20Kit%20UMKM%20-%20Rp199rb" class="btn-primary btn-large" target="_blank">📍 Beli Rp199.000 via WA</a>
   </div>
-</main>
+</article>
 
 <div id="footer-placeholder"></div>
-<script>
-function toggleMenu() {
-  document.getElementById('mobile-menu').classList.toggle('active');
-  document.getElementById('overlay').classList.toggle('active');
-}
-function closeMenu() {
-  document.getElementById('mobile-menu').classList.remove('active');
-  document.getElementById('overlay').classList.remove('active');
-}
-function trackLead() {
-  if (typeof gtag === 'function') gtag('event', 'lead', { method: 'whatsapp' });
-}
-function openChat() {
-  window.open('https://wa.me/6281907552758?text=Halo%20saya%20tertarik%20dengan%20AI%20automation%20AMS', '_blank');
-}
-window.addEventListener('scroll', function() {
-  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
-});
-(function() {
-  var els = document.querySelectorAll('.fade-up, .stagger-1, .stagger-2, .stagger-3');
-  if (els.length) {
-    var obs = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
-      });
-    }, { threshold: 0.1 });
-    els.forEach(function(el) { obs.observe(el); });
-  }
-})();
-</script>
-<script src="/js/nav-footer.js"></script>
+<script src="/assets/js/main.js" defer></script>
+<script src="/assets/js/tracking.js" defer></script>
 </body>
 </html>
