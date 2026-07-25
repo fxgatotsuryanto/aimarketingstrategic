@@ -149,12 +149,12 @@
     // Produk column
     var produkDiv = document.createElement('div');
     produkDiv.innerHTML =
-      '<div class="footer-col-title">Paket AI</div>' +
+      '<div class="footer-col-title">Produk</div>' +
       '<ul class="footer-links">' +
-        '<li><a href="/harga.html#starter">Starter</a></li>' +
-        '<li><a href="/harga.html#autopilot">Autopilot</a></li>' +
-        '<li><a href="/harga.html#custom">Custom</a></li>' +
-        '<li><a href="/demo.html">Coba Demo</a></li>' +
+        '<li><a href="/harga.html">Paket AI Utama</a></li>' +
+        '<li><a href="/tools/ai-readiness-assessment.html">AI Readiness Assessment</a></li>' +
+        '<li><a href="/tools/follow-up-playbook.html">Playbook Follow-Up WA</a></li>' +
+        '<li><a href="/tools/sop-kit-umkm.html">SOP Kit UMKM</a></li>' +
       '</ul>';
     inner.appendChild(produkDiv);
 

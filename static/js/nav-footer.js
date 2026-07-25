@@ -136,16 +136,16 @@
     var prodDiv = document.createElement('div');
     var prodTitle = document.createElement('p');
     prodTitle.className = 'footer-col-title';
-    prodTitle.textContent = 'Paket AI';
+    prodTitle.textContent = 'Produk';
     prodDiv.appendChild(prodTitle);
 
     var prodUl = document.createElement('ul');
     prodUl.className = 'footer-links';
     var products = [
-      { href: '/harga.html#starter', label: 'Starter' },
-      { href: '/harga.html#autopilot', label: 'Autopilot' },
-      { href: '/harga.html#custom', label: 'Custom' },
-      { href: '/demo.html', label: 'Coba Demo' }
+      { href: '/harga.html', label: 'Paket AI Utama' },
+      { href: '/tools/ai-readiness-assessment.html', label: 'AI Readiness Assessment' },
+      { href: '/tools/follow-up-playbook.html', label: 'Playbook Follow-Up WA' },
+      { href: '/tools/sop-kit-umkm.html', label: 'SOP Kit UMKM' }
     ];
     products.forEach(function(item) {
       var li = document.createElement('li');
