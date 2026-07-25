@@ -142,10 +142,10 @@
     var prodUl = document.createElement('ul');
     prodUl.className = 'footer-links';
     var products = [
-      { href: '/tools/', label: 'Halaman Utama Add On' },
-      { href: '/tools/ai-readiness-assessment.html', label: 'AI Readiness Assessment' },
-      { href: '/tools/follow-up-playbook.html', label: 'Playbook Follow-Up WA' },
-      { href: '/tools/sop-kit-umkm.html', label: 'SOP Kit UMKM' }
+      { href: '/tools/', label: 'AI Tools' },
+      { href: '/tools/ai-readiness-assessment.html', label: 'AI Readiness' },
+      { href: '/tools/follow-up-playbook.html', label: 'Playbook Follow Up' },
+      { href: '/tools/sop-kit-umkm.html', label: 'UMKM Kit' }
     ];
     products.forEach(function(item) {
       var li = document.createElement('li');
