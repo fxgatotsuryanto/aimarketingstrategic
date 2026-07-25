@@ -142,7 +142,7 @@
     var prodUl = document.createElement('ul');
     prodUl.className = 'footer-links';
     var products = [
-      { href: '/harga.html', label: 'Paket AI Utama' },
+      { href: '/tools/', label: 'Halaman Utama Add On' },
       { href: '/tools/ai-readiness-assessment.html', label: 'AI Readiness Assessment' },
       { href: '/tools/follow-up-playbook.html', label: 'Playbook Follow-Up WA' },
       { href: '/tools/sop-kit-umkm.html', label: 'SOP Kit UMKM' }

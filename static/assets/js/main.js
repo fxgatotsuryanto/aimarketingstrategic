@@ -151,7 +151,7 @@
     produkDiv.innerHTML =
       '<div class="footer-col-title">Produk</div>' +
       '<ul class="footer-links">' +
-        '<li><a href="/harga.html">Paket AI Utama</a></li>' +
+        '<li><a href="/tools/">Halaman Utama Add On</a></li>' +
         '<li><a href="/tools/ai-readiness-assessment.html">AI Readiness Assessment</a></li>' +
         '<li><a href="/tools/follow-up-playbook.html">Playbook Follow-Up WA</a></li>' +
         '<li><a href="/tools/sop-kit-umkm.html">SOP Kit UMKM</a></li>' +
