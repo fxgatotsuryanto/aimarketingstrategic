@@ -8,6 +8,7 @@
 
   // ─── DATA ────────────────────────────────────────────
   var NAV_LINKS = [
+    { href: '/produk/',             label: 'Produk' },
     { href: '/tentang.html',        label: 'Tentang' },
     { href: '/harga.html',          label: 'Harga' },
     { href: '/hasil.html',          label: 'Hasil' },
