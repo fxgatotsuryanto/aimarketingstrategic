@@ -6,64 +6,75 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Produk Digital — AI Marketing Strategic</title>
 <meta name="description" content="Koleksi produk digital AI Marketing Strategic: Playbook Follow-Up WA, AI Readiness Assessment, SOP Kit UMKM. Solusi AI revenue activation untuk UMKM Indonesia.">
-<meta name="author" content="AI Marketing Strategic">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://aimarketingstrategic.com/produk/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://aimarketingstrategic.com/produk/">
-<link rel="canonical" href="https://aimarketingstrategic.com/produk/">
 <meta property="og:title" content="Produk Digital — AI Marketing Strategic">
 <meta property="og:description" content="Solusi AI revenue activation untuk UMKM Indonesia. Dari playbook sampai assessment — mulai dari Rp99.000.">
 <meta property="og:image" content="https://aimarketingstrategic.com/images/og-card.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:locale" content="id_ID">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Produk Digital — AI Marketing Strategic">
 <meta name="twitter:description" content="Solusi AI revenue activation untuk UMKM Indonesia. Mulai dari Rp99.000.">
-<meta name="robots" content="index, follow">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
 <link rel="stylesheet" href="/assets/css/components.css">
 <link rel="stylesheet" href="/assets/css/responsive.css">
 
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HPCDWE0YDD"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  window.gtag = gtag;
-  gtag('js', new Date());
-  gtag('config', 'G-HPCDWE0YDD');
-</script>
-
 <style>
-/* Produk page — inline overrides */
-#hero { text-align: center; padding-bottom: 0; }
-#hero .section-header { margin-bottom: 48px; }
+/* ─── Layout ─── */
+.produk-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 120px 24px 80px;
+}
 
-/* Card grid for products */
+/* ─── Page Header (matching blog) ─── */
+.page-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+.page-header h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(24px, 3.5vw, 36px);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+.page-header h1 span { color: var(--orange); }
+.page-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(14px, 1.6vw, 17px);
+  color: var(--text-medium);
+  line-height: 1.7;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* ─── Product Card Grid ─── */
 .produk-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 24px;
-  max-width: 1100px;
-  margin: 0 auto;
 }
 .produk-card {
-  background: var(--bg-white);
-  border-radius: var(--radius-xl);
+  background: #fff;
+  border: 1px solid var(--border-light, #e2e8f0);
+  border-radius: 20px;
   padding: 32px;
-  border: 1px solid var(--border-card);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 4px 20px rgba(11,42,74,0.06);
   transition: all 0.25s ease;
   display: flex;
   flex-direction: column;
 }
 .produk-card:hover {
-  box-shadow: var(--shadow-lg);
-  border-color: rgba(245, 124, 0, 0.2);
+  box-shadow: 0 8px 30px rgba(11,42,74,0.12);
+  border-color: var(--orange, #F57C00);
   transform: translateY(-3px);
 }
 .produk-card .icon-wrap {
@@ -72,28 +83,33 @@
 }
 .produk-card .card-badge {
   display: inline-block;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--accent);
-  background: var(--accent-subtle);
-  padding: 3px 10px;
+  color: var(--orange);
+  background: rgba(245,124,0,0.1);
+  border: 1px solid rgba(245,124,0,0.2);
+  padding: 5px 12px;
   border-radius: 100px;
   margin-bottom: 12px;
   align-self: flex-start;
 }
 .produk-card h3 {
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 8px;
-  line-height: 1.35;
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(16px, 1.8vw, 20px);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: var(--primary);
+  margin-bottom: 10px;
+  line-height: 1.3;
 }
 .produk-card .desc {
+  font-family: 'Inter', sans-serif;
   font-size: 14px;
-  color: var(--text-secondary);
-  line-height: 1.65;
+  color: var(--text-medium);
+  line-height: 1.7;
   margin-bottom: 20px;
   flex: 1;
 }
@@ -104,90 +120,150 @@
   margin-bottom: 20px;
 }
 .produk-card .price {
+  font-family: 'Orbitron', sans-serif;
   font-size: 24px;
   font-weight: 700;
-  color: var(--accent);
+  color: var(--orange);
 }
 .produk-card .price small {
+  font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 13px;
-  color: var(--text-tertiary);
+  color: var(--text-light);
+}
+.produk-card .btn-produk {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: var(--primary);
+  color: #fff;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.2s;
+  border: none;
+  cursor: pointer;
+}
+.produk-card .btn-produk:hover {
+  background: var(--orange);
+  transform: translateY(-2px);
+}
+
+/* ─── CTA Section ─── */
+.cta-section {
+  text-align: center;
+  margin-top: 64px;
+  padding: 48px 24px;
+  background: linear-gradient(135deg, var(--primary), #163a5f);
+  border-radius: 20px;
+}
+.cta-section h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(20px, 2.5vw, 28px);
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.cta-section p {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 24px;
+}
+.cta-section .btn-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 32px;
+  background: var(--orange);
+  color: #fff;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.2s;
+  border: none;
+  cursor: pointer;
+}
+.cta-section .btn-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(245,124,0,0.4);
 }
 </style>
 </head>
 <body>
-
-<div id="nav-placeholder" role="navigation" aria-label="Navigasi utama"></div>
+<div id="nav-placeholder"></div>
 <div id="mobile-placeholder"></div>
 
-<!-- HERO -->
-<section id="hero" style="padding-top:100px">
-  <div class="container">
-    <div class="section-header fade-up">
-      <div class="section-label">Produk Digital</div>
-      <h1 class="section-title">Solusi Siap Pakai <span class="highlight">untuk UMKM</span></h1>
-      <p class="section-sub">Dari playbook sampai assessment — semua bisa dibeli via WhatsApp, file dikirim langsung ke chat Anda.</p>
-    </div>
-  </div>
-</section>
+<main class="produk-page">
+  <!-- ─── PAGE HEADER (blog style) ─── -->
+  <header class="page-header">
+    <h1>Produk <span>Digital</span></h1>
+    <p class="page-subtitle">Solusi siap pakai untuk UMKM Indonesia — dari playbook sampai assessment. Bayar via WhatsApp, file dikirim langsung ke chat Anda.</p>
+  </header>
 
-<section style="padding-top:0">
-  <div class="container">
-    <div class="produk-grid">
+  <!-- ─── PRODUCT GRID ─── -->
+  <div class="produk-grid">
 
-      <!-- Card 1: AI Readiness Assessment -->
-      <div class="produk-card stagger-1">
-        <div class="icon-wrap">🔍</div>
-        <span class="card-badge">Baru</span>
-        <h3>AI Readiness Assessment</h3>
-        <p class="desc">40+ pertanyaan terstruktur + scoring otomatis. Ketahui level kesiapan bisnis Anda mengadopsi AI — dari 0 sampai mature. Lengkap dengan rekomendasi prioritas.</p>
-        <div class="price-row">
-          <span class="price">Rp99.000</span>
-          <small>· PDF + Scorecard</small>
-        </div>
-        <a class="btn btn-accent btn-block" href="/produk/ai-readiness-assessment.html">Lihat Detail →</a>
+    <!-- AI Readiness Assessment -->
+    <div class="produk-card">
+      <div class="icon-wrap">🔍</div>
+      <span class="card-badge">Baru</span>
+      <h3>AI Readiness Assessment</h3>
+      <p class="desc">40+ pertanyaan terstruktur + scoring otomatis. Ketahui level kesiapan bisnis Anda mengadopsi AI — dari 0 sampai mature. Lengkap dengan rekomendasi prioritas.</p>
+      <div class="price-row">
+        <span class="price">Rp99.000</span>
+        <small>· PDF + Scorecard</small>
       </div>
-
-      <!-- Card 2: Playbook Follow-Up -->
-      <div class="produk-card stagger-2">
-        <div class="icon-wrap">📋</div>
-        <span class="card-badge">Best Seller</span>
-        <h3>Playbook Follow-Up WA yang Konversi</h3>
-        <p class="desc">5 strategi + 20 template follow-up WA siap copy-paste. Khusus UMKM yang leads WA masuk tapi closing rendah. Termasuk kalkulator & tracker.</p>
-        <div class="price-row">
-          <span class="price">Rp249.000</span>
-          <small>· PDF + Bonus</small>
-        </div>
-        <a class="btn btn-accent btn-block" href="/produk/follow-up-playbook.html">Lihat Detail →</a>
-      </div>
-
-      <!-- Card 3: SOP Kit -->
-      <div class="produk-card stagger-3">
-        <div class="icon-wrap">⚙️</div>
-        <span class="card-badge">Tools</span>
-        <h3>SOP Kit UMKM</h3>
-        <p class="desc">15 template SOP siap edit di Google Docs. Dari order masuk sampai evaluasi bulanan — tinggal duplikat dan pakai. Fondasi operasional bisnis yang bisa scale.</p>
-        <div class="price-row">
-          <span class="price">Rp199.000</span>
-          <small>· 15 Template SOP</small>
-        </div>
-        <a class="btn btn-accent btn-block" href="/produk/sop-kit-umkm.html">Lihat Detail →</a>
-      </div>
-
+      <a class="btn-produk" href="/produk/ai-readiness-assessment.html">Lihat Detail →</a>
     </div>
-  </div>
-</section>
 
-<!-- CTA -->
-<section class="section-warm">
-  <div class="container" style="text-align:center">
-    <div class="section-header fade-up">
-      <h2 class="section-title">Bingung Mulai dari Mana?</h2>
-      <p class="section-sub" style="max-width:500px;margin:0 auto 24px">Konsultasi gratis 15 menit — kami rekomendasikan produk yang tepat buat bisnis Anda.</p>
-      <button class="btn btn-accent btn-lg" onclick="openChat()">📍 Konsultasi Gratis via WA</button>
+    <!-- Playbook Follow-Up -->
+    <div class="produk-card">
+      <div class="icon-wrap">📋</div>
+      <span class="card-badge">Best Seller</span>
+      <h3>Playbook Follow-Up WA yang Konversi</h3>
+      <p class="desc">5 strategi + 20 template follow-up WA siap copy-paste. Khusus UMKM yang leads WA masuk tapi closing rendah. Termasuk kalkulator & tracker.</p>
+      <div class="price-row">
+        <span class="price">Rp249.000</span>
+        <small>· PDF + Bonus</small>
+      </div>
+      <a class="btn-produk" href="/produk/follow-up-playbook.html">Lihat Detail →</a>
     </div>
+
+    <!-- SOP Kit -->
+    <div class="produk-card">
+      <div class="icon-wrap">⚙️</div>
+      <span class="card-badge">Tools</span>
+      <h3>SOP Kit UMKM</h3>
+      <p class="desc">15 template SOP siap edit di Google Docs. Dari order masuk sampai evaluasi bulanan — tinggal duplikat dan pakai. Fondasi operasional bisnis yang bisa scale.</p>
+      <div class="price-row">
+        <span class="price">Rp199.000</span>
+        <small>· 15 Template SOP</small>
+      </div>
+      <a class="btn-produk" href="/produk/sop-kit-umkm.html">Lihat Detail →</a>
+    </div>
+
   </div>
-</section>
+
+  <!-- ─── CTA ─── -->
+  <div class="cta-section">
+    <h2>Bingung Mulai dari Mana?</h2>
+    <p>Konsultasi gratis 15 menit — kami rekomendasikan produk yang tepat buat bisnis Anda.</p>
+    <a class="btn-cta" href="https://wa.me/6281907552758?text=Halo%20saya%20mau%20konsultasi%20produk%20AMS" target="_blank">📍 Konsultasi Gratis via WA</a>
+  </div>
+</main>
 
 <div id="footer-placeholder"></div>
 

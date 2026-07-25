@@ -6,320 +6,315 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI Readiness Assessment — Ukur Kesiapan AI Bisnis Anda | AI Marketing Strategic</title>
 <meta name="description" content="PDF assessment 40+ pertanyaan + scoring otomatis. Ketahui level kesiapan bisnis Anda mengadopsi AI — dari level 0 sampai mature. Rp99.000.">
-<meta name="author" content="AI Marketing Strategic">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://aimarketingstrategic.com/produk/ai-readiness-assessment">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://aimarketingstrategic.com/produk/ai-readiness-assessment">
-<link rel="canonical" href="https://aimarketingstrategic.com/produk/ai-readiness-assessment">
 <meta property="og:title" content="AI Readiness Assessment — Ukur Kesiapan AI Bisnis Anda">
 <meta property="og:description" content="40+ pertanyaan scoring otomatis. Tahu level kesiapan AI bisnis Anda dalam 30 menit. Rp99.000.">
 <meta property="og:image" content="https://aimarketingstrategic.com/images/og-card.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:locale" content="id_ID">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="AI Readiness Assessment — AI Marketing Strategic">
 <meta name="twitter:description" content="40+ pertanyaan scoring otomatis. Tahu level kesiapan AI bisnis Anda. Rp99.000.">
-<meta name="robots" content="index, follow">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
 <link rel="stylesheet" href="/assets/css/components.css">
 <link rel="stylesheet" href="/assets/css/responsive.css">
 
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HPCDWE0YDD"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  window.gtag = gtag;
-  gtag('js', new Date());
-  gtag('config', 'G-HPCDWE0YDD');
-</script>
-
 <style>
-/* Product page specific */
-#hero { text-align: center; }
+/* ─── Layout ─── */
+.produk-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 120px 24px 80px;
+}
+
+/* ─── Page Header ─── */
+.page-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.page-header h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(24px, 3.5vw, 36px);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+.page-header h1 span { color: var(--orange); }
 .price-badge {
   display: inline-block;
-  background: var(--accent);
-  color: #fff;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 24px;
   font-weight: 700;
-  font-size: 28px;
-  padding: 10px 28px;
-  border-radius: var(--radius-md);
+  color: #fff;
+  background: var(--orange);
+  padding: 8px 24px;
+  border-radius: 12px;
   margin-bottom: 16px;
 }
 .price-badge small {
+  font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 14px;
   opacity: 0.8;
 }
 .produk-hero-sub {
-  font-size: 18px;
-  color: var(--text-secondary);
+  font-family: 'Inter', sans-serif;
+  font-size: 17px;
+  color: var(--text-medium);
+  line-height: 1.7;
   max-width: 600px;
-  margin: 0 auto 32px;
-  line-height: 1.6;
+  margin: 0 auto 28px;
 }
-.btn-wa {
+.btn-buy {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   padding: 14px 32px;
-  background: #25D366;
+  background: var(--primary);
   color: #fff;
-  font-weight: 600;
-  font-size: 15px;
-  border-radius: var(--radius-md);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border-radius: 12px;
   text-decoration: none;
   transition: all 0.2s;
+  cursor: pointer;
+  border: none;
 }
-.btn-wa:hover {
-  background: #1da851;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(37,211,102,0.3);
+.btn-buy:hover { background: var(--orange); transform: translateY(-2px); }
+.btn-buy-orange {
+  background: var(--orange);
+  color: #fff;
 }
+.btn-buy-orange:hover { background: #e07000; }
+
+/* ─── Section Style ─── */
+.section-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(20px, 2.5vw, 28px);
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  color: var(--primary);
+  text-align: center;
+  margin-bottom: 36px;
+}
+.section-title span { color: var(--orange); }
+
+/* ─── Feature Grid ─── */
 .feature-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
-  max-width: 960px;
-  margin: 0 auto;
+  margin-bottom: 48px;
 }
 .feature-card {
-  background: var(--bg-white);
-  border-radius: var(--radius-lg);
+  background: #fff;
+  border: 1px solid var(--border-light, #e2e8f0);
+  border-radius: 16px;
   padding: 28px 24px;
-  border: 1px solid var(--border-card);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 4px 16px rgba(11,42,74,0.04);
   transition: all 0.2s;
 }
-.feature-card:hover { box-shadow: var(--shadow-md); }
-.feature-card h3 { font-size: 15px; font-weight: 600; color: var(--text-primary); margin-bottom: 8px; }
-.feature-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
+.feature-card:hover { box-shadow: 0 6px 24px rgba(11,42,74,0.1); }
+.feature-card h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+.feature-card p {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: var(--text-medium);
+  line-height: 1.65;
+}
+
+/* ─── Scoring Grid ─── */
 .scoring-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 16px;
-  max-width: 900px;
-  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 14px;
+  margin-bottom: 48px;
 }
 .scoring-item {
-  background: var(--bg-white);
-  border-radius: var(--radius-lg);
-  padding: 24px 20px;
+  background: #fff;
+  border: 1px solid var(--border-light, #e2e8f0);
+  border-radius: 16px;
+  padding: 24px 16px;
   text-align: center;
-  border: 1px solid var(--border-card);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 2px 12px rgba(11,42,74,0.04);
 }
 .scoring-item .level {
+  font-family: 'Orbitron', sans-serif;
   font-size: 28px;
   font-weight: 700;
-  color: var(--accent);
-  letter-spacing: -0.03em;
+  color: var(--orange);
   margin-bottom: 2px;
 }
 .scoring-item .lbl {
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--text-tertiary);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  color: var(--text-light);
   margin-bottom: 6px;
 }
 .scoring-item .desc {
+  font-family: 'Inter', sans-serif;
   font-size: 12px;
-  color: var(--text-secondary);
+  color: var(--text-medium);
   line-height: 1.5;
 }
-.testimonial-card {
-  max-width: 600px;
-  margin: 0 auto;
-  background: var(--bg-white);
-  border-radius: var(--radius-xl);
-  padding: 32px;
-  border: 1px solid var(--border-card);
-  box-shadow: var(--shadow-sm);
+
+/* ─── Steps ─── */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 48px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
-.testimonial-card .quote {
-  font-size: 15px;
-  color: var(--text-primary);
-  line-height: 1.7;
-  font-style: italic;
-}
-.testimonial-card .author {
-  font-size: 13px;
-  color: var(--text-tertiary);
-  margin-top: 16px;
-}
+
+/* ─── CTA Card ─── */
 .cta-card {
-  max-width: 600px;
-  margin: 0 auto;
-  background: var(--bg-white);
-  border-radius: var(--radius-xl);
-  padding: 40px 32px;
   text-align: center;
-  border: 1px solid var(--border-card);
-  box-shadow: var(--shadow-lg);
+  padding: 48px 32px;
+  background: linear-gradient(135deg, var(--primary), #163a5f);
+  border-radius: 20px;
+  margin-top: 48px;
 }
 .cta-card h3 {
-  font-size: 20px;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 8px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(20px, 2.5vw, 26px);
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  color: #fff;
+  margin-bottom: 10px;
 }
 .cta-card p {
-  font-size: 14px;
-  color: var(--text-secondary);
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  color: rgba(255,255,255,0.7);
   margin-bottom: 24px;
 }
 </style>
 </head>
 <body>
-
-<div id="nav-placeholder" role="navigation" aria-label="Navigasi utama"></div>
+<div id="nav-placeholder"></div>
 <div id="mobile-placeholder"></div>
 
-<!-- HERO -->
-<section id="hero" style="padding-top:100px">
-  <div class="container">
-    <div class="price-badge">Rp99.000</div>
-    <div class="section-header fade-up">
-      <div class="section-label">Digital Product</div>
-      <h1 class="section-title">AI Readiness <span class="highlight">Assessment</span></h1>
-    </div>
+<main class="produk-page">
+  <!-- HERO -->
+  <header class="page-header">
+    <div class="price-badge">Rp99.000 <small>· PDF + Scorecard</small></div>
+    <h1>AI Readiness <span>Assessment</span></h1>
     <p class="produk-hero-sub">40+ pertanyaan terstruktur + scoring otomatis. Tahu persis level kesiapan bisnis Anda adopsi AI — dari 0 sampai mature. Selesai dalam 30 menit.</p>
-    <a class="btn btn-accent btn-lg" href="https://wa.me/6281907552758?text=Mau%20beli%20AI%20Readiness%20Assessment%20-%20Rp99rb" target="_blank">Beli via WA — Rp99.000 →</a>
-  </div>
-</section>
+    <a class="btn-buy btn-buy-orange" href="https://wa.me/6281907552758?text=Mau%20beli%20AI%20Readiness%20Assessment%20-%20Rp99rb" target="_blank">Beli via WA — Rp99.000 →</a>
+  </header>
 
-<!-- SCORING LEVELS -->
-<section class="section-warm">
-  <div class="container">
-    <div class="section-header fade-up">
-      <div class="section-label">Scoring</div>
-      <h2 class="section-title">5 Level <span class="highlight">Kesiapan AI</span></h2>
-      <p class="section-sub">Skor otomatis setelah isi assessment — Anda langsung tahu posisi dan langkah selanjutnya.</p>
+  <!-- SCORING LEVELS -->
+  <h2 class="section-title">5 Level <span>Kesiapan AI</span></h2>
+  <div class="scoring-grid">
+    <div class="scoring-item">
+      <div class="level">L0</div>
+      <div class="lbl">Manual</div>
+      <div class="desc">Semua masih manual, belum pernah coba AI.</div>
     </div>
-    <div class="scoring-grid">
-      <div class="scoring-item stagger-1">
-        <div class="level">L0</div>
-        <div class="lbl">Manual</div>
-        <div class="desc">Semua masih manual, belum pernah coba AI.</div>
-      </div>
-      <div class="scoring-item stagger-2">
-        <div class="level">L1</div>
-        <div class="lbl">Eksperimen</div>
-        <div class="desc">Pernah coba ChatGPT — belum terintegrasi.</div>
-      </div>
-      <div class="scoring-item stagger-3">
-        <div class="level">L2</div>
-        <div class="lbl">Fungsional</div>
-        <div class="desc">Ada 1-2 tools AI dipakai rutin.</div>
-      </div>
-      <div class="scoring-item stagger-1">
-        <div class="level">L3</div>
-        <div class="lbl">Terintegrasi</div>
-        <div class="desc">AI dipakai di beberapa departemen.</div>
-      </div>
-      <div class="scoring-item stagger-2">
-        <div class="level">L4</div>
-        <div class="lbl">Mature</div>
-        <div class="desc">AI jadi core operasional — terukur, optimal.</div>
-      </div>
+    <div class="scoring-item">
+      <div class="level">L1</div>
+      <div class="lbl">Eksperimen</div>
+      <div class="desc">Pernah coba ChatGPT — belum terintegrasi.</div>
+    </div>
+    <div class="scoring-item">
+      <div class="level">L2</div>
+      <div class="lbl">Fungsional</div>
+      <div class="desc">Ada 1-2 tools AI dipakai rutin.</div>
+    </div>
+    <div class="scoring-item">
+      <div class="level">L3</div>
+      <div class="lbl">Terintegrasi</div>
+      <div class="desc">AI dipakai di beberapa departemen.</div>
+    </div>
+    <div class="scoring-item">
+      <div class="level">L4</div>
+      <div class="lbl">Mature</div>
+      <div class="desc">AI jadi core operasional — terukur, optimal.</div>
     </div>
   </div>
-</section>
 
-<!-- WHAT YOU GET -->
-<section>
-  <div class="container">
-    <div class="section-header fade-up">
-      <div class="section-label">Di Dalamnya</div>
-      <h2 class="section-title">Apa yang Anda <span class="highlight">Dapatkan</span></h2>
+  <!-- WHAT YOU GET -->
+  <h2 class="section-title">Apa yang Anda <span>Dapatkan</span></h2>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <h3>📝 40+ Pertanyaan Terstruktur</h3>
+      <p>Meliputi 6 dimensi: Infrastruktur, SDM, Data, Proses, Marketing, dan Keuangan. Tiap pertanyaan punya bobot scoring.</p>
     </div>
-    <div class="feature-grid">
-      <div class="feature-card stagger-1">
-        <h3>📝 40+ Pertanyaan Terstruktur</h3>
-        <p>Meliputi 6 dimensi: Infrastruktur, SDM, Data, Proses, Marketing, dan Keuangan. Tiap pertanyaan punya bobot scoring.</p>
-      </div>
-      <div class="feature-card stagger-2">
-        <h3>📊 Scorecard Otomatis</h3>
-        <p>File Excel dengan formula siap pakai. Isi jawaban, skor langsung terhitung per dimensi — nol perlu manual.</p>
-      </div>
-      <div class="feature-card stagger-3">
-        <h3>🎯 Rekomendasi Prioritas</h3>
-        <p>Dapatkan 3-5 rekomendasi aksi prioritas tertinggi berdasarkan skor Anda. Langsung tahu apa yang harus dikerjakan minggu depan.</p>
-      </div>
-      <div class="feature-card stagger-1">
-        <h3>📈 Benchmark Industri</h3>
-        <p>Perbandingan skor Anda dengan rata-rata UMKM sektor yang sama. Tahu posisi Anda dibanding kompetitor.</p>
-      </div>
-      <div class="feature-card stagger-2">
-        <h3>🚀 Roadmap 30-60-90 Hari</h3>
-        <p>Template roadmap implementasi berdasarkan level Anda. Dari langkah pertama sampai siap scale.</p>
-      </div>
-      <div class="feature-card stagger-3">
-        <h3>💬 Bonus: Konsultasi 15 Menit</h3>
-        <p>Diskusi hasil assessment dengan tim AMS via WA. Tanya apa pun tentang langkah selanjutnya.</p>
-      </div>
+    <div class="feature-card">
+      <h3>📊 Scorecard Otomatis</h3>
+      <p>File Excel dengan formula siap pakai. Isi jawaban, skor langsung terhitung per dimensi — nol perlu manual.</p>
+    </div>
+    <div class="feature-card">
+      <h3>🎯 Rekomendasi Prioritas</h3>
+      <p>Dapatkan 3-5 rekomendasi aksi prioritas tertinggi berdasarkan skor Anda. Langsung tahu apa yang harus dikerjakan minggu depan.</p>
+    </div>
+    <div class="feature-card">
+      <h3>📈 Benchmark Industri</h3>
+      <p>Perbandingan skor Anda dengan rata-rata UMKM sektor yang sama. Tahu posisi Anda dibanding kompetitor.</p>
+    </div>
+    <div class="feature-card">
+      <h3>🚀 Roadmap 30-60-90 Hari</h3>
+      <p>Template roadmap implementasi berdasarkan level Anda. Dari langkah pertama sampai siap scale.</p>
+    </div>
+    <div class="feature-card">
+      <h3>💬 Bonus: Konsultasi 15 Menit</h3>
+      <p>Diskusi hasil assessment dengan tim AMS via WA. Tanya apa pun tentang langkah selanjutnya.</p>
     </div>
   </div>
-</section>
 
-<!-- HOW IT WORKS -->
-<section class="section-warm">
-  <div class="container">
-    <div class="section-header fade-up">
-      <div class="section-label">Cara Kerja</div>
-      <h2 class="section-title">Mulai dalam <span class="highlight">3 Langkah</span></h2>
+  <!-- HOW IT WORKS -->
+  <h2 class="section-title">Mulai dalam <span>3 Langkah</span></h2>
+  <div class="steps-grid">
+    <div class="feature-card" style="text-align:center">
+      <div style="font-size:32px;margin-bottom:10px">📱</div>
+      <h3>1. Beli via WA</h3>
+      <p>Klik tombol beli, chat WA kami. Bayar — kami kirim file PDF + Excel langsung ke chat Anda.</p>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;max-width:800px;margin:0 auto">
-      <div class="feature-card stagger-1" style="text-align:center">
-        <div style="font-size:32px;margin-bottom:12px">📱</div>
-        <h3>1. Beli via WA</h3>
-        <p>Klik tombol beli, chat WA kami. Bayar — kami kirim file PDF + Excel langsung ke chat Anda.</p>
-      </div>
-      <div class="feature-card stagger-2" style="text-align:center">
-        <div style="font-size:32px;margin-bottom:12px">📝</div>
-        <h3>2. Isi Assessment</h3>
-        <p>Luangkan 20-30 menit. Isi 40+ pertanyaan. Jujur saja — ini untuk Anda, bukan untuk kami.</p>
-      </div>
-      <div class="feature-card stagger-3" style="text-align:center">
-        <div style="font-size:32px;margin-bottom:12px">📈</div>
-        <h3>3. Dapatkan Skor</h3>
-        <p>Skor otomatis terhitung. Anda langsung tahu level kesiapan dan langkah prioritas selanjutnya.</p>
-      </div>
+    <div class="feature-card" style="text-align:center">
+      <div style="font-size:32px;margin-bottom:10px">📝</div>
+      <h3>2. Isi Assessment</h3>
+      <p>Luangkan 20-30 menit. Isi 40+ pertanyaan. Jujur saja — ini untuk Anda, bukan untuk kami.</p>
+    </div>
+    <div class="feature-card" style="text-align:center">
+      <div style="font-size:32px;margin-bottom:10px">📈</div>
+      <h3>3. Dapatkan Skor</h3>
+      <p>Skor otomatis terhitung. Anda langsung tahu level kesiapan dan langkah prioritas selanjutnya.</p>
     </div>
   </div>
-</section>
 
-<!-- PROOF -->
-<section>
-  <div class="container" style="max-width:640px;text-align:center">
-    <div class="testimonial-card stagger-1">
-      <p class="quote">"Investasi Rp99rb ini menyelamatkan saya dari trial-and-error beli tools AI yang ternyata gak cocok. Assessment-nya akurat — cocok dengan kondisi bisnis saya."</p>
-      <p class="author">— Pemilik bisnis F&B, Jakarta (testimoni internal)</p>
-    </div>
+  <!-- CTA -->
+  <div class="cta-card">
+    <h3>Ukur Kesiapan AI Bisnis Anda</h3>
+    <p>PDF + Scorecard Excel + Bonus konsultasi 15 menit. Selesai dalam 30 menit.</p>
+    <a class="btn-buy btn-buy-orange" href="https://wa.me/6281907552758?text=Mau%20beli%20AI%20Readiness%20Assessment%20-%20Rp99rb" target="_blank">📍 Beli Rp99.000 via WA</a>
   </div>
-</section>
-
-<!-- CTA -->
-<section class="section-warm">
-  <div class="container">
-    <div class="cta-card stagger-1">
-      <h3>Ukur Kesiapan AI Bisnis Anda</h3>
-      <p>PDF + Scorecard Excel + Bonus konsultasi 15 menit. Selesai dalam 30 menit.</p>
-      <a class="btn btn-accent btn-lg" href="https://wa.me/6281907552758?text=Mau%20beli%20AI%20Readiness%20Assessment%20-%20Rp99rb" target="_blank">📍 Beli Rp99.000 via WA</a>
-    </div>
-  </div>
-</section>
+</main>
 
 <div id="footer-placeholder"></div>
-
 <script>
 function toggleMenu() {
   document.getElementById('mobile-menu').classList.toggle('active');
