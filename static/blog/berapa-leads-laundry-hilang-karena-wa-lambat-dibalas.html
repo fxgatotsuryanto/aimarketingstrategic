@@ -15,6 +15,274 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <title>Berapa Leads Laundry yang Hilang Karena WA Lambat Dibalas? | AI Marketing Strategic</title>
 
+  <style>
+    /* ═══════════════════════════════════════════
+       Blog Article Styles — matching main site design
+       ═══════════════════════════════════════════ */
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .article-page {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 48px;
+      padding: 120px 0 80px;
+    }
+
+    /* ─── Article Header ─── */
+    .article-header {
+      margin-bottom: 40px;
+    }
+    .article-category {
+      display: inline-block;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--orange, #F57C00);
+      background: rgba(245, 124, 0, 0.08);
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+    }
+    .article-header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(22px, 3vw, 32px);
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      line-height: 1.25;
+      color: var(--primary, #0B2A4A);
+      margin-bottom: 16px;
+    }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .article-meta time,
+    .article-meta .author,
+    .article-meta .read-time {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: var(--text-light, #94a3b8);
+    }
+
+    /* ─── Article Content ─── */
+    .article-content {
+      font-family: 'Inter', sans-serif;
+      font-size: 17px;
+      line-height: 1.85;
+      color: #1f2937;
+    }
+    .article-content h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--primary, #0B2A4A);
+      margin: 48px 0 16px;
+      padding-top: 8px;
+      border-top: 2px solid rgba(11, 42, 74, 0.08);
+    }
+    .article-content h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--primary, #0B2A4A);
+      margin: 32px 0 12px;
+    }
+    .article-content p {
+      margin-bottom: 20px;
+    }
+    .article-content strong {
+      color: var(--primary, #0B2A4A);
+    }
+    .article-content ul, .article-content ol {
+      margin: 0 0 20px 24px;
+    }
+    .article-content li {
+      margin-bottom: 10px;
+    }
+    .lead-answer {
+      font-size: 19px;
+      line-height: 1.8;
+      color: var(--primary, #0B2A4A);
+      background: #f8fafc;
+      border-left: 4px solid var(--orange, #F57C00);
+      padding: 24px;
+      border-radius: 0 16px 16px 0;
+      margin-bottom: 32px;
+    }
+
+    /* ─── Comparison Table ─── */
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0 32px;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    }
+    .comparison-table thead {
+      background: var(--primary, #0B2A4A);
+    }
+    .comparison-table th {
+      color: #fff;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 14px 16px;
+      text-align: left;
+    }
+    .comparison-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid #e5e7eb;
+      color: #374151;
+    }
+    .comparison-table tbody tr:hover {
+      background: #f9fafb;
+    }
+    .comparison-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .comparison-table td:first-child {
+      font-weight: 600;
+      color: var(--primary, #0B2A4A);
+    }
+    .comparison-table td strong {
+      color: var(--orange, #F57C00);
+    }
+
+    /* ─── CTA Box ─── */
+    .cta-box {
+      background: linear-gradient(135deg, var(--primary, #0B2A4A), #163a5f);
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      margin: 48px 0 0;
+    }
+    .cta-box h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      color: #fff !important;
+      margin-bottom: 12px !important;
+    }
+    .cta-box p {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 24px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ─── Sidebar ─── */
+    .article-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .sidebar-widget {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 24px;
+    }
+    .sidebar-widget h4 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--primary, #0B2A4A);
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .recent-posts,
+    .categories {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .recent-posts li,
+    .categories li {
+      padding: 8px 0;
+      border-bottom: 1px solid #f3f4f6;
+    }
+    .recent-posts li:last-child,
+    .categories li:last-child {
+      border-bottom: none;
+    }
+    .recent-posts a,
+    .categories a {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: var(--primary, #0B2A4A);
+      text-decoration: none;
+      transition: color 0.2s;
+      line-height: 1.4;
+      display: block;
+    }
+    .recent-posts a:hover,
+    .categories a:hover {
+      color: var(--orange, #F57C00);
+    }
+    .cta-sidebar {
+      background: linear-gradient(135deg, var(--primary, #0B2A4A), #163a5f);
+      border-color: transparent;
+      text-align: center;
+    }
+    .cta-sidebar h4 {
+      color: #fff;
+      border-bottom-color: rgba(255, 255, 255, 0.1);
+    }
+    .cta-sidebar p {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    .btn-block {
+      width: 100%;
+      display: block;
+      text-align: center;
+      padding: 14px;
+    }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 768px) {
+      .article-page {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 100px 0 60px;
+      }
+      .article-sidebar {
+        order: 2;
+      }
+    }
+    @media (max-width: 480px) {
+      .cta-box { padding: 32px 20px; }
+      .comparison-table { font-size: 11px; }
+      .comparison-table th,
+      .comparison-table td { padding: 10px 12px; }
+    }
+
+    /* ─── Inline article <cite> ─── */
+    cite { font-style: italic; color: var(--text-medium, #475569); }
+  </style>
+
   <!-- GEO: Article Schema -->
   <script type="application/ld+json">
   {
