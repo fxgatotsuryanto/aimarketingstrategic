@@ -132,6 +132,32 @@
     menuDiv.appendChild(ul);
     inner.appendChild(menuDiv);
 
+    // Products
+    var prodDiv = document.createElement('div');
+    var prodTitle = document.createElement('p');
+    prodTitle.className = 'footer-col-title';
+    prodTitle.textContent = 'Produk Digital';
+    prodDiv.appendChild(prodTitle);
+
+    var prodUl = document.createElement('ul');
+    prodUl.className = 'footer-links';
+    var products = [
+      { href: '/produk/', label: 'Semua Produk' },
+      { href: '/produk/ai-readiness-assessment.html', label: 'AI Readiness Assessment' },
+      { href: '/produk/follow-up-playbook.html', label: 'Playbook Follow-Up WA' },
+      { href: '/produk/sop-kit-umkm.html', label: 'SOP Kit UMKM' }
+    ];
+    products.forEach(function(item) {
+      var li = document.createElement('li');
+      var a = document.createElement('a');
+      a.href = item.href;
+      a.textContent = item.label;
+      li.appendChild(a);
+      prodUl.appendChild(li);
+    });
+    prodDiv.appendChild(prodUl);
+    inner.appendChild(prodDiv);
+
     // Contact
     var contact = document.createElement('div');
     contact.innerHTML = 
