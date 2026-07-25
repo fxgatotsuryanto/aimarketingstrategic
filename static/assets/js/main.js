@@ -35,13 +35,12 @@
     var inner = document.createElement('div');
     inner.className = 'header-inner';
 
-    // Logo — image + white brand text
-    var logo = document.createElement('a');
-    logo.className = 'header-logo';
-    logo.href = '/';
-    logo.innerHTML =
-      '<img src="https://aimarketingstrategic.com/images/logo%20aims.png" alt="AI Revenue Activation" height="32">' +
-      '<span class="header-logo-text">AI&nbsp;Marketing<span>Strategic</span></span>';
+    // Logo — image only
+        var logo = document.createElement('a');
+        logo.className = 'header-logo';
+        logo.href = '/';
+        logo.innerHTML =
+          '<img src="https://aimarketingstrategic.com/images/logo%20aims.png" alt="AI Marketing Strategic" height="36">';
     inner.appendChild(logo);
 
     // Desktop nav links
@@ -126,7 +125,7 @@
     // Brand column
     var brandDiv = document.createElement('div');
     brandDiv.innerHTML =
-      '<img src="https://aimarketingstrategic.com/images/logo%20aims.png" alt="AI Marketing Strategic" height="36" style="margin-bottom:12px">' +
+      '<img src="https://aimarketingstrategic.com/images/logo%20aims.png" alt="AI Marketing Strategic" height="48" style="margin-bottom:12px">' +
       '<p class="footer-desc">AI Business Operating System untuk UMKM Indonesia. Bukan chatbot biasa — sistem AI yang mengoperasikan WhatsApp, follow-up, CRM, dan dashboard bisnis Anda 24/7.</p>';
     inner.appendChild(brandDiv);
 
