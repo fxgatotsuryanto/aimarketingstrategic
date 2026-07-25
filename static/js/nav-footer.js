@@ -8,24 +8,17 @@
 
   // ─── DATA ────────────────────────────────────────────
   var NAV_LINKS = [
-    { href: '/index.html',          label: 'Beranda' },
-    { href: '/demo.html',          label: 'Demo' },
-    { href: '/hasil.html',          label: 'Hasil' },
-    { href: '/produk/',             label: 'Produk' },
-    { href: '/harga.html',          label: 'Harga' },
     { href: '/tentang.html',        label: 'Tentang' },
-    { href: '/kontak.html',         label: 'Kontak' },
+    { href: '/harga.html',          label: 'Harga' },
+    { href: '/hasil.html',          label: 'Hasil' },
     { href: '/blog/',               label: 'Blog' }
   ];
 
   var FOOTER_LINKS = [
-    { href: '/index.html',          label: 'Beranda' },
-    { href: '/demo.html',          label: 'Demo' },
-    { href: '/hasil.html',          label: 'Hasil Nyata' },
-    { href: '/produk/',             label: 'Produk Digital' },
+    { href: '/tentang.html',        label: 'Tentang' },
     { href: '/harga.html',          label: 'Harga & Paket' },
-    { href: '/tentang.html',        label: 'Tentang Kami' },
-    { href: '/kontak.html',         label: 'Kontak' }
+    { href: '/hasil.html',          label: 'Hasil Nyata' },
+    { href: '/blog/',               label: 'Blog' }
   ];
 
   // ─── BUILD NAVBAR ────────────────────────────────────
