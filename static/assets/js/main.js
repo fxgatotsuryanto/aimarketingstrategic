@@ -14,7 +14,6 @@
      ============================================= */
 
   var NAV_LINKS = [
-    { href: '/',             label: 'Beranda' },
     { href: '/tentang.html', label: 'Tentang' },
     { href: '/harga.html',   label: 'Harga' },
     { href: '/hasil.html',   label: 'Hasil' },
