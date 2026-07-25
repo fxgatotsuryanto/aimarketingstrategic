@@ -238,7 +238,99 @@
       color: #6b7280;
     }
 
-    /* ─── Blog CTA ─── */
+    /* ─── All Articles Grid ─── */
+	    .all-articles {
+	      margin-bottom: 64px;
+	    }
+	    .all-articles h2 {
+	      font-family: 'Orbitron', sans-serif;
+	      font-size: clamp(16px, 2vw, 22px);
+	      font-weight: 800;
+	      text-transform: uppercase;
+	      letter-spacing: 0.08em;
+	      color: var(--primary, #0B2A4A);
+	      margin-bottom: 32px;
+	      padding-bottom: 12px;
+	      border-bottom: 2px solid rgba(11, 42, 74, 0.08);
+	    }
+	    .articles-grid {
+	      display: grid;
+	      grid-template-columns: 1fr;
+	      gap: 20px;
+	    }
+	    @media (min-width: 640px) {
+	      .articles-grid { grid-template-columns: repeat(2, 1fr); }
+	    }
+	    @media (min-width: 900px) {
+	      .articles-grid { grid-template-columns: repeat(3, 1fr); }
+	    }
+	    .article-card-item {
+	      background: #fff;
+	      border: 1px solid #e5e7eb;
+	      border-radius: 16px;
+	      padding: 24px;
+	      transition: border-color 0.2s, box-shadow 0.2s;
+	      display: flex;
+	      flex-direction: column;
+	    }
+	    .article-card-item:hover {
+	      border-color: var(--orange, #F57C00);
+	      box-shadow: 0 4px 20px rgba(11, 42, 74, 0.06);
+	    }
+	    .article-card-item .card-header {
+	      display: flex;
+	      align-items: center;
+	      gap: 8px;
+	      flex-wrap: wrap;
+	      margin-bottom: 12px;
+	    }
+	    .article-card-item h3 {
+	      font-family: 'Orbitron', sans-serif;
+	      font-size: 13px;
+	      font-weight: 700;
+	      letter-spacing: 0.02em;
+	      line-height: 1.4;
+	      color: var(--primary, #0B2A4A);
+	      margin-bottom: 10px;
+	      flex: 1;
+	    }
+	    .article-card-item h3 a {
+	      color: inherit;
+	      text-decoration: none;
+	      display: block;
+	      transition: color 0.2s;
+	    }
+	    .article-card-item h3 a:hover {
+	      color: var(--orange, #F57C00);
+	    }
+	    .article-card-item p {
+	      font-family: 'Inter', sans-serif;
+	      font-size: 13px;
+	      line-height: 1.65;
+	      color: var(--text-medium, #475569);
+	      margin-bottom: 16px;
+	      flex: 1;
+	    }
+	    .article-card-item .card-footer {
+	      display: flex;
+	      align-items: center;
+	      justify-content: space-between;
+	      flex-wrap: wrap;
+	      gap: 8px;
+	    }
+	    .article-card-item .card-date {
+	      font-size: 11px;
+	      color: #94a3b8;
+	      font-family: 'Inter', sans-serif;
+	    }
+	    .cat-panduan { background: rgba(59,130,246,.1); color: #2563eb; border:1px solid rgba(59,130,246,.2); }
+	    .cat-insight { background: rgba(139,92,246,.1); color: #7c3aed; border:1px solid rgba(139,92,246,.2); }
+	    .cat-case-study { background: rgba(16,185,129,.1); color: #059669; border:1px solid rgba(16,185,129,.2); }
+	    .cat-perbandingan { background: rgba(245,158,11,.1); color: #d97706; border:1px solid rgba(245,158,11,.2); }
+	    .cat-tutorial { background: rgba(236,72,153,.1); color: #db2777; border:1px solid rgba(236,72,153,.2); }
+	    .cat-tren { background: rgba(6,182,212,.1); color: #0891b2; border:1px solid rgba(6,182,212,.2); }
+
+	    /* ─── Blog CTA ─── */
     .blog-cta {
       background: linear-gradient(135deg, var(--primary, #0B2A4A), #163a5f);
       border-radius: 20px;
@@ -326,11 +418,147 @@
     "blogPosts": [
       {
         "@type": "BlogPosting",
+        "headline": "Berapa Omzet yang Hilang Karena Restoran & Kafe Lambat Balas WhatsApp?",
+        "url": "https://aimarketingstrategic.com/blog/omzet-hilang-restoran-lambat-balas-wa-solusi-ai-chatbot-fnb.html",
+        "datePublished": "2026-07-18",
+        "author": {"@type": "Organization", "name": "AI Marketing Strategic"},
+        "description": "Restoran dan kafe di Indonesia kehilangan Rp 10-40 juta per bulan karena WA lambat dibalas."
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "Apa 5 Tanda Klinik Kecantikan Anda Butuh AI WhatsApp Sebelum Terlambat?",
+        "url": "https://aimarketingstrategic.com/blog/5-tanda-klinik-kecantikan-butuh-ai-whatsapp.html",
+        "datePublished": "2026-07-11",
+        "author": {"@type": "Organization", "name": "AI Marketing Strategic"},
+        "description": "5 tanda klinik kecantikan Anda sudah butuh AI WhatsApp — dari WA penuh sampai no-show tinggi."
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "Bagaimana Chatbot AI Bantu Klinik Kecantikan Handle 100+ Booking WA per Hari?",
+        "url": "https://aimarketingstrategic.com/blog/cara-chatbot-ai-bantu-klinik-kecantikan-handle-100-plus-booking-wa-per-hari.html",
+        "datePublished": "2026-07-09",
+        "author": {"@type": "Organization", "name": "AI Marketing Strategic"},
+        "description": "Chatbot AI WhatsApp handle 100+ booking klinik kecantikan per hari secara otomatis 24 jam."
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "Berapa Leads yang Hilang Karena WA Klinik Lambat Dibalas?",
+        "url": "https://aimarketingstrategic.com/blog/berapa-leads-yang-hilang-karena-wa-klinik-lambat-dibalas.html",
+        "datePublished": "2026-07-07",
+        "author": {"@type": "Organization", "name": "AI Marketing Strategic"},
+        "description": "Klinik kecantikan kehilangan Rp 15-30 juta per bulan karena WA lambat dibalas."
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "Panduan Lengkap Chatbot WhatsApp AI untuk UMKM Indonesia",
+        "url": "https://aimarketingstrategic.com/blog/panduan-lengkap-chatbot-whatsapp-ai-untuk-umkm-indonesia.html",
+        "datePublished": "2026-07-05",
+        "author": {"@type": "Organization", "name": "AI Marketing Strategic"},
+        "description": "Panduan lengkap implementasi chatbot WhatsApp AI untuk UMKM Indonesia."
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "AI untuk UMKM: 5 Mitos & Fakta yang Wajib Diketahui",
+        "url": "https://aimarketingstrategic.com/blog/ai-untuk-umkm-mitos-fakta.html",
+        "datePublished": "2026-07-04",
+        "author": {"@type": "Organization", "name": "AI Marketing Strategic"},
+        "description": "Bedah 5 mitos vs fakta AI untuk bisnis kecil Indonesia."
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "AI Voice untuk Follow Up Leads: Tren UMKM 2026",
+        "url": "https://aimarketingstrategic.com/blog/ai-voice-follow-up-leads-tren-otomasi-umkm-2026.html",
+        "datePublished": "2026-07-03",
+        "author": {"@type": "Organization", "name": "AI Marketing Strategic"},
+        "description": "AI voice assistant untuk follow up leads UMKM 2026."
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "Investasi Chatbot AI vs Tambah Admin: Mana Lebih Untung untuk UMKM?",
+        "url": "https://aimarketingstrategic.com/blog/investasi-chatbot-ai-vs-tambah-admin-umkm.html",
+        "datePublished": "2026-07-02",
+        "author": {"@type": "Organization", "name": "AI Marketing Strategic"},
+        "description": "Perbandingan biaya chatbot AI vs rekrut admin baru untuk UMKM."
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "AI Chatbot Naikkan Omzet Toko Oleh-Oleh 320% — Ini Kisahnya",
+        "url": "https://aimarketingstrategic.com/blog/ai-chatbot-naikkan-omzet-toko-oleh-oleh.html",
+        "datePublished": "2026-07-01",
+        "author": {"@type": "Organization", "name": "AI Marketing Strategic"},
+        "description": "Toko oleh-oleh naikkan konversi dari 8% jadi 52% dengan AI chatbot."
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "Studi Kasus AI Marketing Properti: Leads Naik 3x dalam 30 Hari",
+        "url": "https://aimarketingstrategic.com/blog/studi-kasus-ai-marketing-properti-leads-naik-3x.html",
+        "datePublished": "2026-07-01",
+        "author": {"@type": "Organization", "name": "AI Marketing Strategic"},
+        "description": "Agen properti Jakarta: closing rate naik 275% pakai AI WhatsApp."
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "Kehilangan Leads karena Telat Balas WA? Ini Solusi AI-nya",
+        "url": "https://aimarketingstrategic.com/blog/kehilangan-leads-telat-balas-wa-solusi-ai-umkm.html",
+        "datePublished": "2026-06-30",
+        "author": {"@type": "Organization", "name": "AI Marketing Strategic"},
+        "description": "AI automation untuk auto follow-up 24 jam, konversi naik hingga 3x lipat."
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "Cara Setup Chatbot WA untuk UMKM: Panduan 5 Langkah",
+        "url": "https://aimarketingstrategic.com/blog/cara-setup-chatbot-wa-untuk-umkm-panduan-5-langkah.html",
+        "datePublished": "2026-06-29",
+        "author": {"@type": "Organization", "name": "AI Marketing Strategic"},
+        "description": "Setup chatbot WhatsApp untuk UMKM dalam 5 langkah mudah tanpa coding."
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "Panduan Lengkap Chatbot AI WhatsApp untuk Sales UMKM 2026",
+        "url": "https://aimarketingstrategic.com/blog/panduan-lengkap-chatbot-ai-whatsapp-sales-umkm-2026.html",
+        "datePublished": "2026-06-28",
+        "author": {"@type": "Organization", "name": "AI Marketing Strategic"},
+        "description": "Panduan lengkap chatbot AI WhatsApp untuk follow-up leads UMKM."
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "5 Mitos AI UMKM: Fakta vs Fiksi yang Bikin Kamu Ragu",
+        "url": "https://aimarketingstrategic.com/blog/5-mitos-ai-umkm-fakta-vs-fiksi.html",
+        "datePublished": "2026-06-27",
+        "author": {"@type": "Organization", "name": "AI Marketing Strategic"},
+        "description": "Mitos AI untuk UMKM yang bikin pemilik bisnis ragu — fakta vs fiksi."
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "Tren AI untuk UMKM 2026: Data & Prediksi Otomasi Bisnis",
+        "url": "https://aimarketingstrategic.com/blog/tren-ai-untuk-umkm-2026-data-prediksi-otomasi-bisnis.html",
+        "datePublished": "2026-06-26",
+        "author": {"@type": "Organization", "name": "AI Marketing Strategic"},
+        "description": "Tren AI untuk UMKM Indonesia 2026: data adopsi dan prediksi pertumbuhan."
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "AI Chatbot vs Follow-Up Manual: Perbandingan untuk UMKM",
+        "url": "https://aimarketingstrategic.com/blog/ai-chatbot-vs-follow-up-manual-umkm.html",
+        "datePublished": "2026-06-25",
+        "author": {"@type": "Organization", "name": "AI Marketing Strategic"},
+        "description": "Perbandingan biaya, kecepatan, konversi leads chatbot AI vs follow-up manual."
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "Dari 8 ke 45 Leads per Minggu — AI WhatsApp untuk UMKM",
+        "url": "https://aimarketingstrategic.com/blog/dari-8-ke-45-leads-per-minggu-ai-whatsapp-untuk-umkm.html",
+        "datePublished": "2026-06-24",
+        "author": {"@type": "Organization", "name": "AI Marketing Strategic"},
+        "description": "Toko oleh-oleh di Bandung naikkan leads dari 8 jadi 45/minggu dengan AI."
+      },
+      {
+        "@type": "BlogPosting",
         "headline": "Berapa Leads Laundry yang Hilang Karena WA Lambat Dibalas?",
         "url": "https://aimarketingstrategic.com/blog/berapa-leads-laundry-hilang-karena-wa-lambat-dibalas.html",
         "datePublished": "2025-07-22",
         "author": {"@type": "Organization", "name": "AI Marketing Strategic"},
-        "description": "Laundry kilatan yang lambat balas WA kehilangan 15-30% order per bulan. Chatbot AI WhatsApp balas 2 detik selamatkan Rp 5-15 juta/bulan."
+        "description": "Laundry kilatan hilang 15-30% order per bulan karena lambat balas WA."
       }
     ]
   }
@@ -361,8 +589,116 @@
           <span class="stat"><span class="stat-value">2 detik</span> response AI</span>
           <span class="stat"><span class="stat-value">Rp 299rb</span>/bulan biaya bot</span>
         </div>
-        <a href="/blog/berapa-leads-laundry-hilang-karena-wa-lambat-dibalas.html" class="btn-secondary">Baca Artikellengkap →</a>
+        <a href="/blog/berapa-leads-laundry-hilang-karena-wa-lambat-dibalas.html" class="btn-secondary">Baca Artikel lengkap →</a>
       </article>
+    </section>
+
+    <section class="all-articles">
+      <h2>Semua Artikel</h2>
+      <div class="articles-grid">
+        <article class="article-card-item">
+          <div class="card-header"><span class="category-tag cat-insight">Insight</span></div>
+          <h3><a href="/blog/omzet-hilang-restoran-lambat-balas-wa-solusi-ai-chatbot-fnb.html">Berapa Omzet yang Hilang Karena Restoran &amp; Kafe Lambat Balas WhatsApp?</a></h3>
+          <p>Restoran dan kafe di Indonesia kehilangan Rp 10–40 juta per bulan karena WA lambat dibalas. Hitung kerugiannya + solusi AI chatbot WhatsApp untuk F&amp;B.</p>
+          <div class="card-footer"><time class="card-date" datetime="2026-07-18">18 Jul 2026</time><span class="category-tag sector-tag">F&amp;B</span></div>
+        </article>
+        <article class="article-card-item">
+          <div class="card-header"><span class="category-tag cat-insight">Insight</span></div>
+          <h3><a href="/blog/5-tanda-klinik-kecantikan-butuh-ai-whatsapp.html">Apa 5 Tanda Klinik Kecantikan Anda Butuh AI WhatsApp Sebelum Terlambat?</a></h3>
+          <p>5 tanda klinik kecantikan Anda sudah butuh AI WhatsApp — dari WA penuh dan slow response sampai no-show tinggi. Simak kerugian per bulan dan solusinya.</p>
+          <div class="card-footer"><time class="card-date" datetime="2026-07-11">11 Jul 2026</time><span class="category-tag geo-tag">Klinik</span></div>
+        </article>
+        <article class="article-card-item">
+          <div class="card-header"><span class="category-tag cat-panduan">Panduan</span></div>
+          <h3><a href="/blog/cara-chatbot-ai-bantu-klinik-kecantikan-handle-100-plus-booking-wa-per-hari.html">Bagaimana Chatbot AI Bantu Klinik Kecantikan Handle 100+ Booking WA per Hari?</a></h3>
+          <p>Chatbot AI WhatsApp bisa handle 100+ booking klinik kecantikan per hari secara otomatis 24 jam. Simak cara kerja, biaya, dan hasil nyata.</p>
+          <div class="card-footer"><time class="card-date" datetime="2026-07-09">9 Jul 2026</time><span class="category-tag geo-tag">Klinik</span></div>
+        </article>
+        <article class="article-card-item">
+          <div class="card-header"><span class="category-tag cat-insight">Insight</span></div>
+          <h3><a href="/blog/berapa-leads-yang-hilang-karena-wa-klinik-lambat-dibalas.html">Berapa Leads yang Hilang Karena WA Klinik Lambat Dibalas?</a></h3>
+          <p>Klinik kecantikan kehilangan Rp 15–30 juta per bulan karena WA lambat dibalas. Hitung sendiri kerugian leads Anda &amp; solusi AI chatbot WhatsApp 24 jam.</p>
+          <div class="card-footer"><time class="card-date" datetime="2026-07-07">7 Jul 2026</time><span class="category-tag geo-tag">Klinik</span></div>
+        </article>
+        <article class="article-card-item">
+          <div class="card-header"><span class="category-tag cat-panduan">Panduan</span></div>
+          <h3><a href="/blog/panduan-lengkap-chatbot-whatsapp-ai-untuk-umkm-indonesia.html">Panduan Lengkap Chatbot WhatsApp AI untuk UMKM Indonesia</a></h3>
+          <p>Panduan lengkap implementasi chatbot WhatsApp AI untuk UMKM Indonesia. Dari cara kerja, setup, sampai strategi optimal — tanpa coding, tanpa tim IT.</p>
+          <div class="card-footer"><time class="card-date" datetime="2026-07-05">5 Jul 2026</time></div>
+        </article>
+        <article class="article-card-item">
+          <div class="card-header"><span class="category-tag cat-insight">Insight</span></div>
+          <h3><a href="/blog/ai-untuk-umkm-mitos-fakta.html">AI untuk UMKM: 5 Mitos &amp; Fakta yang Wajib Diketahui</a></h3>
+          <p>Banyak pemilik UMKM masih ragu pakai AI karena mitos yang beredar. Yuk bedah 5 mitos vs fakta AI untuk bisnis kecil Indonesia.</p>
+          <div class="card-footer"><time class="card-date" datetime="2026-07-04">4 Jul 2026</time></div>
+        </article>
+        <article class="article-card-item">
+          <div class="card-header"><span class="category-tag cat-insight">Insight</span></div>
+          <h3><a href="/blog/ai-voice-follow-up-leads-tren-otomasi-umkm-2026.html">AI Voice untuk Follow Up Leads: Tren UMKM 2026</a></h3>
+          <p>AI voice assistant untuk follow up leads UMKM 2026: otomasi telepon follow-up, konfirmasi order, dan customer service dengan suara natural tanpa coding.</p>
+          <div class="card-footer"><time class="card-date" datetime="2026-07-03">3 Jul 2026</time></div>
+        </article>
+        <article class="article-card-item">
+          <div class="card-header"><span class="category-tag cat-perbandingan">Perbandingan</span></div>
+          <h3><a href="/blog/investasi-chatbot-ai-vs-tambah-admin-umkm.html">Investasi Chatbot AI vs Tambah Admin: Mana Lebih Untung untuk UMKM?</a></h3>
+          <p>Perbandingan biaya chatbot AI vs rekrut admin baru untuk UMKM. Hitung sendiri ROI dari investasi otomasi WhatsApp untuk bisnis kamu.</p>
+          <div class="card-footer"><time class="card-date" datetime="2026-07-02">2 Jul 2026</time></div>
+        </article>
+        <article class="article-card-item">
+          <div class="card-header"><span class="category-tag cat-case-study">Case Study</span></div>
+          <h3><a href="/blog/ai-chatbot-naikkan-omzet-toko-oleh-oleh.html">AI Chatbot Naikkan Omzet Toko Oleh-Oleh 320% — Ini Kisahnya</a></h3>
+          <p>Toko oleh-oleh kehilangan 200+ leads WA per bulan. Simak bagaimana AI chatbot berhasil naikkan konversi dari 8% jadi 52% dalam 30 hari.</p>
+          <div class="card-footer"><time class="card-date" datetime="2026-07-01">1 Jul 2026</time><span class="category-tag sector-tag">Oleh-Oleh</span></div>
+        </article>
+        <article class="article-card-item">
+          <div class="card-header"><span class="category-tag cat-case-study">Case Study</span></div>
+          <h3><a href="/blog/studi-kasus-ai-marketing-properti-leads-naik-3x.html">Studi Kasus AI Marketing Properti: Leads Naik 3x dalam 30 Hari</a></h3>
+          <p>Studi kasus nyata agen properti Jakarta: dari 80% leads hilang ke closing rate naik 275% pakai AI WhatsApp otomatis. Cek angka dan pelajarannya.</p>
+          <div class="card-footer"><time class="card-date" datetime="2026-07-01">1 Jul 2026</time><span class="category-tag geo-tag">Properti</span></div>
+        </article>
+        <article class="article-card-item">
+          <div class="card-header"><span class="category-tag cat-insight">Insight</span></div>
+          <h3><a href="/blog/kehilangan-leads-telat-balas-wa-solusi-ai-umkm.html">Kehilangan Leads karena Telat Balas WA? Ini Solusi AI-nya</a></h3>
+          <p>Ratusan leads UMKM hilang karena telat balas WhatsApp? AI automation solusinya. Auto follow-up 24 jam &amp; konversi naik hingga 3x lipat.</p>
+          <div class="card-footer"><time class="card-date" datetime="2026-06-30">30 Jun 2026</time></div>
+        </article>
+        <article class="article-card-item">
+          <div class="card-header"><span class="category-tag cat-tutorial">Tutorial</span></div>
+          <h3><a href="/blog/cara-setup-chatbot-wa-untuk-umkm-panduan-5-langkah.html">Cara Setup Chatbot WA untuk UMKM: Panduan 5 Langkah</a></h3>
+          <p>Pelajari cara setup chatbot WhatsApp untuk UMKM dalam 5 langkah mudah. Otomatiskan balas chat, follow-up leads, dan tingkatkan konversi tanpa coding.</p>
+          <div class="card-footer"><time class="card-date" datetime="2026-06-29">29 Jun 2026</time></div>
+        </article>
+        <article class="article-card-item">
+          <div class="card-header"><span class="category-tag cat-panduan">Panduan</span></div>
+          <h3><a href="/blog/panduan-lengkap-chatbot-ai-whatsapp-sales-umkm-2026.html">Panduan Lengkap Chatbot AI WhatsApp untuk Sales UMKM 2026</a></h3>
+          <p>Panduan lengkap chatbot AI WhatsApp untuk follow-up leads UMKM. Cara kerja, biaya mulai Rp100rb/bln, fitur wajib, sampai hasil nyata.</p>
+          <div class="card-footer"><time class="card-date" datetime="2026-06-28">28 Jun 2026</time></div>
+        </article>
+        <article class="article-card-item">
+          <div class="card-header"><span class="category-tag cat-panduan">Panduan</span></div>
+          <h3><a href="/blog/5-mitos-ai-umkm-fakta-vs-fiksi.html">5 Mitos AI UMKM: Fakta vs Fiksi yang Bikin Kamu Ragu</a></h3>
+          <p>Banyak mitos AI untuk UMKM yang bikin pemilik bisnis ragu mengadopsi teknologi ini. Simak fakta vs fiksi — dari biaya, coding, sampai cara kerja AI.</p>
+          <div class="card-footer"><time class="card-date" datetime="2026-06-27">27 Jun 2026</time></div>
+        </article>
+        <article class="article-card-item">
+          <div class="card-header"><span class="category-tag cat-insight">Insight</span></div>
+          <h3><a href="/blog/tren-ai-untuk-umkm-2026-data-prediksi-otomasi-bisnis.html">Tren AI untuk UMKM 2026: Data &amp; Prediksi Otomasi Bisnis</a></h3>
+          <p>Tren AI untuk UMKM Indonesia 2026: data adopsi, prediksi pertumbuhan, dan cara otomasi WhatsApp, leads, dan operasional bisnis tanpa coding.</p>
+          <div class="card-footer"><time class="card-date" datetime="2026-06-26">26 Jun 2026</time></div>
+        </article>
+        <article class="article-card-item">
+          <div class="card-header"><span class="category-tag cat-perbandingan">Perbandingan</span></div>
+          <h3><a href="/blog/ai-chatbot-vs-follow-up-manual-umkm.html">AI Chatbot vs Follow-Up Manual: Perbandingan untuk UMKM</a></h3>
+          <p>Perbandingan lengkap chatbot AI vs follow-up manual untuk UMKM: biaya, kecepatan, konversi leads, dan skalabilitas. Mana yang lebih menguntungkan?</p>
+          <div class="card-footer"><time class="card-date" datetime="2026-06-25">25 Jun 2026</time></div>
+        </article>
+        <article class="article-card-item">
+          <div class="card-header"><span class="category-tag cat-case-study">Case Study</span></div>
+          <h3><a href="/blog/dari-8-ke-45-leads-per-minggu-ai-whatsapp-untuk-umkm.html">Dari 8 ke 45 Leads per Minggu — AI WhatsApp untuk UMKM</a></h3>
+          <p>Case study nyata: Toko oleh-oleh di Bandung berhasil naikkan leads dari 8 jadi 45/minggu setelah pakai AI WhatsApp automation. Simak strategi dan hasilnya.</p>
+          <div class="card-footer"><time class="card-date" datetime="2026-06-24">24 Jun 2026</time><span class="category-tag sector-tag">Oleh-Oleh</span></div>
+        </article>
+      </div>
     </section>
 
     <section class="upcoming-articles">
