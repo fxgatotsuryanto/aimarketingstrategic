@@ -14,18 +14,17 @@
      ============================================= */
 
   var NAV_LINKS = [
-    { href: '/produk/',      label: 'Produk' },
-    { href: '/tentang.html', label: 'Tentang' },
-    { href: '/harga.html',   label: 'Harga' },
-    { href: '/hasil.html',   label: 'Hasil' },
-    { href: '/blog/',        label: 'Blog' }
+    { href: '/harga.html',      label: 'Produk' },
+    { href: '/tentang.html',    label: 'Tentang' },
+    { href: '/hasil.html',      label: 'Hasil' },
+    { href: '/blog/',           label: 'Blog' }
   ];
 
   var FOOTER_LINKS = [
-    { href: '/tentang.html',        label: 'Tentang' },
-    { href: '/harga.html',          label: 'Harga & Paket' },
-    { href: '/hasil.html',          label: 'Hasil Nyata' },
-    { href: '/blog/',               label: 'Blog' }
+    { href: '/harga.html',      label: 'Produk' },
+    { href: '/tentang.html',    label: 'Tentang' },
+    { href: '/hasil.html',      label: 'Hasil Nyata' },
+    { href: '/blog/',           label: 'Blog' }
   ];
 
   /** Build the fixed top navigation bar — Dark navy with logo image */
@@ -150,12 +149,12 @@
     // Produk column
     var produkDiv = document.createElement('div');
     produkDiv.innerHTML =
-      '<div class="footer-col-title">Produk Digital</div>' +
+      '<div class="footer-col-title">Paket AI</div>' +
       '<ul class="footer-links">' +
-        '<li><a href="/produk/">Semua Produk</a></li>' +
-        '<li><a href="/produk/ai-readiness-assessment.html">AI Readiness Assessment</a></li>' +
-        '<li><a href="/produk/follow-up-playbook.html">Playbook Follow-Up WA</a></li>' +
-        '<li><a href="/produk/sop-kit-umkm.html">SOP Kit UMKM</a></li>' +
+        '<li><a href="/harga.html#starter">Starter</a></li>' +
+        '<li><a href="/harga.html#autopilot">Autopilot</a></li>' +
+        '<li><a href="/harga.html#custom">Custom</a></li>' +
+        '<li><a href="/demo.html">Coba Demo</a></li>' +
       '</ul>';
     inner.appendChild(produkDiv);
 

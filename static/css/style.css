@@ -50,9 +50,9 @@ img{max-width:100%;display:block}
 .nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;height:72px;display:flex;align-items:center;justify-content:space-between}
 .nav-logo img{height:44px;width:auto}
 .nav-links{display:none;gap:32px}
-.nav-links a{color:var(--text-medium);font-family:'Orbitron',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;transition:color .2s}
+.nav-links a{color:var(--text-medium);font-family:'Orbitron',sans-serif;font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;transition:color .2s}
 .nav-links a:hover{color:var(--orange)}
-.nav-cta{display:none;background:var(--orange);color:#fff;padding:10px 24px;border-radius:12px;font-family:'Orbitron',sans-serif;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;transition:background .2s;box-shadow:0 4px 20px rgba(245,124,0,.3)}
+.nav-cta{display:none;background:var(--orange);color:#fff;padding:10px 24px;border-radius:12px;font-family:'Orbitron',sans-serif;font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;transition:background .2s;box-shadow:0 4px 20px rgba(245,124,0,.3)}
 .nav-cta:hover{background:var(--orange-light)}
 .hamburger{color:var(--text-dark);padding:8px;border-radius:8px;border:1px solid var(--border-light);transition:background .2s}
 .hamburger:hover{background:var(--bg-light)}

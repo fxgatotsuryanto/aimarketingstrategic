@@ -8,16 +8,15 @@
 
   // ─── DATA ────────────────────────────────────────────
   var NAV_LINKS = [
-    { href: '/produk/',             label: 'Produk' },
+    { href: '/harga.html',          label: 'Produk' },
     { href: '/tentang.html',        label: 'Tentang' },
-    { href: '/harga.html',          label: 'Harga' },
     { href: '/hasil.html',          label: 'Hasil' },
     { href: '/blog/',               label: 'Blog' }
   ];
 
   var FOOTER_LINKS = [
+    { href: '/harga.html',          label: 'Produk' },
     { href: '/tentang.html',        label: 'Tentang' },
-    { href: '/harga.html',          label: 'Harga & Paket' },
     { href: '/hasil.html',          label: 'Hasil Nyata' },
     { href: '/blog/',               label: 'Blog' }
   ];
@@ -137,16 +136,16 @@
     var prodDiv = document.createElement('div');
     var prodTitle = document.createElement('p');
     prodTitle.className = 'footer-col-title';
-    prodTitle.textContent = 'Produk Digital';
+    prodTitle.textContent = 'Paket AI';
     prodDiv.appendChild(prodTitle);
 
     var prodUl = document.createElement('ul');
     prodUl.className = 'footer-links';
     var products = [
-      { href: '/produk/', label: 'Semua Produk' },
-      { href: '/produk/ai-readiness-assessment.html', label: 'AI Readiness Assessment' },
-      { href: '/produk/follow-up-playbook.html', label: 'Playbook Follow-Up WA' },
-      { href: '/produk/sop-kit-umkm.html', label: 'SOP Kit UMKM' }
+      { href: '/harga.html#starter', label: 'Starter' },
+      { href: '/harga.html#autopilot', label: 'Autopilot' },
+      { href: '/harga.html#custom', label: 'Custom' },
+      { href: '/demo.html', label: 'Coba Demo' }
     ];
     products.forEach(function(item) {
       var li = document.createElement('li');
