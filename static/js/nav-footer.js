@@ -11,10 +11,10 @@
     { href: '/index.html',          label: 'Beranda' },
     { href: '/demo.html',          label: 'Demo' },
     { href: '/hasil.html',          label: 'Hasil' },
+    { href: '/produk/',             label: 'Produk' },
     { href: '/harga.html',          label: 'Harga' },
     { href: '/tentang.html',        label: 'Tentang' },
     { href: '/kontak.html',         label: 'Kontak' },
-    { href: '/produk/follow-up-playbook.html', label: 'Playbook' },
     { href: '/blog/',               label: 'Blog' }
   ];
 
@@ -22,9 +22,9 @@
     { href: '/index.html',          label: 'Beranda' },
     { href: '/demo.html',          label: 'Demo' },
     { href: '/hasil.html',          label: 'Hasil Nyata' },
+    { href: '/produk/',             label: 'Produk Digital' },
     { href: '/harga.html',          label: 'Harga & Paket' },
     { href: '/tentang.html',        label: 'Tentang Kami' },
-    { href: '/produk/follow-up-playbook.html', label: 'Playbook WA' },
     { href: '/kontak.html',         label: 'Kontak' }
   ];
 
