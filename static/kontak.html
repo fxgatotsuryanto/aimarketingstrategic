@@ -21,13 +21,16 @@
 <meta name="twitter:title" content="Kontak — AI Marketing Strategic | AI Business Operating System">
 <meta name="twitter:description" content="Hubungi kami untuk AI Assessment Gratis. 15 menit — temukan 1 celah revenue di WhatsApp bisnis Anda.">
 <meta name="twitter:image" content="https://aimarketingstrategic.com/images/og-card.png">
-<meta name="robots" content="noindex">
+<meta name="robots" content="index, follow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
 <link rel="stylesheet" href="/assets/css/style.css">
 <link rel="stylesheet" href="/assets/css/components.css">
 <link rel="stylesheet" href="/assets/css/responsive.css">
+<link rel="stylesheet" href="/assets/css/blog-footer.css">
+<!-- Google Analytics
 
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-HPCDWE0YDD"></script>
@@ -105,6 +108,8 @@ src="https://www.facebook.com/tr?id=1032082533057403&ev=PageView&noscript=1"
 <!-- End Meta Pixel Code -->
 </head>
 <body>
+
+<!-- Navigation injected by main.js -->
 <div id="nav-placeholder" role="navigation" aria-label="Navigasi utama"></div>
 <div id="mobile-placeholder"></div>
 
@@ -143,12 +148,13 @@ src="https://www.facebook.com/tr?id=1032082533057403&ev=PageView&noscript=1"
         <div style="margin-top:20px;padding-top:20px;border-top:1px solid var(--border-light)">
           <div style="font-size:14px;font-weight:600;margin-bottom:12px">Atau tinggalkan pesan:</div>
           <form onsubmit="submitForm(event)" aria-label="Formulir kontak">
-          <div class="input-group"><label for="form-nama">Nama</label><input type="text" id="form-nama" placeholder="Nama Anda" required aria-required="true"></div>
-          <div class="input-group"><label for="form-wa">No. WhatsApp</label><input type="tel" id="form-wa" placeholder="08xxxxxxxxxx" required aria-required="true"></div>
-          <div class="input-group"><label for="form-bisnis">Bisnis Anda</label><input type="text" id="form-bisnis" placeholder="Nama bisnis / industri"></div>
-          <div class="input-group"><label for="form-pesan">Pesan</label><textarea id="form-pesan" placeholder="Ceritakan kondisi bisnis Anda..." aria-label="Pesan untuk kami"></textarea></div>
-          <button type="submit" class="btn btn-accent btn-block" style="display:flex">Kirim & Buka WhatsApp &rarr;</button>
-        </form>
+            <div class="input-group"><label for="form-nama">Nama</label><input type="text" id="form-nama" placeholder="Nama Anda" required aria-required="true"></div>
+            <div class="input-group"><label for="form-wa">No. WhatsApp</label><input type="tel" id="form-wa" placeholder="08xxxxxxxxxx" required aria-required="true"></div>
+            <div class="input-group"><label for="form-bisnis">Bisnis Anda</label><input type="text" id="form-bisnis" placeholder="Nama bisnis / industri"></div>
+            <div class="input-group"><label for="form-pesan">Pesan</label><textarea id="form-pesan" placeholder="Ceritakan kondisi bisnis Anda..." aria-label="Pesan untuk kami"></textarea></div>
+            <button type="submit" class="btn btn-accent btn-block" style="display:flex">Kirim & Buka WhatsApp &rarr;</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
@@ -227,6 +233,30 @@ src="https://www.facebook.com/tr?id=1032082533057403&ev=PageView&noscript=1"
 </section>
 
 <div id="footer-placeholder"></div>
+
+<!-- Modals -->
+<div class="modal-overlay" id="chat-modal" role="dialog" aria-modal="true" aria-label="Chat assessment">
+  <div class="modal-box" style="padding:0;overflow:hidden">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:var(--text-primary);color:#fff">
+      <span style="font-size:14px;font-weight:600">AI Assessment Gratis</span>
+      <button onclick="closeModal('chat-modal')" style="width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px;cursor:pointer;border:none" aria-label="Tutup chat">✕</button>
+    </div>
+    <iframe class="modal-iframe" src="https://ai.newton.co.id/webhook/f263072c-d9fd-47e0-82e5-a85af72df984/chat" allow="microphone" title="AI Assessment Chat"></iframe>
+  </div>
+</div>
+<div class="modal-overlay" id="terms-modal" role="dialog" aria-modal="true" aria-label="Syarat dan Ketentuan">
+  <div class="modal-box" style="max-width:560px;background:var(--bg-white);border-radius:var(--radius-xl);padding:32px">
+    <button class="modal-close" onclick="closeModal('terms-modal')" style="float:right;width:32px;height:32px;border-radius:50%;background:#f7f7f8;display:flex;align-items:center;justify-content:center;color:var(--text-tertiary);font-size:16px;cursor:pointer;border:none" aria-label="Tutup syarat dan ketentuan">✕</button>
+    <div style="font-size:20px;font-weight:700;letter-spacing:-0.02em;margin-bottom:16px">Syarat & Ketentuan</div>
+    <div style="font-size:13px;color:var(--text-secondary);line-height:1.8;max-height:60vh;overflow-y:auto">
+      <p style="font-weight:600;color:var(--text-primary);margin-bottom:8px">1. Layanan</p><p style="margin-bottom:16px">AI Marketing Strategic menyediakan layanan AI Business Operating System untuk UMKM Indonesia.</p>
+      <p style="font-weight:600;color:var(--text-primary);margin-bottom:8px">2. Biaya & Pembayaran</p><p style="margin-bottom:16px">Biaya setup dibayar sekali di awal. Biaya infrastruktur bulanan dikenakan terpisah. Tidak ada kontrak jangka panjang.</p>
+      <p style="font-weight:600;color:var(--text-primary);margin-bottom:8px">3. Garansi</p><p style="margin-bottom:16px">Jika sistem tidak berjalan sesuai spesifikasi tertulis, uang setup dikembalikan 100%.</p>
+      <p style="font-weight:600;color:var(--text-primary);margin-bottom:8px">4. Data & Privasi</p><p style="margin-bottom:16px">Data klien tidak dijual, tidak dibagikan ke pihak ketiga.</p>
+      <p style="font-size:11px;color:var(--text-tertiary);margin-top:16px">Terakhir diperbarui: Juli 2026</p>
+    </div>
+  </div>
+</div>
 
 <script src="/assets/js/main.js" defer></script>
 <script src="/assets/js/tracking.js" defer></script>
