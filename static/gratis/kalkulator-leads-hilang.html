@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kalkulator Leads Hilang — AIMarketingStrategic</title>
+<style>
+  :root { --navy:#0d1b2e; --orange:#f57c00; }
+  * { box-sizing:border-box; }
+  body { font-family:'Segoe UI',Arial,sans-serif; background:var(--navy); color:#fff; margin:0; padding:24px 16px; min-height:100vh; }
+  .card { max-width:480px; margin:0 auto; background:#122642; border-radius:16px; padding:28px 24px; box-shadow:0 8px 40px rgba(0,0,0,.4); }
+  h1 { font-size:22px; margin:0 0 4px; } h1 span { color:var(--orange); }
+  .sub { color:#9fb2c8; font-size:13px; margin-bottom:22px; }
+  label { display:block; font-size:13px; color:#cfd8e3; margin:14px 0 4px; }
+  input { width:100%; padding:12px 14px; border-radius:10px; border:1px solid #2c4568; background:#0d1b2e; color:#fff; font-size:16px; }
+  input:focus { outline:2px solid var(--orange); border-color:var(--orange); }
+  .result { margin-top:24px; background:var(--orange); color:#fff; border-radius:12px; padding:18px; text-align:center; display:none; }
+  .result .big { font-size:28px; font-weight:800; margin:4px 0; }
+  .result .small { font-size:12px; opacity:.9; }
+  .detail { margin-top:14px; font-size:13px; color:#cfd8e3; background:#0d1b2e; border-radius:10px; padding:12px 14px; display:none; }
+  button { width:100%; margin-top:22px; padding:14px; border:none; border-radius:10px; background:var(--orange); color:#fff; font-size:16px; font-weight:700; cursor:pointer; }
+  button:active { transform:scale(.98); }
+  .cta { margin-top:18px; font-size:12.5px; color:#9fb2c8; text-align:center; }
+  .cta a { color:var(--orange); font-weight:700; text-decoration:none; }
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>Kalkulator <span>Leads Hilang</span></h1>
+  <div class="sub">Berapa rupiah yang bocor tiap bulan karena chat WA tidak terbalas? Isi 4 angka, jujur ya ☺️</div>
+
+  <label>1. Rata-rata chat masuk per hari (WA + DM diarahkan ke WA)</label>
+  <input type="number" id="c" placeholder="contoh: 20" min="0">
+
+  <label>2. Berapa % yang tidak terbalas / terbalas lebih dari 1 jam?</label>
+  <input type="number" id="l" placeholder="contoh: 35" min="0" max="100">
+
+  <label>3. Berapa % penanya yang biasanya jadi beli/booking?</label>
+  <input type="number" id="k" placeholder="contoh: 25" min="0" max="100">
+
+  <label>4. Nilai transaksi rata-rata (Rp)</label>
+  <input type="number" id="t" placeholder="contoh: 350000" min="0">
+
+  <button onclick="hitung()">Hitung Kebocoran Saya</button>
+
+  <div class="result" id="res">
+    <div class="small">Estimasi rupiah yang hilang per bulan:</div>
+    <div class="big" id="rp">Rp0</div>
+    <div class="small" id="chats"></div>
+  </div>
+  <div class="detail" id="det"></div>
+
+  <div class="cta">Mau kebocoran ini ditambal otomatis 24 jam?<br>
+  <a href="https://aimarketingstrategic.com">aimarketingstrategic.com</a> — sebutkan "PLAYBOOK"</div>
+</div>
+<script>
+function fmt(n){return 'Rp'+Math.round(n).toLocaleString('id-ID');}
+function hitung(){
+  var c=+document.getElementById('c').value||0,
+      l=(+document.getElementById('l').value||0)/100,
+      k=(+document.getElementById('k').value||0)/100,
+      t=+document.getElementById('t').value||0;
+  var chatHilang=c*l*30, rugi=chatHilang*k*t;
+  document.getElementById('res').style.display='block';
+  document.getElementById('rp').textContent=fmt(rugi);
+  document.getElementById('chats').textContent=Math.round(chatHilang)+' chat/bulan tidak tertangani → '+Math.round(chatHilang*k)+' calon pembeli hilang';
+  var det=document.getElementById('det');
+  det.style.display='block';
+  det.innerHTML='<b>Artinya:</b> dalam setahun ≈ <b>'+fmt(rugi*12)+'</b> menguap. '+
+    'Menyelamatkan separuhnya saja = <b>'+fmt(rugi/2)+'/bulan</b> — tanpa menambah budget iklan sepeser pun. '+
+    'Mulai dari Strategi #1 &amp; #2 di playbook.';
+}
+</script>
+</body>
+</html>
