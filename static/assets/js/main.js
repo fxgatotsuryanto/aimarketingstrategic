@@ -12,7 +12,7 @@
       if (typeof gtag === 'function') gtag('event', 'lead', { method: 'whatsapp' });
     }
     function openChat() {
-        window.open('https://wa.me/6281907552758?text=Halo%2C%20saya%20mau%20coba%20AI%20Assessment%20Gratis', '_blank');
+        window.location.href = '/kontak.html';
       }
 
     /* =============================================
