@@ -20,7 +20,7 @@
   .detail { margin-top:14px; font-size:13px; color:#cfd8e3; background:#0d1b2e; border-radius:10px; padding:12px 14px; display:none; }
   button { width:100%; margin-top:22px; padding:14px; border:none; border-radius:10px; background:var(--orange); color:#fff; font-size:16px; font-weight:700; cursor:pointer; }
   button:active { transform:scale(.98); }
-  .cta { margin-top:18px; font-size:12.5px; color:#9fb2c8; text-align:center; }
+  .cta { margin-top:18px; font-size:12.5px; color:#9fb2c8; text-align:center; display:none; }
   .cta a { color:var(--orange); font-weight:700; text-decoration:none; }
 </style>
 </head>
@@ -50,8 +50,10 @@
   </div>
   <div class="detail" id="det"></div>
 
-  <div class="cta">Mau kebocoran ini ditambal otomatis 24 jam?<br>
-  <a href="https://wa.me/6281907552758?text=Mau%20beli%20Playbook%20Follow-Up%20WA%20-%20Rp249rb">📱 Klik sini, sebut "PLAYBOOK" → dapat Playbook Follow-Up WA Rp249rb</a></div>
+  <div class="cta" id="cta">
+    Mau kebocoran ini ditambal otomatis 24 jam?<br>
+    <a href="https://aimarketingstrategic.com/produk/playbook/">📱 Lihat Playbook Follow-Up WA → tambal bocoran mulai strategi #1</a>
+  </div>
 </div>
 <script>
 function fmt(n){return 'Rp'+Math.round(n).toLocaleString('id-ID');}
@@ -63,12 +65,12 @@ function hitung(){
   var chatHilang=c*l*30, rugi=chatHilang*k*t;
   document.getElementById('res').style.display='block';
   document.getElementById('rp').textContent=fmt(rugi);
-  document.getElementById('chats').textContent=Math.round(chatHilang)+' chat/bulan tidak tertangani → '+Math.round(chatHilang*k)+' calon pembeli hilang';
+  document.getElementById('chats').textContent=Math.round(chatHilang)+' chat/bulan tidak tertangani -> '+Math.round(chatHilang*k)+' calon pembeli hilang';
   var det=document.getElementById('det');
   det.style.display='block';
-  det.innerHTML='<b>Artinya:</b> dalam setahun ≈ <b>'+fmt(rugi*12)+'</b> menguap. '+
-    'Menyelamatkan separuhnya saja = <b>'+fmt(rugi/2)+'/bulan</b> — tanpa menambah budget iklan sepeser pun. '+
-    'Mulai dari Strategi #1 &amp; #2 di playbook.';
+  det.innerHTML='<b>Artinya:</b> dalam setahun sekitar <b>'+fmt(rugi*12)+'</b> menguap. '+
+    'Menyelamatkan separuhnya saja = <b>'+fmt(rugi/2)+'/bulan</b> - tanpa menambah budget iklan sepeser pun.';
+  document.getElementById('cta').style.display='block';
 }
 </script>
 </body>
