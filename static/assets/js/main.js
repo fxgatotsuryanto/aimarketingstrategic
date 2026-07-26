@@ -7,7 +7,15 @@
 (function () {
   'use strict';
 
-  /* =============================================
+    /* ─── Global CTA Helpers ─── */
+    function trackLead() {
+      if (typeof gtag === 'function') gtag('event', 'lead', { method: 'whatsapp' });
+    }
+    function openChat() {
+        window.open('https://wa.me/6281907552758?text=Halo%2C%20saya%20mau%20coba%20AI%20Assessment%20Gratis', '_blank');
+      }
+
+    /* =============================================
      NAVIGATION — Data & Builders (React-style dark)
      Injects into #nav-placeholder, #mobile-placeholder,
      #footer-placeholder on page load
