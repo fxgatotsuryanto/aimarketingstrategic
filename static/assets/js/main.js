@@ -14,14 +14,14 @@
      ============================================= */
 
   var NAV_LINKS = [
-    { href: '/harga.html',      label: 'Paket Solusi' },
+      { href: '/produk/playbook/',      label: 'Paket Solusi' },
     { href: '/tentang.html',    label: 'Cara Kerja' },
     { href: '/hasil.html',      label: 'Hasil Klien' },
     { href: '/blog/',           label: 'Panduan Gratis' }
   ];
 
   var FOOTER_LINKS = [
-    { href: '/harga.html',      label: 'Paket Solusi' },
+    { href: '/produk/playbook/',      label: 'Paket Solusi' },
     { href: '/tentang.html',    label: 'Cara Kerja' },
     { href: '/hasil.html',      label: 'Hasil Klien' },
     { href: '/blog/',           label: 'Panduan Gratis' }
