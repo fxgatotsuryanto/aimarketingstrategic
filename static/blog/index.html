@@ -49,6 +49,42 @@
       margin: 0 auto;
     }
 
+    /* ─── Jump-to-LeadMagnet Banner ─── */
+    .leadmagnet-jump {
+      text-align: center;
+      margin: -24px auto 48px;
+      max-width: 640px;
+    }
+    .leadmagnet-jump .jump-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--orange), #e06600);
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 14px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 12px 30px rgba(245,124,0,.35);
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+    .leadmagnet-jump .jump-btn:hover {
+      transform: scale(0.97);
+      box-shadow: 0 8px 20px rgba(245,124,0,.45);
+    }
+    .leadmagnet-jump .jump-sub {
+      display: block;
+      margin-top: 8px;
+      font-size: 12px;
+      color: var(--text-light);
+    }
+
     /* ─── Featured Article ─── */
     .featured-article {
       margin-bottom: 64px;
@@ -589,8 +625,13 @@
   <main class="container blog-index">
     <header class="page-header">
       <h1>Blog AI Marketing Strategic</h1>
-      <p class="page-subtitle">Strategi AI Automation & Chatbot WhatsApp untuk UMKM Indonesia. Data nyata, studi kasus nyata, ROI nyata.</p>
+      <p class="page-subtitle">Strategi, studi kasus, dan panduan AI automation untuk UMKM Indonesia. Biar bisnis kamu nggak ketinggalan zaman.</p>
     </header>
+
+    <div class="leadmagnet-jump">
+      <a href="#leadmagnet" class="jump-btn">💰 Hitung Kerugian WA-mu — Gratis</a>
+      <span class="jump-sub">30 detik — tahu persis berapa rupiah hilang karena WA lambat balas</span>
+    </div>
 
     <section class="featured-article">
       <article class="article-card featured">
@@ -761,7 +802,7 @@
       </div>
     </section>
 
-    <section class="leadmagnet-section">
+    <section class="leadmagnet-section" id="leadmagnet">
       <div class="leadmagnet-card">
         <div class="leadmagnet-content">
           <span class="leadmagnet-badge">🎯 GRATIS</span>
