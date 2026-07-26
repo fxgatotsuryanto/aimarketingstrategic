@@ -14,17 +14,17 @@
      ============================================= */
 
   var NAV_LINKS = [
-    { href: '/harga.html',      label: 'Produk' },
-    { href: '/tentang.html',    label: 'Tentang' },
-    { href: '/hasil.html',      label: 'Hasil' },
-    { href: '/blog/',           label: 'Blog' }
+    { href: '/harga.html',      label: 'Paket Solusi' },
+    { href: '/tentang.html',    label: 'Cara Kerja' },
+    { href: '/hasil.html',      label: 'Hasil Klien' },
+    { href: '/blog/',           label: 'Panduan Gratis' }
   ];
 
   var FOOTER_LINKS = [
-    { href: '/harga.html',      label: 'Produk' },
-    { href: '/tentang.html',    label: 'Tentang' },
-    { href: '/hasil.html',      label: 'Hasil Nyata' },
-    { href: '/blog/',           label: 'Blog' }
+    { href: '/harga.html',      label: 'Paket Solusi' },
+    { href: '/tentang.html',    label: 'Cara Kerja' },
+    { href: '/hasil.html',      label: 'Hasil Klien' },
+    { href: '/blog/',           label: 'Panduan Gratis' }
   ];
 
   /** Build the fixed top navigation bar — Dark navy with logo image */
