@@ -7,65 +7,63 @@
 (function () {
   'use strict';
 
-    /* ─── Global CTA Helpers ─── */
-    function trackLead() {
-      if (typeof gtag === 'function') gtag('event', 'lead', { method: 'whatsapp' });
+  /* ─── Global CTA Helpers ─── */
+  function trackLead() {
+    if (typeof gtag === 'function') gtag('event', 'lead', { method: 'whatsapp' });
+  }
+  function openChat() {
+    var overlay = document.getElementById('chat-overlay');
+    if (!overlay) {
+      overlay = document.createElement('div');
+      overlay.id = 'chat-overlay';
+      overlay.style.cssText = 'display:none;position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.6);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:16px';
+      overlay.onclick = function(e) { if (e.target === this) closeChat(); };
+
+      var modal = document.createElement('div');
+      modal.style.cssText = 'background:#fff;border-radius:0;width:92%;max-width:440px;max-height:90vh;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.35)';
+
+      var header = document.createElement('div');
+      header.style.cssText = 'display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:#0B2A4A;color:#fff';
+      header.innerHTML = '<span style="font-family:Orbitron,sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase">AI Assessment Gratis</span><button id="chat-close-btn" style="width:28px;height:28px;border-radius:4px;border:none;background:rgba(255,255,255,.1);color:#fff;font-size:14px;cursor:pointer;line-height:1">X</button>';
+      header.querySelector('#chat-close-btn').onclick = closeChat;
+
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://ai.newton.co.id/webhook/f263072c-d9fd-47e0-82e5-a85af72df984/chat';
+      iframe.allow = 'microphone';
+      iframe.style.cssText = 'width:100%;height:600px;border:none;display:block';
+
+      modal.appendChild(header);
+      modal.appendChild(iframe);
+      overlay.appendChild(modal);
+      document.body.appendChild(overlay);
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeChat();
+      });
+
+      var style = document.createElement('style');
+      style.textContent = '@keyframes chatFadeIn{from{opacity:0;transform:translateY(20px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}';
+      document.head.appendChild(style);
     }
-    function openChat() {
-        var overlay = document.getElementById('chat-overlay');
-        if (!overlay) {
-          overlay = document.createElement('div');
-          overlay.id = 'chat-overlay';
-          overlay.style.cssText = 'display:none;position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.6);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:24px';
-          overlay.onclick = function(e) { if (e.target === this) closeChat(); };
+    overlay.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+  function closeChat() {
+    var overlay = document.getElementById('chat-overlay');
+    if (overlay) {
+      overlay.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+  }
 
-          var modal = document.createElement('div');
-                    modal.style.cssText = 'background:#fff;border-radius:20px;width:95%;max-width:480px;overflow:hidden;max-height:95vh;box-shadow:0 30px 80px rgba(0,0,0,.35);animation:chatFadeIn .3s ease-out;position:relative;height:90vh;min-height:600px';
-
-                    var header = document.createElement('div');
-                    header.style.cssText = 'display:flex;align-items:center;justify-content:space-between;padding:14px 20px;background:#0B2A4A;color:#fff';
-                    header.innerHTML = '<span style="font-family:Orbitron,sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase">AI Assessment Gratis</span><button id="chat-close-btn" style="width:30px;height:30px;border-radius:50%;border:none;background:rgba(255,255,255,.1);color:#fff;font-size:14px;cursor:pointer">X</button>';
-                    header.querySelector('#chat-close-btn').onclick = closeChat;
-
-                    var iframe = document.createElement('iframe');
-                    iframe.src = 'https://ai.newton.co.id/webhook/f263072c-d9fd-47e0-82e5-a85af72df984/chat';
-                    iframe.allow = 'microphone';
-                    iframe.style.cssText = 'width:100%;height:100%;border:none;display:block;position:absolute;inset:0;top:48px';
-
-          modal.appendChild(header);
-          modal.appendChild(iframe);
-          overlay.appendChild(modal);
-          document.body.appendChild(overlay);
-
-          // Keydown escape
-          document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') closeChat();
-          });
-
-          // Animation keyframes
-          var style = document.createElement('style');
-          style.textContent = '@keyframes chatFadeIn{from{opacity:0;transform:translateY(20px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}';
-          document.head.appendChild(style);
-        }
-        overlay.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-      }
-      function closeChat() {
-        var overlay = document.getElementById('chat-overlay');
-        if (overlay) {
-          overlay.style.display = 'none';
-          document.body.style.overflow = '';
-        }
-      }
-
-    /* =============================================
+  /* =============================================
      NAVIGATION — Data & Builders (React-style dark)
      Injects into #nav-placeholder, #mobile-placeholder,
      #footer-placeholder on page load
      ============================================= */
 
   var NAV_LINKS = [
-      { href: '/harga.html',      label: 'Paket Solusi' },
+    { href: '/harga.html',      label: 'Paket Solusi' },
     { href: '/tentang.html',    label: 'Cara Kerja' },
     { href: '/hasil.html',      label: 'Hasil Klien' },
     { href: '/blog/',           label: 'Panduan Gratis' }
@@ -87,11 +85,11 @@
     inner.className = 'header-inner';
 
     // Logo — image only
-        var logo = document.createElement('a');
-        logo.className = 'header-logo';
-        logo.href = '/';
-        logo.innerHTML =
-          '<img src="https://aimarketingstrategic.com/images/logo%20aims.png" alt="AI Marketing Strategic" height="36">';
+    var logo = document.createElement('a');
+    logo.className = 'header-logo';
+    logo.href = '/';
+    logo.innerHTML =
+      '<img src="https://aimarketingstrategic.com/images/logo%20aims.png" alt="AI Marketing Strategic" height="36">';
     inner.appendChild(logo);
 
     // Desktop nav links
@@ -152,20 +150,38 @@
       menu.appendChild(a);
     });
 
+    // CTA in mobile menu
     var cta = document.createElement('button');
-    cta.onclick = function () { trackLead(); openChat(); closeMenu(); };
+    cta.className = 'menu-cta-btn';
     cta.textContent = 'AI Assessment Gratis';
-    cta.style.cssText = 'width:100%;padding:14px;margin-top:16px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;font-size:14px;font-weight:600;border-radius:10px;background:#F57C00;color:#fff';
-
+    cta.onclick = function () { trackLead(); openChat(); closeMenu(); };
     menu.appendChild(cta);
 
-    var frag = document.createDocumentFragment();
-    frag.appendChild(overlay);
-    frag.appendChild(menu);
-    return frag;
+    overlay.appendChild(menu);
+    return overlay;
   }
 
-  /** Build the site footer — Dark navy style */
+  function toggleMenu() {
+    var overlay = document.getElementById('mobile-overlay');
+    var menu = document.getElementById('mobile-menu');
+    if (overlay && menu) {
+      overlay.classList.toggle('active');
+      menu.classList.toggle('active');
+      document.body.style.overflow = overlay.classList.contains('active') ? 'hidden' : '';
+    }
+  }
+
+  function closeMenu() {
+    var overlay = document.getElementById('mobile-overlay');
+    var menu = document.getElementById('mobile-menu');
+    if (overlay && menu) {
+      overlay.classList.remove('active');
+      menu.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  }
+
+  /** Build the footer — Dark navy */
   function buildFooter() {
     var footer = document.createElement('footer');
     footer.className = 'site-footer';
@@ -173,494 +189,90 @@
     var inner = document.createElement('div');
     inner.className = 'footer-inner';
 
-    // Brand column
-    var brandDiv = document.createElement('div');
-    brandDiv.innerHTML =
-      '<img src="https://aimarketingstrategic.com/images/logo%20aims.png" alt="AI Marketing Strategic" height="48" style="margin-bottom:12px">' +
-      '<p class="footer-desc">AI Business Operating System untuk UMKM Indonesia. Bukan chatbot biasa — sistem AI yang mengoperasikan WhatsApp, follow-up, CRM, dan dashboard bisnis Anda 24/7.</p>';
-    inner.appendChild(brandDiv);
+    // Brand
+    var brand = document.createElement('div');
+    brand.className = 'footer-brand';
+    brand.innerHTML =
+      '<img src="https://aimarketingstrategic.com/images/logo%20aims.png" alt="AI Marketing Strategic" height="32">' +
+      '<p class="footer-brand-sub">AI Automation untuk UMKM Indonesia. Chatbot WhatsApp, Follow-up Otomatis, CRM, Booking System.</p>';
+    inner.appendChild(brand);
 
-    // Menu column
-    var menuDiv = document.createElement('div');
-    menuDiv.innerHTML = '<div class="footer-col-title">Menu</div>';
-    var menuUl = document.createElement('ul');
-    menuUl.className = 'footer-links';
-    FOOTER_LINKS.forEach(function (item) {
-      var li = document.createElement('li');
-      var a = document.createElement('a');
-      a.href = item.href;
-      a.textContent = item.label;
-      li.appendChild(a);
-      menuUl.appendChild(li);
+    // Links grid
+    var links = document.createElement('div');
+    links.className = 'footer-links';
+    var cols = [
+      { title: 'Solusi', items: FOOTER_LINKS },
+      { title: 'Sumber Daya', items: [
+        { href: '/blog/', label: 'Blog' },
+        { href: '/tools/', label: 'Tools Gratis' },
+        { href: '/gratis/', label: 'Download Gratis' }
+      ]},
+      { title: 'Kontak', items: [
+        { href: 'https://wa.me/6281907552758', label: 'WhatsApp', ext: true },
+        { href: 'mailto:hello@aimarketingstrategic.com', label: 'Email', ext: true }
+      ]}
+    ];
+    cols.forEach(function (col) {
+      var colDiv = document.createElement('div');
+      colDiv.className = 'footer-col';
+      var title = document.createElement('div');
+      title.className = 'footer-col-title';
+      title.textContent = col.title;
+      colDiv.appendChild(title);
+      col.items.forEach(function (item) {
+        var a = document.createElement(item.ext ? 'a' : 'a');
+        a.href = item.href;
+        if (item.ext) a.target = '_blank';
+        a.textContent = item.label;
+        colDiv.appendChild(a);
+      });
+      links.appendChild(colDiv);
     });
-    menuDiv.appendChild(menuUl);
-    inner.appendChild(menuDiv);
-
-    // Produk column
-    var produkDiv = document.createElement('div');
-    produkDiv.innerHTML =
-      '<div class="footer-col-title">Produk</div>' +
-      '<ul class="footer-links">' +
-        '<li><a href="/tools/">AI Tools</a></li>' +
-        '<li><a href="/tools/ai-readiness-assessment.html">AI Readiness</a></li>' +
-        '<li><a href="/tools/follow-up-playbook.html">Playbook Follow Up</a></li>' +
-        '<li><a href="/tools/sop-kit-umkm.html">UMKM Kit</a></li>' +
-      '</ul>';
-    inner.appendChild(produkDiv);
-
-    // Kontak column
-    var kontakDiv = document.createElement('div');
-    kontakDiv.innerHTML =
-      '<div class="footer-col-title">Kontak</div>' +
-      '<ul class="footer-links">' +
-        '<li><a href="https://wa.me/6281907552758">0819-0755-2758</a></li>' +
-        '<li><a href="mailto:hallo@aimarketingstrategic.com">hallo@aimarketingstrategic.com</a></li>' +
-        '<li><a href="/kontak.html">Konsultasi Gratis</a></li>' +
-      '</ul>';
-    inner.appendChild(kontakDiv);
-
-    footer.appendChild(inner);
+    inner.appendChild(links);
 
     // Bottom bar
     var bottom = document.createElement('div');
     bottom.className = 'footer-bottom';
-    bottom.innerHTML =
-      '<p class="footer-copy">&copy; 2026 aimarketingstrategic.com</p>' +
-      '<div style="display:flex;gap:24px">' +
-        '<a href="/privacy-policy.html" style="font-size:11px;color:rgba(255,255,255,0.35);text-decoration:none">Privacy</a>' +
-        '<button onclick="openModal(\'terms-modal\')" style="font-size:11px;color:rgba(255,255,255,0.35);background:none;border:none;cursor:pointer">Terms</button>' +
-      '</div>';
-    footer.appendChild(bottom);
+    bottom.innerHTML = '<p class="footer-copy">&copy; ' + new Date().getFullYear() + ' AI Marketing Strategic. Hak cipta dilindungi.</p>';
+    inner.appendChild(bottom);
 
+    footer.appendChild(inner);
     return footer;
   }
 
-  // -- Inject into placeholders -- //
-  var navTarget = document.getElementById('nav-placeholder');
-  if (navTarget) navTarget.replaceWith(buildNav());
+  /** Initialize on DOM ready */
+  document.addEventListener('DOMContentLoaded', function () {
+    // Nav
+    var navPh = document.getElementById('nav-placeholder');
+    var mobPh = document.getElementById('mobile-placeholder');
+    var ftrPh = document.getElementById('footer-placeholder');
+    if (navPh) navPh.appendChild(buildNav());
+    if (mobPh) mobPh.appendChild(buildMobileMenu());
+    if (ftrPh) ftrPh.appendChild(buildFooter());
 
-  var mobileTarget = document.getElementById('mobile-placeholder');
-  if (mobileTarget) mobileTarget.replaceWith(buildMobileMenu());
-
-  var footerTarget = document.getElementById('footer-placeholder');
-  if (footerTarget) footerTarget.replaceWith(buildFooter());
-
-})();
-
-
-/* =============================================
-   MOBILE MENU — Toggle / Close (Light popup)
-   ============================================= */
-
-function toggleMenu() {
-  var menu = document.getElementById('mobile-menu');
-  var overlay = document.getElementById('mobile-overlay');
-  if (menu) menu.classList.toggle('open');
-  if (overlay) overlay.classList.toggle('open');
-}
-
-function closeMenu() {
-  var menu = document.getElementById('mobile-menu');
-  var overlay = document.getElementById('mobile-overlay');
-  if (menu) menu.classList.remove('open');
-  if (overlay) overlay.classList.remove('open');
-}
-
-
-/* =============================================
-   SCROLL — Top, To Element, Smooth Anchors
-   ============================================= */
-
-function scrollTop(e) {
-  if (e) e.preventDefault();
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-function navTo(e, id) {
-  if (e) e.preventDefault();
-  var el = document.querySelector(id);
-  if (el) el.scrollIntoView({ behavior: 'smooth' });
-}
-
-
-/* =============================================
-   MODALS — Open / Close / Overlay
-   ============================================= */
-
-function openModal(id) {
-  var el = document.getElementById(id);
-  if (el) {
-    el.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-}
-
-function closeModal(id) {
-  var el = document.getElementById(id);
-  if (el) {
-    el.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-}
-
-function openChat() {
-  openModal('chat-modal');
-}
-
-
-/* =============================================
-   FORM HANDLING — Lead Form + Validation
-   ============================================= */
-
-/**
- * Fire GA4 and Facebook Pixel tracking events.
- * Called from CTA clicks and form submissions.
- */
-function trackLead() {
-  try {
-    if (typeof fbq === 'function') fbq('track', 'Lead');
-    if (typeof gtag === 'function') gtag('event', 'generate_lead', { event_category: 'CTA' });
-  } catch (e) {
-    // Silently fail — tracking is non-critical
-  }
-}
-
-/**
- * Validate the lead form before submission.
- * Returns an array of error messages.  Empty = valid.
- */
-function validateLeadForm() {
-  var errors = [];
-  var nama = document.getElementById('lf-nama');
-  var wa   = document.getElementById('lf-wa');
-  var kebutuhan = document.getElementById('lf-kebutuhan');
-
-  // Nama — required, min 2 chars
-  if (!nama || !nama.value.trim() || nama.value.trim().length < 2) {
-    errors.push('Nama harus diisi (minimal 2 karakter)');
-  }
-
-  // WA — required, Indonesian mobile number
-  if (!wa || !wa.value.trim()) {
-    errors.push('Nomor WhatsApp harus diisi');
-  } else {
-    var waClean = wa.value.trim().replace(/\s+/g, '');
-    if (!/^08\d{8,12}$/.test(waClean) && !/^628\d{8,12}$/.test(waClean)) {
-      errors.push('Nomor WhatsApp tidak valid (mulai dengan 08, min 10 digit)');
+    // Sticky nav background
+    var hdr = document.querySelector('.site-header');
+    if (hdr) {
+      window.addEventListener('scroll', function () {
+        hdr.classList.toggle('scrolled', window.scrollY > 60);
+      });
     }
-  }
 
-  // Kebutuhan — must select an option with non-empty value
-  if (!kebutuhan || !kebutuhan.value) {
-    errors.push('Pilih kebutuhan bisnis Anda');
-  }
-
-  return errors;
-}
-
-/**
- * Submit lead form — validate, track, send via WA deep-link.
- */
-function submitLeadForm(e) {
-  e.preventDefault();
-
-  // Validate
-  var errors = validateLeadForm();
-  if (errors.length > 0) {
-    // Show first error
-    var errEl = document.getElementById('form-error');
-    if (errEl) {
-      errEl.textContent = errors[0];
-      errEl.style.display = 'block';
-    }
-    return;
-  }
-
-  // Hide any prior error
-  var errEl = document.getElementById('form-error');
-  if (errEl) errEl.style.display = 'none';
-
-  var btn = document.getElementById('formBtn');
-  if (btn) {
-    btn.disabled = true;
-    btn.textContent = 'Mengirim…';
-  }
-
-  var nama      = document.getElementById('lf-nama').value.trim();
-  var wa        = document.getElementById('lf-wa').value.trim();
-  var kebutuhan = document.getElementById('lf-kebutuhan').value;
-  var bisnis    = document.getElementById('lf-bisnis') ? document.getElementById('lf-bisnis').value.trim() : '';
-
-  // Fire tracking
-  trackLead();
-  try {
-    if (typeof fbq === 'function') fbq('track', 'Contact');
-  } catch (_) {}
-
-  // Send via WhatsApp deep-link (works always, no server needed)
-  var pesan = encodeURIComponent(
-    'Halo, saya ' + nama + ' ingin info sistem AI.\n' +
-    'Kebutuhan: ' + kebutuhan +
-    (bisnis ? '\nBisnis: ' + bisnis : '') +
-    '\nNo WA: ' + wa
-  );
-
-  // Show success state immediately, open WA in background
-  var wrap = document.getElementById('form-wrap');
-  if (wrap) wrap.style.display = 'none';
-
-  var success = document.getElementById('form-success');
-  if (success) success.style.display = 'block';
-
-  setTimeout(function () {
-    window.open('https://wa.me/6281907552758?text=' + pesan, '_blank');
-  }, 600);
-}
-
-
-/* =============================================
-   DEMO SIMULATOR — Interactive WhatsApp Demo
-   ============================================= */
-
-var SCENARIOS = {
-  properti: {
-    botName: 'AI Frontliner — Properti',
-    messages: [
-      { type: 'user', text: 'Halo, saya lihat iklan rumah di Antapani. Harganya berapa?' },
-      { type: 'typing', delay: 800 },
-      { type: 'bot', text: '👋 Halo! Selamat datang.\n\nUntuk info harga terkini, boleh saya tanya dulu:\n1️⃣ Budget yang disiapkan?\n2️⃣ Untuk keluarga berapa orang?\n\nSaya carikan unit yang paling sesuai!' },
-      { type: 'user', text: 'Budget 500 juta, untuk 4 orang', delay: 1200 },
-      { type: 'typing', delay: 1000 },
-      { type: 'bot', text: '✅ Ada 2 unit cocok untuk Anda:\n\n🏡 Tipe 36/72 — Rp 485 juta\n• 2 kamar tidur, KPR BTN ready\n\n🏡 Tipe 45/90 — Rp 520 juta\n• 3 kamar tidur, cocok 2 anak\n\nMau saya kirim brosur lengkapnya?' },
-      { type: 'user', text: 'Mau dong!', delay: 1000 },
-      { type: 'typing', delay: 600 },
-      { type: 'bot', text: '📄 Brosur terkirim!\n\nAgen kami akan hubungi Anda dalam 10 menit untuk jadwal survey gratis 🏠' }
-    ]
-  },
-  klinik: {
-    botName: 'AI Frontliner — Klinik',
-    messages: [
-      { type: 'user', text: 'Dok, bisa konsultasi gigi hari ini?' },
-      { type: 'typing', delay: 700 },
-      { type: 'bot', text: '👋 Halo! Selamat datang di Klinik.\n\nUntuk jadwal konsultasi gigi, ada slot tersedia:\n\n⏰ Hari ini: 14.00 & 16.30 WIB\n⏰ Besok: 09.00, 11.00, 15.00 WIB\n\nJam berapa yang paling nyaman?' },
-      { type: 'user', text: 'Jam 14.00 bisa', delay: 1000 },
-      { type: 'typing', delay: 800 },
-      { type: 'bot', text: '✅ Slot 14.00 hari ini dikonfirmasi!\n\nBoleh saya catat:\n1️⃣ Nama lengkap?\n2️⃣ Keluhan utama?\n\nReminder otomatis akan dikirim 1 jam sebelumnya 🦷' },
-      { type: 'user', text: 'Andi, sakit gigi geraham kiri', delay: 1200 },
-      { type: 'typing', delay: 600 },
-      { type: 'bot', text: '📋 Tercatat!\n\nAndi — Konsultasi gigi 14.00 hari ini.\nDokter: drg. Sarah\n\nSampai jumpa! 😊' }
-    ]
-  },
-  toko: {
-    botName: 'AI Frontliner — Toko Online',
-    messages: [
-      { type: 'user', text: 'Kak, sepatu size 42 masih ada stok?' },
-      { type: 'typing', delay: 600 },
-      { type: 'bot', text: '👟 Halo! Terima kasih udah mampir!\n\nUntuk size 42, masih tersedia:\n✅ Putih — 3 pcs\n✅ Hitam — 1 pcs (hampir habis!)\n❌ Navy — habis\n\nMau yang warna apa?' },
-      { type: 'user', text: 'Yang hitam masih ada? Berapa harganya?', delay: 1000 },
-      { type: 'typing', delay: 700 },
-      { type: 'bot', text: '🔥 Hitam size 42 masih 1 pcs!\n\nHarga: Rp 285.000\n(Sudah termasuk ongkir Jabodetabek)\n\nMau langsung order? Nanti saya buatkan link pembayaran 🛒' },
-      { type: 'user', text: 'Iya mau order sekarang', delay: 900 },
-      { type: 'typing', delay: 500 },
-      { type: 'bot', text: '✅ Siap! Stok sudah dicadangkan.\n\n📦 Kirim link order ke WhatsApp ini ya.\nEstimasi pengiriman: 1-2 hari kerja 🚀' }
-    ]
-  },
-  b2b: {
-    botName: 'AI Frontliner — B2B',
-    messages: [
-      { type: 'user', text: 'Halo, kami butuh jasa cleaning kantor. Bisa survey dulu?' },
-      { type: 'typing', delay: 800 },
-      { type: 'bot', text: '👋 Halo! Terima kasih telah menghubungi kami.\n\nUntuk layanan cleaning kantor, boleh info:\n1️⃣ Luas area (m²)?\n2️⃣ Kota/lokasi kantor?\n3️⃣ Frekuensi: harian/mingguan/bulanan?' },
-      { type: 'user', text: 'Sekitar 500m2, di Bandung, mingguan', delay: 1200 },
-      { type: 'typing', delay: 900 },
-      { type: 'bot', text: '📊 Estimasi untuk kebutuhan Anda:\n\n✅ Area 500m² — Bandung\n✅ Cleaning mingguan (4x/bulan)\n💰 Estimasi: Rp 1,8 – 2,2 juta/bulan\n\nMau jadwalkan survey gratis untuk penawaran pasti?' },
-      { type: 'user', text: 'Bisa, kapan bisa survey?', delay: 1000 },
-      { type: 'typing', delay: 600 },
-      { type: 'bot', text: '📅 Tim survey tersedia:\n• Besok: 10.00 atau 14.00 WIB\n• Lusa: 09.00 atau 13.00 WIB\n\nSlot mana yang cocok? Konfirmasi sekarang sebelum penuh ✅' }
-    ]
-  }
-};
-
-var currentIndustry = 'properti';
-var isPlaying = false;
-var demoTimeouts = [];
-
-function selectIndustry(btn) {
-  document.querySelectorAll('.ind-btn').forEach(function (b) { b.classList.remove('active'); });
-  btn.classList.add('active');
-  currentIndustry = btn.dataset.ind;
-  var nameEl = document.getElementById('bot-name');
-  if (nameEl) nameEl.textContent = SCENARIOS[currentIndustry].botName;
-  resetDemo();
-}
-
-function resetDemo() {
-  demoTimeouts.forEach(clearTimeout);
-  demoTimeouts = [];
-  isPlaying = false;
-  var chat = document.getElementById('phone-chat');
-  if (chat) {
-    chat.innerHTML = '<div class="typing-bubble" id="typing-bubble"><span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span></div>';
-  }
-  var btn = document.getElementById('demo-run-btn');
-  if (btn) {
-    btn.disabled = false;
-    btn.textContent = '▶ Mulai Simulasi';
-  }
-}
-
-function runDemo() {
-  if (isPlaying) return;
-  resetDemo();
-  isPlaying = true;
-  var btn = document.getElementById('demo-run-btn');
-  if (btn) {
-    btn.disabled = true;
-    btn.textContent = '⏸ Sedang Berjalan...';
-  }
-  var msgs = SCENARIOS[currentIndustry].messages;
-  var delay = 0;
-
-  msgs.forEach(function (msg, i) {
-    if (msg.type === 'typing') {
-      var d = delay;
-      demoTimeouts.push(setTimeout(function () {
-        var tb = document.getElementById('typing-bubble');
-        if (tb) tb.classList.add('show');
-        scrollChat();
-      }, d));
-      delay += msg.delay || 800;
-      demoTimeouts.push(setTimeout(function () {
-        var tb = document.getElementById('typing-bubble');
-        if (tb) tb.classList.remove('show');
-      }, delay));
-    } else {
-      var d2 = delay + (i === 0 ? 0 : 1200);
-      delay = d2;
-      // Capture msg in closure via IIFE
-      (function (m, d) {
-        demoTimeouts.push(setTimeout(function () {
-          addMessage(m.type, m.text);
-        }, d));
-      })(msg, d2);
-    }
-  });
-
-  demoTimeouts.push(setTimeout(function () {
-    isPlaying = false;
-    if (btn) {
-      btn.disabled = false;
-      btn.textContent = '↺ Putar Ulang';
-    }
-  }, delay + 1500));
-}
-
-function addMessage(type, text) {
-  var chat = document.getElementById('phone-chat');
-  if (!chat) return;
-  var typing = document.getElementById('typing-bubble');
-  var div = document.createElement('div');
-  div.className = 'chat-msg ' + (type === 'bot' ? 'bot' : 'user');
-  div.innerHTML = '<div>' + text.replace(/\n/g, '<br>') + '</div><div class="chat-time">Selesai</div>';
-  chat.insertBefore(div, typing);
-  scrollChat();
-}
-
-function scrollChat() {
-  var c = document.getElementById('phone-chat');
-  if (c) {
-    setTimeout(function () { c.scrollTop = c.scrollHeight; }, 50);
-  }
-}
-
-
-/* =============================================
-   SCROLL ANIMATIONS — IntersectionObserver
-   Triggers fade-up for .fade-up, .stagger-*
-   and .reveal elements when they enter viewport
-   ============================================= */
-
-(function initScrollAnimations() {
-  var animEls = document.querySelectorAll('.fade-up, .stagger-1, .stagger-2, .stagger-3, .stagger-4, .reveal');
-  if (animEls.length === 0) return;
-
-  // Pause CSS animations until observed
-  animEls.forEach(function (el) {
-    el.style.animationPlayState = 'paused';
-  });
-
-  var observer = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        entry.target.style.animationPlayState = 'running';
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
+    // Reveal animations
+    (function () {
+      var els = document.querySelectorAll('.reveal');
+      if (els.length) {
+        var obs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+          });
+        }, { threshold: 0.15 });
+        els.forEach(function (el) { obs.observe(el); });
       }
-    });
-  }, { threshold: 0.1 });
+    })();
 
-  animEls.forEach(function (el) {
-    observer.observe(el);
+    // Auto-play hero video
+    var vid = document.querySelector('.hero-video video');
+    if (vid) { vid.muted = true; vid.playsInline = true; vid.play().catch(function () {}); }
   });
 })();
-
-
-/* =============================================
-   SMOOTH SCROLL — Anchor Links
-   Intercepts same-page anchor clicks for
-   smooth scrolling via scrollIntoView
-   ============================================= */
-
-(function initSmoothAnchors() {
-  document.addEventListener('click', function (e) {
-    var target = e.target.closest('a[href^="#"]');
-    if (!target) return;
-
-    var id = target.getAttribute('href').slice(1); // strip '#'
-    if (!id) return;
-
-    var el = document.getElementById(id);
-    if (el) {
-      e.preventDefault();
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  });
-})();
-
-
-/* =============================================
-   EVENT LISTENERS — Modals, Scroll-to-top
-   ============================================= */
-
-// -- Close modals on overlay click -- //
-document.querySelectorAll('.modal-overlay').forEach(function (m) {
-  m.addEventListener('click', function (e) {
-    if (e.target === m) {
-      m.classList.remove('open');
-      document.body.style.overflow = '';
-    }
-  });
-});
-
-// -- Scroll-to-top button visibility -- //
-(function initScrollTopBtn() {
-  var btn = document.getElementById('scroll-top');
-  if (!btn) return;
-
-  window.addEventListener('scroll', function () {
-    btn.classList.toggle('show', window.scrollY > 300);
-  }, { passive: true });
-})();
-
-
-/* =============================================
-   CLOSE MOBILE MENU ON OUTSIDE CLICK
-   Fallback for pages with inline mobile menus
-   ============================================= */
-
-document.addEventListener('click', function (e) {
-  var menu = document.getElementById('mobile-menu');
-  if (menu && menu.classList.contains('open') && !menu.contains(e.target) && !e.target.closest('.header-hamburger')) {
-    closeMenu();
-  }
-});
