@@ -20,7 +20,7 @@
           overlay.onclick = function(e) { if (e.target === this) closeChat(); };
 
           var modal = document.createElement('div');
-                    modal.style.cssText = 'background:#fff;border-radius:20px;width:95%;max-width:480px;overflow:hidden;max-height:95vh;box-shadow:0 30px 80px rgba(0,0,0,.35);animation:chatFadeIn .3s ease-out;position:relative';
+                    modal.style.cssText = 'background:#fff;border-radius:20px;width:95%;max-width:480px;overflow:hidden;max-height:95vh;box-shadow:0 30px 80px rgba(0,0,0,.35);animation:chatFadeIn .3s ease-out;position:relative;height:90vh;min-height:600px';
 
                     var header = document.createElement('div');
                     header.style.cssText = 'display:flex;align-items:center;justify-content:space-between;padding:14px 20px;background:#0B2A4A;color:#fff';
