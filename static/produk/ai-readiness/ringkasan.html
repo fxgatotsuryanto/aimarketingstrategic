@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ringkasan AI Readiness — Gratis</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  @page { size: A4; margin: 15mm; }
+  body { background: white; font-size: 10.5pt; line-height: 1.5; color: #1e293b; }
+  .ringkasan { max-width: 180mm; margin: 0 auto; padding: 0; }
+  .ringkasan .container { max-width: 100%; padding: 0; }
+
+  .lead-header {
+    background: linear-gradient(135deg, #1e3a5f, #2563eb);
+    color: white;
+    padding: 24pt 24pt;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 16pt;
+  }
+  .lead-header h1 { font-size: 18pt; font-weight: 800; margin-bottom: 4pt; }
+  .lead-header .tagline { font-size: 10pt; opacity: 0.85; }
+  .lead-header .badge-lead {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 3px 12px;
+    border-radius: 12px;
+    font-size: 8pt;
+    margin-top: 8pt;
+  }
+
+  .section-lead {
+    font-size: 12pt;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 14pt 0 8pt;
+    padding-bottom: 4pt;
+    border-bottom: 2px solid #2563eb;
+  }
+
+  .func-mini-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8pt;
+    margin: 8pt 0;
+  }
+  .func-mini-card {
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 10pt 12pt;
+    page-break-inside: avoid;
+  }
+  .func-mini-card h3 { font-size: 9pt; font-weight: 700; margin-bottom: 2pt; }
+  .func-mini-card p { font-size: 8pt; color: #64748b; margin: 0; }
+  .func-mini-card .score-mini {
+    font-size: 14pt;
+    font-weight: 800;
+    float: right;
+  }
+
+  .mini-rec {
+    border-left: 3px solid #2563eb;
+    padding: 8pt 12pt;
+    margin: 6pt 0;
+    background: #f8fafc;
+    font-size: 9pt;
+    border-radius: 0 4px 4px 0;
+  }
+  .mini-rec strong { display: block; margin-bottom: 2px; }
+
+  .lead-cta {
+    text-align: center;
+    padding: 16pt;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 8px;
+    margin-top: 12pt;
+  }
+  .lead-cta h3 { font-size: 11pt; color: #059669; margin-bottom: 4pt; }
+  .lead-cta p { font-size: 9pt; color: #475569; }
+  .lead-cta .btn-lead {
+    display: inline-block;
+    background: #25D366;
+    color: white;
+    padding: 8pt 24pt;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 10pt;
+    margin-top: 8pt;
+  }
+
+  .footer-lead {
+    text-align: center;
+    font-size: 7.5pt;
+    color: #94a3b8;
+    margin-top: 16pt;
+    padding-top: 8pt;
+    border-top: 1px solid #e2e8f0;
+  }
+
+  @media print {
+    .no-print { display: none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="ringkasan">
+  <div class="container">
+
+    <div class="lead-header">
+      <h1>🤖 AI Readiness Assessment</h1>
+      <div class="tagline">Ringkasan Gratis — Ukur Kesiapan AI Bisnis Anda dalam 5 Menit</div>
+      <div class="badge-lead">🎁 Lead Magnet — Bagikan ke Prospek</div>
+    </div>
+
+    <!-- Form biodata sederhana -->
+    <div style="padding:8pt 0;font-size:9pt;color:#475569;display:flex;gap:12pt;flex-wrap:wrap;">
+      <span><strong>Bisnis:</strong> _______________________</span>
+      <span><strong>Industri:</strong> _______________________</span>
+      <span><strong>Tanggal:</strong> _______________________</span>
+    </div>
+
+    <div class="section-lead">📊 Skor Kesiapan AI Anda</div>
+    <div style="display:flex;align-items:center;gap:16pt;margin:8pt 0;">
+      <div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#2563eb,#7c3aed);color:white;display:flex;align-items:center;justify-content:center;flex-direction:column;font-size:20pt;font-weight:800;flex-shrink:0;">
+        -- <span style="font-size:7pt;opacity:0.7;">/100</span>
+      </div>
+      <div>
+        <div style="font-weight:700;font-size:11pt;">[Kategori Anda]</div>
+        <p style="font-size:9pt;color:#64748b;margin:2pt 0;">Berdasarkan jawaban Anda untuk 15 pertanyaan di 5 fungsi bisnis. Skor 0-100: semakin tinggi, semakin siap bisnis Anda mengadopsi AI.</p>
+      </div>
+    </div>
+
+    <div style="background:#f1f5f9;border-radius:6px;height:14px;overflow:hidden;margin:8pt 0;">
+      <div style="height:100%;width:42%;border-radius:6px;background:linear-gradient(90deg,#ef4444,#f59e0b,#06b6d4,#8b5cf6,#10b981);"></div>
+    </div>
+    <div style="display:flex;justify-content:space-between;font-size:7pt;color:#94a3b8;">
+      <span>0 Beginner</span>
+      <span>25 Explorer</span>
+      <span>50 Practitioner</span>
+      <span>75 Adapter</span>
+      <span>100 Ready</span>
+    </div>
+
+    <div class="section-lead">📈 Skor per Fungsi Bisnis</div>
+    <div class="func-mini-grid">
+      <div class="func-mini-card">
+        <div class="score-mini" style="color:#2563eb;">--</div>
+        <h3>📢 Marketing</h3>
+        <p>Data pelanggan, strategi promosi, tools digital</p>
+      </div>
+      <div class="func-mini-card">
+        <div class="score-mini" style="color:#f59e0b;">--</div>
+        <h3>⚙️ Operasional</h3>
+        <p>Catatan stok, sistem pelacakan, otomasi proses</p>
+      </div>
+      <div class="func-mini-card">
+        <div class="score-mini" style="color:#06b6d4;">--</div>
+        <h3>💬 Customer Service</h3>
+        <p>FAQ, kecepatan respon, follow-up pelanggan</p>
+      </div>
+      <div class="func-mini-card">
+        <div class="score-mini" style="color:#7c3aed;">--</div>
+        <h3>💰 Keuangan</h3>
+        <p>Pencatatan, laporan, reminder pembayaran</p>
+      </div>
+      <div class="func-mini-card" style="grid-column:1/-1;text-align:center;">
+        <div class="score-mini" style="color:#10b981;">--</div>
+        <h3>👥 SDM & HR</h3>
+        <p>Rekrutmen, absensi, evaluasi kinerja</p>
+      </div>
+    </div>
+
+    <div class="section-lead">🎯 3 Langkah Awal yang Bisa Anda Lakukan</div>
+
+    <div class="mini-rec">
+      <strong>🔴 1. [Prioritas Utama — Fungsi dengan Skor Terendah]</strong>
+      Mulai dengan tools gratis yang sesuai. Contoh: jika operasional skor rendah, gunakan BukuWarung atau Paper.id untuk digitalisasi catatan.
+    </div>
+    <div class="mini-rec">
+      <strong>🟡 2. [Langkah Kedua — Fungsi dengan Skor Terendah Kedua]</strong>
+      Setelah fondasi pertama rapi, lanjutkan ke fungsi ini. Buat sistem sederhana yang bisa berjalan tanpa pengawasan penuh.
+    </div>
+    <div class="mini-rec">
+      <strong>🟢 3. [Langkah Ketiga — Fungsi dengan Dampak Tertinggi]</strong>
+      Integrasikan tools yang sudah berjalan. Evaluasi hasil dan scale up ke fungsi berikutnya.
+    </div>
+
+    <div class="section-lead">💰 Potensi Penghematan</div>
+    <div style="display:flex;gap:12pt;margin:8pt 0;">
+      <div style="flex:1;text-align:center;padding:10pt;border:1px solid #e2e8f0;border-radius:6px;">
+        <div style="font-size:16pt;font-weight:800;color:#059669;">-- jam</div>
+        <div style="font-size:8pt;color:#64748b;">Hemat waktu/bulan</div>
+      </div>
+      <div style="flex:1;text-align:center;padding:10pt;border:1px solid #e2e8f0;border-radius:6px;">
+        <div style="font-size:16pt;font-weight:800;color:#059669;">Rp--</div>
+        <div style="font-size:8pt;color:#64748b;">Hemat biaya/bulan</div>
+      </div>
+    </div>
+
+    <div class="lead-cta">
+      <h3>📥 Dapatkan Laporan Lengkap 8-10 Halaman</h3>
+      <p>Dapatkan analisis mendalam, radar chart, gap analysis, roadmap 30 hari, dan rekomendasi 20+ tools Indonesia — hanya Rp99.000</p>
+      <a href="https://wa.me/6281234567890?text=Halo%20saya%20mau%20AI%20Readiness%20Assessment%20lengkap" class="btn-lead">💬 Beli via WhatsApp — Rp99.000</a>
+    </div>
+
+    <div class="footer-lead">
+      AI Readiness Assessment — AIMarketingStrategic.com — Ringkasan gratis ini adalah lead magnet.<br>
+      Untuk laporan personal lengkap, hubungi kami di WhatsApp.
+    </div>
+
+  </div>
+</div>
+
+<script>
+// Auto-fill date
+const dateInputs = document.querySelectorAll('span:contains("Tanggal")');
+</script>
+</body>
+</html>

@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Readiness Assessment — Ukur Kesiapan AI Bisnis Anda</title>
+<link rel="stylesheet" href="style.css">
+<script src="scoring.js"></script>
+<style>
+  /* Additional quiz-specific styles */
+  .quiz-container { max-width: 720px; margin: 0 auto; }
+  .question-card { display: none; }
+  .question-card.active { display: block; }
+  .nav-buttons { display: flex; justify-content: space-between; gap: 12px; margin-top: 28px; }
+  .func-badge {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    background: var(--primary-light);
+    color: var(--primary);
+    margin-bottom: 4px;
+  }
+  .question-counter {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--gray-500);
+    margin-bottom: 20px;
+  }
+  .func-section-title {
+    text-align: center;
+    font-size: 1rem;
+    color: var(--gray-600);
+    margin-bottom: 4px;
+  }
+  .func-section-title strong { color: var(--gray-900); }
+  .landing-hero {
+    text-align: center;
+    padding: 60px 24px 40px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .landing-hero h1 { font-size: 2.2rem; font-weight: 800; margin-bottom: 12px; }
+  .landing-hero .tagline { font-size: 1.1rem; color: var(--gray-500); margin-bottom: 8px; }
+  .landing-hero .price-tag {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--success), #059669);
+    color: white;
+    padding: 6px 20px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 24px;
+  }
+  .landing-hero .price-tag del { opacity: 0.6; margin-right: 8px; }
+  .trust-badges { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin: 20px 0; }
+  .trust-badge {
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    color: var(--gray-600);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .quiz-start { text-align: center; padding: 20px 0; }
+  .quiz-start .btn { font-size: 1.15rem; padding: 16px 40px; }
+
+  .result-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 24px; }
+  .summary-section { margin-top: 20px; }
+
+  /* Radar chart canvas */
+  .chart-container { max-width: 400px; margin: 0 auto 24px; }
+
+  /* Thank you page after submission */
+  .thank-you { text-align: center; padding: 40px 0; }
+  .thank-you .check-icon {
+    width: 80px; height: 80px;
+    background: var(--success);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 600px) {
+    .landing-hero h1 { font-size: 1.6rem; }
+    .nav-buttons { flex-direction: column; }
+    .nav-buttons .btn { width: 100%; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav-bar">
+  <div class="container">
+    <a href="#" class="nav-logo">🤖 AI Readiness Assessment</a>
+    <div class="nav-links">
+      <a href="#tentang">Tentang</a>
+      <a href="#mulai" class="no-print">Mulai Tes</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ LANDING PAGE ============ -->
+<div id="landing" class="page">
+  <div class="container">
+    <div class="landing-hero">
+      <h1>🧠 Seberapa Siap Bisnis Anda Mengadopsi AI?</h1>
+      <p class="tagline">Kuisioner 5 menit — Dapatkan laporan personal 8-10 halaman: skor kesiapan AI, analisis celah per fungsi bisnis, rekomendasi tools, dan estimasi penghematan.</p>
+      <div class="price-tag"><del>Rp199.000</del> Rp99.000</div>
+      <div class="trust-badges">
+        <span class="trust-badge">⏱ 5 Menit</span>
+        <span class="trust-badge">📊 Laporan Personal</span>
+        <span class="trust-badge">🎯 5 Fungsi Bisnis</span>
+        <span class="trust-badge">💡 Tools Indonesia</span>
+        <span class="trust-badge">💰 Estimasi Hemat</span>
+      </div>
+    </div>
+
+    <div class="hero">
+      <div class="features">
+        <div class="feature-item">
+          <div class="emoji">📢</div>
+          <h3>Marketing</h3>
+          <p>Seberapa efektif promosi & data pelanggan Anda?</p>
+        </div>
+        <div class="feature-item">
+          <div class="emoji">⚙️</div>
+          <h3>Operasional</h3>
+          <p>Apakah proses harian sudah terdigitalisasi?</p>
+        </div>
+        <div class="feature-item">
+          <div class="emoji">💬</div>
+          <h3>Customer Service</h3>
+          <p>Seberapa cepat & otomatis respon pelanggan?</p>
+        </div>
+        <div class="feature-item">
+          <div class="emoji">💰</div>
+          <h3>Keuangan</h3>
+          <p>Apakah pencatatan & laporan sudah otomatis?</p>
+        </div>
+        <div class="feature-item">
+          <div class="emoji">👥</div>
+          <h3>SDM & HR</h3>
+          <p>Apakah manajemen tim sudah terstruktur?</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="tentang">
+      <div class="card-header">📋 Apa yang Anda Dapatkan?</div>
+      <div class="summary-grid">
+        <div><strong>✅ Laporan Personal 8-10 Halaman</strong><br><span style="color:var(--gray-500);font-size:0.9rem;">PDF khusus bisnis Anda dengan skor, analisis, dan rekomendasi.</span></div>
+        <div><strong>✅ Skor Kesiapan AI (0-100)</strong><br><span style="color:var(--gray-500);font-size:0.9rem;">Tahu persis posisi bisnis Anda: Beginner → Ready.</span></div>
+        <div><strong>✅ Radar Chart 5 Fungsi</strong><br><span style="color:var(--gray-500);font-size:0.9rem;">Visualisasi kekuatan & kelemahan per fungsi bisnis.</span></div>
+        <div><strong>✅ Gap Analysis</strong><br><span style="color:var(--gray-500);font-size:0.9rem;">Analisis celah antara kondisi saat ini vs ideal.</span></div>
+        <div><strong>✅ 3 Prioritas Langkah</strong><br><span style="color:var(--gray-500);font-size:0.9rem;">Roadmap aksi terurut berdasarkan skor terendah.</span></div>
+        <div><strong>✅ Rekomendasi Tools Indonesia</strong><br><span style="color:var(--gray-500);font-size:0.9rem;">Tools gratis & berbayar yang cocok untuk UMKM.</span></div>
+        <div><strong>✅ Estimasi Penghematan</strong><br><span style="color:var(--gray-500);font-size:0.9rem;">Hitung Rp/bulan yang bisa dihemat dengan otomasi.</span></div>
+        <div><strong>✅ Konsultasi WA 15 Menit</strong><br><span style="color:var(--gray-500);font-size:0.9rem;">Diskusi hasil assessment langsung dengan konsultan.</span></div>
+      </div>
+    </div>
+
+    <div class="quiz-start" id="mulai">
+      <button class="btn btn-primary btn-lg" onclick="startQuiz()">
+        🚀 Mulai Assessment — Rp99.000
+      </button>
+      <p style="margin-top:12px;color:var(--gray-400);font-size:0.85rem;">
+        Pembayaran via WA. Hubungi <strong>Gatot</strong> setelah selesai untuk akses laporan.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ============ QUIZ PAGE ============ -->
+<div id="quiz" class="page" style="display:none;">
+  <div class="container quiz-container">
+    <div class="card">
+      <div class="quiz-progress" id="progressDots"></div>
+      <div class="question-counter" id="questionCounter"></div>
+
+      <div id="questionsContainer">
+        <!-- Questions will be rendered by JS -->
+      </div>
+
+      <div class="nav-buttons">
+        <button class="btn btn-secondary" id="prevBtn" onclick="prevQuestion()" style="visibility:hidden;">← Sebelumnya</button>
+        <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()">Selanjutnya →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ RESULT PAGE (standalone preview) ============ -->
+<div id="result" class="page" style="display:none;">
+  <div class="container quiz-container">
+    <div class="result-actions no-print" style="margin-bottom:16px;">
+      <button class="btn btn-secondary" onclick="window.print()">🖨 Cetak / PDF</button>
+      <button class="btn btn-outline" onclick="startQuiz()">🔄 Ulang Assessment</button>
+    </div>
+
+    <div id="resultContent">
+      <!-- Filled by JS -->
+    </div>
+
+    <div class="result-actions no-print" style="margin-top:24px;">
+      <button class="btn btn-primary btn-lg" onclick="window.print()">🖨 Download PDF Laporan</button>
+      <p style="margin-top:8px;color:var(--gray-400);font-size:0.85rem;">
+        Gunakan "Print → Save as PDF" untuk hasil terbaik. Atau hubungi Gatot via WA untuk laporan siap kirim.
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+// ===== STATE =====
+let currentQuestion = 0;
+let answers = {};
+
+// ===== INIT =====
+QUESTIONS.forEach(q => { answers[q.id] = 0; });
+
+function startQuiz() {
+  currentQuestion = 0;
+  answers = {};
+  QUESTIONS.forEach(q => { answers[q.id] = 0; });
+  document.getElementById('landing').style.display = 'none';
+  document.getElementById('result').style.display = 'none';
+  document.getElementById('quiz').style.display = 'block';
+  renderProgress();
+  renderQuestions();
+  showQuestion(0);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function renderProgress() {
+  const container = document.getElementById('progressDots');
+  container.innerHTML = '';
+  QUESTIONS.forEach((q, i) => {
+    const dot = document.createElement('div');
+    dot.className = 'progress-dot';
+    dot.id = 'dot-' + i;
+    dot.textContent = i + 1;
+    dot.title = q.text.substring(0, 40) + '...';
+    container.appendChild(dot);
+  });
+}
+
+function renderQuestions() {
+  const container = document.getElementById('questionsContainer');
+  container.innerHTML = '';
+  QUESTIONS.forEach((q, i) => {
+    const func = FUNCTIONS.find(f => f.id === q.func);
+    const card = document.createElement('div');
+    card.className = 'question-card';
+    card.id = 'qcard-' + i;
+
+    let html = '<div class="func-section-title">';
+    html += `<span class="func-badge">${func.icon} ${func.label}</span></div>`;
+    html += `<div class="question-text">${q.text}</div>`;
+    html += '<div class="scale-group">';
+
+    SCALE_LABELS.forEach(s => {
+      const selected = answers[q.id] === s.value ? ' selected' : '';
+      html += `<div class="scale-option${selected}" onclick="selectAnswer(${i}, ${s.value})">
+        <div class="num">${s.value}</div>
+        <div class="label">${s.label}</div>
+      </div>`;
+    });
+
+    html += '</div>';
+    card.innerHTML = html;
+    container.appendChild(card);
+  });
+}
+
+function showQuestion(index) {
+  document.querySelectorAll('.question-card').forEach(el => el.classList.remove('active'));
+  document.getElementById('qcard-' + index).classList.add('active');
+
+  // Update dots
+  document.querySelectorAll('.progress-dot').forEach(d => d.classList.remove('active'));
+  document.getElementById('dot-' + index).classList.add('active');
+
+  // Mark done dots
+  QUESTIONS.forEach((q, i) => {
+    const dot = document.getElementById('dot-' + i);
+    if (i < index && answers[q.id] > 0) {
+      dot.classList.add('done');
+    } else if (i < index) {
+      dot.classList.remove('done');
+    }
+  });
+
+  // Counter
+  document.getElementById('questionCounter').textContent =
+    `Pertanyaan ${index + 1} dari ${QUESTIONS.length}`;
+
+  // Prev button
+  document.getElementById('prevBtn').style.visibility = index === 0 ? 'hidden' : 'visible';
+
+  // Next button text
+  const nextBtn = document.getElementById('nextBtn');
+  if (index === QUESTIONS.length - 1) {
+    nextBtn.textContent = '📊 Lihat Hasil';
+  } else {
+    nextBtn.textContent = 'Selanjutnya →';
+  }
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function selectAnswer(index, value) {
+  const q = QUESTIONS[index];
+  answers[q.id] = value;
+
+  // Update UI
+  const card = document.getElementById('qcard-' + index);
+  card.querySelectorAll('.scale-option').forEach(el => {
+    el.classList.toggle('selected', parseInt(el.querySelector('.num').textContent) === value);
+  });
+
+  // Mark dot done
+  document.getElementById('dot-' + index).classList.add('done');
+
+  // Auto-advance after short delay
+  setTimeout(() => {
+    if (index < QUESTIONS.length - 1) {
+      nextQuestion();
+    }
+  }, 400);
+}
+
+function nextQuestion() {
+  // Validate current answer
+  const q = QUESTIONS[currentQuestion];
+  if (answers[q.id] === 0) {
+    const card = document.getElementById('qcard-' + currentQuestion);
+    card.style.animation = 'shake 0.4s ease';
+    setTimeout(() => { card.style.animation = ''; }, 500);
+    return;
+  }
+
+  if (currentQuestion === QUESTIONS.length - 1) {
+    showResults();
+  } else {
+    currentQuestion++;
+    showQuestion(currentQuestion);
+  }
+}
+
+function prevQuestion() {
+  if (currentQuestion > 0) {
+    currentQuestion--;
+    showQuestion(currentQuestion);
+  }
+}
+
+// ===== RESULTS =====
+function showResults() {
+  document.getElementById('quiz').style.display = 'none';
+  document.getElementById('result').style.display = 'block';
+
+  const result = calculateScores(answers);
+  const recs = generateRecommendations(result.functions);
+  const savings = calculateSavings(result.functions);
+  const tools = getRecommendedTools(result.functions);
+  const cat = result.category;
+
+  const container = document.getElementById('resultContent');
+  let html = '';
+
+  // Score hero
+  html += `<div class="result-score">
+    <div class="score-circle" style="background:conic-gradient(${cat.color} ${result.overall}%, var(--gray-200) ${result.overall}%);">
+      <span style="background:${cat.color};width:150px;height:150px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-direction:column;">
+        ${result.overall}<span class="sub">/100</span>
+      </span>
+    </div>
+    <div class="score-category" style="color:${cat.color};">${cat.category}</div>
+    <div class="score-description">${cat.desc}</div>
+  </div>`;
+
+  // Savings summary
+  html += `<div class="savings-grid">
+    <div class="savings-card">
+      <div class="amount">⏱ ${savings.hours} jam/bulan</div>
+      <div class="label">Potensi hemat waktu dengan otomasi</div>
+    </div>
+    <div class="savings-card">
+      <div class="amount">💰 Rp${savings.money.toLocaleString('id-ID')}/bulan</div>
+      <div class="label">Estimasi penghematan biaya operasional</div>
+    </div>
+  </div>`;
+
+  // Radar Chart (canvas)
+  html += `<div style="text-align:center;margin-bottom:8px;">
+    <div class="section-title" style="justify-content:center;"><span class="icon">📊</span> Radar Chart — Skor per Fungsi</div>
+  </div>
+  <div class="chart-container">
+    <canvas id="radarChart" width="400" height="400"></canvas>
+  </div>`;
+
+  // Score bars per function
+  html += `<div class="card">
+    <div class="card-header">📈 Skor Detail per Fungsi Bisnis</div>`;
+
+  FUNCTIONS.forEach(f => {
+    const score = result.functions[f.id];
+    const color = getScoreColor(score);
+    let statusClass = 'status-low';
+    let statusText = 'Perlu Perbaikan';
+    if (score > 60) { statusClass = 'status-medium'; statusText = 'Cukup Baik'; }
+    if (score > 75) { statusClass = 'status-high'; statusText = 'Baik'; }
+    if (score > 90) { statusClass = 'status-excellent'; statusText = 'Sangat Baik'; }
+
+    html += `<div class="score-bar-container">
+      <div class="score-bar-label">
+        <span>${f.icon} ${f.label}</span>
+        <span><span class="status-badge ${statusClass}">${statusText}</span> ${score}/100</span>
+      </div>
+      <div class="score-bar-bg">
+        <div class="score-bar-fill" style="width:${score}%;background:${color};"></div>
+      </div>
+    </div>`;
+  });
+  html += `</div>`;
+
+  // Gap Analysis Table
+  html += `<div class="card">
+    <div class="card-header">🔍 Gap Analysis — Kondisi Saat Ini vs. Target Ideal</div>
+    <table class="gap-table">
+      <tr>
+        <th>Fungsi</th>
+        <th>Skor Saat Ini</th>
+        <th>Target Ideal</th>
+        <th>Gap</th>
+        <th>Prioritas</th>
+      </tr>`;
+
+  FUNCTIONS.forEach(f => {
+    const score = result.functions[f.id];
+    const gap = 100 - score;
+    let priority = gap >= 60 ? '🔴 Tinggi' : gap >= 30 ? '🟡 Sedang' : '🟢 Ringan';
+    html += `<tr>
+      <td>${f.icon} ${f.label}</td>
+      <td><strong>${score}/100</strong></td>
+      <td>80/100</td>
+      <td>${gap} poin</td>
+      <td>${priority}</td>
+    </tr>`;
+  });
+  html += `</table></div>`;
+
+  // 3 Priority Recommendations
+  html += `<div style="margin-bottom:24px;">
+    <div class="section-title"><span class="icon">🎯</span> 3 Langkah Prioritas Anda</div>`;
+
+  recs.forEach(r => {
+    html += `<div class="recommendation-card priority-${r.priority}">
+      <div class="priority">${r.icon} LANGKAH ${r.priority === 1 ? 'PERTAMA' : r.priority === 2 ? 'KEDUA' : 'KETIGA'}</div>
+      <h4>${r.title}</h4>
+      <p style="color:var(--gray-600);font-size:0.9rem;">${r.detail}</p>
+    </div>`;
+  });
+  html += `</div>`;
+
+  // Recommended Tools
+  html += `<div class="card">
+    <div class="card-header">🛠 Tools yang Direkomendasikan untuk Bisnis Anda</div>
+    <table class="tool-table">
+      <tr>
+        <th>Tools</th>
+        <th>Fungsi</th>
+        <th>Tipe</th>
+        <th>Hemat Waktu</th>
+        <th>Biaya</th>
+      </tr>`;
+
+  // Show top 2 tools per function that have low scores
+  tools.forEach(t => {
+    const typeClass = t.type === 'free' ? 'tool-free' : t.type === 'paid' ? 'tool-paid' : 'tool-freemium';
+    html += `<tr>
+      <td><a href="${t.url}" target="_blank" rel="noopener"><strong>${t.name}</strong></a></td>
+      <td style="font-size:0.85rem;">${t.desc}</td>
+      <td class="${typeClass}">${t.type === 'free' ? '🆓 Gratis' : t.type === 'freemium' ? '🟡 Freemium' : '🔵 Berbayar'}</td>
+      <td>${t.savings}</td>
+      <td style="font-size:0.85rem;">${t.cost}</td>
+    </tr>`;
+  });
+  html += `</table></div>`;
+
+  // Savings detail
+  html += `<div class="card">
+    <div class="card-header">💰 Detail Estimasi Penghematan</div>
+    <p style="margin-bottom:16px;">Berdasarkan skor Anda saat ini, berikut estimasi potensi penghematan jika Anda meningkatkan digitalisasi dan otomasi di setiap fungsi:</p>
+    <table class="gap-table">
+      <tr><th>Fungsi</th><th>Skor</th><th>Potensi Hemat Waktu</th><th>Estimasi Hemat Biaya</th></tr>`;
+
+  FUNCTIONS.forEach(f => {
+    const score = result.functions[f.id];
+    const hours = Math.round((100 - score) / 100 * 40);
+    const money = Math.round(hours * 25000);
+    html += `<tr>
+      <td>${f.icon} ${f.label}</td>
+      <td>${score}/100</td>
+      <td>~${hours} jam/bulan</td>
+      <td><strong>Rp${money.toLocaleString('id-ID')}/bulan</strong></td>
+    </tr>`;
+  });
+  html += `<tr style="background:var(--gray-50);font-weight:700;">
+    <td colspan="2"><strong>TOTAL</strong></td>
+    <td><strong>${savings.hours} jam/bulan</strong></td>
+    <td><strong>Rp${savings.money.toLocaleString('id-ID')}/bulan</strong></td>
+  </tr>`;
+  html += `</table></div>`;
+
+  // Next steps / CTA
+  html += `<div class="card" style="background:linear-gradient(135deg, var(--primary), var(--secondary));color:white;border:none;">
+    <div class="card-header" style="color:white;">🚀 Langkah Selanjutnya</div>
+    <p style="margin-bottom:16px;opacity:0.95;">
+      Assessment ini adalah langkah pertama. Tim AIMarketingStrategic siap membantu Anda mengimplementasikan rekomendasi di atas — dari setup tools hingga otomasi penuh.
+    </p>
+    <div style="display:flex;flex-wrap:wrap;gap:16px;">
+      <div style="flex:1;min-width:200px;background:rgba(255,255,255,0.1);padding:16px;border-radius:12px;">
+        <strong>📞 Konsultasi 15 Menit</strong>
+        <p style="font-size:0.85rem;opacity:0.85;">Diskusikan hasil assessment Anda langsung dengan konsultan.</p>
+      </div>
+      <div style="flex:1;min-width:200px;background:rgba(255,255,255,0.1);padding:16px;border-radius:12px;">
+        <strong>⚡ AUTOPILOT SALES</strong>
+        <p style="font-size:0.85rem;opacity:0.85;">Otomatisasi penuh marketing & operasional WA bisnis Anda. Rp2.500.000</p>
+      </div>
+      <div style="flex:1;min-width:200px;background:rgba(255,255,255,0.1);padding:16px;border-radius:12px;">
+        <strong>🔍 AI Diagnostic</strong>
+        <p style="font-size:0.85rem;opacity:0.85;">Audit mendalam + roadmap implementasi AI. Rp5.000.000</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:20px;">
+      <a href="https://wa.me/6281234567890" target="_blank" class="btn btn-success btn-lg" style="color:white;background:rgba(255,255,255,0.2);">💬 Hubungi via WA</a>
+    </div>
+  </div>`;
+
+  // Footer info
+  html += `<div style="text-align:center;padding:16px;color:var(--gray-400);font-size:0.8rem;">
+    <p>AI Readiness Assessment — AIMarketingStrategic.com<br>
+    Dilaporkan pada: ${formatDate(result.timestamp)}</p>
+  </div>`;
+
+  container.innerHTML = html;
+  drawRadarChart(result.functions);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ===== RADAR CHART =====
+function drawRadarChart(scores) {
+  const canvas = document.getElementById('radarChart');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const W = canvas.width, H = canvas.height;
+  const cx = W / 2, cy = H / 2;
+  const R = Math.min(W, H) / 2 - 50;
+  const total = FUNCTIONS.length;
+  const angleStep = (Math.PI * 2) / total;
+
+  ctx.clearRect(0, 0, W, H);
+
+  // Grid circles
+  for (let level = 1; level <= 5; level++) {
+    const r = (R / 5) * level;
+    ctx.beginPath();
+    ctx.arc(cx, cy, r, 0, Math.PI * 2);
+    ctx.strokeStyle = 'rgba(0,0,0,0.08)';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+  }
+
+  // Axis lines & labels
+  FUNCTIONS.forEach((f, i) => {
+    const angle = -Math.PI / 2 + i * angleStep;
+    const x = cx + R * Math.cos(angle);
+    const y = cy + R * Math.sin(angle);
+    ctx.beginPath();
+    ctx.moveTo(cx, cy);
+    ctx.lineTo(x, y);
+    ctx.strokeStyle = 'rgba(0,0,0,0.1)';
+    ctx.stroke();
+
+    const lx = cx + (R + 20) * Math.cos(angle);
+    const ly = cy + (R + 20) * Math.sin(angle);
+    ctx.font = '11px Segoe UI, sans-serif';
+    ctx.fillStyle = '#475569';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(f.icon + ' ' + f.label, lx, ly);
+  });
+
+  // Data polygon
+  ctx.beginPath();
+  FUNCTIONS.forEach((f, i) => {
+    const score = scores[f.id] / 100;
+    const angle = -Math.PI / 2 + i * angleStep;
+    const r = R * score;
+    const x = cx + r * Math.cos(angle);
+    const y = cy + r * Math.sin(angle);
+    if (i === 0) ctx.moveTo(x, y);
+    else ctx.lineTo(x, y);
+  });
+  ctx.closePath();
+  ctx.fillStyle = 'rgba(37, 99, 235, 0.15)';
+  ctx.fill();
+  ctx.strokeStyle = '#2563eb';
+  ctx.lineWidth = 2;
+  ctx.stroke();
+
+  // Data points
+  FUNCTIONS.forEach((f, i) => {
+    const score = scores[f.id] / 100;
+    const angle = -Math.PI / 2 + i * angleStep;
+    const r = R * score;
+    const x = cx + r * Math.cos(angle);
+    const y = cy + r * Math.sin(angle);
+    ctx.beginPath();
+    ctx.arc(x, y, 4, 0, Math.PI * 2);
+    ctx.fillStyle = '#2563eb';
+    ctx.fill();
+    ctx.strokeStyle = 'white';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    // Score label
+    ctx.font = 'bold 12px Segoe UI, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'bottom';
+    const labelX = cx + (R * score + 15) * Math.cos(angle);
+    const labelY = cy + (R * score + 15) * Math.sin(angle);
+    ctx.fillText(scores[f.id], labelX, labelY);
+  });
+}
+
+// ===== TOOLS FILTER =====
+function getRecommendedTools(scores) {
+  // Sort functions by score (lowest first), then get relevant tools
+  const sorted = [...Object.entries(scores)].sort((a, b) => a[1] - b[1]);
+  const result = [];
+  // Get top 2 tools for each of the lowest 3 functions
+  sorted.slice(0, 3).forEach(([funcId]) => {
+    const funcTools = RECOMMENDED_TOOLS.filter(t => t.func === funcId).slice(0, 2);
+    result.push(...funcTools);
+  });
+  // Add 1 tool each for the remaining functions
+  sorted.slice(3).forEach(([funcId]) => {
+    const tool = RECOMMENDED_TOOLS.find(t => t.func === funcId);
+    if (tool) result.push(tool);
+  });
+  return result;
+}
+
+// ===== SHAKE ANIMATION =====
+const styleSheet = document.createElement('style');
+styleSheet.textContent = `@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-8px); }
+  40% { transform: translateX(8px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+}`;
+document.head.appendChild(styleSheet);
+</script>
+</body>
+</html>

@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laporan AI Readiness Assessment — [Nama Bisnis]</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  /* ===== REPORT-SPECIFIC PRINT STYLES ===== */
+  @page {
+    size: A4;
+    margin: 18mm 20mm 20mm 20mm;
+  }
+
+  body {
+    background: white;
+    font-size: 11pt;
+    line-height: 1.6;
+    color: #1e293b;
+  }
+
+  .report-page {
+    max-width: 210mm;
+    margin: 0 auto;
+    padding: 0;
+    background: white;
+  }
+
+  .report-page .container {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  /* Cover page */
+  .cover-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 297mm;
+    padding: 40mm 30mm;
+    background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 50%, #7c3aed 100%);
+    color: white;
+    text-align: center;
+    page-break-after: always;
+  }
+  .cover-page h1 {
+    font-size: 32pt;
+    font-weight: 800;
+    margin-bottom: 8pt;
+    letter-spacing: -0.5px;
+  }
+  .cover-page .subtitle {
+    font-size: 16pt;
+    opacity: 0.9;
+    margin-bottom: 24pt;
+  }
+  .cover-page .meta {
+    font-size: 11pt;
+    opacity: 0.75;
+    line-height: 2;
+  }
+  .cover-page .meta span {
+    display: block;
+  }
+  .cover-page .logo-text {
+    font-size: 14pt;
+    opacity: 0.6;
+    margin-top: 40pt;
+  }
+  .cover-score {
+    display: inline-block;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    line-height: 160px;
+    font-size: 48pt;
+    font-weight: 800;
+    margin: 20pt auto;
+  }
+  .cover-score .small {
+    font-size: 18pt;
+    font-weight: 400;
+    opacity: 0.7;
+  }
+
+  /* Section page style */
+  .section-title-report {
+    font-size: 18pt;
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 12pt;
+    padding-bottom: 6pt;
+    border-bottom: 3px solid #2563eb;
+  }
+  .section-title-report .icon { margin-right: 8px; }
+
+  /* Card in report */
+  .report-card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 20pt 24pt;
+    margin-bottom: 16pt;
+    page-break-inside: avoid;
+  }
+  .report-card h3 {
+    font-size: 13pt;
+    font-weight: 700;
+    margin-bottom: 8pt;
+    color: #0f172a;
+  }
+
+  /* Tables */
+  table.report-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 10pt;
+    margin: 12pt 0;
+  }
+  table.report-table th {
+    background: #f1f5f9;
+    font-weight: 600;
+    color: #475569;
+    padding: 8pt 10pt;
+    text-align: left;
+    font-size: 9pt;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #e2e8f0;
+  }
+  table.report-table td {
+    padding: 8pt 10pt;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  table.report-table tr:last-child td { border-bottom: none; }
+
+  /* Score bar print */
+  .print-score-bar {
+    margin: 8pt 0;
+  }
+  .print-score-bar .label-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10pt;
+    margin-bottom: 3pt;
+  }
+  .print-score-bar .bar-bg {
+    height: 18px;
+    background: #f1f5f9;
+    border-radius: 9px;
+    overflow: hidden;
+  }
+  .print-score-bar .bar-fill {
+    height: 100%;
+    border-radius: 9px;
+    transition: none;
+  }
+
+  /* Radar chart print */
+  .print-chart-container {
+    max-width: 320px;
+    margin: 16pt auto;
+    text-align: center;
+  }
+  .print-chart-container canvas {
+    max-width: 100%;
+  }
+
+  /* Recommendation box */
+  .rec-box {
+    border-left: 4px solid #2563eb;
+    padding: 12pt 16pt;
+    margin-bottom: 12pt;
+    background: #f8fafc;
+    border-radius: 0 6px 6px 0;
+    page-break-inside: avoid;
+  }
+  .rec-box.rec-1 { border-left-color: #ef4444; }
+  .rec-box.rec-2 { border-left-color: #f59e0b; }
+  .rec-box.rec-3 { border-left-color: #10b981; }
+  .rec-box .rec-label {
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    color: #2563eb;
+    margin-bottom: 2pt;
+  }
+  .rec-box.rec-1 .rec-label { color: #ef4444; }
+  .rec-box.rec-2 .rec-label { color: #d97706; }
+  .rec-box.rec-3 .rec-label { color: #059669; }
+  .rec-box h4 { font-size: 11pt; margin-bottom: 4pt; }
+  .rec-box p { font-size: 10pt; color: #475569; }
+
+  /* Status badges print */
+  .badge-print {
+    display: inline-block;
+    padding: 1px 8px;
+    border-radius: 10px;
+    font-size: 8pt;
+    font-weight: 600;
+  }
+  .badge-red { background: #fee2e2; color: #dc2626; }
+  .badge-yellow { background: #fef3c7; color: #d97706; }
+  .badge-green { background: #d1fae5; color: #059669; }
+  .badge-blue { background: #dbeafe; color: #2563eb; }
+
+  /* Tool tags */
+  .tool-free-tag { color: #059669; font-weight: 600; }
+  .tool-paid-tag { color: #2563eb; font-weight: 600; }
+  .tool-freemium-tag { color: #d97706; font-weight: 600; }
+
+  /* Savings highlight */
+  .savings-row {
+    display: flex;
+    gap: 16pt;
+    margin: 12pt 0;
+  }
+  .savings-item {
+    flex: 1;
+    text-align: center;
+    padding: 16pt;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background: #f0fdf4;
+  }
+  .savings-item .big-num {
+    font-size: 22pt;
+    font-weight: 800;
+    color: #059669;
+  }
+  .savings-item .s-label {
+    font-size: 9pt;
+    color: #64748b;
+    margin-top: 2px;
+  }
+
+  /* Page footer */
+  .page-footer {
+    text-align: center;
+    font-size: 8pt;
+    color: #94a3b8;
+    padding: 8pt 0 0;
+    border-top: 1px solid #e2e8f0;
+    margin-top: 24pt;
+  }
+
+  /* Page breaks */
+  .page-brake { page-break-before: always; }
+
+  /* Print only */
+  @media print {
+    .no-print { display: none !important; }
+    body { font-size: 10pt; }
+    .cover-page { min-height: 100vh; }
+    .report-card { break-inside: avoid; }
+    .rec-box { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="report-page" id="reportRoot">
+
+<!-- ===== PAGE 1: COVER ===== -->
+<div class="cover-page">
+  <h1>🤖 AI Readiness Assessment</h1>
+  <div class="subtitle">Laporan Personal Kesiapan Adopsi AI untuk UMKM</div>
+
+  <div class="cover-score" id="coverScoreDisplay">-- <span class="small">/100</span></div>
+  <div style="font-size:14pt;font-weight:600;" id="coverCategoryDisplay">-</div>
+
+  <div class="meta">
+    <span><strong>Bisnis:</strong> <span id="metaBisnis">[Nama Bisnis]</span></span>
+    <span><strong>Industri:</strong> <span id="metaIndustri">[Industri]</span></span>
+    <span><strong>Tanggal:</strong> <span id="metaTanggal">-</span></span>
+    <span><strong>ID Laporan:</strong> <span id="metaID">AIRA-</span></span>
+  </div>
+
+  <div class="logo-text">aimarketingstrategic.com</div>
+</div>
+
+<!-- ===== PAGE 2: EXECUTIVE SUMMARY ===== -->
+<div class="page-brake"></div>
+<div style="padding:0 0 24pt 0;">
+  <h2 class="section-title-report"><span class="icon">📋</span> Ringkasan Eksekutif</h2>
+
+  <div class="report-card">
+    <h3>Skor Kesiapan AI</h3>
+    <div style="display:flex;gap:32pt;align-items:center;flex-wrap:wrap;">
+      <div style="text-align:center;">
+        <div style="width:120px;height:120px;border-radius:50%;background:#2563eb;color:white;display:flex;align-items:center;justify-content:center;flex-direction:column;font-size:36pt;font-weight:800;" id="execScoreCircle">
+          -- <span style="font-size:12pt;opacity:0.7;">/100</span>
+        </div>
+        <div style="font-weight:700;font-size:12pt;margin-top:4pt;" id="execCategory">-</div>
+      </div>
+      <div style="flex:1;">
+        <p id="execDesc" style="font-size:10pt;color:#475569;">Berdasarkan penilaian terhadap 5 fungsi bisnis utama, bisnis Anda berada pada tahap awal dalam perjalanan adopsi AI dan digitalisasi.</p>
+        <p style="font-size:10pt;color:#475569;margin-top:8pt;">
+          Laporan ini memberikan analisis mendalam tentang kesiapan digital di setiap fungsi bisnis, dilengkapi dengan rekomendasi langkah prioritas dan tools yang sesuai dengan skala UMKM Indonesia.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="savings-row" id="execSavings">
+    <div class="savings-item">
+      <div class="big-num" id="execHours">-</div>
+      <div class="s-label">Potensi Hemat Waktu / Bulan</div>
+    </div>
+    <div class="savings-item">
+      <div class="big-num" id="execMoney">-</div>
+      <div class="s-label">Estimasi Hemat Biaya / Bulan</div>
+    </div>
+    <div class="savings-item">
+      <div class="big-num" id="execLevel">-</div>
+      <div class="s-label">Level Kesiapan</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PAGE 3: SCORE DETAIL + RADAR ===== -->
+<div class="page-brake"></div>
+<div style="padding:0 0 24pt 0;">
+  <h2 class="section-title-report"><span class="icon">📊</span> Skor Detail per Fungsi Bisnis</h2>
+
+  <div class="report-card">
+    <p style="font-size:10pt;color:#475569;margin-bottom:12pt;">Berikut adalah skor untuk masing-masing dari 5 fungsi bisnis yang dinilai. Skor 0-100 menunjukkan sejauh mana setiap fungsi telah terdigitalisasi dan siap mengadopsi AI.</p>
+
+    <div id="scoreBarsContainer"></div>
+  </div>
+
+  <div class="report-card" style="text-align:center;">
+    <h3>Radar Chart — Visualisasi 5 Fungsi</h3>
+    <div class="print-chart-container">
+      <canvas id="reportRadarChart" width="320" height="320"></canvas>
+    </div>
+    <p style="font-size:9pt;color:#94a3b8;">Semakin luas area chart, semakin siap bisnis Anda mengadopsi AI di seluruh fungsi.</p>
+  </div>
+</div>
+
+<!-- ===== PAGE 4: GAP ANALYSIS ===== -->
+<div class="page-brake"></div>
+<div style="padding:0 0 24pt 0;">
+  <h2 class="section-title-report"><span class="icon">🔍</span> Gap Analysis</h2>
+
+  <div class="report-card">
+    <p style="font-size:10pt;color:#475569;margin-bottom:12pt;">Gap analysis membandingkan skor saat ini dengan target ideal (80/100) untuk setiap fungsi. Semakin besar gap, semakin mendesak kebutuhan perbaikan.</p>
+
+    <table class="report-table" id="gapTable">
+      <tr>
+        <th>Fungsi</th>
+        <th>Skor Saat Ini</th>
+        <th>Target Ideal</th>
+        <th>Gap</th>
+        <th>Tingkat Urgensi</th>
+      </tr>
+    </table>
+  </div>
+
+  <div class="report-card">
+    <h3>Interpretasi Gap</h3>
+    <div id="gapInterpretation">
+      <p style="font-size:10pt;color:#475569;">Berdasarkan analisis kesenjangan, rekomendasi difokuskan pada fungsi dengan gap terbesar karena memberikan dampak tertinggi terhadap kesiapan AI secara keseluruhan.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PAGE 5-6: 3 PRIORITY RECOMMENDATIONS ===== -->
+<div class="page-brake"></div>
+<div style="padding:0 0 24pt 0;">
+  <h2 class="section-title-report"><span class="icon">🎯</span> 3 Langkah Prioritas</h2>
+
+  <div class="report-card">
+    <p style="font-size:10pt;color:#475569;margin-bottom:12pt;">Rekomendasi ini diurutkan berdasarkan skor terendah ke tertinggi. Mulai dari Langkah 1, selesaikan sebelum beralih ke langkah berikutnya.</p>
+    <div id="recommendationsContainer"></div>
+  </div>
+</div>
+
+<!-- ===== PAGE 7: ROADMAP ===== -->
+<div class="page-brake"></div>
+<div style="padding:0 0 24pt 0;">
+  <h2 class="section-title-report"><span class="icon">🗺️</span> Roadmap Implementasi 30 Hari</h2>
+
+  <div class="report-card">
+    <p style="font-size:10pt;color:#475569;margin-bottom:12pt;">Berikut timeline rekomendasi untuk memulai perjalanan digitalisasi dan adopsi AI bisnis Anda.</p>
+
+    <table class="report-table">
+      <tr><th style="width:80pt;">Minggu</th><th>Aksi</th><th>Estimasi Waktu</th><th>Biaya</th></tr>
+      <tr>
+        <td><strong>Minggu 1</strong></td>
+        <td>Implementasi langkah prioritas #1. Fokus pada fungsi dengan skor terendah. Mulai dengan tools gratis.</td>
+        <td>3-5 jam</td>
+        <td>Gratis - Rp150rb</td>
+      </tr>
+      <tr>
+        <td><strong>Minggu 2</strong></td>
+        <td>Implementasi langkah prioritas #2. Rapikan fondasi digital di fungsi kedua. Evaluasi hasil minggu 1.</td>
+        <td>3-5 jam</td>
+        <td>Gratis - Rp200rb</td>
+      </tr>
+      <tr>
+        <td><strong>Minggu 3</strong></td>
+        <td>Implementasi langkah prioritas #3. Integrasikan tools yang sudah berjalan. Buat SOP digital sederhana.</td>
+        <td>2-4 jam</td>
+        <td>Gratis - Rp250rb</td>
+      </tr>
+      <tr>
+        <td><strong>Minggu 4</strong></td>
+        <td>Review & optimasi. Ukur ulang skor awal vs akhir. Identifikasi langkah selanjutnya untuk otomasi lanjutan.</td>
+        <td>2 jam</td>
+        <td>Gratis</td>
+      </tr>
+    </table>
+
+    <p style="font-size:9pt;color:#94a3b8;margin-top:8pt;">
+      <strong>Catatan:</strong> Timeline ini adalah rekomendasi umum. Sesuaikan dengan kapasitas tim dan prioritas bisnis Anda.
+    </p>
+  </div>
+</div>
+
+<!-- ===== PAGE 8: TOOLS RECOMMENDATIONS ===== -->
+<div class="page-brake"></div>
+<div style="padding:0 0 24pt 0;">
+  <h2 class="section-title-report"><span class="icon">🛠️</span> Rekomendasi Tools untuk Bisnis Anda</h2>
+
+  <div class="report-card">
+    <p style="font-size:10pt;color:#475569;margin-bottom:12pt;">Tools berikut dipilih khusus berdasarkan skor fungsi bisnis Anda. Prioritaskan tools yang gratis atau freemium untuk memulai.</p>
+
+    <table class="report-table" id="toolsTable">
+      <tr>
+        <th>Tools</th>
+        <th>Fungsi</th>
+        <th>Deskripsi</th>
+        <th>Tipe</th>
+        <th>Hemat Waktu</th>
+        <th>Biaya</th>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<!-- ===== PAGE 9: SAVINGS + ROI ===== -->
+<div class="page-brake"></div>
+<div style="padding:0 0 24pt 0;">
+  <h2 class="section-title-report"><span class="icon">💰</span> Estimasi Penghematan & ROI</h2>
+
+  <div class="report-card">
+    <p style="font-size:10pt;color:#475569;margin-bottom:12pt;">Berdasarkan skor assessment Anda, berikut estimasi potensi penghematan jika setiap fungsi ditingkatkan ke level 80/100 (target ideal digitalisasi).</p>
+
+    <table class="report-table" id="savingsDetailTable">
+      <tr>
+        <th>Fungsi</th>
+        <th>Skor</th>
+        <th>Gap ke Ideal</th>
+        <th>Hemat Waktu</th>
+        <th>Estimasi Hemat Rp</th>
+      </tr>
+    </table>
+
+    <div style="margin-top:16pt;padding:16pt;background:#f0fdf4;border-radius:8px;text-align:center;">
+      <div style="font-size:10pt;color:#475569;">Total Potensi Penghematan per Bulan</div>
+      <div style="font-size:28pt;font-weight:800;color:#059669;" id="totalSavingsDisplay">Rp0</div>
+      <div style="font-size:10pt;color:#475569;">atau setara <span id="savingsYearly">Rp0</span> per tahun</div>
+    </div>
+
+    <p style="font-size:9pt;color:#94a3b8;margin-top:8pt;">
+      <strong>Asumsi:</strong> Nilai waktu Rp25.000/jam (estimasi upah staf UMKM). Penghematan aktual dapat bervariasi tergantung skala bisnis dan implementasi.
+    </p>
+  </div>
+
+  <div class="report-card">
+    <h3>ROI Calculator — Investasi vs. Penghematan</h3>
+    <table class="report-table">
+      <tr><th>Item</th><th>Estimasi</th></tr>
+      <tr><td>Biaya assessment ini</td><td><strong>Rp99.000</strong></td></tr>
+      <tr><td>Estimasi hemat per bulan (setelah implementasi)</td><td><strong id="roiMonthly">Rp0</strong></td></tr>
+      <tr><td>Estimasi biaya tools per bulan</td><td><strong>Rp150.000 - Rp500.000</strong></td></tr>
+      <tr><td><strong>ROI (bulan ke-)</strong></td><td><strong id="roiMonth">-</strong></td></tr>
+      <tr><td><strong>ROI 1 Tahun</strong></td><td><strong id="roiYear">-</strong></td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ===== PAGE 10: NEXT STEPS ===== -->
+<div class="page-brake"></div>
+<div style="padding:0 0 24pt 0;">
+  <h2 class="section-title-report"><span class="icon">🚀</span> Langkah Selanjutnya</h2>
+
+  <div class="report-card">
+    <h3>1. Mulai dengan Tools Gratis</h3>
+    <p style="font-size:10pt;color:#475569;">Sebagian besar rekomendasi di laporan ini bisa dimulai dengan tools gratis. Tidak perlu investasi besar di awal — buktikan dampaknya, lalu scale up.</p>
+  </div>
+
+  <div class="report-card">
+    <h3>2. Konsultasi 15 Menit</h3>
+    <p style="font-size:10pt;color:#475569;">Setiap pembeli assessment ini berhak mendapatkan sesi konsultasi 15 menit via WA untuk mendiskusikan hasil dan langkah pertama. Hubungi kami untuk menjadwalkan.</p>
+    <p style="margin-top:8pt;"><a href="https://wa.me/6281234567890" style="background:#25D366;color:white;padding:8pt 20pt;border-radius:8px;text-decoration:none;font-weight:600;display:inline-block;">💬 Hubungi via WhatsApp</a></p>
+  </div>
+
+  <div class="report-card">
+    <h3>3. Butuh Bantuan Implementasi?</h3>
+    <p style="font-size:10pt;color:#475569;">Jika Anda ingin implementasi tanpa repot, tim kami siap membantu:</p>
+    <ul style="font-size:10pt;color:#475569;margin-top:8pt;padding-left:16pt;">
+      <li><strong>AUTOPILOT SALES (Rp2.500.000)</strong> — Otomatisasi penuh marketing & CS via WhatsApp. Setup 1 hari.</li>
+      <li><strong>AI Diagnostic (Rp5.000.000)</strong> — Audit mendalam + roadmap implementasi AI untuk seluruh fungsi bisnis.</li>
+    </ul>
+  </div>
+
+  <div class="report-card">
+    <h3>Tentang AIMarketingStrategic</h3>
+    <p style="font-size:10pt;color:#475569;">
+      Kami membantu UMKM Indonesia mengadopsi AI dan otomasi untuk meningkatkan efisiensi operasional dan pertumbuhan bisnis. Dari tools sederhana hingga otomasi penuh — kami dampingi setiap langkah.
+    </p>
+    <p style="font-size:9pt;color:#94a3b8;margin-top:4pt;">aimarketingstrategic.com</p>
+  </div>
+</div>
+
+<!-- Page footer -->
+<div style="text-align:center;font-size:8pt;color:#94a3b8;padding:8pt 0;border-top:1px solid #e2e8f0;margin-top:24pt;">
+  AI Readiness Assessment — AIMarketingStrategic.com — Laporan ini digenerate khusus untuk bisnis Anda.<br>
+  ID Laporan: <span id="footerID">AIRA-</span> — <span id="footerDate">-</span>
+</div>
+
+</div><!-- /report-page -->
+
+<script src="scoring.js"></script>
+<script>
+(function() {
+  // ===== GET DATA FROM URL PARAMS OR SESSION STORAGE =====
+  function getData() {
+    // Try sessionStorage first (set by kuis.html)
+    const stored = sessionStorage.getItem('airaResult');
+    if (stored) {
+      try { return JSON.parse(stored); } catch(e) {}
+    }
+
+    // Try URL params (?score=75&m=60&...)
+    const params = new URLSearchParams(window.location.search);
+    if (params.has('score')) {
+      const overall = parseInt(params.get('score')) || 50;
+      const funcScores = {};
+      const funcMap = { m:'marketing', o:'operations', c:'cs', f:'finance', h:'hr' };
+      Object.entries(funcMap).forEach(([short, full]) => {
+        funcScores[full] = parseInt(params.get(short)) || 50;
+      });
+      return {
+        overall: overall,
+        functions: funcScores,
+        answers: {},
+        category: getCategory(overall),
+        timestamp: new Date().toISOString(),
+      };
+    }
+
+    // Demo data fallback
+    return {
+      overall: 42,
+      functions: { marketing: 55, operations: 30, cs: 65, finance: 25, hr: 35 },
+      answers: {},
+      category: getCategory(42),
+      timestamp: new Date().toISOString(),
+    };
+  }
+
+  const result = getData();
+  const recs = generateRecommendations(result.functions);
+  const savings = calculateSavings(result.functions);
+  const cat = result.category;
+
+  // ===== POPULATE COVER =====
+  document.getElementById('coverScoreDisplay').innerHTML = result.overall + ' <span class="small">/100</span>';
+  document.getElementById('coverCategoryDisplay').textContent = cat.label + ' — ' + cat.category;
+  document.getElementById('metaTanggal').textContent = formatDate(result.timestamp);
+  document.getElementById('metaID').textContent += Date.now().toString(36).toUpperCase();
+  document.getElementById('footerID').textContent = 'AIRA-' + Date.now().toString(36).toUpperCase();
+  document.getElementById('footerDate').textContent = formatDate(result.timestamp);
+
+  // ===== EXECUTIVE SUMMARY =====
+  const execCircle = document.getElementById('execScoreCircle');
+  execCircle.innerHTML = result.overall + ' <span style="font-size:12pt;opacity:0.7;">/100</span>';
+  execCircle.style.background = cat.color;
+  document.getElementById('execCategory').textContent = cat.category;
+  document.getElementById('execCategory').style.color = cat.color;
+  document.getElementById('execDesc').textContent = cat.desc;
+  document.getElementById('execHours').textContent = savings.hours + ' jam';
+  document.getElementById('execMoney').textContent = 'Rp' + savings.money.toLocaleString('id-ID');
+  document.getElementById('execLevel').textContent = cat.label;
+
+  // ===== SCORE BARS =====
+  const barsContainer = document.getElementById('scoreBarsContainer');
+  FUNCTIONS.forEach(f => {
+    const score = result.functions[f.id];
+    const color = getScoreColor(score);
+    let badge = score <= 25 ? 'badge-red' : score <= 50 ? 'badge-yellow' : score <= 75 ? 'badge-green' : 'badge-blue';
+    let status = score <= 25 ? 'Kritis' : score <= 50 ? 'Perlu Perbaikan' : score <= 75 ? 'Cukup Baik' : 'Sangat Baik';
+
+    barsContainer.innerHTML +=
+      `<div class="print-score-bar">
+        <div class="label-row">
+          <span>${f.icon} ${f.label}</span>
+          <span><span class="badge-print ${badge}">${status}</span> ${score}/100</span>
+        </div>
+        <div class="bar-bg">
+          <div class="bar-fill" style="width:${score}%;background:${color};"></div>
+        </div>
+      </div>`;
+  });
+
+  // ===== RADAR CHART =====
+  drawPrintRadar(result.functions);
+
+  // ===== GAP TABLE =====
+  const gapTbody = document.getElementById('gapTable');
+  FUNCTIONS.forEach(f => {
+    const score = result.functions[f.id];
+    const gap = 100 - score;
+    let urgency = gap >= 60 ? '🔴 Tinggi' : gap >= 30 ? '🟡 Sedang' : '🟢 Rendah';
+    // Use actual <tr> via insertRow
+    const row = gapTbody.insertRow();
+    row.insertCell().innerHTML = f.icon + ' ' + f.label;
+    row.insertCell().innerHTML = '<strong>' + score + '/100</strong>';
+    row.insertCell().innerHTML = '80/100';
+    row.insertCell().innerHTML = gap + ' poin';
+    row.insertCell().innerHTML = urgency;
+  });
+
+  // ===== RECOMMENDATIONS =====
+  const recContainer = document.getElementById('recommendationsContainer');
+  recs.forEach(r => {
+    recContainer.innerHTML +=
+      `<div class="rec-box rec-${r.priority}">
+        <div class="rec-label">${r.icon} LANGKAH ${r.priority === 1 ? 'PERTAMA (PRIORITAS)' : r.priority === 2 ? 'KEDUA' : 'KETIGA'}</div>
+        <h4>${r.title}</h4>
+        <p>${r.detail}</p>
+      </div>`;
+  });
+
+  // ===== TOOLS TABLE =====
+  const toolsTbody = document.getElementById('toolsTable');
+  const sortedFuncs = [...Object.entries(result.functions)].sort((a, b) => a[1] - b[1]);
+
+  // Get tools for lowest 3 functions (2 each) + 1 each for rest
+  const toolsToShow = [];
+  sortedFuncs.slice(0, 3).forEach(([funcId]) => {
+    const ft = RECOMMENDED_TOOLS.filter(t => t.func === funcId).slice(0, 2);
+    toolsToShow.push(...ft);
+  });
+  sortedFuncs.slice(3).forEach(([funcId]) => {
+    const ft = RECOMMENDED_TOOLS.find(t => t.func === funcId);
+    if (ft) toolsToShow.push(ft);
+  });
+
+  toolsToShow.forEach(t => {
+    const func = FUNCTIONS.find(f => f.id === t.func);
+    const typeClass = t.type === 'free' ? 'tool-free-tag' : t.type === 'paid' ? 'tool-paid-tag' : 'tool-freemium-tag';
+    const typeLabel = t.type === 'free' ? '🆓 Gratis' : t.type === 'paid' ? '🔵 Berbayar' : '🟡 Freemium';
+    const row = toolsTbody.insertRow();
+    row.insertCell().innerHTML = '<strong>' + t.name + '</strong>';
+    row.insertCell().innerHTML = (func ? func.icon + ' ' : '') + (func ? func.label : '');
+    row.insertCell().innerHTML = t.desc;
+    row.insertCell().innerHTML = '<span class="' + typeClass + '">' + typeLabel + '</span>';
+    row.insertCell().innerHTML = t.savings;
+    row.insertCell().innerHTML = t.cost;
+  });
+
+  // ===== SAVINGS DETAIL =====
+  const savingsTbody = document.getElementById('savingsDetailTable');
+  let totalHematRp = 0;
+  FUNCTIONS.forEach(f => {
+    const score = result.functions[f.id];
+    const gap = 80 - score; // gap to ideal
+    const hours = Math.round((100 - score) / 100 * 40);
+    const money = Math.round(hours * 25000);
+    totalHematRp += money;
+    const row = savingsTbody.insertRow();
+    row.insertCell().innerHTML = f.icon + ' ' + f.label;
+    row.insertCell().innerHTML = '' + score + '/100';
+    row.insertCell().innerHTML = (80 - score) + ' poin';
+    row.insertCell().innerHTML = '~' + hours + ' jam/bln';
+    row.insertCell().innerHTML = '<strong>Rp' + money.toLocaleString('id-ID') + '</strong>';
+  });
+
+  document.getElementById('totalSavingsDisplay').textContent = 'Rp' + totalHematRp.toLocaleString('id-ID') + '/bulan';
+  document.getElementById('savingsYearly').textContent = 'Rp' + (totalHematRp * 12).toLocaleString('id-ID');
+
+  // ===== ROI =====
+  document.getElementById('roiMonthly').textContent = 'Rp' + totalHematRp.toLocaleString('id-ID');
+  const netSaving = totalHematRp - 250000; // after tool costs
+  const roiMonth = netSaving > 0 ? Math.ceil(99000 / netSaving) : '-';
+  document.getElementById('roiMonth').textContent = roiMonth !== '-' ? 'Bulan ke-' + roiMonth : '-';
+  const roiYearNet = (netSaving * 12) - 99000;
+  document.getElementById('roiYear').textContent = roiYearNet > 0 ? 'Rp' + roiYearNet.toLocaleString('id-ID') : '-';
+
+  // ===== RADAR CHART DRAW =====
+  function drawPrintRadar(scores) {
+    const canvas = document.getElementById('reportRadarChart');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const W = canvas.width, H = canvas.height;
+    const cx = W / 2, cy = H / 2;
+    const R = Math.min(W, H) / 2 - 30;
+    const total = FUNCTIONS.length;
+    const angleStep = (Math.PI * 2) / total;
+
+    ctx.clearRect(0, 0, W, H);
+
+    // Grid
+    for (let l = 1; l <= 5; l++) {
+      const r = (R / 5) * l;
+      ctx.beginPath();
+      ctx.arc(cx, cy, r, 0, Math.PI * 2);
+      ctx.strokeStyle = 'rgba(0,0,0,0.08)';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+    }
+
+    // Axis + labels
+    FUNCTIONS.forEach((f, i) => {
+      const angle = -Math.PI / 2 + i * angleStep;
+      const x = cx + R * Math.cos(angle);
+      const y = cy + R * Math.sin(angle);
+      ctx.beginPath();
+      ctx.moveTo(cx, cy);
+      ctx.lineTo(x, y);
+      ctx.strokeStyle = 'rgba(0,0,0,0.1)';
+      ctx.stroke();
+
+      const lx = cx + (R + 22) * Math.cos(angle);
+      const ly = cy + (R + 22) * Math.sin(angle);
+      ctx.font = '10px Segoe UI, sans-serif';
+      ctx.fillStyle = '#475569';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(f.icon, lx, ly - 8);
+      ctx.font = '8px Segoe UI, sans-serif';
+      ctx.fillText(f.label.substring(0, 8), lx, ly + 6);
+    });
+
+    // Data
+    ctx.beginPath();
+    FUNCTIONS.forEach((f, i) => {
+      const score = scores[f.id] / 100;
+      const angle = -Math.PI / 2 + i * angleStep;
+      const r = R * score;
+      const x = cx + r * Math.cos(angle);
+      const y = cy + r * Math.sin(angle);
+      if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+    });
+    ctx.closePath();
+    ctx.fillStyle = 'rgba(37, 99, 235, 0.12)';
+    ctx.fill();
+    ctx.strokeStyle = '#2563eb';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    // Points
+    FUNCTIONS.forEach((f, i) => {
+      const score = scores[f.id] / 100;
+      const angle = -Math.PI / 2 + i * angleStep;
+      const r = R * score;
+      const x = cx + r * Math.cos(angle);
+      const y = cy + r * Math.sin(angle);
+      ctx.beginPath();
+      ctx.arc(x, y, 3, 0, Math.PI * 2);
+      ctx.fillStyle = '#2563eb';
+      ctx.fill();
+    });
+  }
+})();
+</script>
+</body>
+</html>
