@@ -132,6 +132,9 @@
 <script>
 let leadData = {};
 
+let GSHEET_WEBHOOK = ''; // Isi URL dari Google Apps Script nanti
+// contoh: GSHEET_WEBHOOK = 'https://script.google.com/macros/s/xxx/exec';
+
 function goStep2() {
   var name = document.getElementById('leadName').value.trim();
   var phone = document.getElementById('leadPhone').value.trim().replace(/[^0-9]/g,'');
@@ -148,7 +151,20 @@ function goStep2() {
 
   leadData = { name:name, phone:phone, biz:biz || '-' };
 
-  // Kirim lead ke WhatsApp admin (notifikasi internal)
+  // Kirim lead ke Google Sheets (webhook)
+  if (GSHEET_WEBHOOK) {
+    var gsPayload = JSON.stringify({
+      name: name,
+      phone: phone,
+      biz: biz || '-',
+      result: 0,
+      source: 'kalkulator-website'
+    });
+    var gxhr = new XMLHttpRequest();
+    try { gxhr.open('POST', GSHEET_WEBHOOK, true); gxhr.setRequestHeader('Content-Type','application/json'); gxhr.send(gsPayload); } catch(e){}
+  }
+
+  // Kirim lead ke WA admin (notifikasi)
   var adminMsg = '🔔 *Lead Baru - Kalkulator*\nNama: ' + name + '\nWA: ' + phone + '\nBisnis: ' + (biz||'-');
   var xhr = new XMLHttpRequest();
   try { xhr.open('GET', 'https://wa.aimarketingstrategic.com/send?phone=6281907552758&text=' + encodeURIComponent(adminMsg), true); xhr.send(); } catch(e){}
@@ -189,6 +205,19 @@ function hitung() {
     '%20-%20hasil%20kalkulator%3A%20Rp' + totalHilang.toLocaleString('id-ID').replace(/\./g,'%2C') + 
     '%2Fbln.%20Minta%20PDF%20strategi%20follow-up%20gratisnya%20dong';
   document.getElementById('ctaLink').href = 'https://wa.me/6281907552758?text=' + msg;
+
+  // Kirim hasil ke Google Sheets (update hasil)
+  if (GSHEET_WEBHOOK) {
+    var gsPayload2 = JSON.stringify({
+      name: leadData.name,
+      phone: leadData.phone,
+      biz: leadData.biz,
+      result: totalHilang,
+      source: 'kalkulator-website-hasil'
+    });
+    var gxhr2 = new XMLHttpRequest();
+    try { gxhr2.open('POST', GSHEET_WEBHOOK, true); gxhr2.setRequestHeader('Content-Type','application/json'); gxhr2.send(gsPayload2); } catch(e){}
+  }
 
   // Kirim hasil ke admin
   var resultMsg = '📊 *Hasil Kalkulator*\nNama: ' + leadData.name + '\nWA: ' + leadData.phone + '\nBisnis: ' + leadData.biz + '\n🔴 Hilang: Rp' + totalHilang.toLocaleString('id-ID') + '/bln';
