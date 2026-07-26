@@ -181,20 +181,8 @@ img{max-width:100%;display:block}
 .stagger-4{animation:fadeUp 0.6s 0.4s both}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important}}
 
-/* ═══ NAVBAR ═══ */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border-light)}
-.nav-inner{max-width:var(--max-w);margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between}
-.nav-logo{font-weight:700;font-size:16px;letter-spacing:-0.03em;color:var(--text-primary)}
-.nav-logo span{color:var(--accent)}
-.nav-links{display:none;gap:32px}
-.nav-links a{font-size:13px;font-weight:500;color:var(--text-secondary);transition:color 0.2s;letter-spacing:-0.01em}
-.nav-links a:hover{color:var(--text-primary)}
-.nav-cta{display:none}
-.hamburger{width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-sm);color:var(--text-primary);border:1px solid var(--border)}
-.hamburger svg{display:block}
-
-/* ═══ HERO ═══ */
-#hero{min-height:80vh;display:flex;align-items:center;padding:120px 0 80px;background:linear-gradient(180deg,var(--bg-white) 0%,var(--bg-warm) 100%);position:relative;overflow:hidden}
+/* ═══ ANIMATIONS ═══ */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 #hero::before{content:'';position:absolute;top:-40%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(245,124,0,0.06) 0%,transparent 70%);pointer-events:none}
 .hero-content{max-width:var(--max-w);margin:0 auto;padding:0 24px;position:relative;z-index:2}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;background:var(--accent-subtle);border:1px solid rgba(245,124,0,0.15);border-radius:100px;margin-bottom:28px}
@@ -368,9 +356,6 @@ footer{background:var(--bg-warm);border-top:1px solid var(--border-light);paddin
 
 /* ═══ RESPONSIVE ═══ */
 @media(min-width:768px){
-  .nav-links{display:flex}
-  .nav-cta{display:inline-flex}
-  .hamburger{display:none}
 }
 @media(max-width:767px){
   .hero-grid{grid-template-columns:1fr;gap:40px}
