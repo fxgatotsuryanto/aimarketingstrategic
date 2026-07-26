@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kalkulator Leads Hilang — Berapa Rupiah dari WA yang Tidak Terbalas? | AIMarketingStrategic</title>
+<meta name="description" content="Hitung gratis berapa rupiah bisnis Anda hilang setiap bulan karena chat WA lambat dibalas. Dapatkan solusi follow-up otomatis dari AIMarketingStrategic.">
+<meta property="og:title" content="Kalkulator Leads Hilang — AIMarketingStrategic">
+<meta property="og:description" content="Isi 4 angka, tahu berapa juta yang bocor dari WA bisnis Anda. Gratis.">
+<meta property="og:image" content="https://aimarketingstrategic.com/images/og-card.png">
+<link rel="canonical" href="https://aimarketingstrategic.com/tools/kalkulator-leads-hilang/">
+<style>
+  :root { --navy:#0d1b2e; --orange:#f57c00; --teal:#00bcd4; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:'Segoe UI',Arial,sans-serif; background:var(--navy); color:#fff; min-height:100vh; }
+  .hero { background:linear-gradient(135deg,#0d1b2e 0%,#1a3355 100%); padding:32px 16px 24px; text-align:center; border-bottom:1px solid rgba(255,255,255,.06); }
+  .hero h1 { font-size:26px; max-width:500px; margin:0 auto; }
+  .hero h1 span { color:var(--orange); }
+  .hero p { color:#9fb2c8; font-size:14px; margin-top:8px; max-width:400px; margin:8px auto 0; }
+  .card { max-width:460px; margin:24px auto; background:#122642; border-radius:16px; padding:28px 24px; box-shadow:0 8px 40px rgba(0,0,0,.4); }
+  .step { display:none; }
+  .step.active { display:block; }
+  h2 { font-size:17px; margin-bottom:6px; }
+  h2 span { color:var(--orange); }
+  .step-desc { color:#9fb2c8; font-size:13px; margin-bottom:18px; }
+  label { display:block; font-size:13px; color:#cfd8e3; margin:14px 0 4px; font-weight:600; }
+  input { width:100%; padding:12px 14px; border-radius:10px; border:1px solid #2c4568; background:#0d1b2e; color:#fff; font-size:16px; transition:border-color .2s; }
+  input:focus { outline:none; border-color:var(--orange); box-shadow:0 0 0 2px rgba(245,124,0,.2); }
+  .btn { width:100%; padding:14px; border:none; border-radius:10px; font-size:15px; font-weight:700; cursor:pointer; transition:all .15s; margin-top:18px; }
+  .btn:active { transform:scale(.98); }
+  .btn-primary { background:var(--orange); color:#fff; }
+  .btn-primary:hover { background:#e67100; }
+  .btn-secondary { background:#2c4568; color:#fff; }
+  .btn-secondary:hover { background:#3a5a85; }
+  .result-box { background:var(--orange); border-radius:12px; padding:20px; text-align:center; margin-top:20px; }
+  .result-box .big { font-size:32px; font-weight:800; margin:6px 0; letter-spacing:-1px; }
+  .result-box .label { font-size:12px; opacity:.85; }
+  .detail-box { background:#0d1b2e; border-radius:10px; padding:14px; margin-top:14px; font-size:13px; color:#cfd8e3; line-height:1.6; }
+  .detail-box strong { color:#fff; }
+  .cta-box { text-align:center; margin-top:18px; padding:16px; background:rgba(0,188,212,.08); border-radius:10px; border:1px solid rgba(0,188,212,.2); }
+  .cta-box p { color:#9fb2c8; font-size:13px; margin-bottom:10px; }
+  .cta-box .btn-cta { display:inline-block; padding:10px 24px; background:var(--teal); color:#fff; border-radius:8px; text-decoration:none; font-weight:700; font-size:14px; }
+  .footer-bar { text-align:center; padding:20px; color:#4a6a8a; font-size:12px; }
+  .error { color:#ff6b6b; font-size:12px; margin-top:4px; display:none; }
+  .capture-input { margin-bottom:4px; }
+  .tagline { font-size:11px; color:#4a6a8a; margin-top:4px; }
+  @media(max-width:480px){ .card { margin:16px 12px; padding:20px 16px; } .hero h1 { font-size:22px; } }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>💰 Kalkulator <span>Leads Hilang</span></h1>
+  <p>Isi 4 angka • 30 detik • Tahu persis berapa juta yang bocor dari WA bisnis kamu</p>
+</div>
+
+<div class="card">
+
+  <!-- STEP 1: CAPTURE LEAD -->
+  <div class="step active" id="step1">
+    <h2>📋 Sebelum mulai — <span>isi data dulu ya</span></h2>
+    <div class="step-desc">Hasil kalkulasi akan dikirim gratis ke WA kamu + bonus PDF strategi follow-up.</div>
+
+    <label for="leadName">Nama *</label>
+    <input type="text" id="leadName" class="capture-input" placeholder="contoh: Budi Santoso" autocomplete="name">
+    <div class="error" id="errName">Nama harus diisi</div>
+
+    <label for="leadPhone">No. WhatsApp *</label>
+    <input type="tel" id="leadPhone" class="capture-input" placeholder="contoh: 08123456789" autocomplete="tel">
+    <div class="error" id="errPhone">Nomor WA harus diisi (min 10 digit)</div>
+    <div class="tagline">🔒 Data aman, tidak spam. Hanya untuk kirim hasil + 1 follow-up.</div>
+
+    <label for="leadBiz">Nama Bisnis (opsional)</label>
+    <input type="text" id="leadBiz" placeholder="contoh: Warung Makmur" autocomplete="organization">
+
+    <button class="btn btn-primary" onclick="goStep2()">Lanjut → Hitung Sekarang</button>
+  </div>
+
+  <!-- STEP 2: CALCULATOR -->
+  <div class="step" id="step2">
+    <h2>📊 Masukkan <span>angka bisnis kamu</span></h2>
+    <div class="step-desc">Jujur aja, hasilnya cuma kamu yang lihat.</div>
+
+    <label>1. Rata-rata chat WA masuk per hari</label>
+    <input type="number" id="c" placeholder="contoh: 20" min="0">
+    <div class="error" id="errC">Harus diisi</div>
+
+    <label>2. Berapa % yang tidak terbalas / lewat 1 jam?</label>
+    <input type="number" id="l" placeholder="contoh: 35" min="0" max="100">
+    <div class="error" id="errL">Harus diisi (0-100)</div>
+
+    <label>3. Berapa % penanya yang biasanya jadi beli/booking?</label>
+    <input type="number" id="k" placeholder="contoh: 25" min="0" max="100">
+    <div class="error" id="errK">Harus diisi (0-100)</div>
+
+    <label>4. Nilai transaksi rata-rata (Rp)</label>
+    <input type="number" id="t" placeholder="contoh: 350000" min="0">
+    <div class="error" id="errT">Harus diisi</div>
+
+    <button class="btn btn-primary" onclick="hitung()">🔍 Hitung Kebocoran Saya</button>
+  </div>
+
+  <!-- STEP 3: RESULT -->
+  <div class="step" id="step3">
+    <h2>📈 <span>Hasil Estimasi</span></h2>
+    <div class="result-box">
+      <div class="label">Perkiraan rupiah hilang per bulan:</div>
+      <div class="big" id="rp">Rp0</div>
+      <div class="label" id="chats"></div>
+    </div>
+    <div class="detail-box" id="detail">
+      <p><strong>📱 Chat masuk/hari:</strong> <span id="d1"></span></p>
+      <p><strong>⏰ % tidak terbalas tepat:</strong> <span id="d2"></span>%</p>
+      <p><strong>💵 Nilai per leads:</strong> Rp<span id="d3"></span></p>
+      <p><strong>📉 Leads hilang/bulan:</strong> <span id="d4"></span> orang</p>
+      <p style="margin-top:8px;color:var(--orange);font-weight:700;">⬆️ Bayangkan kalau Anda bisa挽回 50% dari angka ini</p>
+    </div>
+
+    <div class="cta-box" id="ctaBox">
+      <p>📘 <strong>Mau PDF strategi follow-up WA gratis?</strong><br>
+      Sudah termasuk 5 template WA yang langsung copy-paste.</p>
+      <a class="btn-cta" href="https://wa.me/6281907552758?text=Halo%20AMS%2C%20saya%20baru%20cek%20kalkulator%20leads%20hilang%20-%20hasilnya%20Rp0%20per%20bulan.%20Minta%20PDF%20strategi%20follow-up%20gratisnya%20dong" target="_blank" id="ctaLink">📩 Minta PDF Gratis via WA</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer-bar">
+  © 2026 AIMarketingStrategic.com — AI Revenue Activation untuk UMKM Indonesia
+</div>
+
+<script>
+let leadData = {};
+
+function goStep2() {
+  var name = document.getElementById('leadName').value.trim();
+  var phone = document.getElementById('leadPhone').value.trim().replace(/[^0-9]/g,'');
+  var biz = document.getElementById('leadBiz').value.trim();
+  var valid = true;
+
+  if (!name) { document.getElementById('errName').style.display='block'; valid=false; } 
+  else { document.getElementById('errName').style.display='none'; }
+
+  if (!phone || phone.length<9) { document.getElementById('errPhone').style.display='block'; valid=false; }
+  else { document.getElementById('errPhone').style.display='none'; }
+
+  if (!valid) return;
+
+  leadData = { name:name, phone:phone, biz:biz || '-' };
+
+  // Kirim lead ke WhatsApp admin (notifikasi internal)
+  var adminMsg = '🔔 *Lead Baru - Kalkulator*\nNama: ' + name + '\nWA: ' + phone + '\nBisnis: ' + (biz||'-');
+  var xhr = new XMLHttpRequest();
+  try { xhr.open('GET', 'https://wa.aimarketingstrategic.com/send?phone=6281907552758&text=' + encodeURIComponent(adminMsg), true); xhr.send(); } catch(e){}
+
+  document.getElementById('step1').classList.remove('active');
+  document.getElementById('step2').classList.add('active');
+}
+
+function hitung() {
+  var c = parseFloat(document.getElementById('c').value);
+  var l = parseFloat(document.getElementById('l').value);
+  var k = parseFloat(document.getElementById('k').value);
+  var t = parseFloat(document.getElementById('t').value);
+  var valid = true;
+
+  if (!c || c<1) { document.getElementById('errC').style.display='block'; valid=false; } else { document.getElementById('errC').style.display='none'; }
+  if (!l || l<0 || l>100) { document.getElementById('errL').style.display='block'; valid=false; } else { document.getElementById('errL').style.display='none'; }
+  if (!k || k<0 || k>100) { document.getElementById('errK').style.display='block'; valid=false; } else { document.getElementById('errK').style.display='none'; }
+  if (!t || t<1000) { document.getElementById('errT').style.display='block'; valid=false; } else { document.getElementById('errT').style.display='none'; }
+  if (!valid) return;
+
+  var leadsHilangPerBulan = Math.round(c * (l/100) * 30);
+  var nilaiPerLeads = Math.round(t * (k/100));
+  var totalHilang = leadsHilangPerBulan * nilaiPerLeads;
+  var pulih50 = Math.round(totalHilang * 0.5);
+  var perTahun = totalHilang * 12;
+
+  document.getElementById('rp').textContent = 'Rp' + totalHilang.toLocaleString('id-ID');
+  document.getElementById('chats').textContent = leadsHilangPerBulan + ' leads hilang × Rp' + nilaiPerLeads.toLocaleString('id-ID') + ' = Rp' + totalHilang.toLocaleString('id-ID') + '/bln';
+  document.getElementById('d1').textContent = c;
+  document.getElementById('d2').textContent = l;
+  document.getElementById('d3').textContent = nilaiPerLeads.toLocaleString('id-ID');
+  document.getElementById('d4').textContent = leadsHilangPerBulan;
+
+  // Update CTA link with lead name + result
+  var msg = 'Halo%20AMS%2C%20saya%20' + encodeURIComponent(leadData.name) + 
+    '%20dari%20' + encodeURIComponent(leadData.biz) + 
+    '%20-%20hasil%20kalkulator%3A%20Rp' + totalHilang.toLocaleString('id-ID').replace(/\./g,'%2C') + 
+    '%2Fbln.%20Minta%20PDF%20strategi%20follow-up%20gratisnya%20dong';
+  document.getElementById('ctaLink').href = 'https://wa.me/6281907552758?text=' + msg;
+
+  // Kirim hasil ke admin
+  var resultMsg = '📊 *Hasil Kalkulator*\nNama: ' + leadData.name + '\nWA: ' + leadData.phone + '\nBisnis: ' + leadData.biz + '\n🔴 Hilang: Rp' + totalHilang.toLocaleString('id-ID') + '/bln';
+  var xhr2 = new XMLHttpRequest();
+  try { xhr2.open('GET', 'https://wa.aimarketingstrategic.com/send?phone=6281907552758&text=' + encodeURIComponent(resultMsg), true); xhr2.send(); } catch(e){}
+
+  document.getElementById('step2').classList.remove('active');
+  document.getElementById('step3').classList.add('active');
+}
+</script>
+</body>
+</html>
