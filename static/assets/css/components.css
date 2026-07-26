@@ -18,13 +18,8 @@
   font-family: var(--font);
 }
 
-.btn-primary {
-  background: var(--text-primary);
-  color: var(--text-inverse);
-  box-shadow: var(--shadow-sm);
-}
-
-.btn-primary:hover { background: #2a2a2a; }
+/* btn-primary – base / fallback */
+/* Inherits full styling from /css/style.css – no overrides needed here */
 
 .btn-accent {
   background: var(--accent);
