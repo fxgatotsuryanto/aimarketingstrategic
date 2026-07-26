@@ -20,18 +20,17 @@
           overlay.onclick = function(e) { if (e.target === this) closeChat(); };
 
           var modal = document.createElement('div');
-          modal.style.cssText = 'background:#fff;border-radius:20px;width:95%;max-width:480px;max-height:90vh;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.35);animation:chatFadeIn .3s ease-out;display:flex;flex-direction:column';
+                    modal.style.cssText = 'background:#fff;border-radius:20px;width:95%;max-width:480px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.35);animation:chatFadeIn .3s ease-out';
 
-          var header = document.createElement('div');
-          header.style.cssText = 'display:flex;align-items:center;justify-content:space-between;padding:14px 20px;background:#0B2A4A;color:#fff;flex-shrink:0';
-          header.innerHTML = '<span style="font-family:Orbitron,sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase">AI Assessment Gratis</span><button id="chat-close-btn" style="width:30px;height:30px;border-radius:50%;border:none;background:rgba(255,255,255,.1);color:#fff;font-size:14px;cursor:pointer">✕</button>';
+                    var header = document.createElement('div');
+                    header.style.cssText = 'display:flex;align-items:center;justify-content:space-between;padding:14px 20px;background:#0B2A4A;color:#fff';
+                    header.innerHTML = '<span style="font-family:Orbitron,sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase">AI Assessment Gratis</span><button id="chat-close-btn" style="width:30px;height:30px;border-radius:50%;border:none;background:rgba(255,255,255,.1);color:#fff;font-size:14px;cursor:pointer">X</button>';
                     header.querySelector('#chat-close-btn').onclick = closeChat;
 
-          var iframe = document.createElement('iframe');
-          iframe.className = 'modal-iframe';
-          iframe.src = 'https://ai.newton.co.id/webhook/f263072c-d9fd-47e0-82e5-a85af72df984/chat';
-          iframe.allow = 'microphone';
-          iframe.style.cssText = 'width:100%;height:75vh;min-height:500px;border:none;display:block;flex:1';
+                    var iframe = document.createElement('iframe');
+                    iframe.src = 'https://ai.newton.co.id/webhook/f263072c-d9fd-47e0-82e5-a85af72df984/chat';
+                    iframe.allow = 'microphone';
+                    iframe.style.cssText = 'width:100%;height:660px;border:none;display:block';
 
           modal.appendChild(header);
           modal.appendChild(iframe);
