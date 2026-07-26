@@ -7,54 +7,54 @@
 (function () {
   'use strict';
 
-  /* ─── Global CTA Helpers ─── */
-  function trackLead() {
-    if (typeof gtag === 'function') gtag('event', 'lead', { method: 'whatsapp' });
-  }
-  function openChat() {
-    var overlay = document.getElementById('chat-overlay');
-    if (!overlay) {
-      overlay = document.createElement('div');
-      overlay.id = 'chat-overlay';
-      overlay.style.cssText = 'display:none;position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.6);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:16px';
-      overlay.onclick = function(e) { if (e.target === this) closeChat(); };
-
-      var modal = document.createElement('div');
-      modal.style.cssText = 'background:#fff;border-radius:0;width:92%;max-width:440px;max-height:90vh;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.35)';
-
-      var header = document.createElement('div');
-      header.style.cssText = 'display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:#0B2A4A;color:#fff';
-      header.innerHTML = '<span style="font-family:Orbitron,sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase">AI Assessment Gratis</span><button id="chat-close-btn" style="width:28px;height:28px;border-radius:4px;border:none;background:rgba(255,255,255,.1);color:#fff;font-size:14px;cursor:pointer;line-height:1">X</button>';
-      header.querySelector('#chat-close-btn').onclick = closeChat;
-
-      var iframe = document.createElement('iframe');
-      iframe.src = 'https://ai.newton.co.id/webhook/f263072c-d9fd-47e0-82e5-a85af72df984/chat';
-      iframe.allow = 'microphone';
-      iframe.style.cssText = 'width:100%;height:600px;border:none;display:block';
-
-      modal.appendChild(header);
-      modal.appendChild(iframe);
-      overlay.appendChild(modal);
-      document.body.appendChild(overlay);
-
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') closeChat();
-      });
-
-      var style = document.createElement('style');
-      style.textContent = '@keyframes chatFadeIn{from{opacity:0;transform:translateY(20px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}';
-      document.head.appendChild(style);
+    /* ─── Global CTA Helpers ─── */
+    function trackLead() {
+      if (typeof gtag === 'function') gtag('event', 'lead', { method: 'whatsapp' });
     }
-    overlay.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-  }
-  function closeChat() {
-    var overlay = document.getElementById('chat-overlay');
-    if (overlay) {
-      overlay.style.display = 'none';
-      document.body.style.overflow = '';
+    function openChat() {
+      var overlay = document.getElementById('chat-overlay');
+      if (!overlay) {
+        overlay = document.createElement('div');
+        overlay.id = 'chat-overlay';
+        overlay.style.cssText = 'display:none;position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.6);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:16px';
+        overlay.onclick = function(e) { if (e.target === this) closeChat(); };
+
+        var modal = document.createElement('div');
+        modal.style.cssText = 'background:#fff;border-radius:0;width:92%;max-width:440px;max-height:90vh;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.35);height:100%;min-height:500px';
+
+        var header = document.createElement('div');
+        header.style.cssText = 'display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:#0B2A4A;color:#fff';
+        header.innerHTML = '<span style="font-family:Orbitron,sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase">AI Assessment Gratis</span><button id="chat-close-btn" style="width:28px;height:28px;border-radius:4px;border:none;background:rgba(255,255,255,.1);color:#fff;font-size:14px;cursor:pointer;line-height:1">X</button>';
+        header.querySelector('#chat-close-btn').onclick = closeChat;
+
+        var iframe = document.createElement('iframe');
+        iframe.src = 'https://ai.newton.co.id/webhook/f263072c-d9fd-47e0-82e5-a85af72df984/chat';
+        iframe.allow = 'microphone';
+        iframe.style.cssText = 'width:100%;height:calc(100% - 44px);border:none;display:block';
+
+        modal.appendChild(header);
+        modal.appendChild(iframe);
+        overlay.appendChild(modal);
+        document.body.appendChild(overlay);
+
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape') closeChat();
+        });
+
+        var style = document.createElement('style');
+        style.textContent = '@keyframes chatFadeIn{from{opacity:0;transform:translateY(20px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}';
+        document.head.appendChild(style);
+      }
+      overlay.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
     }
-  }
+    function closeChat() {
+      var overlay = document.getElementById('chat-overlay');
+      if (overlay) {
+        overlay.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    }
 
   /* =============================================
      NAVIGATION — Data & Builders (React-style dark)
@@ -85,11 +85,11 @@
     inner.className = 'header-inner';
 
     // Logo — image only
-    var logo = document.createElement('a');
-    logo.className = 'header-logo';
-    logo.href = '/';
-    logo.innerHTML =
-      '<img src="https://aimarketingstrategic.com/images/logo%20aims.png" alt="AI Marketing Strategic" height="36">';
+        var logo = document.createElement('a');
+        logo.className = 'header-logo';
+        logo.href = '/';
+        logo.innerHTML =
+          '<img src="https://aimarketingstrategic.com/images/logo%20aims.png" alt="AI Marketing Strategic" height="36">';
     inner.appendChild(logo);
 
     // Desktop nav links
@@ -153,35 +153,39 @@
     // CTA in mobile menu
     var cta = document.createElement('button');
     cta.className = 'menu-cta-btn';
-    cta.textContent = 'AI Assessment Gratis';
     cta.onclick = function () { trackLead(); openChat(); closeMenu(); };
+    cta.textContent = 'AI Assessment Gratis';
     menu.appendChild(cta);
 
     overlay.appendChild(menu);
     return overlay;
   }
 
+  /** Toggle mobile menu */
   function toggleMenu() {
-    var overlay = document.getElementById('mobile-overlay');
     var menu = document.getElementById('mobile-menu');
-    if (overlay && menu) {
-      overlay.classList.toggle('active');
-      menu.classList.toggle('active');
-      document.body.style.overflow = overlay.classList.contains('active') ? 'hidden' : '';
+    var ov = document.getElementById('mobile-overlay');
+    if (!menu) {
+      var built = buildMobileMenu();
+      document.body.appendChild(built);
+      ov = document.getElementById('mobile-overlay');
+      menu = document.getElementById('mobile-menu');
     }
+    var open = !menu.classList.contains('active');
+    menu.classList.toggle('active', open);
+    ov.style.display = open ? 'flex' : 'none';
+    document.body.style.overflow = open ? 'hidden' : '';
   }
 
   function closeMenu() {
-    var overlay = document.getElementById('mobile-overlay');
     var menu = document.getElementById('mobile-menu');
-    if (overlay && menu) {
-      overlay.classList.remove('active');
-      menu.classList.remove('active');
-      document.body.style.overflow = '';
-    }
+    var ov = document.getElementById('mobile-overlay');
+    if (menu) menu.classList.remove('active');
+    if (ov) ov.style.display = 'none';
+    document.body.style.overflow = '';
   }
 
-  /** Build the footer — Dark navy */
+  /** Build footer — Dark navy, matches header */
   function buildFooter() {
     var footer = document.createElement('footer');
     footer.className = 'site-footer';
@@ -193,86 +197,84 @@
     var brand = document.createElement('div');
     brand.className = 'footer-brand';
     brand.innerHTML =
-      '<img src="https://aimarketingstrategic.com/images/logo%20aims.png" alt="AI Marketing Strategic" height="32">' +
-      '<p class="footer-brand-sub">AI Automation untuk UMKM Indonesia. Chatbot WhatsApp, Follow-up Otomatis, CRM, Booking System.</p>';
+      '<div class="footer-brand-name">AI Marketing Strategic</div>' +
+      '<div class="footer-brand-sub">AI Automation untuk UMKM Indonesia — Chatbot WhatsApp, Follow-up Otomatis, Booking System</div>';
     inner.appendChild(brand);
 
-    // Links grid
+    // Links columns
     var links = document.createElement('div');
     links.className = 'footer-links';
-    var cols = [
-      { title: 'Solusi', items: FOOTER_LINKS },
-      { title: 'Sumber Daya', items: [
-        { href: '/blog/', label: 'Blog' },
-        { href: '/tools/', label: 'Tools Gratis' },
-        { href: '/gratis/', label: 'Download Gratis' }
-      ]},
-      { title: 'Kontak', items: [
-        { href: 'https://wa.me/6281907552758', label: 'WhatsApp', ext: true },
-        { href: 'mailto:hello@aimarketingstrategic.com', label: 'Email', ext: true }
-      ]}
-    ];
-    cols.forEach(function (col) {
-      var colDiv = document.createElement('div');
-      colDiv.className = 'footer-col';
-      var title = document.createElement('div');
-      title.className = 'footer-col-title';
-      title.textContent = col.title;
-      colDiv.appendChild(title);
-      col.items.forEach(function (item) {
-        var a = document.createElement(item.ext ? 'a' : 'a');
-        a.href = item.href;
-        if (item.ext) a.target = '_blank';
-        a.textContent = item.label;
-        colDiv.appendChild(a);
-      });
-      links.appendChild(colDiv);
+    FOOTER_LINKS.forEach(function (item) {
+      var a = document.createElement('a');
+      a.href = item.href;
+      a.textContent = item.label;
+      links.appendChild(a);
     });
     inner.appendChild(links);
 
-    // Bottom bar
-    var bottom = document.createElement('div');
-    bottom.className = 'footer-bottom';
-    bottom.innerHTML = '<p class="footer-copy">&copy; ' + new Date().getFullYear() + ' AI Marketing Strategic. Hak cipta dilindungi.</p>';
-    inner.appendChild(bottom);
+    // Contact
+    var contact = document.createElement('div');
+    contact.className = 'footer-contact';
+    contact.innerHTML =
+      '<div class="footer-contact-label">Hubungi Kami</div>' +
+      '<a class="footer-phone" href="https://wa.me/6281907552758?text=Halo%2C%20saya%20tertarik%20dengan%20AI%20automation%20AMS">+62 819-0755-2758</a>' +
+      '<div class="footer-hours">Senin – Minggu · 09:00 – 21:00 WIB</div>';
+    inner.appendChild(contact);
 
     footer.appendChild(inner);
+
+    // Copyright bar
+    var bar = document.createElement('div');
+    bar.className = 'footer-bar';
+    bar.innerHTML =
+      '<div class="footer-copy">© ' + new Date().getFullYear() + ' AI Marketing Strategic. All rights reserved.</div>' +
+      '<div class="footer-legal">' +
+        '<a href="/privacy-policy.html">Privacy</a>' +
+        '<span>·</span>' +
+        '<a href="/terms.html">Terms</a>' +
+      '</div>';
+    footer.appendChild(bar);
+
     return footer;
   }
 
-  /** Initialize on DOM ready */
-  document.addEventListener('DOMContentLoaded', function () {
-    // Nav
+  /** Inject nav, mobile menu, footer into placeholders */
+  function injectLayout() {
     var navPh = document.getElementById('nav-placeholder');
+    if (navPh && !navPh.querySelector('header')) navPh.appendChild(buildNav());
+
     var mobPh = document.getElementById('mobile-placeholder');
-    var ftrPh = document.getElementById('footer-placeholder');
-    if (navPh) navPh.appendChild(buildNav());
-    if (mobPh) mobPh.appendChild(buildMobileMenu());
-    if (ftrPh) ftrPh.appendChild(buildFooter());
+    if (mobPh && !mobPh.querySelector('.menu-overlay')) mobPh.appendChild(buildMobileMenu());
 
-    // Sticky nav background
-    var hdr = document.querySelector('.site-header');
-    if (hdr) {
-      window.addEventListener('scroll', function () {
-        hdr.classList.toggle('scrolled', window.scrollY > 60);
-      });
+    var ftPh = document.getElementById('footer-placeholder');
+    if (ftPh && !ftPh.querySelector('footer')) ftPh.appendChild(buildFooter());
+  }
+
+  /** Sticky nav background on scroll */
+  function initStickyNav() {
+    window.addEventListener('scroll', function () {
+      var hdr = document.querySelector('.site-header');
+      if (hdr) hdr.classList.toggle('scrolled', window.scrollY > 60);
+    });
+  }
+
+  /** Reveal-on-scroll animation */
+  function initReveal() {
+    var els = document.querySelectorAll('.reveal');
+    if (els.length) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+        });
+      }, { threshold: 0.15 });
+      els.forEach(function (el) { obs.observe(el); });
     }
+  }
 
-    // Reveal animations
-    (function () {
-      var els = document.querySelectorAll('.reveal');
-      if (els.length) {
-        var obs = new IntersectionObserver(function (entries) {
-          entries.forEach(function (e) {
-            if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
-          });
-        }, { threshold: 0.15 });
-        els.forEach(function (el) { obs.observe(el); });
-      }
-    })();
-
-    // Auto-play hero video
-    var vid = document.querySelector('.hero-video video');
-    if (vid) { vid.muted = true; vid.playsInline = true; vid.play().catch(function () {}); }
-  });
+  // Initialize when DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function () { injectLayout(); initStickyNav(); initReveal(); });
+  } else {
+    injectLayout(); initStickyNav(); initReveal();
+  }
 })();
