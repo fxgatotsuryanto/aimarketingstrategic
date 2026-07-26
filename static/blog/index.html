@@ -459,42 +459,86 @@
     .preview-small{font-size:11px;color:rgba(255,255,255,.3);margin-top:8px}
     @media(max-width:640px){.leadmagnet-card{flex-direction:column;padding:28px 24px;text-align:center}.leadmagnet-preview{width:100%}.leadmagnet-points{justify-content:center}}
 
-    /* ─── Kalkulator Iframe ─── */
-    .kalkulator-frame-container {
-      max-width: 720px;
-      margin: 24px auto 0;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0,0,0,.2);
-      animation: fadeSlideIn .3s ease-out;
+    /* ─── Kalkulator Floating Modal ─── */
+    .kalkulator-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(0,0,0,.6);
+      backdrop-filter: blur(4px);
+      animation: fadeIn .25s ease-out;
     }
-    .kalkulator-iframe {
-      width: 100%;
-      height: 480px;
-      border: none;
-      display: block;
+    .kalkulator-overlay.show {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .kalkulator-modal {
       background: #fff;
-    }
-    .kalkulator-close-btn {
-      display: block;
+      border-radius: 20px;
       width: 100%;
-      padding: 10px;
-      background: #f1f5f9;
-      border: none;
-      color: #475569;
-      font-family: 'Inter', sans-serif;
+      max-width: 740px;
+      max-height: 90vh;
+      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0,0,0,.35);
+      animation: modalIn .3s ease-out;
+      display: flex;
+      flex-direction: column;
+    }
+    .kalkulator-modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 24px;
+      background: var(--primary);
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .kalkulator-modal-header h3 {
+      font-family: 'Orbitron', sans-serif;
       font-size: 12px;
-      font-weight: 600;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: #fff;
+      margin: 0;
+    }
+    .kalkulator-modal-close {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(255,255,255,.1);
+      color: #fff;
+      font-size: 16px;
       cursor: pointer;
-      letter-spacing: .05em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       transition: background .2s;
     }
-    .kalkulator-close-btn:hover {
-      background: #e2e8f0;
+    .kalkulator-modal-close:hover {
+      background: rgba(255,255,255,.2);
     }
-    @keyframes fadeSlideIn {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
+    .kalkulator-modal iframe {
+      width: 100%;
+      height: 520px;
+      border: none;
+      display: block;
+      flex: 1;
+    }
+    @media (max-height: 700px) {
+      .kalkulator-modal iframe { height: 380px; }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes modalIn {
+      from { opacity: 0; transform: translateY(20px) scale(.97); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
     }
 
     /* ─── Lead Magnet CTA Button (override components.css) ─── */
@@ -872,7 +916,7 @@
             <span>✅ Hasil langsung</span>
             <span>✅ PDF siap simpan</span>
           </div>
-          <a href="#kalkulator-frame" class="btn-primary btn-large" id="show-kalkulator-btn" onclick="return showKalkulator()">Hitung Sekarang — Gratis</a>
+          <a href="#kalkulator-modal" class="btn-primary btn-large" id="show-kalkulator-btn" onclick="return showKalkulator()">Hitung Sekarang — Gratis</a>
         </div>
         <div class="leadmagnet-preview">
           <div class="preview-box">
@@ -882,9 +926,16 @@
           </div>
         </div>
       </div>
-      <div class="kalkulator-frame-container" id="kalkulator-frame" style="display:none">
-        <button class="kalkulator-close-btn" onclick="closeKalkulator()">✕ Tutup</button>
-        <iframe src="/gratis/kalkulator-leads-hilang.html" class="kalkulator-iframe" title="Kalkulator Leads Hilang"></iframe>
+
+      <!-- Floating Modal -->
+      <div class="kalkulator-overlay" id="kalkulator-overlay" onclick="closeKalkulator(event)">
+        <div class="kalkulator-modal" onclick="event.stopPropagation()">
+          <div class="kalkulator-modal-header">
+            <h3>💰 Kalkulator Leads Hilang</h3>
+            <button class="kalkulator-modal-close" onclick="closeKalkulator()">✕</button>
+          </div>
+          <iframe src="/gratis/kalkulator-leads-hilang.html" title="Kalkulator Leads Hilang"></iframe>
+        </div>
       </div>
     </section>
 
@@ -906,13 +957,24 @@
 
   <script>
     function showKalkulator() {
-      document.getElementById('kalkulator-frame').style.display = 'block';
-      document.getElementById('kalkulator-frame').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      document.getElementById('kalkulator-overlay').classList.add('show');
+      document.body.style.overflow = 'hidden';
       return false;
     }
-    function closeKalkulator() {
-      document.getElementById('kalkulator-frame').style.display = 'none';
+    function closeKalkulator(e) {
+      if (e && e.target !== e.currentTarget) return;
+      document.getElementById('kalkulator-overlay').classList.remove('show');
+      document.body.style.overflow = '';
     }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        var overlay = document.getElementById('kalkulator-overlay');
+        if (overlay && overlay.classList.contains('show')) {
+          overlay.classList.remove('show');
+          document.body.style.overflow = '';
+        }
+      }
+    });
   </script>
   <div id="footer-placeholder"></div>
 
