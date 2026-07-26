@@ -29,9 +29,9 @@
       header.querySelector('#chat-close-btn').onclick = closeChat;
 
       var iframe = document.createElement('iframe');
-            iframe.src = 'https://ai.newton.co.id/webhook/f263072c-d9fd-47e0-82e5-a85af72df984/chat';
-            iframe.allow = 'microphone';
-            iframe.style.cssText = 'width:100%;height:700px;border:none;display:block';
+      iframe.src = 'https://ai.newton.co.id/webhook/f263072c-d9fd-47e0-82e5-a85af72df984/chat';
+      iframe.allow = 'microphone';
+      iframe.style.cssText = 'width:100%;height:700px;border:none;display:block';
 
       modal.appendChild(header);
       modal.appendChild(iframe);
@@ -283,36 +283,36 @@
      Initialize on DOM ready
      ============================================= */
   function injectLayout() {
-      console.log('[AMS] injectLayout called - starting');
-      try {
-        var navPh = document.getElementById('nav-placeholder');
-        console.log('[AMS] nav-placeholder found:', !!navPh);
-        if (navPh && !navPh.querySelector('header')) {
-          console.log('[AMS] Calling buildNav...');
-          navPh.appendChild(buildNav());
-          console.log('[AMS] buildNav done');
-        }
-      } catch (e) { console.error('buildNav error:', e); }
+    console.log('[AMS] injectLayout called - starting');
+    try {
+      var navPh = document.getElementById('nav-placeholder');
+      console.log('[AMS] nav-placeholder found:', !!navPh);
+      if (navPh && !navPh.querySelector('header')) {
+        console.log('[AMS] Calling buildNav...');
+        navPh.appendChild(buildNav());
+        console.log('[AMS] buildNav done');
+      }
+    } catch (e) { console.error('buildNav error:', e); }
 
     try {
-          var mobPh = document.getElementById('mobile-placeholder');
-          console.log('[AMS] mobile-placeholder found:', !!mobPh);
-          if (mobPh && !mobPh.querySelector('.menu-overlay')) {
-            console.log('[AMS] Calling buildMobileMenu...');
-            mobPh.appendChild(buildMobileMenu());
-            console.log('[AMS] buildMobileMenu done');
-          }
-        } catch (e) { console.error('buildMobileMenu error:', e); }
+      var mobPh = document.getElementById('mobile-placeholder');
+      console.log('[AMS] mobile-placeholder found:', !!mobPh);
+      if (mobPh && !mobPh.querySelector('.menu-overlay')) {
+        console.log('[AMS] Calling buildMobileMenu...');
+        mobPh.appendChild(buildMobileMenu());
+        console.log('[AMS] buildMobileMenu done');
+      }
+    } catch (e) { console.error('buildMobileMenu error:', e); }
 
-        try {
-          var ftrPh = document.getElementById('footer-placeholder');
-          console.log('[AMS] footer-placeholder found:', !!ftrPh);
-          if (ftrPh && !ftrPh.querySelector('footer')) {
-            console.log('[AMS] Calling buildFooter...');
-            ftrPh.appendChild(buildFooter());
-            console.log('[AMS] buildFooter done');
-          }
-        } catch (e) { console.error('buildFooter error:', e); }
+    try {
+      var ftrPh = document.getElementById('footer-placeholder');
+      console.log('[AMS] footer-placeholder found:', !!ftrPh);
+      if (ftrPh && !ftrPh.querySelector('footer')) {
+        console.log('[AMS] Calling buildFooter...');
+        ftrPh.appendChild(buildFooter());
+        console.log('[AMS] buildFooter done');
+      }
+    } catch (e) { console.error('buildFooter error:', e); }
 
     // Sticky nav background
     try {
