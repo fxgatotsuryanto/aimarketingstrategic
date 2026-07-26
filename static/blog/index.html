@@ -458,6 +458,27 @@
     .preview-label{font-size:11px;font-family:'Orbitron',sans-serif;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5)}
     .preview-small{font-size:11px;color:rgba(255,255,255,.3);margin-top:8px}
     @media(max-width:640px){.leadmagnet-card{flex-direction:column;padding:28px 24px;text-align:center}.leadmagnet-preview{width:100%}.leadmagnet-points{justify-content:center}}
+
+    /* ─── Lead Magnet CTA Button (override components.css) ─── */
+    .leadmagnet-card .btn-primary.btn-large {
+      background: var(--orange) !important;
+      color: #fff !important;
+      padding: 16px 36px !important;
+      border-radius: 12px !important;
+      font-family: 'Orbitron', sans-serif !important;
+      font-size: 13px !important;
+      font-weight: 700 !important;
+      letter-spacing: .15em !important;
+      text-transform: uppercase !important;
+      display: inline-block !important;
+      box-shadow: 0 15px 30px rgba(245,124,0,.4) !important;
+      border: none !important;
+      text-decoration: none !important;
+    }
+    .leadmagnet-card .btn-primary.btn-large:hover {
+      background: #e06600 !important;
+      transform: scale(0.98);
+    }
   </style>
 
   <!-- GEO: Article List Schema -->
