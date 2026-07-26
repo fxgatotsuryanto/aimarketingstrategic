@@ -406,19 +406,17 @@
 	          color: rgba(255,255,255,.7);
 	          margin: 0 0 28px;
 	        }
-	        .merged-grid {
-	          display: grid;
-	          grid-template-columns: 1fr 1fr;
-	          gap: 16px;
-	          margin-bottom: 24px;
-	        }
-	        .merged-benefit {
-	          background: rgba(255,255,255,.06);
-	          border: 1px solid rgba(255,255,255,.1);
-	          border-radius: 16px;
-	          padding: 24px 20px 20px;
-	          text-align: center;
-	        }
+	        .merged-single {
+	              max-width: 480px;
+	              margin: 0 auto 24px;
+	            }
+	            .merged-benefit {
+	              background: rgba(255,255,255,.06);
+	              border: 1px solid rgba(255,255,255,.1);
+	              border-radius: 16px;
+	              padding: 32px 28px 24px;
+	              text-align: center;
+	            }
 	        .merge-icon {
 	          font-size: 28px;
 	          margin-bottom: 8px;
@@ -486,10 +484,9 @@
 	          margin: 0;
 	        }
 	        @media (max-width: 600px) {
-	          .merged-grid { grid-template-columns: 1fr; }
-	          .merged-cta { padding: 32px 20px; }
-	          .merged-form { flex-direction: column; }
-	        }
+	                  .merged-cta { padding: 32px 20px; }
+	                  .merged-form { flex-direction: column; }
+	                }
 
     /* ─── Lead Magnet Section ─── */
     .leadmagnet-section{margin:0 -24px 64px;padding:0 24px}
@@ -993,26 +990,20 @@
     <section class="merged-cta" id="join">
       <div class="merged-cta-content">
         <div class="merged-badge">GRATIS</div>
-        <h2>Dapatkan Pilot Project + Insight AI Mingguan</h2>
-        <p class="merged-desc">Kami cari <strong>5 UMKM</strong> (laundry, kuliner, klinik, kursus, properti) untuk <strong>pilot project chatbot AI WhatsApp gratis</strong> — setup 3 bulan, <strong>Rp0.</strong> Imbalan: jadi studi kasus + testimoni video.</p>
-        <div class="merged-grid">
+        <h2>Dapatkan Insight AI UMKM Mingguan</h2>
+        <p class="merged-desc">Data ROI nyata, template flow chatbot, update fitur WA Business API, studi kasus eksklusif. Gratis, unsubscribe kapan saja.</p>
+        <div class="merged-single">
           <div class="merged-benefit">
-            <div class="merge-icon">📋</div>
-            <h4>Pilot Project</h4>
-            <p>Chatbot WA gratis 3 bulan. Cuma 5 slot.</p>
-            <a href="https://wa.me/6281907552758?text=Halo%2C%20saya%20mau%20daftar%20pilot%20project%20chatbot%20AI%20gratis" class="merged-btn">Daftar Pilot Project →</a>
-          </div>
-          <div class="merged-benefit merged-benefit-right">
             <div class="merge-icon">📧</div>
             <h4>Insight Mingguan</h4>
-            <p>Data ROI nyata, template flow chatbot, update WA API. Gratis.</p>
+            <p>Langsung ke email kamu setiap minggu. <strong>0 spam, 100% value.</strong></p>
             <form class="merged-form" action="/api/newsletter" method="POST">
               <input type="email" name="email" placeholder="email@umkm-anda.com" required>
-              <button type="submit" class="merged-btn">Langganan Gratis</button>
+              <button type="submit" class="merged-btn">Langganan Gratis →</button>
             </form>
           </div>
         </div>
-        <p class="merged-foot">Dapatkan keduanya — <strong>gratis</strong>, tanpa syarat. Cancel kapan saja.</p>
+        <p class="merged-foot">Gratis. Cancel kapan saja. Dijamin tidak spam.</p>
       </div>
     </section>
   </main>
