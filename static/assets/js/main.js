@@ -283,21 +283,36 @@
      Initialize on DOM ready
      ============================================= */
   function injectLayout() {
-      console.log('[AMS] injectLayout called');
+      console.log('[AMS] injectLayout called - starting');
       try {
         var navPh = document.getElementById('nav-placeholder');
-        if (navPh && !navPh.querySelector('header')) navPh.appendChild(buildNav());
+        console.log('[AMS] nav-placeholder found:', !!navPh);
+        if (navPh && !navPh.querySelector('header')) {
+          console.log('[AMS] Calling buildNav...');
+          navPh.appendChild(buildNav());
+          console.log('[AMS] buildNav done');
+        }
       } catch (e) { console.error('buildNav error:', e); }
 
     try {
-      var mobPh = document.getElementById('mobile-placeholder');
-      if (mobPh && !mobPh.querySelector('.menu-overlay')) mobPh.appendChild(buildMobileMenu());
-    } catch (e) { console.error('buildMobileMenu error:', e); }
+          var mobPh = document.getElementById('mobile-placeholder');
+          console.log('[AMS] mobile-placeholder found:', !!mobPh);
+          if (mobPh && !mobPh.querySelector('.menu-overlay')) {
+            console.log('[AMS] Calling buildMobileMenu...');
+            mobPh.appendChild(buildMobileMenu());
+            console.log('[AMS] buildMobileMenu done');
+          }
+        } catch (e) { console.error('buildMobileMenu error:', e); }
 
-    try {
-      var ftrPh = document.getElementById('footer-placeholder');
-      if (ftrPh && !ftrPh.querySelector('footer')) ftrPh.appendChild(buildFooter());
-    } catch (e) { console.error('buildFooter error:', e); }
+        try {
+          var ftrPh = document.getElementById('footer-placeholder');
+          console.log('[AMS] footer-placeholder found:', !!ftrPh);
+          if (ftrPh && !ftrPh.querySelector('footer')) {
+            console.log('[AMS] Calling buildFooter...');
+            ftrPh.appendChild(buildFooter());
+            console.log('[AMS] buildFooter done');
+          }
+        } catch (e) { console.error('buildFooter error:', e); }
 
     // Sticky nav background
     try {
