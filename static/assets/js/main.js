@@ -31,7 +31,7 @@
           iframe.className = 'modal-iframe';
           iframe.src = 'https://ai.newton.co.id/webhook/f263072c-d9fd-47e0-82e5-a85af72df984/chat';
           iframe.allow = 'microphone';
-          iframe.style.cssText = 'width:100%;height:520px;border:none;display:block;flex:1';
+          iframe.style.cssText = 'width:100%;height:75vh;min-height:500px;border:none;display:block;flex:1';
 
           modal.appendChild(header);
           modal.appendChild(iframe);
