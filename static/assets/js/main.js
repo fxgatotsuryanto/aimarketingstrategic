@@ -283,10 +283,11 @@
      Initialize on DOM ready
      ============================================= */
   function injectLayout() {
-    try {
-      var navPh = document.getElementById('nav-placeholder');
-      if (navPh && !navPh.querySelector('header')) navPh.appendChild(buildNav());
-    } catch (e) { console.error('buildNav error:', e); }
+      console.log('[AMS] injectLayout called');
+      try {
+        var navPh = document.getElementById('nav-placeholder');
+        if (navPh && !navPh.querySelector('header')) navPh.appendChild(buildNav());
+      } catch (e) { console.error('buildNav error:', e); }
 
     try {
       var mobPh = document.getElementById('mobile-placeholder');
