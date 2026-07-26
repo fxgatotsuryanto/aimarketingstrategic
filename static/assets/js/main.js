@@ -20,7 +20,7 @@
           overlay.onclick = function(e) { if (e.target === this) closeChat(); };
 
           var modal = document.createElement('div');
-                    modal.style.cssText = 'background:#fff;border-radius:20px;width:95%;max-width:480px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.35);animation:chatFadeIn .3s ease-out';
+                    modal.style.cssText = 'background:#fff;border-radius:20px;width:95%;max-width:480px;overflow:hidden;max-height:95vh;box-shadow:0 30px 80px rgba(0,0,0,.35);animation:chatFadeIn .3s ease-out;position:relative';
 
                     var header = document.createElement('div');
                     header.style.cssText = 'display:flex;align-items:center;justify-content:space-between;padding:14px 20px;background:#0B2A4A;color:#fff';
@@ -30,7 +30,7 @@
                     var iframe = document.createElement('iframe');
                     iframe.src = 'https://ai.newton.co.id/webhook/f263072c-d9fd-47e0-82e5-a85af72df984/chat';
                     iframe.allow = 'microphone';
-                    iframe.style.cssText = 'width:100%;height:800px;border:none;display:block';
+                    iframe.style.cssText = 'width:100%;height:100%;border:none;display:block;position:absolute;inset:0;top:48px';
 
           modal.appendChild(header);
           modal.appendChild(iframe);
