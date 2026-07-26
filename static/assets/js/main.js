@@ -12,7 +12,51 @@
       if (typeof gtag === 'function') gtag('event', 'lead', { method: 'whatsapp' });
     }
     function openChat() {
-        window.location.href = '/kontak.html';
+        var overlay = document.getElementById('chat-overlay');
+        if (!overlay) {
+          overlay = document.createElement('div');
+          overlay.id = 'chat-overlay';
+          overlay.style.cssText = 'display:none;position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.6);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:24px';
+          overlay.onclick = function(e) { if (e.target === this) closeChat(); };
+
+          var modal = document.createElement('div');
+          modal.style.cssText = 'background:#fff;border-radius:20px;width:95%;max-width:480px;max-height:90vh;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.35);animation:chatFadeIn .3s ease-out;display:flex;flex-direction:column';
+
+          var header = document.createElement('div');
+          header.style.cssText = 'display:flex;align-items:center;justify-content:space-between;padding:14px 20px;background:#0B2A4A;color:#fff;flex-shrink:0';
+          header.innerHTML = '<span style="font-family:Orbitron,sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase">AI Assessment Gratis</span><button id="chat-close-btn" style="width:30px;height:30px;border-radius:50%;border:none;background:rgba(255,255,255,.1);color:#fff;font-size:14px;cursor:pointer">✕</button>';
+                    header.querySelector('#chat-close-btn').onclick = closeChat;
+
+          var iframe = document.createElement('iframe');
+          iframe.className = 'modal-iframe';
+          iframe.src = 'https://ai.newton.co.id/webhook/f263072c-d9fd-47e0-82e5-a85af72df984/chat';
+          iframe.allow = 'microphone';
+          iframe.style.cssText = 'width:100%;height:520px;border:none;display:block;flex:1';
+
+          modal.appendChild(header);
+          modal.appendChild(iframe);
+          overlay.appendChild(modal);
+          document.body.appendChild(overlay);
+
+          // Keydown escape
+          document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeChat();
+          });
+
+          // Animation keyframes
+          var style = document.createElement('style');
+          style.textContent = '@keyframes chatFadeIn{from{opacity:0;transform:translateY(20px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}';
+          document.head.appendChild(style);
+        }
+        overlay.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      }
+      function closeChat() {
+        var overlay = document.getElementById('chat-overlay');
+        if (overlay) {
+          overlay.style.display = 'none';
+          document.body.style.overflow = '';
+        }
       }
 
     /* =============================================
