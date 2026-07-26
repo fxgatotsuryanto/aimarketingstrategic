@@ -29,9 +29,9 @@
       header.querySelector('#chat-close-btn').onclick = closeChat;
 
       var iframe = document.createElement('iframe');
-      iframe.src = 'https://ai.newton.co.id/webhook/f263072c-d9fd-47e0-82e5-a85af72df984/chat';
-      iframe.allow = 'microphone';
-      iframe.style.cssText = 'width:100%;height:calc(100% - 44px);border:none;display:block';
+            iframe.src = 'https://ai.newton.co.id/webhook/f263072c-d9fd-47e0-82e5-a85af72df984/chat';
+            iframe.allow = 'microphone';
+            iframe.style.cssText = 'width:100%;height:700px;border:none;display:block';
 
       modal.appendChild(header);
       modal.appendChild(iframe);
