@@ -3,28 +3,217 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kalkulator Leads Hilang — AIMarketingStrategic</title>
+<meta name="description" content="Hitung berapa rupiah yang bocor tiap bulan karena chat WA tidak terbalas. Gratis, 30 detik.">
+<title>Kalkulator Leads Hilang — AI Marketing Strategic</title>
+<meta name="facebook-domain-verification" content="2n1msy4uivoghk0v44i2ce8tt89jyh" />
+
+<!-- Google Fonts — matching main site -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HPCDWE0YDD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', 'G-HPCDWE0YDD');
+</script>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1032082533057403');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1032082533057403&ev=PageView&noscript=1" /></noscript>
+<!-- End Meta Pixel Code -->
+
 <style>
-  :root { --navy:#0d1b2e; --orange:#f57c00; }
-  * { box-sizing:border-box; }
-  body { font-family:'Segoe UI',Arial,sans-serif; background:var(--navy); color:#fff; margin:0; padding:24px 16px; min-height:100vh; }
-  .card { max-width:480px; margin:0 auto; background:#122642; border-radius:16px; padding:28px 24px; box-shadow:0 8px 40px rgba(0,0,0,.4); }
-  h1 { font-size:22px; margin:0 0 4px; } h1 span { color:var(--orange); }
-  .sub { color:#9fb2c8; font-size:13px; margin-bottom:22px; }
-  label { display:block; font-size:13px; color:#cfd8e3; margin:14px 0 4px; }
-  input { width:100%; padding:12px 14px; border-radius:10px; border:1px solid #2c4568; background:#0d1b2e; color:#fff; font-size:16px; }
+  :root { --navy:#0d1b2e; --orange:#f57c00; --primary:#0B2A4A; --text-medium:#64748b; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body {
+    font-family:'Inter',Arial,sans-serif;
+    background:var(--navy);
+    color:#fff;
+    margin:0;
+    padding:24px 16px;
+    min-height:100vh;
+  }
+  .card {
+    max-width:500px;
+    margin:60px auto 40px;
+    background:#122642;
+    border-radius:20px;
+    padding:32px 28px;
+    box-shadow:0 8px 50px rgba(0,0,0,.5);
+  }
+  h1 {
+    font-family:'Orbitron',sans-serif;
+    font-size:20px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.05em;
+    margin:0 0 6px;
+    color:#fff;
+  }
+  h1 span { color:var(--orange); }
+  .sub {
+    color:#94a3b8;
+    font-size:13px;
+    line-height:1.6;
+    margin-bottom:24px;
+  }
+  label {
+    display:block;
+    font-size:12px;
+    color:#cbd5e1;
+    margin:16px 0 6px;
+    font-weight:500;
+  }
+  input {
+    width:100%;
+    padding:13px 16px;
+    border-radius:10px;
+    border:1px solid #2c4568;
+    background:#0d1b2e;
+    color:#fff;
+    font-size:16px;
+    transition:border-color .2s;
+  }
   input:focus { outline:2px solid var(--orange); border-color:var(--orange); }
-  .result { margin-top:24px; background:var(--orange); color:#fff; border-radius:12px; padding:18px; text-align:center; display:none; }
-  .result .big { font-size:28px; font-weight:800; margin:4px 0; }
+  input::placeholder { color:#475569; }
+
+  button.primary {
+    width:100%;
+    margin-top:24px;
+    padding:16px;
+    border:none;
+    border-radius:12px;
+    background:var(--orange);
+    color:#fff;
+    font-size:15px;
+    font-weight:700;
+    font-family:'Inter',sans-serif;
+    cursor:pointer;
+    transition:transform .15s, box-shadow .15s;
+    box-shadow:0 8px 24px rgba(245,124,0,.3);
+  }
+  button.primary:active { transform:scale(.97); }
+  button.primary:hover { box-shadow:0 12px 32px rgba(245,124,0,.4); }
+
+  .result {
+    margin-top:28px;
+    background:var(--orange);
+    color:#fff;
+    border-radius:14px;
+    padding:20px 18px;
+    text-align:center;
+    display:none;
+  }
+  .result .big {
+    font-family:'Orbitron',sans-serif;
+    font-size:32px;
+    font-weight:900;
+    margin:6px 0;
+    text-shadow:0 2px 8px rgba(0,0,0,.2);
+  }
   .result .small { font-size:12px; opacity:.9; }
-  .detail { margin-top:14px; font-size:13px; color:#cfd8e3; background:#0d1b2e; border-radius:10px; padding:12px 14px; display:none; }
-  button { width:100%; margin-top:22px; padding:14px; border:none; border-radius:10px; background:var(--orange); color:#fff; font-size:16px; font-weight:700; cursor:pointer; }
-  button:active { transform:scale(.98); }
-  .cta { margin-top:18px; font-size:12.5px; color:#9fb2c8; text-align:center; display:none; }
-  .cta a { color:var(--orange); font-weight:700; text-decoration:none; }
+
+  .detail {
+    margin-top:16px;
+    font-size:13px;
+    color:#cbd5e1;
+    background:#0d1b2e;
+    border-radius:12px;
+    padding:14px 16px;
+    display:none;
+    line-height:1.7;
+  }
+  .detail b { color:var(--orange); }
+
+  /* ─── LEAD CAPTURE SECTION (muncul setelah hasil) ─── */
+  .lead-capture {
+    margin-top:28px;
+    background:linear-gradient(135deg, #1a3050, #0d1b2e);
+    border:1px solid rgba(245,124,0,.2);
+    border-radius:16px;
+    padding:24px 20px;
+    text-align:center;
+    display:none;
+  }
+  .lead-capture h3 {
+    font-family:'Orbitron',sans-serif;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--orange);
+    margin-bottom:8px;
+  }
+  .lead-capture p {
+    font-size:14px;
+    color:#94a3b8;
+    margin-bottom:20px;
+    line-height:1.6;
+  }
+  .btn-wa {
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:16px 32px;
+    background:#25D366;
+    color:#fff;
+    border:none;
+    border-radius:14px;
+    font-size:15px;
+    font-weight:700;
+    font-family:'Inter',sans-serif;
+    cursor:pointer;
+    text-decoration:none;
+    transition:transform .15s, box-shadow .15s;
+    box-shadow:0 6px 20px rgba(37,211,102,.3);
+  }
+  .btn-wa:hover { transform:scale(1.02); box-shadow:0 8px 28px rgba(37,211,102,.4); }
+  .btn-wa:active { transform:scale(.97); }
+
+  .btn-wa-sub {
+    display:block;
+    margin-top:8px;
+    font-size:11px;
+    color:#64748b;
+  }
+
+  /* Footer ringan */
+  .footer-small {
+    text-align:center;
+    margin-top:32px;
+    font-size:11px;
+    color:#475569;
+    padding-bottom:24px;
+  }
+  .footer-small a { color:#64748b; text-decoration:none; }
+  .footer-small a:hover { color:var(--orange); }
+
+  @media(max-width:480px){
+    body { padding:16px 12px; }
+    .card { margin:30px auto; padding:24px 18px; }
+    .result .big { font-size:26px; }
+  }
 </style>
 </head>
 <body>
+
 <div class="card">
   <h1>Kalkulator <span>Leads Hilang</span></h1>
   <div class="sub">Berapa rupiah yang bocor tiap bulan karena chat WA tidak terbalas? Isi 4 angka, jujur ya ☺️</div>
@@ -41,8 +230,9 @@
   <label>4. Nilai transaksi rata-rata (Rp)</label>
   <input type="number" id="t" placeholder="contoh: 350000" min="0">
 
-  <button onclick="hitung()">Hitung Kebocoran Saya</button>
+  <button class="primary" onclick="hitung()">🔍 Hitung Kebocoran Saya</button>
 
+  <!-- Hasil -->
   <div class="result" id="res">
     <div class="small">Estimasi rupiah yang hilang per bulan:</div>
     <div class="big" id="rp">Rp0</div>
@@ -50,27 +240,85 @@
   </div>
   <div class="detail" id="det"></div>
 
-  <div class="cta" id="cta">
-    Mau kebocoran ini ditambal otomatis 24 jam?<br>
-    <a href="https://aimarketingstrategic.com/produk/playbook/" target="_top">📱 Lihat Playbook Follow-Up WA → tambal bocoran mulai strategi #1</a>
+  <!-- Lead Capture — muncul setelah hasil -->
+  <div class="lead-capture" id="leadCapture">
+    <h3>😱 Angkanya Gede Ya?</h3>
+    <p>Kami bantu tambal bocoran ini otomatis — tanpa tambah staf, tanpa ribet IT. <strong>AI Assessment gratis 15 menit</strong>, langsung dapat rekomendasi khusus bisnis Anda.</p>
+    <a class="btn-wa" id="waBtn" href="#" target="_blank">
+      💬 AI Assessment Gratis via WA
+    </a>
+    <span class="btn-wa-sub">Klik → langsung chat owner. 1-2 menit dibalas.</span>
   </div>
 </div>
+
+<div class="footer-small">
+  <a href="https://aimarketingstrategic.com">AI Marketing Strategic</a> — AI Business Operating System untuk UMKM Indonesia
+</div>
+
 <script>
 function fmt(n){return 'Rp'+Math.round(n).toLocaleString('id-ID');}
+
 function hitung(){
-  var c=+document.getElementById('c').value||0,
-      l=(+document.getElementById('l').value||0)/100,
-      k=(+document.getElementById('k').value||0)/100,
-      t=+document.getElementById('t').value||0;
-  var chatHilang=c*l*30, rugi=chatHilang*k*t;
-  document.getElementById('res').style.display='block';
-  document.getElementById('rp').textContent=fmt(rugi);
-  document.getElementById('chats').textContent=Math.round(chatHilang)+' chat/bulan tidak tertangani -> '+Math.round(chatHilang*k)+' calon pembeli hilang';
-  var det=document.getElementById('det');
-  det.style.display='block';
-  det.innerHTML='<b>Artinya:</b> dalam setahun sekitar <b>'+fmt(rugi*12)+'</b> menguap. '+
-    'Menyelamatkan separuhnya saja = <b>'+fmt(rugi/2)+'/bulan</b> - tanpa menambah budget iklan sepeser pun.';
-  document.getElementById('cta').style.display='block';
+  var c = +document.getElementById('c').value || 0;
+  var l = (+document.getElementById('l').value || 0) / 100;
+  var k = (+document.getElementById('k').value || 0) / 100;
+  var t = +document.getElementById('t').value || 0;
+
+  var chatHilang = c * l * 30;
+  var rugi = chatHilang * k * t;
+  var rugiTahunan = rugi * 12;
+
+  // Tampilkan hasil
+  document.getElementById('res').style.display = 'block';
+  document.getElementById('rp').textContent = fmt(rugi);
+  document.getElementById('chats').textContent =
+    Math.round(chatHilang) + ' chat/bulan tidak tertangani → ' +
+    Math.round(chatHilang * k) + ' calon pembeli hilang';
+
+  var det = document.getElementById('det');
+  det.style.display = 'block';
+  det.innerHTML = '<b>Artinya:</b> dalam setahun sekitar <b>' + fmt(rugiTahunan) +
+    '</b> menguap. ' +
+    'Menyelamatkan separuhnya saja = <b>' + fmt(rugi / 2) +
+    '/bulan</b> tambahan — tanpa nambah budget iklan.';
+
+  // Set WA link dengan pre-filled message (biar personal)
+  var waMsg = encodeURIComponent(
+    'Halo kak, saya baru hitung kerugian WA bisnis saya pakai Kalkulator Leads Hilang.\n\n' +
+    'Hasilnya: ' + fmt(rugi) + '/bulan bocor 😱\n' +
+    'Setahun: ' + fmt(rugiTahunan) + '\n\n' +
+    'Saya tertarik AI Assessment Gratis 15 menit untuk lihat solusinya. Bisa bantu?'
+  );
+  document.getElementById('waBtn').href =
+    'https://wa.me/6281907552758?text=' + waMsg;
+
+  // Munculkan lead capture
+  document.getElementById('leadCapture').style.display = 'block';
+
+  // Scroll halus ke lead capture
+  setTimeout(function(){
+    document.getElementById('leadCapture').scrollIntoView({behavior:'smooth', block:'center'});
+  }, 200);
+
+  // Fire Pixel Lead event
+  if (typeof fbq === 'function') {
+    fbq('track', 'Lead', {
+      value: rugi,
+      currency: 'IDR',
+      content_name: 'Kalkulator Leads Hilang',
+      content_category: 'Lead Magnet'
+    });
+    console.log('Pixel Lead fired: value=' + rugi);
+  }
+
+  // GA4 event
+  if (typeof gtag === 'function') {
+    gtag('event', 'calculate_loss', {
+      monthly_loss: rugi,
+      yearly_loss: rugiTahunan,
+      chats_lost: Math.round(chatHilang)
+    });
+  }
 }
 </script>
 </body>
