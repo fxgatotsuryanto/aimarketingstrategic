@@ -51,15 +51,23 @@
   }
 
   function closeChat() {
-    var overlay = document.getElementById('chat-overlay');
-    if (overlay) {
-      overlay.style.display = 'none';
-      document.body.style.overflow = '';
+      var overlay = document.getElementById('chat-overlay');
+      if (overlay) {
+        overlay.style.display = 'none';
+        document.body.style.overflow = '';
+      }
     }
-  }
 
-  /* =============================================
-     NAVIGATION — Data & Builders (React-style dark)
+    // Expose globally for HTML onclick attributes
+    window.openChat = openChat;
+    window.closeChat = closeChat;
+    window.closeModal = function(id) {
+      var el = document.getElementById(id);
+      if (el) el.classList.remove('open');
+    };
+
+    /* =============================================
+       NAVIGATION — Data & Builders (React-style dark)
      Injects into #nav-placeholder, #mobile-placeholder,
      #footer-placeholder on page load
      ============================================= */
