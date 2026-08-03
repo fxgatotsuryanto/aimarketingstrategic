@@ -250,13 +250,9 @@
             '</ul>' +
           '</nav>' +
 
-          '<nav class="footer-nav" aria-label="Produk">' +
-            '<div class="footer-col-title">Produk</div>' +
+          '<nav class="footer-nav" aria-label="Addon">' +
+            '<div class="footer-col-title">Addon</div>' +
             '<ul class="footer-links">' +
-              '<li><a href="/harga.html#starter">AI Frontliner (Starter)</a></li>' +
-              '<li><a href="/harga.html#growth">AI Marketing + Sales</a></li>' +
-              '<li><a href="/harga.html#scale">Full AI Team</a></li>' +
-              '<li><a href="/demo.html">Coba Demo</a></li>' +
               '<li><a href="/produk/follow-up-playbook.html">Playbook Follow-Up WA</a></li>' +
               '<li><a href="/produk/ai-readiness-assessment.html">AI Readiness Assessment</a></li>' +
               '<li><a href="/produk/sop-kit-umkm.html">SOP Kit UMKM</a></li>' +
