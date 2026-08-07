@@ -2035,7 +2035,7 @@ table.comp tr:last-child td { border-bottom: none; }
 /* Chat modal: iframe fills remaining space, never clipped */
 .modal-chat-box .modal-iframe {
   flex: 1 1 auto;
-  min-height: 0;
+  min-height: 560px;
   height: auto;
 }
 
