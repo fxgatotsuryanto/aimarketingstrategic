@@ -21,17 +21,17 @@
       overlay.onclick = function(e) { if (e.target === this) closeChat(); };
 
       var modal = document.createElement('div');
-            modal.style.cssText = 'background:#fff;border-radius:0;width:92%;max-width:440px;max-height:calc(100vh - 32px);overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.35);height:100%;min-height:0;display:flex;flex-direction:column';
+      modal.style.cssText = 'background:#fff;border-radius:0;width:92%;max-width:440px;max-height:calc(100dvh - 32px);overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.35);height:100%;min-height:0;display:flex;flex-direction:column';
 
       var header = document.createElement('div');
-            header.style.cssText = 'flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:#0B2A4A;color:#fff';
+      header.style.cssText = 'flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:#0B2A4A;color:#fff';
       header.innerHTML = '<span style="font-family:Orbitron,sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase">AI Assessment Gratis</span><button id="chat-close-btn" style="width:28px;height:28px;border-radius:4px;border:none;background:rgba(255,255,255,.1);color:#fff;font-size:14px;cursor:pointer;line-height:1">X</button>';
       header.querySelector('#chat-close-btn').onclick = closeChat;
 
       var iframe = document.createElement('iframe');
-            iframe.src = 'https://ai.newton.co.id/webhook/f263072c-d9fd-47e0-82e5-a85af72df984/chat';
-            iframe.allow = 'microphone';
-            iframe.style.cssText = 'flex:1 1 auto;min-height:0;width:100%;border:none;display:block';
+      iframe.src = 'https://ai.newton.co.id/webhook/f263072c-d9fd-47e0-82e5-a85af72df984/chat';
+      iframe.allow = 'microphone';
+      iframe.style.cssText = 'flex:1 1 auto;min-height:0;width:100%;border:none;display:block';
 
       modal.appendChild(header);
       modal.appendChild(iframe);

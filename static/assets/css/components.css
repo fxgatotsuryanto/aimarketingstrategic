@@ -2042,7 +2042,7 @@ table.comp tr:last-child td { border-bottom: none; }
 /* Chat modal specific */
 .modal-chat-box {
   max-height: 90vh;
-  height: calc(100vh - 32px);
+  height: calc(100dvh - 32px);
   display: flex;
   flex-direction: column;
   overflow: hidden;
