@@ -2032,17 +2032,9 @@ table.comp tr:last-child td { border-bottom: none; }
   display: block;
 }
 
-/* Chat modal: iframe fills remaining space, never clipped */
-.modal-chat-box .modal-iframe {
-  flex: 1 1 auto;
-  min-height: 560px;
-  height: auto;
-}
-
 /* Chat modal specific */
 .modal-chat-box {
   max-height: 90vh;
-  height: calc(100dvh - 32px);
   display: flex;
   flex-direction: column;
   overflow: hidden;
