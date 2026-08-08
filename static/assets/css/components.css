@@ -2026,10 +2026,12 @@ table.comp tr:last-child td { border-bottom: none; }
 
 .modal-iframe {
   width: 100%;
-  height: 480px;
+  height: 100%;
   border: none;
-  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+  border-radius: 0;
   display: block;
+  flex: 1;
+  min-height: 0;
 }
 
 /* Chat modal specific */
@@ -2038,6 +2040,9 @@ table.comp tr:last-child td { border-bottom: none; }
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  padding: 0;
+  height: min(80vh, 760px);
+  border-radius: 16px;
 }
 
 .modal-header {
