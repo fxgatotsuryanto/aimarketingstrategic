@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Google Maps Scraper — Kumpulkan Data Leads UMKM Otomatis | AI Marketing Strategic</title>
+<meta name="description" content="Software scraping Google Maps untuk ambil ribuan data leads bisnis: nama, alamat, telepon, website, rating. Tanpa coding, tanpa install Python. Sekali bayar Rp199.000, download lifetime.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://aimarketingstrategic.com/produk/google-maps-scraper">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aimarketingstrategic.com/produk/google-maps-scraper">
+<meta property="og:title" content="Google Maps Scraper — Data Leads UMKM Otomatis | AI Marketing Strategic">
+<meta property="og:description" content="Ambil ribuan data bisnis dari Google Maps: nama, telepon, website, rating. Tanpa coding. Rp199.000 sekali bayar.">
+<meta property="og:locale" content="id_ID">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/assets/css/components.css">
+<link rel="stylesheet" href="/assets/css/responsive.css">
+<link rel="stylesheet" href="/assets/css/blog-footer.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root { --primary:#0B2A4A; --primary-light:#1a4a7a; --orange:#F57C00; --bg-dark:#061626; }
+.produk-hero {
+  min-height: 500px;
+  padding: 130px 24px 60px;
+  background: linear-gradient(135deg, var(--bg-dark) 0%, var(--primary) 50%, var(--bg-dark) 100%);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.produk-hero h1 { font-size: clamp(28px, 4vw, 44px); color: #fff; margin-bottom: 16px; }
+.produk-hero h1 span { color: var(--orange); }
+.produk-hero .subtitle { font-size: clamp(16px, 2vw, 20px); color: rgba(255,255,255,0.75); max-width: 660px; margin: 0 auto 32px; line-height: 1.6; }
+.price-badge { display: inline-block; background: var(--orange); color: #061626; font-weight: 700; font-size: 22px; padding: 12px 32px; border-radius: 12px; margin-bottom: 24px; }
+.price-badge s { font-weight: 400; font-size: 15px; opacity: 0.6; margin-right: 8px; }
+.price-badge small { font-weight: 400; font-size: 14px; opacity: 0.85; }
+.btn-buy { display: inline-block; background: var(--orange); color: #061626; font-weight: 700; font-size: 16px; padding: 14px 40px; border-radius: 50px; text-decoration: none; transition: all .2s; cursor: pointer; border: none; }
+.btn-buy:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,140,0,.4); }
+.btn-ghost { display: inline-block; background: transparent; color: #fff; font-weight: 600; font-size: 15px; padding: 13px 32px; border-radius: 50px; text-decoration: none; border: 2px solid rgba(255,255,255,.35); margin-left: 12px; transition: all .2s; }
+.btn-ghost:hover { border-color: var(--orange); color: var(--orange); }
+.hero-cta { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 12px; }
+.shot { max-width: 820px; margin: 40px auto 0; border-radius: 16px; border: 1px solid rgba(255,255,255,.15); box-shadow: 0 24px 60px rgba(0,0,0,.5); background: #0d1b2e; padding: 18px; }
+.shot-top { display: flex; gap: 8px; margin-bottom: 12px; }
+.shot-top i { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+.shot-top .r{background:#ff5f57}.shot-top .y{background:#febc2e}.shot-top .g{background:#28c840}
+.mock-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.mock-table th { color: var(--orange); text-align: left; padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,.15); font-family:'Orbitron',sans-serif; font-size:11px; letter-spacing:1px; }
+.mock-table td { color: rgba(255,255,255,.8); padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,.06); }
+.section-dark { padding: 64px 24px; background: var(--primary); }
+.section-deeper { padding: 64px 24px; background: var(--bg-dark); }
+.section-dark h2, .section-deeper h2 { text-align: center; color: #fff; font-size: 28px; margin-bottom: 48px; }
+.grid-3 { max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 24px; }
+.grid-2 { max-width: 800px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 20px; }
+.grid-4 { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 18px; }
+.card-glass { background: rgba(255,255,255,.05); border-radius: 16px; padding: 28px 20px; border: 1px solid rgba(255,255,255,.08); }
+.card-glass h3 { color: var(--orange); font-size: 18px; margin-bottom: 10px; }
+.card-glass p { color: rgba(255,255,255,.7); font-size: 14px; line-height: 1.6; }
+.card-soft { background: rgba(255,255,255,.04); border-radius: 12px; padding: 24px; border: 1px solid rgba(255,255,255,.06); }
+.card-soft h3 { color: #fff; font-size: 16px; margin-bottom: 8px; }
+.card-soft p { color: rgba(255,255,255,.65); font-size: 14px; line-height: 1.6; }
+.step-section { max-width: 720px; margin: 0 auto; }
+.step { display: flex; gap: 16px; margin-bottom: 20px; align-items: flex-start; }
+.step .num { flex: 0 0 40px; height: 40px; border-radius: 10px; background: var(--orange); color:#061626; font-weight:800; display:flex; align-items:center; justify-content:center; font-size:18px; }
+.step h3 { color: #fff; font-size: 16px; margin-bottom: 4px; }
+.step p { color: rgba(255,255,255,.65); font-size: 14px; line-height: 1.6; }
+.proof-section { padding: 48px 24px; background: var(--primary); text-align: center; }
+.proof-section p { color: rgba(255,255,255,.7); font-size: 14px; max-width: 720px; margin: 0 auto; line-height: 1.7; }
+.cta-section { padding: 64px 24px; text-align: center; background: linear-gradient(135deg, var(--bg-dark) 0%, var(--primary) 50%, var(--bg-dark) 100%); }
+.cta-section h2 { color: #fff; font-size: 28px; margin-bottom: 12px; }
+.cta-section p { color: rgba(255,255,255,.7); font-size: 15px; margin-bottom: 28px; }
+.faq { max-width: 720px; margin: 0 auto; }
+.faq details { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); border-radius: 12px; padding: 18px 20px; margin-bottom: 12px; }
+.faq summary { color: #fff; font-weight: 600; font-size: 15px; cursor: pointer; }
+.faq details p { color: rgba(255,255,255,.65); font-size: 14px; line-height: 1.7; margin-top: 10px; }
+.warn { background: rgba(245,124,0,.08); border-left: 3px solid var(--orange); padding: 14px 18px; border-radius: 8px; max-width: 720px; margin: 24px auto 0; }
+.warn p { color: rgba(255,255,255,.7); font-size: 13px; line-height: 1.6; }
+@media(max-width:640px){ .produk-hero h1 { font-size: 24px; } .btn-buy, .btn-ghost { width: 100%; } .btn-ghost { margin-left: 0; margin-top: 6px; } }
+</style>
+</head>
+<body>
+
+<div id="nav-placeholder"></div>
+<div id="mobile-placeholder"></div>
+
+<!-- HERO -->
+<section class="produk-hero">
+  <div class="price-badge"><s>Rp499.000</s> Rp199.000 <small>· sekali bayar, download lifetime</small></div>
+  <h1>Ribuan Leads Bisnis Google Maps <span>Dalam Sekali Klik</span></h1>
+  <p class="subtitle">Software scraping Google Maps yang otomatis mengumpulkan data bisnis: nama, alamat, telepon, website, rating, bahkan koordinat. Tanpa coding, tanpa install Python — langsung jalan, hasil export CSV/Excel.</p>
+  <div class="hero-cta">
+    <a class="btn-buy" href="https://wa.me/6281907552758?text=Halo,%20saya%20mau%20beli%20Google%20Maps%20Scraper%20-%20Rp199.000" target="_blank">Beli Rp199.000 via WA</a>
+    <a class="btn-ghost" href="#fitur">Lihat Cara Kerja ↓</a>
+  </div>
+
+  <div class="shot">
+    <div class="shot-top"><i class="r"></i><i class="y"></i><i class="g"></i><span style="margin-left:auto;color:rgba(255,255,255,.4);font-size:11px;font-family:'Orbitron',sans-serif">GOOGLE MAPS SCRAPER</span></div>
+    <table class="mock-table">
+      <tr><th>NAMA</th><th>TELEPON</th><th>WEBSITE</th><th>RATING</th><th>ALAMAT</th></tr>
+      <tr><td>Kedai Kopi Kita</td><td>0812-3456-7890</td><td>kedaikopi.id</td><td>4.6 ★</td><td>Jl. Sudirman, Jakarta</td></tr>
+      <tr><td>Klinik Sehat</td><td>021-555-0199</td><td>kliniksehat.co</td><td>4.8 ★</td><td>Jl. Gatot Subroto, Jakarta</td></tr>
+      <tr><td>Salon Cantik</td><td>0857-1234-5678</td><td>—</td><td>4.5 ★</td><td>Jl. Thamrin, Bandung</td></tr>
+      <tr><td>Bengkel Motor Jaya</td><td>0838-987-6543</td><td>bengkeljaya</td><td>4.3 ★</td><td>Jl. Ahmad Yani, Surabaya</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- FITUR -->
+<section class="section-dark" id="fitur">
+  <h2>Apa yang Bisa Kamu Ambil?</h2>
+  <div class="grid-4">
+    <div class="card-soft"><h3>📇 Nama Bisnis</h3><p>Nama usaha lengkap dari hasil pencarian Google Maps.</p></div>
+    <div class="card-soft"><h3>📞 Nomor Telepon</h3><p>Nomor WA & telepon yang siap kamu hubungi / kirim pesan.</p></div>
+    <div class="card-soft"><h3>🌐 Website</h3><p>Alamat website bisnis yang punya online presence.</p></div>
+    <div class="card-soft"><h3>⭐ Rating & Review</h3><p>Bintang rating + jumlah ulasan untuk sortir leads berkualitas.</p></div>
+    <div class="card-soft"><h3>📍 Alamat Lengkap</h3><p>Alamat + koordinat GPS (latitude/longitude) tiap bisnis.</p></div>
+    <div class="card-soft"><h3>🕒 Jam Buka</h3><p>Jam operasional untuk strategi follow-up yang tepat waktu.</p></div>
+    <div class="card-soft"><h3>🔖 Kategori & Place ID</h3><p>Jenis usaha + ID unik Google Maps tiap listing.</p></div>
+    <div class="card-soft"><h3>📤 Export CSV/Excel</h3><p>Satu klik export ke file yang siap dibuka di Excel/Google Sheets.</p></div>
+  </div>
+</section>
+
+<!-- CARA KERJA -->
+<section class="section-deeper">
+  <h2>Cara Kerjanya Gampang</h2>
+  <div class="step-section">
+    <div class="step"><div class="num">1</div><div><h3>Ketik Kategori & Lokasi</h3><p>Contoh: "klinik" di "Jakarta Selatan" — atau ketik banyak kategori sekaligus dipisah koma.</p></div></div>
+    <div class="step"><div class="num">2</div><div><h3>Klik Mulai Scraping</h3><p>Software buka Google Maps dan kumpulkan data secara otomatis. Klik Stop kapan pun.</p></div></div>
+    <div class="step"><div class="num">3</div><div><h3>Export & Kelola</h3><p>Hasil langsung tampil di tabel. Export ke CSV/Excel, filter rating & yang punya telepon.</p></div></div>
+  </div>
+
+  <div class="warn">
+    <p><strong>Catatan:</strong> Google Maps bisa membatasi akses bila scraping terlalu agresif. Gunakan volume wajar dan untuk keperluan pemasaran/riset bisnis yang etis.</p>
+  </div>
+</section>
+
+<!-- UNTUK SIAPA -->
+<section class="section-dark">
+  <h2>Untuk Siapa Tool Ini?</h2>
+  <div class="grid-3">
+    <div class="card-glass"><h3>💼 Owner UMKM</h3><p>Dapatkan daftar pesaing & calon pelanggan di area kamu dalam hitungan menit — bukan berhari-hari nge-scroll manual.</p></div>
+    <div class="card-glass"><h3>📈 Sales & Agency</h3><p>Bangun database leads untuk outreach WA/telp. Tak perlu beli data mahal, cukup scrape area target.</p></div>
+    <div class="card-glass"><h3>🔍 Riset Pasar</h3><p>Lihat siapa pemain di tiap kategori & lokasi, berapa rating-nya — untuk keputusan buka cabang atau bidding lebih cerdas.</p></div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section class="proof-section">
+  <p><strong>Kenapa ini berharga:</strong> 1 database leads 200-500 bisnis lokal bisa diisi dalam 15-30 menit — manual bisa makan waktu berhari-hari. Dan 1 prospek yang ter-hubungi duluan lawan, nilainya jauh di atas Rp199rb. Untuk industri sales & marketing, data leads adalah bahan bakarnya.</p>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Mulai Bangun Database Leads Hari Ini</h2>
+  <p>File download dikirim langsung ke WA setelah pembayaran. Tanpa coding, tanpa langganan bulanan, sekali bayar langsung punya.</p>
+  <a class="btn-buy" href="https://wa.me/6281907552758?text=Halo,%20saya%20mau%20beli%20Google%20Maps%20Scraper%20-%20Rp199.000" target="_blank">📍 Beli Rp199.000 via WA</a>
+</section>
+
+<!-- FAQ -->
+<section class="section-deeper">
+  <h2>Pertanyaan Umum</h2>
+  <div class="faq">
+    <details open><summary>Apakah butuh keahlian coding?</summary><p>Tidak. GUI-nya klik-klik. Kalau mau lebih cepat, ada juga mode CLI untuk automation.</p></details>
+    <details><summary>Apakah harus install Python?</summary><p>Versi portable (.exe) tidak perlu install Python sama sekali. Buka file, Chromium otomatis terpasang sekali saat pertama jalan.</p></details>
+    <details><summary>Bagaimana cara menerima file?</summary><p>Setelah pembayaran dikonfirmasi, link download dikirim ke WhatsApp kamu. Ada versi .exe dan .zip.</p></details>
+    <details><summary>Apakah ada update gratis?</summary><p>Versi ini sekali bayar seumur pakai untuk versi yang dibeli. Update fitur besar bisa dirilis sebagai versi baru.</p></details>
+    <details><summary>Apakah legal?</summary><p>Gunakan untuk data publik bisnis dengan volume wajar dan keperluan riset/pemasaran yang etis. Google Maps punya batasan akses; hindari scraping super-agresif.</p></details>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+
+<script src="/assets/js/main.js" defer></script>
+<script src="/assets/js/tracking.js" defer></script>
+</body>
+</html>
