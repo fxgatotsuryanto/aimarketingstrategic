@@ -284,6 +284,49 @@
     function closeDrawer(){ document.getElementById('at-mobile')&&document.getElementById('at-mobile').classList.remove('active'); document.getElementById('at-mback').classList.remove('active'); }
     document.body.appendChild(mback);
     document.body.appendChild(drawer);
+
+    // Footer khusus landing: sinkron dgn header (internal link per-section),
+    // bukan menu global yg keluar halaman. Kontak (WA/email) & legal tetap.
+    var ftrPh = document.getElementById('footer-placeholder');
+    if (ftrPh) {
+      var foot = document.createElement('footer');
+      foot.className = 'site-footer at-footer';
+      foot.setAttribute('role','contentinfo');
+      foot.innerHTML =
+        '<div class="footer-inner">' +
+          '<div class="footer-brand">' +
+            '<span class="logo-text">AI <span class="logo-accent">Auto-Trade</span></span>' +
+            '<p class="footer-desc">Sistem trading emas (XAUUSD) otomatis di MetaTrader 5: multi-strategi, manajemen risiko, dan Learning-by-Doing yang transparan.</p>' +
+          '</div>' +
+          '<nav class="footer-nav" aria-label="Menu utama">' +
+            '<div class="footer-col-title">Menu</div>' +
+            '<ul class="footer-links">' +
+              '<li><a href="#fitur">Fitur</a></li>' +
+              '<li><a href="#arsitektur">Arsitektur</a></li>' +
+              '<li><a href="#risiko">Manajemen Risiko</a></li>' +
+              '<li><a href="#penerapan">Cara Pakai</a></li>' +
+              '<li><a href="#at-faq">FAQ</a></li>' +
+            '</ul>' +
+          '</nav>' +
+          '<div class="footer-contact">' +
+            '<div class="footer-col-title">Kontak</div>' +
+            '<ul class="footer-links">' +
+              '<li><a href="https://wa.me/6281907552758" target="_blank" rel="noopener">WhatsApp: 0819-0755-2758</a></li>' +
+              '<li><a href="mailto:hallo@aimarketingstrategic.com">hallo@aimarketingstrategic.com</a></li>' +
+            '</ul>' +
+            '<p class="footer-address">Indonesia 🇮🇩</p>' +
+          '</div>' +
+        '</div>' +
+        '<div class="footer-bottom">' +
+          '<p class="footer-copy">&copy; ' + new Date().getFullYear() + ' AI Marketing Strategic. Hak cipta dilindungi.</p>' +
+          '<div class="footer-legal">' +
+            '<a href="/privacy-policy.html">Kebijakan Privasi</a>' +
+            '<a href="/terms.html">Syarat & Ketentuan</a>' +
+          '</div>' +
+        '</div>';
+      ftrPh.innerHTML = '';
+      ftrPh.appendChild(foot);
+    }
   }
   // jalan setelah main.js selesai inject nav (defer urut diakhir)
   if (document.readyState === 'complete' || document.readyState === 'interactive') {
