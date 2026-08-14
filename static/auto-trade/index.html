@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Auto-Trade — Sistem Trading Otomatis XAUUSD (Emas) | AI Marketing Strategic</title>
+<meta name="description" content="Sistem trading otomatis berbasis AI untuk XAUUSD (Emas) di MetaTrader 5. Multi-strategi, manajemen risiko otomatis, Learning-by-Doing, dan kontrol penuh. Lisensi untuk trader & pengelola dana. Tanpa janji profit — transparan dan berisiko terkendali.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://auto-trade.aimarketingstrategic.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://auto-trade.aimarketingstrategic.com/">
+<meta property="og:title" content="AI Auto-Trade — Sistem Trading Otomatis XAUUSD | AI Marketing Strategic">
+<meta property="og:description" content="Multi-strategi trading emas otomatis di MT5 + manajemen risiko + Learning-by-Doing. Transparan, berisiko terkendali, tanpa janji profit.">
+<meta property="og:locale" content="id_ID">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/assets/css/components.css">
+<link rel="stylesheet" href="/assets/css/responsive.css">
+<link rel="stylesheet" href="/assets/css/blog-footer.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root { --primary:#0B2A4A; --primary-light:#1a4a7a; --orange:#F57C00; --bg-dark:#061626; --gold:#d4af37; }
+.at-hero {
+  min-height: 520px; padding: 130px 24px 60px;
+  background: linear-gradient(135deg, var(--bg-dark) 0%, var(--primary) 55%, var(--bg-dark) 100%);
+  text-align: center; position: relative; overflow: hidden;
+}
+.at-hero::after { content:''; position:absolute; inset:0; background: radial-gradient(circle at 70% 20%, rgba(212,175,55,.12), transparent 45%); }
+.at-hero > * { position: relative; z-index: 1; }
+.at-hero h1 { font-size: clamp(30px, 4.5vw, 50px); color: #fff; margin-bottom: 18px; line-height:1.15; }
+.at-hero h1 span { color: var(--gold); }
+.at-hero .subtitle { font-size: clamp(15px, 2vw, 19px); color: rgba(255,255,255,.78); max-width: 700px; margin: 0 auto 12px; line-height: 1.65; }
+.at-hero .badge-row { display:flex; justify-content:center; flex-wrap:wrap; gap:10px; margin-bottom: 30px; }
+.at-badge { font-family:'Orbitron',sans-serif; font-size:11px; letter-spacing:1px; color:var(--gold); border:1px solid rgba(212,175,55,.4); border-radius:50px; padding:6px 14px; }
+.hero-cta { display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:12px; }
+.btn-buy { display:inline-block; background:var(--gold); color:#061626; font-weight:700; font-size:16px; padding:14px 40px; border-radius:50px; text-decoration:none; transition:all .2s; }
+.btn-buy:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(212,175,55,.4); }
+.btn-ghost { display:inline-block; background:transparent; color:#fff; font-weight:600; font-size:15px; padding:13px 32px; border-radius:50px; text-decoration:none; border:2px solid rgba(255,255,255,.35); transition:all .2s; }
+.btn-ghost:hover { border-color:var(--gold); color:var(--gold); }
+.hero-stats { max-width:760px; margin:40px auto 0; display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:16px; }
+.stat { background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1); border-radius:14px; padding:18px 12px; }
+.stat b { display:block; color:#fff; font-family:'Orbitron',sans-serif; font-size:22px; }
+.stat span { color:rgba(255,255,255,.6); font-size:12px; }
+.section-dark { padding:64px 24px; background:var(--primary); }
+.section-deeper { padding:64px 24px; background:var(--bg-dark); }
+.section-dark h2, .section-deeper h2 { text-align:center; color:#fff; font-size:28px; margin-bottom:48px; }
+.grid-3 { max-width:960px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:24px; }
+.grid-4 { max-width:1000px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px; }
+.grid-2 { max-width:860px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px; }
+.card-glass { background:rgba(255,255,255,.05); border-radius:16px; padding:26px 20px; border:1px solid rgba(255,255,255,.09); }
+.card-glass h3 { color:var(--gold); font-size:17px; margin-bottom:9px; }
+.card-glass p { color:rgba(255,255,255,.72); font-size:14px; line-height:1.6; }
+.card-soft { background:rgba(255,255,255,.04); border-radius:12px; padding:22px; border:1px solid rgba(255,255,255,.07); }
+.card-soft h3 { color:#fff; font-size:15px; margin-bottom:7px; }
+.card-soft p { color:rgba(255,255,255,.65); font-size:13px; line-height:1.6; }
+.arch { max-width:860px; margin:0 auto; position:relative; }
+.arch-row { display:flex; align-items:center; gap:18px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:14px; padding:22px 20px; margin-bottom:16px; }
+.arch-row .ico { flex:0 0 52px; height:52px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:26px; background:rgba(212,175,55,.12); }
+.arch-row h3 { color:#fff; font-size:16px; margin-bottom:4px; }
+.arch-row p { color:rgba(255,255,255,.68); font-size:13.5px; line-height:1.6; }
+.risk-table { max-width:720px; margin:0 auto; width:100%; border-collapse:collapse; }
+.risk-table th { color:var(--gold); text-align:left; padding:10px 12px; border-bottom:1px solid rgba(255,255,255,.15); font-family:'Orbitron',sans-serif; font-size:11px; letter-spacing:1px; }
+.risk-table td { color:rgba(255,255,255,.8); padding:10px 12px; border-bottom:1px solid rgba(255,255,255,.06); font-size:13.5px; }
+.cta-section { padding:64px 24px; text-align:center; background:linear-gradient(135deg, var(--bg-dark) 0%, var(--primary) 50%, var(--bg-dark) 100%); }
+.cta-section h2 { color:#fff; font-size:28px; margin-bottom:12px; }
+.cta-section p { color:rgba(255,255,255,.7); font-size:15px; margin-bottom:26px; max-width:640px; margin-left:auto; margin-right:auto; line-height:1.6; }
+.faq { max-width:720px; margin:0 auto; }
+.faq details { background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:12px; padding:18px 20px; margin-bottom:12px; }
+.faq summary { color:#fff; font-weight:600; font-size:15px; cursor:pointer; }
+.faq details p { color:rgba(255,255,255,.65); font-size:14px; line-height:1.7; margin-top:10px; }
+.disclaimer { max-width:860px; margin:24px auto 0; background:rgba(245,124,0,.07); border-left:3px solid var(--orange); padding:16px 20px; border-radius:8px; }
+.disclaimer p { color:rgba(255,255,255,.72); font-size:12.5px; line-height:1.65; }
+@media(max-width:640px){ .at-hero h1{font-size:26px;} .btn-buy,.btn-ghost{width:100%;} .btn-ghost{margin-left:0;margin-top:6px;} }
+</style>
+</head>
+<body>
+
+<div id="nav-placeholder"></div>
+<div id="mobile-placeholder"></div>
+
+<!-- HERO -->
+<section class="at-hero">
+  <div class="badge-row">
+    <span class="at-badge">MULTI-STRATEGI</span>
+    <span class="at-badge">MT5</span>
+    <span class="at-badge">AUTO RISK MGMT</span>
+    <span class="at-badge">LEARNING-BY-DOING</span>
+  </div>
+  <h1>Sistem Trading Emas Otomatis<br><span>Berbasis AI & Disiplin Risiko</span></h1>
+  <p class="subtitle">Platform trading XAUUSD (Emas) yang bekerja sendiri di MetaTrader 5 — menggabungkan analisis teknikal multi-timeframe, manajemen risiko kaku, dan lapisan evaluasi otomatis (Learning-by-Doing) yang terus belajar dari setiap hasil trade.</p>
+  <div class="hero-cta">
+    <a class="btn-buy" href="https://wa.me/6281907552758?text=Halo,%20saya%20tertarik%20dengan%20AI%20Auto-Trade%20System%20(XAUUSD)%20-%20mohon%20info%20lisensi" target="_blank">Minta Info Lisensi via WA</a>
+    <a class="btn-ghost" href="#arsitektur">Lihat Arsitektur ↓</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><b>24/7</b><span>Autopilot tanpa emosi</span></div>
+    <div class="stat"><b>≤1.5%</b><span>Risiko terkunci per trade</span></div>
+    <div class="stat"><b>2+</b><span>Strategi berjalan terpisah</span></div>
+    <div class="stat"><b>LBD</b><span>Belajar dari setiap loss</span></div>
+  </div>
+</section>
+
+<!-- FITUR -->
+<section class="section-dark" id="fitur">
+  <h2>Yang Membuat Sistem Ini Berbeda</h2>
+  <div class="grid-4">
+    <div class="card-soft"><h3>🤖 Full Autopilot</h3><p>Scan, analisa, entry, kelola posisi, dan exit otomatis di MT5. Tanpa perlu menonton chart berjam-jam.</p></div>
+    <div class="card-soft"><h3>🧠 Multi-Strategi</h3><p>Strategi swing (analisis struktur/SMC) dan strategi scalping 2-candle berjalan sebagai modul terpisah — tidak saling menimpa.</p></div>
+    <div class="card-soft"><h3>🛡️ Pagar Risiko Kaku</h3><p>Risiko maksimal per trade, batas loss harian, break-even & trailing otomatis. Semua dipagari — bukan sekadar saran.</p></div>
+    <div class="card-soft"><h3>📊 Learning-by-Doing</h3><p>Setiap loss dianalisis otomatis: pola yang sama di masa lalu, arah lawan, zona harga, dan volume — menjadi bahan perbaikan.</p></div>
+  </div>
+</section>
+
+<!-- ARSITEKTUR -->
+<section class="section-deeper" id="arsitektur">
+  <h2>Arsitektur Sistem</h2>
+  <div class="arch">
+    <div class="arch-row"><div class="ico">📡</div><div><h3>Koneksi MetaTrader 5</h3><p>Terhubung langsung ke akun MT5 Anda (server beragam broker). Sistem membaca pasar dan mengeksekusi order otomatis.</p></div></div>
+    <div class="arch-row"><div class="ico">🧮</div><div><h3>Mesin Analisis Teknikal</h3><p>Deteksi struktur, level likuiditas, order block, imbalance (FVG), break of structure, serta zona premium/discount.</p></div></div>
+    <div class="arch-row"><div class="ico">⚖️</div><div><h3>Manajemen Risiko Real-Time</h3><p>Batasi risiko per trade, stop-loss berbasis ATR, partial-take, break-even, trailing — tersentralisasi dan tidak bisa di-override.</p></div></div>
+    <div class="arch-row"><div class="ico">🧬</div><div><h3>Lapisan Learning-By-Doing (LBD)</h3><p>Analisis otomatis hasil setiap trade: missed profit, wrong-way, premature stop-loss, pola pembalikan berulang, cooldown per-setup 24 jam.</p></div></div>
+    <div class="arch-row"><div class="ico">📋</div><div><h3>Laporan & Telemetri</h3><p>Ringkasan berkala, peringatan posisi, dan catatan evaluasi dikirim ke kanal yang Anda kelola — transparan tentang apa yang terjadi.</p></div></div>
+  </div>
+</section>
+
+<!-- RISK MGMT -->
+<section class="section-dark">
+  <h2>Disiplin Risiko — Bukan Janji Profit</h2>
+  <div style="max-width:720px;margin:0 auto 30px;color:rgba(255,255,255,.7);font-size:14px;line-height:1.7;text-align:center">
+    Kami menjual <strong>teknologi dan disiplin</strong>, bukan hasil fantasi. Semua perdagangan berisiko; sistem ini dirancang agar risiko terkendali dan setiap keputusan terdokumentasi.
+  </div>
+  <table class="risk-table">
+    <tr><th>PENGAMAN</th><th>PENJELASAN</th></tr>
+    <tr><td>Risiko per trade</td><td>Terkunci di persentase tetap equity (mis. 2.5%)</td></tr>
+    <tr><td>Batas loss harian</td><td>Berhenti menambah posisi saat rugi hari itu melampaui ambang</td></tr>
+    <tr><td>Break-even otomatis</td><td>SL digeser ke titik impas setelah profit minimal tercapai</td></tr>
+    <tr><td>Partial-take</td><td>50% lot dikunci di +1R, sisa di-trail</td></tr>
+    <tr><td>Cooldown per-setup</td><td>Setup yang baru saja loss diblokir 24 jam (tidak mengulang kesalahan sama)</td></tr>
+    <tr><td>Evaluasi stop-loss</td><td>Deteksi dini bila SL terlalu sempit (premature stop-out)</td></tr>
+  </table>
+</section>
+
+<!-- CARA KERJA -->
+<section class="section-deeper">
+  <h2>Cara Penerapan</h2>
+  <div class="grid-3">
+    <div class="card-glass"><h3>1 · Setup Akun MT5</h3><p>Anda siapkan akun MT5 (demo untuk uji coba, real setelah yakin). Sistem terhubung ke akun Anda.</p></div>
+    <div class="card-glass"><h3>2 · Konfigurasi & Uji</h3><p>Tentukan toleransi risiko sesuai modal. Jalankan mode uji untuk melihat perilakunya tanpa uang sungguhan.</p></div>
+    <div class="card-glass"><h3>3 · Jalan Autopilot</h3><p>Aktifkan dan biarkan sistem bekerja. Terima laporan & evaluasi berkala, sesuaikan jika perlu.</p></div>
+  </div>
+</section>
+
+<!-- UNTUK SIAPA -->
+<section class="section-dark">
+  <h2>Untuk Siapa Sistem Ini</h2>
+  <div class="grid-3">
+    <div class="card-glass"><h3>👤 Trader Individual</h3><p>Ingin otomasi emas tanpa duduk di depan layar, dengan disiplin risiko yang terjaga dan transparan.</p></div>
+    <div class="card-glass"><h3>🏢 Pengelola Dana / Komunitas</h3><p>Butuh sistem multi-strategi yang terdokumentasi dan bisa dipantau, untuk dikelola secara bertanggung jawab.</p></div>
+    <div class="card-glass"><h3>📚 Belajar Otomasi Trading</h3><p>Mau memahami cara kerja bot trading real: arsitektur, risk management, dan evaluasi data — bukan sekadar membeli "robot ajaib".</p></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Diskusikan Kebutuhan Trading Anda</h2>
+  <p>Kami jelaskan cara kerja, konfigurasi, limitasi, dan skema lisensi — tanpa janji profit yang muluk. Transparan sejak awal.</p>
+  <a class="btn-buy" href="https://wa.me/6281907552758?text=Halo,%20saya%20mau%20konsultasi%20AI%20Auto-Trade%20System%20(XAUUSD)" target="_blank">💬 Konsultasi via WhatsApp</a>
+</section>
+
+<!-- FAQ -->
+<section class="section-deeper">
+  <h2>Pertanyaan Umum</h2>
+  <div class="faq">
+    <details open><summary>Apakah sistem ini menjamin profit?</summary><p>Tidak. Tidak ada sistem yang bisa menjamin profit. Kami menekankan pengendalian risiko dan transparansi — bukan janji hasil. Trading mengandung risiko kehilangan modal.</p></details>
+    <details><summary>Modal minimal berapa?</summary><p>Tergantung broker dan simbol (XAUUSD kontrak kecil di akun cent memungkinkan modal kecil). Kami sarankan uji di akun demo lebih dulu, dan jangan gunakan dana yang Anda tidak siap kehilangannya.</p></details>
+    <details><summary>Apakah butuh keahlian coding?</summary><p>Tidak untuk mengoperasikannya. Sistem dijalankan otomatis. Untuk pemahaman lanjut, arsitekturnya terdokumentasi.</p></details>
+    <details><summary>Bagaimana saya tahu sistem bekerja baik?</summary><p>Ada laporan berkala + telemetri: hasil trade, missed profit, evaluasi premature stop-loss, dan catatan Learning-by-Doing — semua transparan dan bisa ditinjau.</p></details>
+    <details><summary>Apakah legal?</summary><p>Trading berjangka/valas diatur oleh regulator di tiap negara (di Indonesia: Bappebti). Pastikan Anda menggunakan broker berizin dan memahami aturan setempat. Kami tidak mengelola dana; Anda yang bertanggung jawab atas keputusan.</p></details>
+  </div>
+
+  <div class="disclaimer">
+    <p><strong>Disclaimer risiko:</strong> Perdagangan instrumen finansial (termasuk emas/valas) berisiko tinggi dan dapat menyebabkan hilangnya sebagian atau seluruh modal Anda. Kinerja masa lalu tidak menjamin hasil di masa depan. Konten halaman ini bersifat edukasi/informasi dan bukan ajakan, saran, atau jaminan keuntungan. Anda bertanggung jawab penuh atas keputusan trading Anda.</p>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+
+<script src="/assets/js/main.js" defer></script>
+<script src="/assets/js/tracking.js" defer></script>
+</body>
+</html>
