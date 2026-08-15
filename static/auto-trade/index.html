@@ -203,8 +203,11 @@
 .at-nav .at-links a { color:rgba(255,255,255,.82); font-size:14px; font-weight:600; text-decoration:none; padding:8px 10px; border-radius:8px; transition:all .15s; }
 .at-nav .at-links a:hover { color:var(--gold); background:rgba(212,175,55,.08); }
 .at-nav .at-actions { display:flex; gap:10px; align-items:center; }
-.at-cta { border:none; cursor:pointer; background:var(--gold); color:#061626; font-weight:700; font-size:14px; padding:10px 18px; border-radius:50px; transition:all .2s; }
+.at-cta { border:none; cursor:pointer; background:var(--gold); color:#061626; font-weight:700; font-size:14px; padding:10px 18px; border-radius:50px; transition:all .2s; text-decoration:none; text-align:center; }
 .at-cta:hover { transform:translateY(-1px); }
+.at-cta-web { background:var(--gold); color:#061626; }
+.at-cta-wa { background:#25D366; color:#061626; }
+.at-cta-wa:hover { box-shadow:0 4px 18px rgba(37,211,102,.4); }
 .at-ham { background:transparent; border:none; color:#fff; cursor:pointer; display:none; padding:6px; }
 .at-mobile { position:fixed; top:0; right:-100%; width:min(300px,80vw); height:100vh; background:var(--bg-dark); z-index:200; padding:80px 24px 24px; transition:right .25s ease; display:flex; flex-direction:column; gap:6px; }
 .at-mobile.active { right:0; }
@@ -250,9 +253,15 @@
 
     var actions = document.createElement('div');
     actions.className = 'at-actions';
+    var waCta = document.createElement('a');
+    waCta.className = 'at-cta at-cta-wa';
+    waCta.textContent = 'WA Chat';
+    waCta.href = 'https://wa.me/6281907552758?text=' + encodeURIComponent('Halo, saya tertarik dengan AI Auto-Trade System (XAUUSD)');
+    waCta.target = '_blank'; waCta.rel = 'noopener';
+    actions.appendChild(waCta);
     var cta = document.createElement('button');
-    cta.className = 'at-cta';
-    cta.textContent = '👋 Chat';
+    cta.className = 'at-cta at-cta-web';
+    cta.textContent = 'Web Chat';
     cta.onclick = function(){ if(window.openChat) window.openChat(); };
     actions.appendChild(cta);
     var ham = document.createElement('button');
@@ -277,7 +286,12 @@
       a.addEventListener('click', closeDrawer);
       drawer.appendChild(a);
     });
-    var c2 = document.createElement('button'); c2.className='at-cta'; c2.textContent='👋 Chat'; c2.style.marginTop='16px';
+    var c2w = document.createElement('a'); c2w.className='at-cta at-cta-wa'; c2w.textContent='WA Chat';
+    c2w.style.marginTop='16px';
+    c2w.href = 'https://wa.me/6281907552758?text=' + encodeURIComponent('Halo, saya tertarik dengan AI Auto-Trade System (XAUUSD)');
+    c2w.target = '_blank'; c2w.rel = 'noopener';
+    drawer.appendChild(c2w);
+    var c2 = document.createElement('button'); c2.className='at-cta at-cta-web'; c2.textContent='Web Chat'; c2.style.marginTop='8px';
     c2.onclick = function(){ closeDrawer(); if(window.openChat) window.openChat(); };
     drawer.appendChild(c2);
     mback.onclick = closeDrawer;
