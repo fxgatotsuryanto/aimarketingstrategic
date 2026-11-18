@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Konsultasi Gratis — AI Marketing Strategic</title>
+  <meta name="description" content="Konsultasi gratis 15–20 menit. Ceritakan masalah leads dan follow-up WhatsApp bisnis Anda. Kami bantu petakan apakah AI Sales Growth System cocok.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="/contact/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Konsultasi Gratis — AI Marketing Strategic">
+  <meta property="og:description" content="Konsultasi gratis 15–20 menit soal leads & follow-up WhatsApp.">
+  <meta property="og:image" content="https://aimarketingstrategic.com/images/og-card.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/components.css?v=2">
+  <link rel="stylesheet" href="/assets/css/responsive.css">
+  <link rel="stylesheet" href="/assets/css/blog-footer.css">
+  <link rel="stylesheet" href="/assets/css/ams-pages.css">
+</head>
+<body>
+  <div id="nav-placeholder"></div>
+  <div id="mobile-placeholder"></div>
+  <main>
+    <section class="ams-hero">
+      <div class="container">
+        <nav class="ams-breadcrumb" aria-label="Breadcrumb"><a href="/">Beranda</a><span>/</span>Kontak</nav>
+        <div class="ams-eyebrow">Konsultasi Gratis</div>
+        <h1>Ceritakan <span>Masalah Leads Anda</span></h1>
+        <p class="lead">Isi form singkat ini, lalu kirim lewat WhatsApp. Kami balas dan jadwalkan diskusi 15–20 menit. Tanpa biaya, tanpa komitmen.</p>
+      </div>
+    </section>
+    <section class="ams-section">
+      <div class="container">
+        <form id="leadForm" style="max-width:560px;">
+          <p><label>Nama<br><input type="text" id="f-nama" required style="width:100%;padding:.6rem;"></label></p>
+          <p><label>Perusahaan<br><input type="text" id="f-perusahaan" style="width:100%;padding:.6rem;"></label></p>
+          <p><label>Jabatan<br><input type="text" id="f-jabatan" style="width:100%;padding:.6rem;"></label></p>
+          <p><label>Nomor WhatsApp (opsional)<br><input type="tel" id="f-wa" style="width:100%;padding:.6rem;"></label></p>
+          <p><label>Produk yang diminati<br>
+            <select id="f-produk" style="width:100%;padding:.6rem;">
+              <option>AI Sales Growth System (Pilot)</option>
+              <option>AI Customer Service (Coming Soon)</option>
+              <option>Business Automation (Coming Soon)</option>
+              <option>AI Marketing Automation (Coming Soon)</option>
+            </select></label></p>
+          <p><label>Sumber (mis. Instagram, referral)</label><br><input type="text" id="f-sumber" style="width:100%;padding:.6rem;"></p>
+          <p><button type="submit" class="btn btn-primary">Kirim via WhatsApp</button></p>
+          <p style="color:#666;font-size:.9rem;">Dengan menekan tombol, data di atas akan disusun menjadi pesan WhatsApp untuk Anda kirim ke kami. Tidak ada data yang disimpan di situs ini.</p>
+        </form>
+        <p style="margin-top:2rem;">Atau langsung: <a href="https://wa.me/6281907552758?text=Halo%2C%20saya%20mau%20konsultasi%20AI%20Sales%20Growth%20System" target="_blank" rel="noopener">Chat WhatsApp</a></p>
+      </div>
+    </section>
+  </main>
+  <div id="footer-placeholder"></div>
+  <script>
+    document.getElementById('leadForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var v = function (id) { var el = document.getElementById(id); return el ? el.value.trim() : ''; };
+      var msg = 'Halo, saya mau konsultasi.%0A'
+        + 'Nama: ' + encodeURIComponent(v('f-nama')) + '%0A'
+        + 'Perusahaan: ' + encodeURIComponent(v('f-perusahaan')) + '%0A'
+        + 'Jabatan: ' + encodeURIComponent(v('f-jabatan')) + '%0A'
+        + 'WA: ' + encodeURIComponent(v('f-wa')) + '%0A'
+        + 'Produk: ' + encodeURIComponent(v('f-produk')) + '%0A'
+        + 'Sumber: ' + encodeURIComponent(v('f-sumber'));
+      window.open('https://wa.me/6281907552758?text=' + msg, '_blank');
+    });
+  </script>
+  <script src="/assets/js/main.js?v=2" defer></script>
+  <script src="/assets/js/tracking.js" defer></script>
+</body>
+</html>
