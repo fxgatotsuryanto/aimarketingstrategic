@@ -73,18 +73,22 @@
      ============================================= */
 
   var NAV_LINKS = [
-    { href: '/harga.html',      label: 'Paket Solusi' },
-    { href: '/tentang.html',    label: 'Cara Kerja' },
-    { href: '/hasil.html',      label: 'Hasil Klien' },
-    { href: '/blog/',           label: 'Panduan Gratis' }
-  ];
+      { href: '/',            label: 'Beranda' },
+      { href: '/products/',   label: 'Produk' },
+      { href: '/demo/',       label: 'Demo' },
+      { href: '/pricing/',    label: 'Harga' },
+      { href: '/solutions/',  label: 'Solusi' },
+      { href: '/contact/',    label: 'Kontak' }
+    ];
 
-  var FOOTER_LINKS = [
-    { href: '/harga.html',      label: 'Paket Solusi' },
-    { href: '/tentang.html',    label: 'Cara Kerja' },
-    { href: '/hasil.html',      label: 'Hasil Klien' },
-    { href: '/blog/',           label: 'Panduan Gratis' }
-  ];
+    var FOOTER_LINKS = [
+      { href: '/products/',   label: 'Produk' },
+      { href: '/demo/',       label: 'Demo' },
+      { href: '/pricing/',    label: 'Harga' },
+      { href: '/solutions/',  label: 'Solusi' },
+      { href: '/contact/',    label: 'Kontak' },
+      { href: '/blog/',       label: 'Panduan' }
+    ];
 
   /** Build the fixed top navigation bar — Dark navy with logo image */
   function buildNav() {
